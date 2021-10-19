@@ -1,17 +1,11 @@
 import { FC } from "react";
-import {
-  BrowserRouter,
-  Route,
-  Switch,
-  NavLink,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
 import { RouteNames, Routes } from "./components/router";
 import "./App.css";
 
 const App: FC = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         {Routes.map(({ path, component, exact }) => (
           <Route
@@ -23,7 +17,7 @@ const App: FC = () => {
         ))}
         {/* <Redirect to={RouteNames.SHOPPING_CART} /> */}
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
