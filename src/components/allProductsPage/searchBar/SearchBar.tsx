@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Caterogy from "./Caterogy";
+import Menu from "./Menu";
 import s from "./SearchBar.module.css";
 
 const SearchBar: FC = () => {
@@ -13,7 +14,9 @@ const SearchBar: FC = () => {
         <div>head</div>
         <div>shop</div>
       </div>
-      <div className={s.bottom}></div>
+      <div className={s.bottom}>
+        <Menu />
+      </div>
     </div>
   );
 };

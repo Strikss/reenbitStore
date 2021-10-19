@@ -92,3 +92,12 @@
   color: black;
   font-size: 15px;
 }
+.menuWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  justify-content: center;
+}
+.menuWrapper div {
+  padding: 5px;
+}

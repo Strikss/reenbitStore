@@ -1,24 +1,31 @@
 import s from "./SearchBar.module.css";
 import searchLoop from "./../../../generalStuff/searchLoop.png";
-import dropDown from "./../../../generalStuff/dropDown.png";
+import dropDownImg from "./../../../generalStuff/dropDown.png";
+import { useState } from "react";
 
 const Caterogy = () => {
+  const [dropDown, setDropDown] = useState(false);
   return (
     <div>
       <div className={s.searchBarWrapper}>
         <div className={s.formGroup}>
           <div className={s.dropDown}>
-            <div className={s.defaultOption}>
-              All categories <img src={dropDown} alt="dropDown" />
+            <div
+              className={s.defaultOption}
+              onClick={() => setDropDown(!dropDown)}
+            >
+              All categories <img src={dropDownImg} alt="dropDown" />
             </div>
-            <div className={s.dropDownList}>
-              <ul>
-                <li>category name</li>
-                <li>category name</li>
-                <li>category name</li>
-                <li>category name</li>
-              </ul>
-            </div>
+            {dropDown && (
+              <div className={s.dropDownList}>
+                <ul>
+                  <li onClick={() => setDropDown(!dropDown)}>category name</li>
+                  <li onClick={() => setDropDown(!dropDown)}>category name</li>
+                  <li onClick={() => setDropDown(!dropDown)}>category name</li>
+                  <li onClick={() => setDropDown(!dropDown)}>category name</li>
+                </ul>
+              </div>
+            )}
           </div>
           <div className={s.search}>
             <input
