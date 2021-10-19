@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/reenbitStore/static/css/main.e1688dc5.chunk.css",
-    "main.js": "/reenbitStore/static/js/main.807bf80f.chunk.js",
-    "main.js.map": "/reenbitStore/static/js/main.807bf80f.chunk.js.map",
+    "main.js": "/reenbitStore/static/js/main.b2f0a3ba.chunk.js",
+    "main.js.map": "/reenbitStore/static/js/main.b2f0a3ba.chunk.js.map",
     "runtime-main.js": "/reenbitStore/static/js/runtime-main.eabdcdb3.js",
     "runtime-main.js.map": "/reenbitStore/static/js/runtime-main.eabdcdb3.js.map",
-    "static/js/2.f9410065.chunk.js": "/reenbitStore/static/js/2.f9410065.chunk.js",
-    "static/js/2.f9410065.chunk.js.map": "/reenbitStore/static/js/2.f9410065.chunk.js.map",
+    "static/js/2.af5078e4.chunk.js": "/reenbitStore/static/js/2.af5078e4.chunk.js",
+    "static/js/2.af5078e4.chunk.js.map": "/reenbitStore/static/js/2.af5078e4.chunk.js.map",
     "index.html": "/reenbitStore/index.html",
     "static/css/main.e1688dc5.chunk.css.map": "/reenbitStore/static/css/main.e1688dc5.chunk.css.map",
-    "static/js/2.f9410065.chunk.js.LICENSE.txt": "/reenbitStore/static/js/2.f9410065.chunk.js.LICENSE.txt"
+    "static/js/2.af5078e4.chunk.js.LICENSE.txt": "/reenbitStore/static/js/2.af5078e4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.eabdcdb3.js",
-    "static/js/2.f9410065.chunk.js",
+    "static/js/2.af5078e4.chunk.js",
     "static/css/main.e1688dc5.chunk.css",
-    "static/js/main.807bf80f.chunk.js"
+    "static/js/main.b2f0a3ba.chunk.js"
   ]
 }
