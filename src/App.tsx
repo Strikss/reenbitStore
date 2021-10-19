@@ -21,7 +21,7 @@ const App: FC = () => {
             component={component}
           ></Route>
         ))}
-        <Redirect to={RouteNames.SHOPPING_CART} />
+        {/* <Redirect to={RouteNames.SHOPPING_CART} /> */}
       </Switch>
     </BrowserRouter>
   );
