@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
-import { RouteNames, Routes } from "./components/router";
+import { HashRouter, Route, Switch } from "react-router-dom";
+import { Routes } from "./components/router";
 import "./App.css";
 
 const App: FC = () => {
@@ -15,7 +15,6 @@ const App: FC = () => {
             component={component}
           ></Route>
         ))}
-        {/* <Redirect to={RouteNames.SHOPPING_CART} /> */}
       </Switch>
     </HashRouter>
   );
