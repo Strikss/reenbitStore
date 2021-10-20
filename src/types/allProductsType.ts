@@ -10,8 +10,9 @@ export interface FruitsType {
   delivery: string;
   stock: number;
   itemCategory: string;
-  itemType: string;
+  farm: string;
   description: string;
+  rating: number;
 }
 export enum AllProductsActionTypes {
   FETCH_ALL_PRODUCTS = "FETCH_ALL_PRODUCTS",

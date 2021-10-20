@@ -14,9 +14,10 @@ const initialState: AllProductsState = {
       freshness: "new",
       delivery: "europe",
       stock: 320,
-      itemCategory: "",
-      itemType: "farm hello",
+      itemCategory: "Fruits",
+      farm: "farm hello",
       description: "best product",
+      rating: 4,
     },
   ],
 };
