@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Product from "../product/Product";
+import Product from "./product/Product";
 
 const MainProducts: FC = () => {
   return (

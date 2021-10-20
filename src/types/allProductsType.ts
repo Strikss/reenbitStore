@@ -15,9 +15,16 @@ export interface FruitsType {
 }
 export enum AllProductsActionTypes {
   FETCH_ALL_PRODUCTS = "FETCH_ALL_PRODUCTS",
+  FETCH_PRODUCTS_ERROR = "FETCH_PRODUCTS_ERROR",
 }
 export interface FetchAllProductsAction {
   type: AllProductsActionTypes.FETCH_ALL_PRODUCTS;
+  payload: any;
 }
-
-export type AllProductsAction = FetchAllProductsAction;
+export interface FetchProductsErrorAction {
+  type: AllProductsActionTypes.FETCH_PRODUCTS_ERROR;
+  payload: string;
+}
+export type AllProductsAction =
+  | FetchAllProductsAction
+  | FetchProductsErrorAction;

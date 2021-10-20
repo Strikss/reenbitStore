@@ -27,7 +27,7 @@ export const allProductsReducer = (
 ): AllProductsState => {
   switch (action.type) {
     case AllProductsActionTypes.FETCH_ALL_PRODUCTS:
-      return { ...state };
+      return { ...state, fruits: action.payload };
 
     default:
       return state;
