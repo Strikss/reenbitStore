@@ -2,4 +2,5 @@
   height: 100vh;
   background-color: rgba(150, 54, 54, 0.158);
   padding: 0px 45px 0px 45px;
+  overflow: scroll;
 }
