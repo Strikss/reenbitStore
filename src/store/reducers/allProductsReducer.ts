@@ -8,15 +8,15 @@ const initialState: AllProductsState = {
   fruits: [
     {
       itemID: "",
-      itemName: "",
-      itemPriceHalf: 0,
-      itemPriceFull: 0,
-      freshness: "",
-      delivery: "",
-      stock: 0,
+      itemName: "Banan",
+      itemPriceHalf: 50,
+      itemPriceFull: 100,
+      freshness: "new",
+      delivery: "europe",
+      stock: 320,
       itemCategory: "",
-      itemType: "",
-      description: "",
+      itemType: "farm hello",
+      description: "best product",
     },
   ],
 };
