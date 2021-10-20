@@ -1,7 +1,12 @@
 import React, { FC } from "react";
+import Product from "../product/Product";
 
 const MainProducts: FC = () => {
-  return <div>main Products</div>;
+  return (
+    <div>
+      <Product />
+    </div>
+  );
 };
 
 export default MainProducts;
