@@ -21,6 +21,7 @@ const initialState: AllProductsState = {
     },
   ],
   filterName: "",
+  filterStars: [0],
 };
 
 export const allProductsReducer = (
@@ -32,6 +33,8 @@ export const allProductsReducer = (
       return { ...state, fruits: action.payload };
     case AllProductsActionTypes.FILTER_BY_NAME:
       return { ...state, filterName: action.payload };
+    case AllProductsActionTypes.FILTER_BY_STARS:
+      return { ...state, filterStars: action.payload };
     default:
       return state;
   }

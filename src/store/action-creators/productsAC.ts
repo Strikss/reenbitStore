@@ -25,3 +25,6 @@ export const fetchProducts =
 export const filterByName = (e: string): AllProductsAction => {
   return { type: AllProductsActionTypes.FILTER_BY_NAME, payload: e };
 };
+export const filterByStars = (e: [number]): AllProductsAction => {
+  return { type: AllProductsActionTypes.FILTER_BY_STARS, payload: e };
+};

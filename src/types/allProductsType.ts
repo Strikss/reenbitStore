@@ -2,6 +2,7 @@ export interface AllProductsState {
   fruits: [FruitsType];
 
   filterName: string;
+  filterStars: [number];
 }
 export interface FruitsType {
   itemID: string;
@@ -20,6 +21,7 @@ export enum AllProductsActionTypes {
   FETCH_ALL_PRODUCTS = "FETCH_ALL_PRODUCTS",
   FETCH_PRODUCTS_ERROR = "FETCH_PRODUCTS_ERROR",
   FILTER_BY_NAME = "FILTER_BY_NAME",
+  FILTER_BY_STARS = "FILTER_BY_STARS",
 }
 export interface FetchAllProductsAction {
   type: AllProductsActionTypes.FETCH_ALL_PRODUCTS;
@@ -29,6 +31,10 @@ export interface FilterByNameAction {
   type: AllProductsActionTypes.FILTER_BY_NAME;
   payload: string;
 }
+export interface FilterByStarsAction {
+  type: AllProductsActionTypes.FILTER_BY_STARS;
+  payload: [number];
+}
 export interface FetchProductsErrorAction {
   type: AllProductsActionTypes.FETCH_PRODUCTS_ERROR;
   payload: string;
@@ -36,4 +42,5 @@ export interface FetchProductsErrorAction {
 export type AllProductsAction =
   | FetchAllProductsAction
   | FetchProductsErrorAction
-  | FilterByNameAction;
+  | FilterByNameAction
+  | FilterByStarsAction;
