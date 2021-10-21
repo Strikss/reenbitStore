@@ -8,14 +8,14 @@ export interface IRoute {
   exact?: boolean;
 }
 export enum RouteNames {
-  ALLPRODUCTS = "/",
+  ALL_PRODUCTS = "/",
   PRODUCT_DESCRIPTION = "/product-description",
   SHOPPING_CART = "/shopping-cart",
 }
 
 export const Routes: IRoute[] = [
   {
-    path: RouteNames.ALLPRODUCTS,
+    path: RouteNames.ALL_PRODUCTS,
     component: AllProducts,
     exact: true,
   },

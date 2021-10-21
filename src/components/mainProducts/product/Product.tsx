@@ -24,6 +24,11 @@ const Product: React.FC = () => {
             return prod;
           } else if (
             prod.name.toLowerCase().includes(filterName.toLowerCase()) &&
+            filterStars.length === 1
+          ) {
+            return prod;
+          } else if (
+            prod.name.toLowerCase().includes(filterName.toLowerCase()) &&
             filterStars.includes(prod.rating)
           ) {
             return prod;
