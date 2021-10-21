@@ -2,9 +2,11 @@ import s from "./SearchBar.module.css";
 import searchLoop from "./../../../generalStuff/searchLoop.png";
 import dropDownImg from "./../../../generalStuff/dropDown.png";
 import { useState } from "react";
+import { useAction } from "../../../hooks/useAction";
 
 const Caterogy = () => {
   const [dropDown, setDropDown] = useState(false);
+  const { filterByName } = useAction();
   return (
     <div>
       <div className={s.searchBarWrapper}>
@@ -29,6 +31,7 @@ const Caterogy = () => {
           </div>
           <div className={s.search}>
             <input
+              onChange={(e) => filterByName(e.target.value)}
               type="text"
               className={s.searchInput}
               placeholder="Search Products, categories ..."

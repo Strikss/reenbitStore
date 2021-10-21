@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Caterogy from "./Caterogy";
+import Caterogy from "./SearchEngine";
 import Menu from "./Menu";
 import s from "./SearchBar.module.css";
 

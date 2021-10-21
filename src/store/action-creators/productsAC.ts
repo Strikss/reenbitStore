@@ -8,7 +8,7 @@ import {
 export const fetchProducts =
   () => async (dispatch: Dispatch<AllProductsAction>) => {
     try {
-      await onSnapshot(collection(db, "momos_nv"), (snapshot) => {
+      await onSnapshot(collection(db, "fruits"), (snapshot) => {
         const response = snapshot.docs.map((doc) => doc.data());
         dispatch({
           type: AllProductsActionTypes.FETCH_ALL_PRODUCTS,
@@ -22,3 +22,6 @@ export const fetchProducts =
       });
     }
   };
+export const filterByName = (e: string): AllProductsAction => {
+  return { type: AllProductsActionTypes.FILTER_BY_NAME, payload: e };
+};

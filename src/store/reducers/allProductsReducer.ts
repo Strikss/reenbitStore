@@ -20,6 +20,7 @@ const initialState: AllProductsState = {
       rating: 0,
     },
   ],
+  filterName: "",
 };
 
 export const allProductsReducer = (
@@ -29,7 +30,8 @@ export const allProductsReducer = (
   switch (action.type) {
     case AllProductsActionTypes.FETCH_ALL_PRODUCTS:
       return { ...state, fruits: action.payload };
-
+    case AllProductsActionTypes.FILTER_BY_NAME:
+      return { ...state, filterName: action.payload };
     default:
       return state;
   }
