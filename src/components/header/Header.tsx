@@ -3,16 +3,16 @@ import style from "./Header.module.css";
 const Header: React.FC = () => {
   return (
     <div className={style.mainWrapper}>
-      <div className={style.left}>
-        <div>Chat with us</div>
-        <div>+420 336 775 664</div>
-        <div>info@freshnesecom.com</div>
-      </div>
-      <div className={style.right}>
-        <div>Blog</div>
-        <div>About us</div>
-        <div>Careers</div>
-      </div>
+      <ul className={style.left}>
+        <li className={style.item}>Chat with us</li>
+        <li className={style.item}>+420 336 775 664</li>
+        <li className={style.item}>info@freshnesecom.com</li>
+      </ul>
+      <ul className={style.right}>
+        <li className={style.item}>Blog</li>
+        <li className={style.item}>About us</li>
+        <li className={style.item}>Careers</li>
+      </ul>
     </div>
   );
 };

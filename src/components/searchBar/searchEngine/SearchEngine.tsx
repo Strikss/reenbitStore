@@ -1,10 +1,10 @@
-import style from "./SearchBar.module.css";
-import searchLoop from "../../assets/images/searchLoop.png";
-import dropDownImg from "../../assets/images/dropDown.png";
+import style from "./SearchEngine.module.css";
+import searchLoop from "../../../assets/images/searchLoop.png";
+import dropDownImg from "../../../assets/images/dropDown.png";
 import React, { useState } from "react";
-import { useAction } from "../../hooks/useAction";
+import { useAction } from "../../../hooks/useAction";
 
-const Caterogy: React.FC = () => {
+const SearchEngine: React.FC = () => {
   const [dropDown, setDropDown] = useState(false);
   const { filterByName } = useAction();
   return (
@@ -46,4 +46,4 @@ const Caterogy: React.FC = () => {
   );
 };
 
-export default Caterogy;
+export default SearchEngine;

@@ -4,7 +4,7 @@ import {
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,
   FILTER_BY_STARS,
-} from "../../types/reducers/allProducts";
+} from "../../types/allProducts";
 
 const initialState: AllProductsState = {
   fruits: [
