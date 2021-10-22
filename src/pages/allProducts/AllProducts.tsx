@@ -1,21 +1,18 @@
 import React from "react";
 import Header from "../../components/header/Header";
-import MainProducts from "../../components/mainProducts/MainProducts";
-import Navigation from "../../components/navigation/Navigation";
-import NavigationHeader from "../../components/navigationHeader/NavigationHeader";
+import MainProducts from "../../components/content/productList/ProductList";
+import BreadCrumps from "../../components/breadCrumps/BreadCrumps";
 import SearchBar from "../../components/searchBar/SearchBar";
-import SortBy from "../../components/sortBy/SortBy";
 import style from "./AllProducts.module.css";
+import Content from "../../components/content/Content";
 
 const AllProducts: React.FC = () => {
   return (
     <div className={style.allProducts}>
       <Header />
       <SearchBar />
-      <Navigation />
-      <NavigationHeader />
-      <SortBy />
-      <MainProducts />
+      <BreadCrumps />
+      <Content />
     </div>
   );
 };

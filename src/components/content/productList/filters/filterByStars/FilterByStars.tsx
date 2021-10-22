@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useAction } from "../../../hooks/useAction";
+import React from "react";
+import { useAction } from "../../../../../hooks/useAction";
 import style from "./FilterByStars.module.css";
 import StarsGenerator from "./StarsGenerator";
 
 const FilterByStars: React.FC = () => {
   const { filterByStars } = useAction();
   const oneRating = Array(5).fill(0);
-  const [ratingFilter, setRatingFilter] = useState(0);
-
   const handleClick = (index: number) => {
     filterByStars(index);
   };

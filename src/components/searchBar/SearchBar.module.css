@@ -9,17 +9,17 @@
   justify-content: space-between;
 }
 .header {
-  margin-top: 17;
+  margin-top: 15px;
   margin-left: 20px;
 }
 .checkout {
   list-style: none;
   display: flex;
   flex-direction: row;
-  margin-top: 0px;
+  margin-top: 13px;
 }
 .checkout img {
-  width: 48px;
+  width: 40px;
 }
 .man {
   position: relative;

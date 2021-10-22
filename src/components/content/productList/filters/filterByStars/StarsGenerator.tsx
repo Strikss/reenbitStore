@@ -1,7 +1,6 @@
-import React from "react";
 import style from "./FilterByStars.module.css";
-import whiteRatingStar from "../../../assets/images/whiteRatingStar.svg";
-import yellowStar from "../../../assets/images/yellowStar.svg";
+import whiteRatingStar from "../../../../../assets/images/whiteRatingStar.svg";
+import yellowStar from "../../../../../assets/images/yellowStar.svg";
 
 type StarsProps = {
   yellow: number;

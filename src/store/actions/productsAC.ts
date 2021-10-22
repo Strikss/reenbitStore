@@ -7,7 +7,7 @@ import {
   FETCH_PRODUCTS_ERROR,
   FILTER_BY_NAME,
   FILTER_BY_STARS,
-} from "../../types/allProducts";
+} from "../../types/reducers/allProducts";
 export const fetchProducts =
   () => async (dispatch: Dispatch<AllProductsAction>) => {
     try {

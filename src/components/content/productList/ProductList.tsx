@@ -1,11 +1,11 @@
 import React from "react";
-import CategoriesFilter from "./categoriesFilter/CategoriesFilter";
+import CategoriesFilter from "./filters/categoriesFilter/CategoriesFilter";
+import FilterByCountry from "./filters/filterByCountry/FilterByCountry";
+import FilterByStars from "./filters/filterByStars/FilterByStars";
 import Product from "./product/Product";
-import style from "./MainProducts.module.css";
-import FilterByCountry from "./filterByCountry/FilterByCountry";
-import FilterByStars from "./filterByStars/FilterByStars";
+import style from "./ProductList.module.css";
 
-const MainProducts: React.FC = () => {
+const ProductList: React.FC = () => {
   return (
     <div className={style.container}>
       <div className={style.allFilters}>
@@ -20,4 +20,4 @@ const MainProducts: React.FC = () => {
   );
 };
 
-export default MainProducts;
+export default ProductList;

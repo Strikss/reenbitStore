@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { useAppSelector } from "../../../hooks/selectorHook";
-import { useAction } from "../../../hooks/useAction";
+import { useAppSelector } from "../../../../hooks/selectorHook";
+import { useAction } from "../../../../hooks/useAction";
 import style from "./Product.module.css";
-import blackStar from "../../../assets/images/blackStar.svg";
-import whiteStar from "../../../assets/images/whiteStar.svg";
-import { RouteNames } from "../../../router/router";
+import blackStar from "../../../../assets/images/blackStar.svg";
+import whiteStar from "../../../../assets/images/whiteStar.svg";
+import { RouteNames } from "../../../../router/router";
 import { NavLink } from "react-router-dom";
 
 const Product: React.FC = () => {

@@ -1,0 +1,9 @@
+.container {
+  font-size: 18px;
+  margin-top: 29px;
+  color: #a9a9a9;
+}
+.current {
+  margin-left: 5px;
+  color: rgba(0, 0, 0, 0.781);
+}

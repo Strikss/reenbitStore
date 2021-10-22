@@ -1,9 +1,0 @@
-.container {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.container div {
-  padding: 10px 10px;
-}
