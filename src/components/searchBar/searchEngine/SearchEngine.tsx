@@ -7,6 +7,10 @@ import { useAction } from "../../../hooks/useAction";
 const SearchEngine: React.FC = () => {
   const [dropDown, setDropDown] = useState(false);
   const { filterByName } = useAction();
+  const dropDownList = Array(5)
+    .fill(0)
+    .map((el) => <li onClick={() => setDropDown(!dropDown)}>category name</li>);
+
   return (
     <div className={style.searchBarWrapper}>
       <div className={style.formGroup}>
@@ -19,12 +23,7 @@ const SearchEngine: React.FC = () => {
           </div>
           {dropDown && (
             <div className={style.dropDownList}>
-              <ul>
-                <li onClick={() => setDropDown(!dropDown)}>category name</li>
-                <li onClick={() => setDropDown(!dropDown)}>category name</li>
-                <li onClick={() => setDropDown(!dropDown)}>category name</li>
-                <li onClick={() => setDropDown(!dropDown)}>category name</li>
-              </ul>
+              <ul>{dropDownList}</ul>
             </div>
           )}
         </div>

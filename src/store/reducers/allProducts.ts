@@ -1,6 +1,6 @@
+import { AllProductsState } from "./../../interfaces/product";
 import {
   AllProductsAction,
-  AllProductsState,
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,
   FILTER_BY_STARS,

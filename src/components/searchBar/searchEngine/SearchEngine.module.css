@@ -8,13 +8,7 @@
   height: 15px;
   border: transparent;
 }
-.btn {
-  width: 5px;
-  border: transparent;
-  background-color: transparent;
-  margin-right: 17.57px;
-  cursor: pointer;
-}
+
 .formGroup {
   background-color: white;
   display: flex;

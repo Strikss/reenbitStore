@@ -4,10 +4,16 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.itemContainer .item {
+.item {
   font-size: 18px;
   padding: 10px 16px 10px 0;
 }
-.header {
+.title {
   font-size: 22px;
+}
+.countCircle {
+  background-color: #d9e0c9a6;
+  color: #4a8015;
+  padding: 0 7px;
+  border-radius: 12px;
 }

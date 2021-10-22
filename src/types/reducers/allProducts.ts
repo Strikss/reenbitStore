@@ -3,26 +3,6 @@ export const FETCH_PRODUCTS_ERROR = "FETCH_PRODUCTS_ERROR";
 export const FILTER_BY_NAME = "FILTER_BY_NAME";
 export const FILTER_BY_STARS = "FILTER_BY_STARS";
 
-export interface AllProductsState {
-  fruits: FruitsType[];
-
-  filterName: string;
-  filterStars: number[];
-}
-export interface FruitsType {
-  itemID: string;
-  name: string;
-  priceHalf: number;
-  priceFull: number;
-  freshness: string;
-  delivery: string;
-  stock: number;
-  category: string;
-  farm: string;
-  description: string;
-  rating: number;
-}
-
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
   payload: any;

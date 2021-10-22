@@ -1,17 +1,13 @@
 import React from "react";
-import CategoriesFilter from "./filters/categoriesFilter/CategoriesFilter";
-import FilterByCountry from "./filters/filterByCountry/FilterByCountry";
-import FilterByStars from "./filters/filterByStars/FilterByStars";
 import Product from "./product/Product";
 import style from "./ProductList.module.css";
+import SideBar from "./sideBar/SideBar";
 
 const ProductList: React.FC = () => {
   return (
     <div className={style.container}>
-      <div className={style.allFilters}>
-        <CategoriesFilter />
-        <FilterByCountry />
-        <FilterByStars />
+      <div className={style.sideBar}>
+        <SideBar />
       </div>
       <div className={style.product}>
         <Product />

@@ -15,14 +15,16 @@ const CategoriesFilter: React.FC = () => {
     return (
       <div key={index} className={style.itemContainer}>
         <div className={style.item}>{elem}</div>
-        <div className={style.item}>{fruitCount.length}</div>
+        <div className={style.item}>
+          <span className={style.countCircle}>{fruitCount.length}</span>
+        </div>
       </div>
     );
   });
 
   return (
     <>
-      <h1 className={style.header}>Categories</h1>
+      <h1 className={style.title}>Categories</h1>
       <div>{category}</div>
     </>
   );

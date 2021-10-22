@@ -12,7 +12,7 @@ const FilterByStars: React.FC = () => {
 
   return (
     <>
-      RATING
+      <h1 className={style.title}>Rating</h1>
       <div className={style.container}>
         {oneRating.map((_, index) => (
           <div className={style.oneBox} key={index}>
