@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 13px 0px;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: row;
+}
+.checkout img {
+  width: 40px;
+}
+.man {
+  position: relative;
+  bottom: 2px;
+  margin-right: 40px;
+}

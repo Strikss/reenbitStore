@@ -1,0 +1,27 @@
+.container {
+  margin-top: 28px;
+  display: flex;
+  width: 170px;
+  border: 1px solid #d1d1d1;
+  border-radius: 12px;
+  justify-content: space-between;
+  font-size: 18px;
+  align-items: center;
+  padding: 9px;
+}
+.dropDown {
+  margin-left: 5px;
+}
+.left {
+  width: 100%;
+  border-right: 1px solid #d1d1d1;
+  color: rgba(0, 0, 0, 0.829);
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}

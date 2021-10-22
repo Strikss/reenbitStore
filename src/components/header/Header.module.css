@@ -1,0 +1,29 @@
+.mainWrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 48px;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 1px solid #d1d1d1;
+  justify-content: space-between;
+  align-items: center;
+}
+.right {
+  display: flex;
+}
+.right .item:not(:first-child) a {
+  margin-left: 38px;
+}
+.right .item a {
+  color: #6a983c;
+}
+.left .item:first-child a {
+  color: #6a983c;
+}
+.left {
+  display: flex;
+}
+.left .item:not(:last-child) a {
+  margin-right: 38px;
+}
