@@ -4,10 +4,10 @@
   width: 170px;
   border: 1px solid #d1d1d1;
   border-radius: 12px;
-  padding: 9px 16px;
   justify-content: space-between;
   font-size: 18px;
   align-items: center;
+  padding: 9px;
 }
 .dropDown {
   margin-left: 5px;

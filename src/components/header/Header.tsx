@@ -9,10 +9,10 @@ const Header: React.FC = () => {
           <a href="#">Chat with us</a>
         </li>
         <li className={style.item}>
-          <a href="#">+420 336 775 664</a>
+          <a href="tel:420-336-775-664">+420 336 775 664</a>
         </li>
         <li className={style.item}>
-          <a href="#">info@freshnesecom.com</a>
+          <a href="mailto:info@freshnesecom.com">info@freshnesecom.com</a>
         </li>
       </ul>
       <ul className={style.right}>
