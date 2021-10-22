@@ -1,17 +1,18 @@
 import React from "react";
 import Header from "../../components/header/Header";
-import MainProducts from "../../components/content/productList/ProductList";
-import BreadCrumps from "../../components/breadCrumps/BreadCrumps";
 import SearchBar from "../../components/searchBar/SearchBar";
 import style from "./AllProducts.module.css";
 import Content from "../../components/content/Content";
+import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
+import Menu from "../../components/menu/Menu";
 
 const AllProducts: React.FC = () => {
   return (
     <div className={style.allProducts}>
       <Header />
       <SearchBar />
-      <BreadCrumps />
+      <Menu />
+      <Breadcrumbs />
       <Content />
     </div>
   );

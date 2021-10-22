@@ -4,40 +4,26 @@
   min-height: 48px;
   white-space: nowrap;
   font-size: 16px;
-  line-height: 0px;
   font-weight: 400;
-  width: 100%;
   border-bottom: 1px solid #d1d1d1;
-  height: 6%;
+  justify-content: space-between;
+  align-items: center;
 }
 .right {
   display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
-  width: 100%;
-  padding-left: 0px;
 }
-.right .item {
-  margin: 16px 33px;
+.right .item:not(:first-child) a {
+  margin-left: 38px;
+}
+.right .item a {
   color: #6a983c;
-  list-style: none;
 }
-.right :last-child {
-  margin: 16px 0px 10px 16px;
+.left .item:first-child a {
+  color: #6a983c;
 }
-
 .left {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding-left: 0px;
 }
-
-.left .item {
-  margin: 16px 33px;
-  list-style: none;
-}
-.left :first-child {
-  color: #6a983c;
-  margin: 16px 33px 10px 0px;
+.left .item:not(:last-child) a {
+  margin-right: 38px;
 }

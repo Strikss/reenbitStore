@@ -1,7 +1,10 @@
 .container {
+  display: flex;
+  align-items: center;
   font-size: 18px;
-  margin-top: 29px;
+  height: 48px;
   color: #a9a9a9;
+  margin: 25px 0;
 }
 .current {
   margin-left: 5px;

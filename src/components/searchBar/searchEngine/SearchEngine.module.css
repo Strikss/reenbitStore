@@ -1,5 +1,4 @@
 .searchBarWrapper {
-  margin: 0px 100px;
   border: 2px solid #d1d1d1;
   border-radius: 12px;
 }
@@ -19,6 +18,7 @@
 .formGroup {
   background-color: white;
   display: flex;
+  align-items: center;
   flex-direction: row;
   width: 500px;
   height: 31px;
@@ -39,11 +39,10 @@
   padding: 8px 0px;
 }
 .dropDownList ul {
-  list-style: none;
   background-color: #f9f9f9;
   color: #151515;
   position: absolute;
-  top: 35px;
+  top: 50px;
   left: -10px;
   width: 150px;
   border-radius: 10px;
@@ -70,8 +69,8 @@
   right: 33px;
 }
 .search {
+  display: flex;
   padding-left: 24px;
-  padding-top: 5px;
   width: 300px;
   height: 100%;
 }

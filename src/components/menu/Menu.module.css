@@ -1,7 +1,5 @@
 .menuWrapper {
   display: flex;
-  flex-direction: row;
-  list-style: none;
   justify-content: space-around;
   width: 100%;
   flex-wrap: wrap;
@@ -13,4 +11,7 @@
   white-space: nowrap;
   font-weight: 500;
   font-size: 18px;
+}
+.item img {
+  margin-left: 5px;
 }

@@ -7,7 +7,8 @@ const SortBy: React.FC = () => {
     <div className={style.container}>
       <div className={style.left}>Sort by</div>
       <div className={style.right}>
-        Select <img className={style.dropDown} src={arrow} alt="arrow" />
+        <span>Select</span>
+        <img className={style.dropDown} src={arrow} alt="arrow" />
       </div>
     </div>
   );
