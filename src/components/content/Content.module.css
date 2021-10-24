@@ -1,4 +1,9 @@
-.container {
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleContainer {
   display: flex;
   flex-direction: row;
   width: 100%;
