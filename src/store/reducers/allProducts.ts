@@ -20,6 +20,7 @@ const initialState: AllProductsState = {
       farm: "",
       description: "",
       rating: 0,
+      image: "",
     },
   ],
   filterName: "",

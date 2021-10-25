@@ -15,4 +15,5 @@ export interface ProductsType {
   farm: string;
   description: string;
   rating: number;
+  image: string;
 }

@@ -24,13 +24,19 @@ const Product: React.FC = () => {
     <>
       {filteredProduct(products, filterName, filterStars).map((prod) => (
         <div className={style.container} key={prod.itemID}>
-          <div className={style.imgBx}></div>
+          <div className={style.imgBx}>
+            <img
+              className={style.productImage}
+              src={prod.image}
+              alt="product Image"
+            />
+          </div>
           <div className={style.content}>
-            <ul className={style.leftSide}>
-              <ul className={style.leftTopPart}>
+            <div className={style.leftSide}>
+              <div className={style.leftTopPart}>
                 <h1 className={style.title}>{prod.name}</h1>
-                <li className={style.description}>{prod.description}</li>
-                <li>
+                <div className={style.description}>{prod.description}</div>
+                <div>
                   {stars.map((_, index) =>
                     prod.rating > index ? (
                       <img
@@ -48,53 +54,55 @@ const Product: React.FC = () => {
                       />
                     )
                   )}
-                </li>
-              </ul>
+                </div>
+              </div>
 
-              <ul className={style.leftBottomPart}>
-                <li>
+              <div className={style.leftBottomPart}>
+                <div className={style.charactContainer}>
                   <span className={style.textTitle}>Freshness</span>
                   <span>{prod.freshness}</span>
-                </li>
-                <li>
+                </div>
+                <div className={style.charactContainer}>
                   <span className={style.textTitle}> Farm</span>
                   <span>{prod.farm}</span>
-                </li>
-                <li>
+                </div>
+                <div className={style.charactContainer}>
                   <span className={style.textTitle}>Delivery</span>
                   <span>{prod.delivery}</span>
-                </li>
-                <li>
+                </div>
+                <div className={style.charactContainer}>
                   <span className={style.textTitle}>Stock</span>
                   <span className={style.supply}>{prod.stock} pcs</span>
-                </li>
-              </ul>
-            </ul>
-            <ul className={style.rightSide}>
-              <ul className={style.prices}>
+                </div>
+              </div>
+            </div>
+            <div className={style.rightSide}>
+              <div className={style.prices}>
                 <h1 className={style.discountPrice}>
-                  {prod.priceHalf.toFixed(2)} USD
+                  {prod.priceHalf.toFixed(2)} <span>USD</span>
                 </h1>
-                <li className={style.fullPrice}>{prod.priceFull.toFixed(2)}</li>
-              </ul>
-              <ul className={style.transfer}>
-                <li className={style.shipping}>Free Shipping</li>
-                <li>Delivery in 1 day</li>
-              </ul>
-              <ul className={style.buttons}>
-                <li>
+                <div className={style.fullPrice}>
+                  {prod.priceFull.toFixed(2)}
+                </div>
+              </div>
+              <div className={style.transfer}>
+                <div className={style.shipping}>Free Shipping</div>
+                <div>Delivery in 1 day</div>
+              </div>
+              <div className={style.buttons}>
+                <div>
                   <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
                     <button className={style.button}>
                       Product Detail <img src={productArrow} alt="arrow" />
                     </button>
                   </NavLink>
-                </li>
+                </div>
 
-                <li className={style.wishList}>
-                  <img src={heart} alt="heart" /> Add to wish list
-                </li>
-              </ul>
-            </ul>
+                <div className={style.wishList}>
+                  <img src={heart} alt="heart" /> <span> Add to wish list</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       ))}
