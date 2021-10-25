@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/reenbitStore/static/css/main.d88a5a18.chunk.css",
-    "main.js": "/reenbitStore/static/js/main.504efb79.chunk.js",
-    "main.js.map": "/reenbitStore/static/js/main.504efb79.chunk.js.map",
+    "main.css": "/reenbitStore/static/css/main.a5aad409.chunk.css",
+    "main.js": "/reenbitStore/static/js/main.7300e4e4.chunk.js",
+    "main.js.map": "/reenbitStore/static/js/main.7300e4e4.chunk.js.map",
     "runtime-main.js": "/reenbitStore/static/js/runtime-main.eabdcdb3.js",
     "runtime-main.js.map": "/reenbitStore/static/js/runtime-main.eabdcdb3.js.map",
-    "static/js/2.040df17d.chunk.js": "/reenbitStore/static/js/2.040df17d.chunk.js",
-    "static/js/2.040df17d.chunk.js.map": "/reenbitStore/static/js/2.040df17d.chunk.js.map",
+    "static/js/2.467044a8.chunk.js": "/reenbitStore/static/js/2.467044a8.chunk.js",
+    "static/js/2.467044a8.chunk.js.map": "/reenbitStore/static/js/2.467044a8.chunk.js.map",
     "index.html": "/reenbitStore/index.html",
-    "static/css/main.d88a5a18.chunk.css.map": "/reenbitStore/static/css/main.d88a5a18.chunk.css.map",
-    "static/js/2.040df17d.chunk.js.LICENSE.txt": "/reenbitStore/static/js/2.040df17d.chunk.js.LICENSE.txt",
+    "static/css/main.a5aad409.chunk.css.map": "/reenbitStore/static/css/main.a5aad409.chunk.css.map",
+    "static/js/2.467044a8.chunk.js.LICENSE.txt": "/reenbitStore/static/js/2.467044a8.chunk.js.LICENSE.txt",
     "static/media/arrow.fd9f895e.svg": "/reenbitStore/static/media/arrow.fd9f895e.svg",
     "static/media/blackStar.14c252db.svg": "/reenbitStore/static/media/blackStar.14c252db.svg",
+    "static/media/heart.43803a47.svg": "/reenbitStore/static/media/heart.43803a47.svg",
+    "static/media/productArrow.87d311cb.svg": "/reenbitStore/static/media/productArrow.87d311cb.svg",
     "static/media/whiteRatingStar.b4d2b8b9.svg": "/reenbitStore/static/media/whiteRatingStar.b4d2b8b9.svg",
-    "static/media/whiteStar.36779233.svg": "/reenbitStore/static/media/whiteStar.36779233.svg",
     "static/media/yellowStar.f9bd7556.svg": "/reenbitStore/static/media/yellowStar.f9bd7556.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.eabdcdb3.js",
-    "static/js/2.040df17d.chunk.js",
-    "static/css/main.d88a5a18.chunk.css",
-    "static/js/main.504efb79.chunk.js"
+    "static/js/2.467044a8.chunk.js",
+    "static/css/main.a5aad409.chunk.css",
+    "static/js/main.7300e4e4.chunk.js"
   ]
 }
