@@ -11,21 +11,12 @@ const StarsGenerator = (props: StarsProps) => {
   return (
     <>
       {yellowStars.map((_, index) => {
-        if (index < props.yellow) {
+        {
           return (
             <img
               className={style.star}
-              src={yellowStar}
+              src={index < props.yellow ? yellowStar : whiteRatingStar}
               alt="yellowStar"
-              key={index}
-            />
-          );
-        } else {
-          return (
-            <img
-              className={style.star}
-              src={whiteRatingStar}
-              alt="whiteStar"
               key={index}
             />
           );

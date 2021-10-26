@@ -15,7 +15,7 @@
   align-items: center;
   flex-direction: row;
   width: 500px;
-  height: 31px;
+  height: 42px;
   padding: 10px;
   border-radius: 12px;
   font-weight: 700;
@@ -33,7 +33,7 @@
   padding: 8px 0px;
 }
 .dropDownList ul {
-  background-color: #f9f9f9;
+  background-color: rgb(209, 209, 209);
   color: #151515;
   position: absolute;
   top: 50px;
@@ -55,9 +55,10 @@
   font-weight: bold;
 }
 .dropDownList ul li::before {
+  content: " ";
   border-width: 0px 8px 8px 8px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.274) transparent;
+  border-color: rgb(209, 209, 209) transparent;
   position: absolute;
   bottom: 100%;
   right: 33px;

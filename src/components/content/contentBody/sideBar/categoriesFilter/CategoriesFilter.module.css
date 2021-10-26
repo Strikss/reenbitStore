@@ -1,3 +1,6 @@
+.container {
+  margin-bottom: 45px;
+}
 .itemContainer {
   display: flex;
   width: 100%;
@@ -5,11 +8,12 @@
   justify-content: space-between;
 }
 .item {
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px 16px 10px 0;
 }
 .title {
   font-size: 22px;
+  margin-bottom: 18px;
 }
 .countCircle {
   background-color: #d9e0c9a6;

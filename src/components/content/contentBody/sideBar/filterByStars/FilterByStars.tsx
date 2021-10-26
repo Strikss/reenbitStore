@@ -22,8 +22,10 @@ const FilterByStars: React.FC = () => {
 
   return (
     <>
-      <h1 className={style.title}>Rating</h1>
-      <div className={style.container}>{ratingComponent}</div>
+      <div className={style.container}>
+        <h1 className={style.title}>Rating</h1>
+        <div className={style.componentContainer}>{ratingComponent}</div>
+      </div>
     </>
   );
 };

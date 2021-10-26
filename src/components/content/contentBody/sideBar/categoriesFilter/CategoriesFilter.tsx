@@ -24,8 +24,10 @@ const CategoriesFilter: React.FC = () => {
 
   return (
     <>
-      <h1 className={style.title}>Categories</h1>
-      <div>{category}</div>
+      <div className={style.container}>
+        <h1 className={style.title}>Categories</h1>
+        <div>{category}</div>
+      </div>
     </>
   );
 };

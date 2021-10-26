@@ -1,6 +1,7 @@
 import React from "react";
 import CategoriesFilter from "./categoriesFilter/CategoriesFilter";
 import FilterByFarm from "./filterByFarm/FilterByFarm";
+import FilterByPrice from "./filterByPrice/FilterByPrice";
 import FilterByStars from "./filterByStars/FilterByStars";
 
 const SideBar: React.FC = () => {
@@ -9,6 +10,7 @@ const SideBar: React.FC = () => {
       <CategoriesFilter />
       <FilterByFarm />
       <FilterByStars />
+      <FilterByPrice />
     </>
   );
 };

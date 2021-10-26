@@ -1,4 +1,7 @@
 .container {
+  margin-bottom: 45px;
+}
+.componentContainer {
   display: flex;
   flex-direction: column-reverse;
 }
