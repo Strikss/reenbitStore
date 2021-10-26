@@ -3,7 +3,7 @@
   border: 1px solid #d1d1d1;
   border-radius: 12px;
   height: 280px;
-  min-width: 500px;
+  min-width: 700px;
   margin-bottom: 32px;
 }
 
@@ -40,6 +40,7 @@
   font-size: 14px;
 }
 .starContainer {
+  display: flex;
   margin-top: 10px;
 }
 
@@ -58,14 +59,23 @@
 }
 .leftBottomPart {
   color: #a9a9a9;
+  display: flex;
+  margin-top: 18px;
 }
-.textTitle {
-  margin-right: 30px;
-  width: 100px;
+.listTitleContainer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 32px;
 }
-.leftBottomPart:not(:first-child) li {
+.listDescriptionContainer {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+}
+.listTitle:not(:first-child) {
   margin-top: 10px;
 }
+
 .supply {
   color: #6a983c;
 }
@@ -112,7 +122,8 @@
 .charactContainer {
   display: flex;
 }
-.charactContainer :last-child {
+
+.pricesContainer {
   display: flex;
-  width: 100%;
+  flex-direction: column;
 }

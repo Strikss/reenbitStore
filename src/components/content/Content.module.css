@@ -2,24 +2,3 @@
   display: flex;
   flex-direction: column;
 }
-
-.titleContainer {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-.title {
-  font-size: 32px;
-}
-.totalCount {
-  background-color: #d9e0c9a6;
-  color: #4a8015;
-  padding: 2px 10px;
-  border-radius: 12px;
-  margin-right: 3px;
-}
-.products {
-  color: #a9a9a9;
-}
