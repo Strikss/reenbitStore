@@ -1,0 +1,25 @@
+.minMaxContainer {
+  display: flex;
+  width: 100%;
+  background-color: rgba(255, 0, 0, 0.301);
+}
+.box {
+  width: 109px;
+  height: 42px;
+  background-color: #d1d1d17a;
+  border-radius: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.min {
+  margin-right: 10px;
+}
+.input {
+  width: 70%;
+  border: transparent;
+  background-color: #d1d1d17a;
+  margin-left: 21px;
+  outline: none;
+}

@@ -28,7 +28,7 @@ const Product: React.FC = () => {
             <img
               className={style.productImage}
               src={prod.image}
-              alt="product Image"
+              alt="Product Image"
             />
           </div>
           <div className={style.content}>
@@ -36,7 +36,7 @@ const Product: React.FC = () => {
               <div className={style.leftTopPart}>
                 <h1 className={style.title}>{prod.name}</h1>
                 <div className={style.description}>{prod.description}</div>
-                <div>
+                <div className={style.starContainer}>
                   {stars.map((_, index) =>
                     prod.rating > index ? (
                       <img
@@ -57,47 +57,44 @@ const Product: React.FC = () => {
                 </div>
               </div>
 
-              <div className={style.leftBottomPart}>
-                <div className={style.charactContainer}>
+              <ul className={style.leftBottomPart}>
+                <li className={style.charactContainer}>
                   <span className={style.textTitle}>Freshness</span>
                   <span>{prod.freshness}</span>
-                </div>
-                <div className={style.charactContainer}>
+                </li>
+                <li className={style.charactContainer}>
                   <span className={style.textTitle}> Farm</span>
                   <span>{prod.farm}</span>
-                </div>
-                <div className={style.charactContainer}>
+                </li>
+                <li className={style.charactContainer}>
                   <span className={style.textTitle}>Delivery</span>
                   <span>{prod.delivery}</span>
-                </div>
-                <div className={style.charactContainer}>
+                </li>
+                <li className={style.charactContainer}>
                   <span className={style.textTitle}>Stock</span>
                   <span className={style.supply}>{prod.stock} pcs</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
             <div className={style.rightSide}>
               <div className={style.prices}>
                 <h1 className={style.discountPrice}>
                   {prod.priceHalf.toFixed(2)} <span>USD</span>
                 </h1>
-                <div className={style.fullPrice}>
-                  {prod.priceFull.toFixed(2)}
-                </div>
+                <p className={style.fullPrice}>
+                  <s>{prod.priceFull.toFixed(2)}</s>
+                </p>
               </div>
               <div className={style.transfer}>
-                <div className={style.shipping}>Free Shipping</div>
-                <div>Delivery in 1 day</div>
+                <p className={style.shipping}>Free Shipping</p>
+                <p className={style.delivery}>Delivery in 1 day</p>
               </div>
               <div className={style.buttons}>
-                <div>
-                  <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
-                    <button className={style.button}>
-                      Product Detail <img src={productArrow} alt="arrow" />
-                    </button>
-                  </NavLink>
-                </div>
-
+                <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
+                  <button className={style.button}>
+                    Product Detail <img src={productArrow} alt="arrow" />
+                  </button>
+                </NavLink>
                 <div className={style.wishList}>
                   <img src={heart} alt="heart" /> <span> Add to wish list</span>
                 </div>
