@@ -75,11 +75,12 @@ const Product = ({ prod }: Props) => {
               <p className={style.delivery}>Delivery in 1 day</p>
             </div>
             <div className={style.buttons}>
-              <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
-                <button className={style.button}>
+              <button className={style.button}>
+                <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
                   Product Detail <img src={productArrow} alt="arrow" />
-                </button>
-              </NavLink>
+                </NavLink>
+              </button>
+
               <div className={style.wishList}>
                 <img src={heart} alt="heart" /> <span> Add to wish list</span>
               </div>
