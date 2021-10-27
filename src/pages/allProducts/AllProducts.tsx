@@ -6,6 +6,7 @@ import Content from "../../components/content/Content";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import Menu from "../../components/menu/Menu";
 import { useAction } from "../../hooks/useAction";
+import Footer from "../../components/footer/Footer";
 
 const AllProducts: React.FC = () => {
   const { fetchProducts } = useAction();
@@ -20,6 +21,7 @@ const AllProducts: React.FC = () => {
       <Menu />
       <Breadcrumbs />
       <Content />
+      <Footer />
     </div>
   );
 };

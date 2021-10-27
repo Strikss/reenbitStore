@@ -2,6 +2,7 @@ import { useAppSelector } from "../../../../hooks/selectorHook";
 import cleanProduct from "./product/cleanProduct";
 import Product from "./product/Product";
 import style from "./AllProductsList.module.css";
+
 const AllProductsList = () => {
   const { products, filterName, filterStars } = useAppSelector(
     (state) => state.products
@@ -10,7 +11,7 @@ const AllProductsList = () => {
 
   return (
     <div className={style.AllProductsListContainer}>
-      {filteredProducts.map((prod) => (
+      {filteredProducts.slice(1, 5).map((prod) => (
         <Product prod={prod} />
       ))}
     </div>
