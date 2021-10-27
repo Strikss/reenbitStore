@@ -1,4 +1,4 @@
-import AllProducts from "./allProducts/AllProducts";
+import AllProductsList from "./allProductsList/AllProductsList";
 import style from "./ContentBody.module.css";
 import SideBar from "./sideBar/SideBar";
 
@@ -9,7 +9,7 @@ const ContentBody = () => {
         <SideBar />
       </div>
       <div className={style.products}>
-        <AllProducts />
+        <AllProductsList />
       </div>
     </div>
   );
