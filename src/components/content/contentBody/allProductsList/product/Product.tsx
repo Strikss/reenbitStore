@@ -1,11 +1,11 @@
 import style from "./Product.module.css";
-import blackStar from "../../../../assets/images/blackStar.svg";
-import whiteStar from "../../../../assets/images/whiteRatingStar.svg";
-import { RouteNames } from "../../../../router/router";
+import blackStar from "../../../../../assets/images/blackStar.svg";
+import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
+import { RouteNames } from "../../../../../router/router";
 import { NavLink } from "react-router-dom";
-import productArrow from "../../../../assets/images/productArrow.svg";
-import heart from "../../../../assets/images/heart.svg";
-import { ProductsType } from "../../../../interfaces/product";
+import productArrow from "../../../../../assets/images/productArrow.svg";
+import heart from "../../../../../assets/images/heart.svg";
+import { ProductsType } from "../../../../../interfaces/product";
 
 interface Props {
   prod: ProductsType;
@@ -30,12 +30,11 @@ const Product = ({ prod }: Props) => {
               <p className={style.description}>{prod.description}</p>
               <ul className={style.starContainer}>
                 {stars.map((_, index) => (
-                  <li>
+                  <li key={index}>
                     <img
                       className={style.star}
                       src={prod.rating > index ? blackStar : whiteStar}
                       alt="star"
-                      key={index}
                     />
                   </li>
                 ))}
