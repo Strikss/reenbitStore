@@ -1,0 +1,5 @@
+.sideBarContainer {
+  width: 300px;
+  flex-basis: 300px;
+  padding-right: 50px;
+}

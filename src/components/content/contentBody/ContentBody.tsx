@@ -5,12 +5,8 @@ import SideBar from "./sideBar/SideBar";
 const ContentBody = () => {
   return (
     <div className={style.container}>
-      <div className={style.sideBar}>
-        <SideBar />
-      </div>
-      <div className={style.products}>
-        <AllProductsList />
-      </div>
+      <SideBar />
+      <AllProductsList />
     </div>
   );
 };
