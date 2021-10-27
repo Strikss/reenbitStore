@@ -12,7 +12,7 @@ const AllProductsList = () => {
   return (
     <div className={style.AllProductsListContainer}>
       {filteredProducts.slice(1, 5).map((prod) => (
-        <Product prod={prod} />
+        <Product prod={prod} key={prod.itemID} />
       ))}
     </div>
   );

@@ -30,12 +30,11 @@ const Product = ({ prod }: Props) => {
               <p className={style.description}>{prod.description}</p>
               <ul className={style.starContainer}>
                 {stars.map((_, index) => (
-                  <li>
+                  <li key={index}>
                     <img
                       className={style.star}
                       src={prod.rating > index ? blackStar : whiteStar}
                       alt="star"
-                      key={index}
                     />
                   </li>
                 ))}
