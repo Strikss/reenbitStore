@@ -5,9 +5,10 @@ import style from "./AllProducts.module.css";
 import Content from "../../components/content/Content";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import Menu from "../../components/menu/Menu";
-import { fetchProducts } from "../../store/actions/productsAC";
+import { useAction } from "../../hooks/useAction";
 
 const AllProducts: React.FC = () => {
+  const { fetchProducts } = useAction();
   useEffect(() => {
     fetchProducts();
   }, []);
