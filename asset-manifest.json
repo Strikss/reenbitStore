@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reenbitStore/static/css/main.780b152b.chunk.css",
-    "main.js": "/reenbitStore/static/js/main.0c4f7e41.chunk.js",
-    "main.js.map": "/reenbitStore/static/js/main.0c4f7e41.chunk.js.map",
+    "main.js": "/reenbitStore/static/js/main.10b620a1.chunk.js",
+    "main.js.map": "/reenbitStore/static/js/main.10b620a1.chunk.js.map",
     "runtime-main.js": "/reenbitStore/static/js/runtime-main.eabdcdb3.js",
     "runtime-main.js.map": "/reenbitStore/static/js/runtime-main.eabdcdb3.js.map",
     "static/js/2.d38c7ffc.chunk.js": "/reenbitStore/static/js/2.d38c7ffc.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.eabdcdb3.js",
     "static/js/2.d38c7ffc.chunk.js",
     "static/css/main.780b152b.chunk.css",
-    "static/js/main.0c4f7e41.chunk.js"
+    "static/js/main.10b620a1.chunk.js"
   ]
 }
