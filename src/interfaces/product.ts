@@ -1,9 +1,9 @@
 export interface AllProductsState {
-  fruits: FruitsType[];
+  products: ProductsType[];
   filterName: string;
   filterStars: number[];
 }
-export interface FruitsType {
+export interface ProductsType {
   itemID: string;
   name: string;
   priceHalf: number;
@@ -15,4 +15,5 @@ export interface FruitsType {
   farm: string;
   description: string;
   rating: number;
+  image: string;
 }

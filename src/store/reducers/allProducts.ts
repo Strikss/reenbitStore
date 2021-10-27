@@ -7,7 +7,7 @@ import {
 } from "../../types/reducers/allProducts";
 
 const initialState: AllProductsState = {
-  fruits: [
+  products: [
     {
       itemID: "",
       name: "",
@@ -20,6 +20,7 @@ const initialState: AllProductsState = {
       farm: "",
       description: "",
       rating: 0,
+      image: "",
     },
   ],
   filterName: "",
@@ -32,7 +33,7 @@ export const allProducts = (
 ): AllProductsState => {
   switch (action.type) {
     case FETCH_ALL_PRODUCTS:
-      return { ...state, fruits: action.payload };
+      return { ...state, products: action.payload };
     case FILTER_BY_NAME:
       return { ...state, filterName: action.payload };
     case FILTER_BY_STARS:

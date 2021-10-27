@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./SortBy.module.css";
+import style from "./ContentActions.module.css";
 import arrow from "../../../assets/images/arrow.svg";
 
-const SortBy: React.FC = () => {
+const ContentActions: React.FC = () => {
   return (
     <div className={style.container}>
       <div className={style.left}>Sort by</div>
@@ -14,4 +14,4 @@ const SortBy: React.FC = () => {
   );
 };
 
-export default SortBy;
+export default ContentActions;
