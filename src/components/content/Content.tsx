@@ -2,7 +2,6 @@ import React from "react";
 import ContentBody from "./contentBody/ContentBody";
 import ContentActions from "./contentActions/ContentActions";
 import style from "./Content.module.css";
-import { useAppSelector } from "../../hooks/selectorHook";
 import ContentHeader from "./contentHeader/ContentHeader";
 
 const Content: React.FC = () => {
