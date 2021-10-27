@@ -2,6 +2,9 @@ export interface AllProductsState {
   products: ProductsType[];
   filterName: string;
   filterStars: number[];
+  currentPage: number;
+  productPortion: number;
+  filteredProductCount: number;
 }
 export interface ProductsType {
   itemID: string;

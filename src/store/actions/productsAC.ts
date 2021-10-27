@@ -1,3 +1,4 @@
+import { SET_CURRENT_PAGE } from "./../../types/reducers/allProducts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { Dispatch } from "redux";
@@ -5,9 +6,11 @@ import {
   AllProductsAction,
   FETCH_ALL_PRODUCTS,
   FETCH_PRODUCTS_ERROR,
+  FILTERED_PRODUCT_COUNT,
   FILTER_BY_NAME,
   FILTER_BY_STARS,
 } from "../../types/reducers/allProducts";
+
 export const fetchProducts =
   () => async (dispatch: Dispatch<AllProductsAction>) => {
     try {
@@ -30,4 +33,10 @@ export const filterByName = (e: string): AllProductsAction => {
 };
 export const filterByStars = (e: number): AllProductsAction => {
   return { type: FILTER_BY_STARS, payload: e };
+};
+export const filterProductCount = (e: number): AllProductsAction => {
+  return { type: FILTERED_PRODUCT_COUNT, payload: e };
+};
+export const setCurrentPage = (e: number): AllProductsAction => {
+  return { type: SET_CURRENT_PAGE, payload: e };
 };

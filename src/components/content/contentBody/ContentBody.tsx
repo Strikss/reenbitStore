@@ -10,11 +10,17 @@ const ContentBody = ({
   products,
   filterName,
   filterStars,
+  currentPage,
+  productPortion,
 }: AllProductsState) => {
-  const { fetchProducts } = useAction();
+  const { fetchProducts, filterProductCount } = useAction();
+  const from = currentPage * productPortion - productPortion;
+  const to = currentPage * productPortion;
+  const product = cleanProduct(products, filterName, filterStars);
   useEffect(() => {
     fetchProducts();
-  }, []);
+    filterProductCount(product.length);
+  }, [product.length]);
 
   return (
     <div className={style.container}>
@@ -22,8 +28,8 @@ const ContentBody = ({
         <SideBar />
       </div>
       <div className={style.products}>
-        {cleanProduct(products, filterName, filterStars).map((prod) => (
-          <Product prod={prod} />
+        {product.slice(from, to).map((prod) => (
+          <Product prod={prod} key={prod.itemID} />
         ))}
       </div>
     </div>
