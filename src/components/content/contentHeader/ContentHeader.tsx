@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import { useAppSelector } from "../../../hooks/selectorHook";
 import style from "./ContentHeader.module.css";
 
