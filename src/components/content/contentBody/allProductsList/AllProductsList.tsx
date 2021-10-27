@@ -1,10 +1,8 @@
 import { useAppSelector } from "../../../../hooks/selectorHook";
-import { useAction } from "../../../../hooks/useAction";
 import cleanProduct from "./product/cleanProduct";
 import Product from "./product/Product";
 
 const AllProductsList = () => {
-  const { fetchProducts } = useAction();
   const { products, filterName, filterStars } = useAppSelector(
     (state) => state.products
   );
