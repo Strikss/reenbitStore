@@ -1,15 +1,11 @@
-import { useEffect } from "react";
-import { useAppSelector } from "../../../../hooks/selectorHook";
-import { useAction } from "../../../../hooks/useAction";
 import style from "./Product.module.css";
-import blackStar from "../../../../assets/images/blackStar.svg";
-import whiteStar from "../../../../assets/images/whiteRatingStar.svg";
-import { RouteNames } from "../../../../router/router";
+import blackStar from "../../../../../assets/images/blackStar.svg";
+import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
+import { RouteNames } from "../../../../../router/router";
 import { NavLink } from "react-router-dom";
-import filteredProduct from "./cleanProduct";
-import productArrow from "../../../../assets/images/productArrow.svg";
-import heart from "../../../../assets/images/heart.svg";
-import { ProductsType } from "../../../../interfaces/product";
+import productArrow from "../../../../../assets/images/productArrow.svg";
+import heart from "../../../../../assets/images/heart.svg";
+import { ProductsType } from "../../../../../interfaces/product";
 
 interface Props {
   prod: ProductsType;
@@ -19,7 +15,7 @@ const Product = ({ prod }: Props) => {
 
   return (
     <>
-      <div className={style.container} key={prod.itemID}>
+      <div className={style.container}>
         <div className={style.imgBx}>
           <img
             className={style.productImage}
@@ -34,12 +30,11 @@ const Product = ({ prod }: Props) => {
               <p className={style.description}>{prod.description}</p>
               <ul className={style.starContainer}>
                 {stars.map((_, index) => (
-                  <li>
+                  <li key={index}>
                     <img
                       className={style.star}
                       src={prod.rating > index ? blackStar : whiteStar}
                       alt="star"
-                      key={index}
                     />
                   </li>
                 ))}
