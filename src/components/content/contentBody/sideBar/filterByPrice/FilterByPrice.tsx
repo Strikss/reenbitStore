@@ -35,14 +35,14 @@ const FilterByPrice: React.FC = () => {
             borderColor: "#EBEBEB",
             height: 20,
             width: 20,
-            backgroundColor: "white",
+            backgroundColor: "#FFFFFF",
             marginTop: -6,
           },
           {
             borderColor: "#EBEBEB",
             height: 20,
             width: 20,
-            backgroundColor: "white",
+            backgroundColor: "#FFFFFF",
             marginTop: -6,
           },
         ]}
