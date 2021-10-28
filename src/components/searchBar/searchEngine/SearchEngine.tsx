@@ -1,12 +1,12 @@
 import style from "./SearchEngine.module.css";
 import searchLoop from "../../../assets/images/searchLoop.png";
-import dropDownImg from "../../../assets/images/dropDown.png";
 import React, { useState } from "react";
 import { useAction } from "../../../hooks/useAction";
 
 const SearchEngine: React.FC = () => {
-  const [dropDown, setDropDown] = useState(false);
   const { filterByName } = useAction();
+
+  const [dropDown, setDropDown] = useState(false);
   const dropDownList = Array(5)
     .fill(0)
     .map((el) => <li onClick={() => setDropDown(!dropDown)}>category name</li>);
@@ -19,7 +19,7 @@ const SearchEngine: React.FC = () => {
             className={style.defaultOption}
             onClick={() => setDropDown(!dropDown)}
           >
-            All categories <img src={dropDownImg} alt="dropDown" />
+            <span className={style.categories}>All categories</span>
           </div>
           {dropDown && (
             <div className={style.dropDownList}>
