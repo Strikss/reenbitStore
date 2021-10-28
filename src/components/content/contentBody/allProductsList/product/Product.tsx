@@ -11,7 +11,16 @@ interface Props {
   prod: ProductsType;
 }
 const Product = ({ prod }: Props) => {
-  const stars = Array(5).fill(0);
+  const starsArray = Array(5).fill(0);
+  const stars = starsArray.map((_, index) => (
+    <li key={index}>
+      <img
+        className={style.star}
+        src={prod.rating > index ? blackStar : whiteStar}
+        alt="star"
+      />
+    </li>
+  ));
 
   return (
     <>
@@ -28,17 +37,7 @@ const Product = ({ prod }: Props) => {
             <div className={style.leftTopPart}>
               <h1 className={style.title}>{prod.name}</h1>
               <p className={style.description}>{prod.description}</p>
-              <ul className={style.starContainer}>
-                {stars.map((_, index) => (
-                  <li key={index}>
-                    <img
-                      className={style.star}
-                      src={prod.rating > index ? blackStar : whiteStar}
-                      alt="star"
-                    />
-                  </li>
-                ))}
-              </ul>
+              <ul className={style.starContainer}>{stars}</ul>
             </div>
 
             <div className={style.leftBottomPart}>

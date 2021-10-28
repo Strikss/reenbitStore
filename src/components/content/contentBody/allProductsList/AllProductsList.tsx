@@ -7,14 +7,13 @@ const AllProductsList = () => {
   const { products, filterName, filterStars } = useAppSelector(
     (state) => state.products
   );
-  const filteredProducts = cleanProduct(products, filterName, filterStars);
+
+  const filteredProducts = cleanProduct(products, filterName, filterStars)
+    .slice(1, 5)
+    .map((prod) => <Product prod={prod} key={prod.itemID} />);
 
   return (
-    <div className={style.AllProductsListContainer}>
-      {filteredProducts.map((prod) => (
-        <Product prod={prod} key={prod.itemID} />
-      ))}
-    </div>
+    <div className={style.AllProductsListContainer}>{filteredProducts}</div>
   );
 };
 

@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+.title {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.descriptionTitle:not(:last-child) {
+  margin-bottom: 16px;
+}
+.descriptionTitle a {
+  letter-spacing: 0.5px;
+  color: #6a983c;
+}

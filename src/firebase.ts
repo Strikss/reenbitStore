@@ -2,14 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC2YMvkvZaBSnPX1Bw7kwE8hqxt6oCRS3I",
-  authDomain: "shopproject-f46e0.firebaseapp.com",
-  databaseURL: "https://shopproject-f46e0-default-rtdb.firebaseio.com",
-  projectId: "shopproject-f46e0",
-  storageBucket: "shopproject-f46e0.appspot.com",
-  messagingSenderId: "379022920527",
-  appId: "1:379022920527:web:bedbf08a88e198ef5f533a",
-  measurementId: "G-Y1L7N8PCXG",
+  apiKey: "AIzaSyA_j7yefc5tX7Dor1FHuJdswiIYJ1UbYfU",
+  authDomain: "newshopproject-da97b.firebaseapp.com",
+  projectId: "newshopproject-da97b",
+  storageBucket: "newshopproject-da97b.appspot.com",
+  messagingSenderId: "607309279287",
+  appId: "1:607309279287:web:6aeee8ced61247971c4fb2",
+  measurementId: "G-F12RDTHC71",
 };
 
 initializeApp(firebaseConfig);
