@@ -10,12 +10,13 @@ const StarsGenerator = (props: StarsProps) => {
   const yellowStarsArray = Array(5).fill(0);
   const yellowStars = yellowStarsArray.map((_, index) => {
     return (
-      <img
-        className={style.star}
-        src={index < props.yellow ? yellowStar : whiteRatingStar}
-        alt="yellowStar"
-        key={index}
-      />
+      <li className={style.star}>
+        <img
+          src={index < props.yellow ? yellowStar : whiteRatingStar}
+          alt="yellowStar"
+          key={index}
+        />
+      </li>
     );
   });
 

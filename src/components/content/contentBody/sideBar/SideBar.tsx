@@ -1,5 +1,5 @@
 import React from "react";
-import CategoriesFilter from "./categoriesFilter/CategoriesFilter";
+import FilterByCategories from "./filterByCategories/FilterByCategories";
 import FilterByFarm from "./filterByFarm/FilterByFarm";
 import FilterByPrice from "./filterByPrice/FilterByPrice";
 import FilterByStars from "./filterByStars/FilterByStars";
@@ -8,7 +8,7 @@ import style from "./SideBar.module.css";
 const SideBar: React.FC = () => {
   return (
     <div className={style.sideBarContainer}>
-      <CategoriesFilter />
+      <FilterByCategories />
       <FilterByFarm />
       <FilterByStars />
       <FilterByPrice />
