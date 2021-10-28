@@ -4,6 +4,7 @@ export const FILTER_BY_NAME = "FILTER_BY_NAME";
 export const FILTER_BY_STARS = "FILTER_BY_STARS";
 export const FILTERED_PRODUCT_COUNT = "FILTERED_PRODUCT_COUNT";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
+export const SET_PRODUCT_PORTION = "SET_PRODUCT_PORTION";
 
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -25,14 +26,19 @@ export interface SetCurrentPage {
   type: typeof SET_CURRENT_PAGE;
   payload: number;
 }
+export interface SetProductPortion {
+  type: typeof SET_PRODUCT_PORTION;
+}
 export interface FetchProductsErrorAction {
   type: typeof FETCH_PRODUCTS_ERROR;
   payload: string;
 }
+
 export type AllProductsAction =
   | FetchAllProductsAction
   | FetchProductsErrorAction
   | FilterByNameAction
   | FilterByStarsAction
   | FilteredProductCountAction
-  | SetCurrentPage;
+  | SetCurrentPage
+  | SetProductPortion;

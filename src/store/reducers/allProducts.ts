@@ -6,6 +6,7 @@ import {
   FILTER_BY_NAME,
   FILTER_BY_STARS,
   SET_CURRENT_PAGE,
+  SET_PRODUCT_PORTION,
 } from "../../types/reducers/allProducts";
 
 const initialState: AllProductsState = {
@@ -57,6 +58,12 @@ export const allProducts = (
       return {
         ...state,
         currentPage: action.payload,
+      };
+    case SET_PRODUCT_PORTION:
+      const newProductPortion = state.productPortion * 2;
+      return {
+        ...state,
+        productPortion: newProductPortion,
       };
     default:
       return state;

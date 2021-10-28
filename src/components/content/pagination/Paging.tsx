@@ -6,17 +6,18 @@ import { useAction } from "../../../hooks/useAction";
 import { useEffect } from "react";
 
 const Paging = () => {
-  const { setCurrentPage } = useAction();
+  const { setCurrentPage, setProductPortion } = useAction();
   const { filteredProductCount, productPortion, currentPage, products } =
     useAppSelector((state) => state.products);
   const totalProductsCount = products.length;
   const numberOfPages = Math.ceil(filteredProductCount / productPortion);
-  useEffect(() => {
-    currentPage > numberOfPages && setCurrentPage(1);
-  }, [numberOfPages]);
   const onPageChange = (page: number) => {
     setCurrentPage(page);
   };
+  useEffect(() => {
+    currentPage > numberOfPages && setCurrentPage(1);
+  }, [numberOfPages]);
+
   return (
     <div className={style.paginationContainer}>
       <Pagination
@@ -24,14 +25,16 @@ const Paging = () => {
         size="small"
         showSizeChanger={false}
         total={filteredProductCount}
-        defaultPageSize={productPortion}
         onChange={onPageChange}
         current={currentPage}
+        pageSize={productPortion}
       />
-      <button className={style.button}>
-        Show more products
-        <img className={style.arrow} src={productArrow} alt="arrow" />
-      </button>
+      {productPortion < filteredProductCount && (
+        <button className={style.button} onClick={() => setProductPortion()}>
+          Show more products
+          <img className={style.arrow} src={productArrow} alt="arrow" />
+        </button>
+      )}
       <div>
         <span className={style.totalProductsCount}>{totalProductsCount}</span>
         <span className={style.products}>Products</span>

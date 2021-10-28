@@ -1,4 +1,7 @@
-import { SET_CURRENT_PAGE } from "./../../types/reducers/allProducts";
+import {
+  SET_CURRENT_PAGE,
+  SET_PRODUCT_PORTION,
+} from "./../../types/reducers/allProducts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { Dispatch } from "redux";
@@ -39,4 +42,7 @@ export const filterProductCount = (e: number): AllProductsAction => {
 };
 export const setCurrentPage = (e: number): AllProductsAction => {
   return { type: SET_CURRENT_PAGE, payload: e };
+};
+export const setProductPortion = (): AllProductsAction => {
+  return { type: SET_PRODUCT_PORTION };
 };
