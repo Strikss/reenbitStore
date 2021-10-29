@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Slider } from "antd";
 import style from "./FilterByPrice.module.css";
 import "antd/dist/antd.css";
+import { handleStyle, trackStyle } from "./sliderStyles";
 
 const FilterByPrice: React.FC = () => {
   const [minValue, setMinValue] = useState(0);
@@ -25,23 +26,8 @@ const FilterByPrice: React.FC = () => {
         onChange={onChange}
         onAfterChange={onAfterChange}
         value={[minValue, maxValue]}
-        trackStyle={[{ backgroundColor: "#6A983C" }]}
-        handleStyle={[
-          {
-            borderColor: "#EBEBEB",
-            height: 20,
-            width: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: -6,
-          },
-          {
-            borderColor: "#EBEBEB",
-            height: 20,
-            width: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: -6,
-          },
-        ]}
+        trackStyle={trackStyle}
+        handleStyle={handleStyle}
       />
       <div className={style.minMaxContainer}>
         <div className={style.min}>
