@@ -6,7 +6,7 @@ import ContentBody from "./contentBody/ContentBody";
 
 const Content: React.FC = () => {
   return (
-    <div className={style.contentContainer}>
+    <div className={style.container}>
       <ContentHeader />
       <ContentActions />
       <ContentBody />

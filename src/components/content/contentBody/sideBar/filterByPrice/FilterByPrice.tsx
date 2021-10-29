@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Slider } from "antd";
 import style from "./FilterByPrice.module.css";
 import "antd/dist/antd.css";
-import { Button } from "antd";
 
 const FilterByPrice: React.FC = () => {
   const [minValue, setMinValue] = useState(0);
@@ -15,10 +14,7 @@ const FilterByPrice: React.FC = () => {
   const onAfterChange = (value: any) => {
     console.log("onAfterChange: ", value);
   };
-  const reset = () => {
-    setMinValue(0);
-    setMaxValue(100);
-  };
+
   return (
     <div className={style.filterContainer}>
       <h1 className={style.filterTitle}>Price</h1>
@@ -73,16 +69,6 @@ const FilterByPrice: React.FC = () => {
             />
           </div>
         </div>
-      </div>
-      <div className={style.reset}>
-        <Button
-          type="text"
-          onClick={reset}
-          size={"middle"}
-          className={style.resetn}
-        >
-          <span className={style.resetText}>Reset</span>
-        </Button>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import React from "react";
-import CheckBox from "../../../../../assets/customButtons/CheckBox";
-import style from "./FilterByFarm.module.css";
+import CheckBox from "../../../../custom/CheckBox";
+import style from "./FilterByFarms.module.css";
 
-const FilterByFarm: React.FC = () => {
-  const Farms = Array(5)
+const FilterByFarms: React.FC = () => {
+  const farms = Array(5)
     .fill(0)
     .map((_, i) => (
       <li className={style.oneBox} key={i}>
@@ -16,10 +16,10 @@ const FilterByFarm: React.FC = () => {
     <>
       <div className={style.container}>
         <h1 className={style.title}>Farm</h1>
-        <ul>{Farms}</ul>
+        <ul>{farms}</ul>
       </div>
     </>
   );
 };
 
-export default FilterByFarm;
+export default FilterByFarms;

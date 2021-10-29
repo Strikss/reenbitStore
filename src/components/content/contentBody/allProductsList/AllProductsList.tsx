@@ -12,7 +12,7 @@ const AllProductsList = () => {
     .slice(1, 5)
     .map((prod) => <Product prod={prod} key={prod.itemID} />);
 
-  return <div className={style.productsContainer}>{filteredProducts}</div>;
+  return <div className={style.container}>{filteredProducts}</div>;
 };
 
 export default AllProductsList;

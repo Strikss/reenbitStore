@@ -1,0 +1,10 @@
+.reset {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.resetText {
+  font-weight: 600;
+  font-size: 17px;
+  color: #b3b1b1;
+}
