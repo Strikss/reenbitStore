@@ -3,7 +3,7 @@ import Product from "./product/Product";
 import style from "./AllProductsList.module.css";
 import { useAction } from "../../../../hooks/useAction";
 import { useEffect } from "react";
-import mainFilter from "./product/mainFilter";
+import mainFilter from "../../mainFilter/mainFilter";
 
 const AllProductsList = () => {
   const { filterProductCount } = useAction();
