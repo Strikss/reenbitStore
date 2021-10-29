@@ -8,6 +8,7 @@ import {
   FILTER_BY_NAME,
   FILTER_BY_STARS,
 } from "../../types/reducers/allProducts";
+
 export const fetchProducts =
   () => async (dispatch: Dispatch<AllProductsAction>) => {
     try {

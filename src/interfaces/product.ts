@@ -1,8 +1,3 @@
-export interface AllProductsState {
-  products: ProductsType[];
-  filterName: string;
-  filterStars: number[];
-}
 export interface ProductsType {
   itemID: string;
   name: string;

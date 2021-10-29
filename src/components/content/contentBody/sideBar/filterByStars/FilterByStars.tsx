@@ -1,4 +1,5 @@
 import React from "react";
+import CheckBox from "../../../../custom/CheckBox";
 import { useAction } from "../../../../../hooks/useAction";
 import style from "./FilterByStars.module.css";
 import StarsGenerator from "./StarsGenerator";
@@ -10,20 +11,24 @@ const FilterByStars: React.FC = () => {
     filterByStars(index);
   };
   const ratingComponent = oneRating.map((_, index) => (
-    <div className={style.oneBox} key={index}>
-      <input
-        className={style.checkbox}
-        type="checkbox"
-        onChange={() => handleClick(index + 1)}
-      ></input>
-      <StarsGenerator yellow={index + 1} />
-    </div>
+    <li
+      className={style.oneBox}
+      key={index}
+      onChange={() => handleClick(index + 1)}
+    >
+      <CheckBox />
+      <ul className={style.starList}>
+        <StarsGenerator yellow={index + 1} />
+      </ul>
+    </li>
   ));
 
   return (
     <>
-      <h1 className={style.title}>Rating</h1>
-      <div className={style.container}>{ratingComponent}</div>
+      <div className={style.container}>
+        <h1 className={style.title}>Rating</h1>
+        <ul className={style.componentContainer}>{ratingComponent}</ul>
+      </div>
     </>
   );
 };

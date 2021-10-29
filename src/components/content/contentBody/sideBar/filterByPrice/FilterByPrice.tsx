@@ -1,0 +1,63 @@
+import React, { useEffect, useState } from "react";
+import { Slider } from "antd";
+import style from "./FilterByPrice.module.css";
+import "antd/dist/antd.css";
+import { handleStyle, trackStyle } from "./sliderStyles";
+
+const FilterByPrice: React.FC = () => {
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(100);
+
+  const onChange = (value: any) => {
+    setMinValue(value[0]);
+    setMaxValue(value[1]);
+  };
+  const onAfterChange = (value: any) => {
+    console.log("onAfterChange: ", value);
+  };
+
+  return (
+    <div className={style.filterContainer}>
+      <h1 className={style.filterTitle}>Price</h1>
+      <Slider
+        range
+        step={5}
+        defaultValue={[0, 100]}
+        onChange={onChange}
+        onAfterChange={onAfterChange}
+        value={[minValue, maxValue]}
+        trackStyle={trackStyle}
+        handleStyle={handleStyle}
+      />
+      <div className={style.minMaxContainer}>
+        <div className={style.min}>
+          <div className={style.title}>Min</div>
+          <div className={style.box}>
+            <input
+              className={style.input}
+              type="text"
+              placeholder="0"
+              value={minValue}
+              onChange={(e: any) => setMinValue(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className={style.slash}>-</div>
+        <div className={style.max}>
+          <div className={style.title}>Max</div>
+          <div className={style.box}>
+            <input
+              className={style.input}
+              type="text"
+              placeholder="000"
+              value={maxValue}
+              onChange={(e: any) => setMaxValue(e.target.value)}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FilterByPrice;

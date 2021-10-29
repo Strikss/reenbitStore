@@ -1,4 +1,7 @@
 .container {
+  margin-bottom: 45px;
+}
+.componentContainer {
   display: flex;
   flex-direction: column-reverse;
 }
@@ -24,4 +27,8 @@
   width: 20px;
   cursor: pointer;
   margin-right: 8px;
+}
+.starList {
+  display: flex;
+  flex-direction: row;
 }
