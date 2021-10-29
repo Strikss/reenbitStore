@@ -93,7 +93,8 @@
   letter-spacing: 1.1px;
   font-weight: 700;
   font-size: 16px;
-  height: 47px;
+  height: 54px;
+  white-space: nowrap;
   max-width: 155px;
   background-color: #6a983c;
   border-radius: 12px;
