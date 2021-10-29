@@ -1,5 +1,4 @@
 export const trackStyle = [{ backgroundColor: "#6A983C" }];
-
 export const handleStyle = [
   {
     borderColor: "#EBEBEB",
