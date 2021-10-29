@@ -7,6 +7,7 @@ export const FILTER_BY_STARS = "FILTER_BY_STARS";
 export const FILTERED_PRODUCT_COUNT = "FILTERED_PRODUCT_COUNT";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 export const SET_PRODUCT_PORTION = "SET_PRODUCT_PORTION";
+export const FILTER_BY_CATEGORIES = "FILTER_BY_CATEGORIES";
 
 export interface AllProductsState {
   products: ProductsType[];
@@ -15,6 +16,7 @@ export interface AllProductsState {
   currentPage: number;
   productPortion: number;
   filteredProductCount: number;
+  filterCategories: string;
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -43,6 +45,10 @@ export interface FetchProductsErrorAction {
   type: typeof FETCH_PRODUCTS_ERROR;
   payload: string;
 }
+export interface FilterByCategoriesAction {
+  type: typeof FILTER_BY_CATEGORIES;
+  payload: string;
+}
 
 export type AllProductsAction =
   | FetchAllProductsAction
@@ -51,4 +57,5 @@ export type AllProductsAction =
   | FilterByStarsAction
   | FilteredProductCountAction
   | SetCurrentPage
-  | SetProductPortion;
+  | SetProductPortion
+  | FilterByCategoriesAction;

@@ -1,4 +1,5 @@
 import {
+  FILTER_BY_CATEGORIES,
   SET_CURRENT_PAGE,
   SET_PRODUCT_PORTION,
 } from "./../../types/reducers/allProducts";
@@ -45,4 +46,7 @@ export const setCurrentPage = (e: number): AllProductsAction => {
 };
 export const setProductPortion = (): AllProductsAction => {
   return { type: SET_PRODUCT_PORTION };
+};
+export const filterByCategories = (e: string): AllProductsAction => {
+  return { type: FILTER_BY_CATEGORIES, payload: e };
 };

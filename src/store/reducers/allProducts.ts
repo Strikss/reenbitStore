@@ -7,6 +7,7 @@ import {
   FILTER_BY_STARS,
   SET_CURRENT_PAGE,
   SET_PRODUCT_PORTION,
+  FILTER_BY_CATEGORIES,
 } from "../../types/reducers/allProducts";
 
 const initialState: AllProductsState = {
@@ -31,6 +32,7 @@ const initialState: AllProductsState = {
   currentPage: 1,
   productPortion: 5,
   filteredProductCount: 0,
+  filterCategories: "",
 };
 
 export const allProducts = (
@@ -49,6 +51,11 @@ export const allProducts = (
           ? [...state.filterStars.filter((el) => el !== action.payload)]
           : [...state.filterStars, action.payload],
       };
+    case FILTER_BY_CATEGORIES:
+      return {
+        ...state,
+        filterCategories: action.payload,
+      };
     case FILTERED_PRODUCT_COUNT:
       return {
         ...state,
@@ -65,6 +72,7 @@ export const allProducts = (
         ...state,
         productPortion: newProductPortion,
       };
+
     default:
       return state;
   }

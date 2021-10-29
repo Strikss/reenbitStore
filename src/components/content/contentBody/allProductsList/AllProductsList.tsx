@@ -3,14 +3,25 @@ import Product from "./product/Product";
 import style from "./AllProductsList.module.css";
 import { useAction } from "../../../../hooks/useAction";
 import { useEffect } from "react";
-import mainFilter from "../../mainFilter/mainFilter";
+import mainFilter from "../../../mainFilter/mainFilter";
 
 const AllProductsList = () => {
   const { filterProductCount } = useAction();
-  const { products, filterName, filterStars, currentPage, productPortion } =
-    useAppSelector((state) => state.products);
+  const {
+    products,
+    filterName,
+    filterStars,
+    currentPage,
+    productPortion,
+    filterCategories,
+  } = useAppSelector((state) => state.products);
 
-  const filteredProducts = mainFilter(products, filterName, filterStars);
+  const filteredProducts = mainFilter(
+    products,
+    filterName,
+    filterStars,
+    filterCategories
+  );
   const from = currentPage * productPortion - productPortion;
   const to = currentPage * productPortion;
 
