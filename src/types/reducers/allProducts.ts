@@ -1,3 +1,5 @@
+import { ProductsType } from "../../interfaces/product";
+
 export const FETCH_ALL_PRODUCTS = "FETCH_ALL_PRODUCTS";
 export const FETCH_PRODUCTS_ERROR = "FETCH_PRODUCTS_ERROR";
 export const FILTER_BY_NAME = "FILTER_BY_NAME";
@@ -6,6 +8,14 @@ export const FILTERED_PRODUCT_COUNT = "FILTERED_PRODUCT_COUNT";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 export const SET_PRODUCT_PORTION = "SET_PRODUCT_PORTION";
 
+export interface AllProductsState {
+  products: ProductsType[];
+  filterName: string;
+  filterStars: number[];
+  currentPage: number;
+  productPortion: number;
+  filteredProductCount: number;
+}
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
   payload: any;

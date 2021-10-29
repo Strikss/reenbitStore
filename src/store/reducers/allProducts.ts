@@ -1,4 +1,4 @@
-import { AllProductsState } from "./../../interfaces/product";
+import { AllProductsState } from "../../types/reducers/allProducts";
 import {
   AllProductsAction,
   FETCH_ALL_PRODUCTS,

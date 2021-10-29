@@ -37,13 +37,3 @@
   font-size: 22px;
   margin-bottom: 16px;
 }
-.reset {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-.resetText {
-  font-weight: 600;
-  font-size: 17px;
-  color: #b3b1b1;
-}

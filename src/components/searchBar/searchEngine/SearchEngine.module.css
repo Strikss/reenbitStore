@@ -85,3 +85,8 @@
 .menuWrapper div {
   padding: 5px;
 }
+.categories::after {
+  content: url(../../../assets/images/arrow.svg);
+  position: absolute;
+  margin-left: 5px;
+}

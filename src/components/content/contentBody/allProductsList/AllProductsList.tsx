@@ -9,12 +9,15 @@ const AllProductsList = () => {
   const { filterProductCount } = useAction();
   const { products, filterName, filterStars, currentPage, productPortion } =
     useAppSelector((state) => state.products);
+
   const filteredProducts = cleanProduct(products, filterName, filterStars);
+  const from = currentPage * productPortion - productPortion;
+  const to = currentPage * productPortion;
+
   useEffect(() => {
     filterProductCount(filteredProducts.length);
   }, [filteredProducts.length]);
-  const from = currentPage * productPortion - productPortion;
-  const to = currentPage * productPortion;
+
   return (
     <div className={style.AllProductsListContainer}>
       {filteredProducts.slice(from, to).map((prod) => (
