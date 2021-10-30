@@ -2,6 +2,7 @@ import { Dropdown, Menu } from "antd";
 import { useAppSelector } from "../../../hooks/selectorHook";
 import { useAction } from "../../../hooks/useAction";
 import style from "./SearchEngine.module.css";
+import arrow from "../../../assets/images/arrow.svg";
 
 const DropDownMenu = () => {
   //Hooks
@@ -47,6 +48,7 @@ const DropDownMenu = () => {
         <button className={style.dropButton}>
           <a onClick={(e) => e.preventDefault()}>
             {filterCategories ? filterCategories : "All categories"}
+            <img className={style.arrow} src={arrow} alt="arrow" />
           </a>
         </button>
       </Dropdown>

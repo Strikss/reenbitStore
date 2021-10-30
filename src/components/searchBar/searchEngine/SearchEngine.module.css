@@ -37,9 +37,13 @@
 }
 .dropButton {
   display: flex;
-  width: 110px;
+  width: 120px;
   border: transparent;
   background-color: transparent;
   cursor: pointer;
   font-weight: 700;
+}
+.arrow {
+  margin-left: 5px;
+  width: 7px;
 }
