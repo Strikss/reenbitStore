@@ -1,19 +1,18 @@
-import {
-  FILTER_BY_CATEGORIES,
-  SET_CURRENT_PAGE,
-  SET_PRODUCT_PORTION,
-} from "./../../types/reducers/allProducts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { Dispatch } from "redux";
+import { AllProductsAction } from "../../types/reducers/allProducts";
 import {
-  AllProductsAction,
   FETCH_ALL_PRODUCTS,
   FETCH_PRODUCTS_ERROR,
-  FILTERED_PRODUCT_COUNT,
   FILTER_BY_NAME,
   FILTER_BY_STARS,
-} from "../../types/reducers/allProducts";
+  FILTERED_PRODUCT_COUNT,
+  SET_CURRENT_PAGE,
+  SET_PRODUCT_PORTION,
+  FILTER_BY_CATEGORIES,
+  SET_SORT_BY,
+} from "../../types/reducers/constansts";
 
 export const fetchProducts =
   () => async (dispatch: Dispatch<AllProductsAction>) => {
@@ -49,4 +48,7 @@ export const setProductPortion = (): AllProductsAction => {
 };
 export const filterByCategories = (e: string): AllProductsAction => {
   return { type: FILTER_BY_CATEGORIES, payload: e };
+};
+export const setSortBy = (e: string): AllProductsAction => {
+  return { type: SET_SORT_BY, payload: e };
 };

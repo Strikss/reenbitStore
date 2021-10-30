@@ -1,14 +1,17 @@
-import { AllProductsState } from "../../types/reducers/allProducts";
 import {
+  AllProductsState,
   AllProductsAction,
+} from "../../types/reducers/allProducts";
+import {
   FETCH_ALL_PRODUCTS,
-  FILTERED_PRODUCT_COUNT,
   FILTER_BY_NAME,
   FILTER_BY_STARS,
+  FILTER_BY_CATEGORIES,
+  FILTERED_PRODUCT_COUNT,
   SET_CURRENT_PAGE,
   SET_PRODUCT_PORTION,
-  FILTER_BY_CATEGORIES,
-} from "../../types/reducers/allProducts";
+  SET_SORT_BY,
+} from "../../types/reducers/constansts";
 
 const initialState: AllProductsState = {
   products: [
@@ -33,6 +36,7 @@ const initialState: AllProductsState = {
   productPortion: 5,
   filteredProductCount: 0,
   filterCategories: "",
+  sortBy: "",
 };
 
 export const allProducts = (
@@ -71,6 +75,11 @@ export const allProducts = (
       return {
         ...state,
         productPortion: newProductPortion,
+      };
+    case SET_SORT_BY:
+      return {
+        ...state,
+        sortBy: action.payload,
       };
 
     default:

@@ -1,13 +1,15 @@
 import { ProductsType } from "../../interfaces/product";
-
-export const FETCH_ALL_PRODUCTS = "FETCH_ALL_PRODUCTS";
-export const FETCH_PRODUCTS_ERROR = "FETCH_PRODUCTS_ERROR";
-export const FILTER_BY_NAME = "FILTER_BY_NAME";
-export const FILTER_BY_STARS = "FILTER_BY_STARS";
-export const FILTERED_PRODUCT_COUNT = "FILTERED_PRODUCT_COUNT";
-export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-export const SET_PRODUCT_PORTION = "SET_PRODUCT_PORTION";
-export const FILTER_BY_CATEGORIES = "FILTER_BY_CATEGORIES";
+import {
+  FETCH_ALL_PRODUCTS,
+  FILTER_BY_NAME,
+  FILTER_BY_STARS,
+  FILTERED_PRODUCT_COUNT,
+  SET_CURRENT_PAGE,
+  SET_PRODUCT_PORTION,
+  FETCH_PRODUCTS_ERROR,
+  FILTER_BY_CATEGORIES,
+  SET_SORT_BY,
+} from "./constansts";
 
 export interface AllProductsState {
   products: ProductsType[];
@@ -17,6 +19,7 @@ export interface AllProductsState {
   productPortion: number;
   filteredProductCount: number;
   filterCategories: string;
+  sortBy: string;
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -49,6 +52,10 @@ export interface FilterByCategoriesAction {
   type: typeof FILTER_BY_CATEGORIES;
   payload: string;
 }
+export interface SetSortBy {
+  type: typeof SET_SORT_BY;
+  payload: string;
+}
 
 export type AllProductsAction =
   | FetchAllProductsAction
@@ -58,4 +65,5 @@ export type AllProductsAction =
   | FilteredProductCountAction
   | SetCurrentPage
   | SetProductPortion
-  | FilterByCategoriesAction;
+  | FilterByCategoriesAction
+  | SetSortBy;

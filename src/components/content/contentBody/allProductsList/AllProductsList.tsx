@@ -14,13 +14,15 @@ const AllProductsList = () => {
     currentPage,
     productPortion,
     filterCategories,
+    sortBy,
   } = useAppSelector((state) => state.products);
 
   const filteredProducts = mainFilter(
     products,
     filterName,
     filterStars,
-    filterCategories
+    filterCategories,
+    sortBy
   );
   const from = currentPage * productPortion - productPortion;
   const to = currentPage * productPortion;
