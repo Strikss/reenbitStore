@@ -15,6 +15,7 @@ const AllProductsList = () => {
     productPortion,
     filterCategories,
     sortBy,
+    filterFarms,
   } = useAppSelector((state) => state.products);
 
   const filteredProducts = mainFilter(
@@ -22,7 +23,8 @@ const AllProductsList = () => {
     filterName,
     filterStars,
     filterCategories,
-    sortBy
+    sortBy,
+    filterFarms
   );
   const from = currentPage * productPortion - productPortion;
   const to = currentPage * productPortion;
@@ -32,7 +34,7 @@ const AllProductsList = () => {
   }, [filteredProducts.length]);
 
   return (
-    <div className={style.AllProductsListContainer}>
+    <div className={style.container}>
       {filteredProducts.slice(from, to).map((prod) => (
         <Product prod={prod} key={prod.itemID} />
       ))}

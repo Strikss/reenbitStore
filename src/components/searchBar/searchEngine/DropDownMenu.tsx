@@ -12,13 +12,12 @@ const DropDownMenu = () => {
   const { filterByCategories } = useAction();
 
   //Categories list
-  const categories = Array();
-  products.map((el) => {
-    if (!categories.includes(el.category)) {
-      categories.push(el.category);
-    }
-  });
-  const dropDownList = categories.map((el, index) => (
+  const categories = products.map((el) => el.category);
+  const unicCategories = categories.filter(
+    (value, index, self) => self.indexOf(value) === index
+  );
+
+  const dropDownList = unicCategories.map((el, index) => (
     <Menu.Item key={index + 1} onClick={() => setCategory(el)}>
       {el}
     </Menu.Item>

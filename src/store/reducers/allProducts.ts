@@ -11,6 +11,7 @@ import {
   SET_CURRENT_PAGE,
   SET_PRODUCT_PORTION,
   SET_SORT_BY,
+  FILTER_BY_FARMS,
 } from "../../types/reducers/constansts";
 
 const initialState: AllProductsState = {
@@ -37,6 +38,7 @@ const initialState: AllProductsState = {
   filteredProductCount: 0,
   filterCategories: "",
   sortBy: "",
+  filterFarms: [""],
 };
 
 export const allProducts = (
@@ -80,6 +82,13 @@ export const allProducts = (
       return {
         ...state,
         sortBy: action.payload,
+      };
+    case FILTER_BY_FARMS:
+      return {
+        ...state,
+        filterFarms: state.filterFarms.includes(action.payload)
+          ? [...state.filterFarms.filter((el) => el !== action.payload)]
+          : [...state.filterFarms, action.payload],
       };
 
     default:

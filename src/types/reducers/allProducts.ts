@@ -9,6 +9,7 @@ import {
   FETCH_PRODUCTS_ERROR,
   FILTER_BY_CATEGORIES,
   SET_SORT_BY,
+  FILTER_BY_FARMS,
 } from "./constansts";
 
 export interface AllProductsState {
@@ -20,6 +21,7 @@ export interface AllProductsState {
   filteredProductCount: number;
   filterCategories: string;
   sortBy: string;
+  filterFarms: string[];
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -56,6 +58,10 @@ export interface SetSortBy {
   type: typeof SET_SORT_BY;
   payload: string;
 }
+export interface FilterByFarmsAction {
+  type: typeof FILTER_BY_FARMS;
+  payload: string;
+}
 
 export type AllProductsAction =
   | FetchAllProductsAction
@@ -66,4 +72,5 @@ export type AllProductsAction =
   | SetCurrentPage
   | SetProductPortion
   | FilterByCategoriesAction
-  | SetSortBy;
+  | SetSortBy
+  | FilterByFarmsAction;
