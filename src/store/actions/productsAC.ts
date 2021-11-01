@@ -13,6 +13,8 @@ import {
   FILTER_BY_CATEGORIES,
   SET_SORT_BY,
   FILTER_BY_FARMS,
+  FILTER_BY_PRICE,
+  RESET,
 } from "../../types/reducers/constansts";
 
 export const fetchProducts =
@@ -55,4 +57,15 @@ export const setSortBy = (e: string): AllProductsAction => {
 };
 export const filterByFarms = (e: string): AllProductsAction => {
   return { type: FILTER_BY_FARMS, payload: e };
+};
+export const filterByPrice = (e: number[]): AllProductsAction => {
+  return {
+    type: FILTER_BY_PRICE,
+    payload: e,
+  };
+};
+export const reset = (): AllProductsAction => {
+  return {
+    type: RESET,
+  };
 };

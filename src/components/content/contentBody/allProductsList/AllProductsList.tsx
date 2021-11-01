@@ -16,6 +16,7 @@ const AllProductsList = () => {
     filterCategories,
     sortBy,
     filterFarms,
+    filterPrice,
   } = useAppSelector((state) => state.products);
 
   const filteredProducts = mainFilter(
@@ -24,7 +25,8 @@ const AllProductsList = () => {
     filterStars,
     filterCategories,
     sortBy,
-    filterFarms
+    filterFarms,
+    filterPrice
   );
   const from = currentPage * productPortion - productPortion;
   const to = currentPage * productPortion;

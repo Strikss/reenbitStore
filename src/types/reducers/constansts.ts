@@ -8,3 +8,5 @@ export const SET_PRODUCT_PORTION = "SET_PRODUCT_PORTION";
 export const FILTER_BY_CATEGORIES = "FILTER_BY_CATEGORIES";
 export const SET_SORT_BY = "SET_SORT_BY";
 export const FILTER_BY_FARMS = "FILTER_BY_FARMS";
+export const FILTER_BY_PRICE = "FILTER_BY_PRICE";
+export const RESET = "RESET";

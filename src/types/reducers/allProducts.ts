@@ -10,6 +10,8 @@ import {
   FILTER_BY_CATEGORIES,
   SET_SORT_BY,
   FILTER_BY_FARMS,
+  FILTER_BY_PRICE,
+  RESET,
 } from "./constansts";
 
 export interface AllProductsState {
@@ -22,6 +24,7 @@ export interface AllProductsState {
   filterCategories: string;
   sortBy: string;
   filterFarms: string[];
+  filterPrice: number[];
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -62,6 +65,13 @@ export interface FilterByFarmsAction {
   type: typeof FILTER_BY_FARMS;
   payload: string;
 }
+export interface FilterByPriceAction {
+  type: typeof FILTER_BY_PRICE;
+  payload: number[];
+}
+export interface ResetAction {
+  type: typeof RESET;
+}
 
 export type AllProductsAction =
   | FetchAllProductsAction
@@ -73,4 +83,6 @@ export type AllProductsAction =
   | SetProductPortion
   | FilterByCategoriesAction
   | SetSortBy
-  | FilterByFarmsAction;
+  | FilterByFarmsAction
+  | FilterByPriceAction
+  | ResetAction;

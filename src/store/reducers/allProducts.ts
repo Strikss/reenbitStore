@@ -12,6 +12,8 @@ import {
   SET_PRODUCT_PORTION,
   SET_SORT_BY,
   FILTER_BY_FARMS,
+  FILTER_BY_PRICE,
+  RESET,
 } from "../../types/reducers/constansts";
 
 const initialState: AllProductsState = {
@@ -39,6 +41,7 @@ const initialState: AllProductsState = {
   filterCategories: "",
   sortBy: "",
   filterFarms: [""],
+  filterPrice: [0],
 };
 
 export const allProducts = (
@@ -90,7 +93,23 @@ export const allProducts = (
           ? [...state.filterFarms.filter((el) => el !== action.payload)]
           : [...state.filterFarms, action.payload],
       };
-
+    case FILTER_BY_PRICE:
+      return {
+        ...state,
+        filterPrice: action.payload,
+      };
+    case RESET:
+      return {
+        ...state,
+        filterName: "",
+        filterStars: [0],
+        currentPage: 1,
+        productPortion: 5,
+        filterCategories: "",
+        sortBy: "",
+        filterFarms: [""],
+        filterPrice: [0],
+      };
     default:
       return state;
   }

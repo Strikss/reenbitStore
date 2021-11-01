@@ -4,6 +4,7 @@ import { filterByName } from "./allFilters/filterByName";
 import { filterByStars } from "./allFilters/filterByStars";
 import { sortByfn } from "./sortBy/sortByfn";
 import { filterByFarms } from "./allFilters/filterByFarms";
+import { filterByPrice } from "./allFilters/filterByprice";
 
 const mainFilter = (
   products: ProductsType[],
@@ -11,15 +12,17 @@ const mainFilter = (
   filterStars: number[],
   filterCategories: string,
   sortBy: string,
-  filterFarms: string[]
+  filterFarms: string[],
+  filterPrice: number[]
 ) => {
   const productsCopy = [...products];
   const sortedBy = sortByfn(productsCopy, sortBy);
   const filteredByName = filterByName(sortedBy, filterName);
   const filteredByStars = filterByStars(filteredByName, filterStars);
   const filteredByFarms = filterByFarms(filteredByStars, filterFarms);
+  const filteredByPrice = filterByPrice(filteredByFarms, filterPrice);
   const filteredByCategories = filterByCategories(
-    filteredByFarms,
+    filteredByPrice,
     filterCategories
   );
 
