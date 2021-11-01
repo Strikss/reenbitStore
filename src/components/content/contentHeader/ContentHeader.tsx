@@ -5,12 +5,17 @@ const ContentHeader = () => {
   const { filteredProductCount, productPortion } = useAppSelector(
     (state) => state.products
   );
+  const productsOnPage =
+    productPortion > filteredProductCount
+      ? filteredProductCount
+      : productPortion;
+
   return (
     <div className={style.titleContainer}>
       <h1 className={style.title}>All Products</h1>
       <div>
         <span className={style.totalCount}>
-          {productPortion} / {filteredProductCount}
+          {productsOnPage} / {filteredProductCount}
         </span>
         <span className={style.products}>Products</span>
       </div>
