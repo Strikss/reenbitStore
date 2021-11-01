@@ -15,7 +15,7 @@ const CheckBox: React.FC = () => {
     <label className={style.container}>
       <input
         type="checkbox"
-        onClick={() => setChecked(!checked)}
+        onChange={() => setChecked(!checked)}
         checked={checked}
       />
       <span className={style.checkmark}></span>

@@ -16,7 +16,6 @@ const Paging: React.FC = () => {
   };
   useEffect(() => {
     currentPage > numberOfPages && setCurrentPage(1);
-    console.log("hallo");
     window.scrollTo(0, 0);
   }, [numberOfPages, currentPage]);
 

@@ -52,9 +52,10 @@ const FilterByPrice: React.FC = () => {
           <div className={style.box}>
             <input
               className={style.input}
-              type="text"
+              type="number"
               placeholder="0"
               value={minValue}
+              min="100"
               onChange={(e: any) => setMinValue(e.target.value)}
             />
           </div>
@@ -65,7 +66,7 @@ const FilterByPrice: React.FC = () => {
           <div className={style.box}>
             <input
               className={style.input}
-              type="text"
+              type="number"
               placeholder="000"
               value={maxValue}
               onChange={(e: any) => setMaxValue(e.target.value)}
