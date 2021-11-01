@@ -1,18 +1,31 @@
 import { useAppSelector } from "../../../../hooks/selectorHook";
 import Product from "./product/Product";
 import style from "./AllProductsList.module.css";
-import mainFilter from "./product/mainFilter";
+import { useAction } from "../../../../hooks/useAction";
+import { useEffect } from "react";
+import mainFilter from "../../mainFilter/mainFilter";
+import React from "react";
 
-const AllProductsList = () => {
-  const { products, filterName, filterStars } = useAppSelector(
-    (state) => state.products
+const AllProductsList: React.FC = () => {
+  const { filterProductCount } = useAction();
+  const { products, filterName, filterStars, currentPage, productPortion } =
+    useAppSelector((state) => state.products);
+
+  const filteredProducts = mainFilter(products, filterName, filterStars);
+  const from = currentPage * productPortion - productPortion;
+  const to = currentPage * productPortion;
+
+  useEffect(() => {
+    filterProductCount(filteredProducts.length);
+  }, [filteredProducts.length]);
+
+  return (
+    <div className={style.container}>
+      {filteredProducts.slice(from, to).map((prod) => (
+        <Product prod={prod} key={prod.itemID} />
+      ))}
+    </div>
   );
-
-  const filteredProducts = mainFilter(products, filterName, filterStars)
-    .slice(1, 5)
-    .map((prod) => <Product prod={prod} key={prod.itemID} />);
-
-  return <div className={style.container}>{filteredProducts}</div>;
 };
 
 export default AllProductsList;

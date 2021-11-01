@@ -1,4 +1,4 @@
-import { ProductsType } from "../../../../../interfaces/product";
+import { ProductsType } from "../../../interfaces/product";
 
 const mainFilter = (
   products: ProductsType[],

@@ -6,11 +6,12 @@ import { NavLink } from "react-router-dom";
 import productArrow from "../../../../../assets/images/productArrow.svg";
 import heart from "../../../../../assets/images/heart.svg";
 import { ProductsType } from "../../../../../interfaces/product";
+import React from "react";
 
 interface Props {
   prod: ProductsType;
 }
-const Product = ({ prod }: Props) => {
+const Product: React.FC<Props> = ({ prod }) => {
   const starsArray = Array(5).fill(0);
   const stars = starsArray.map((_, index) => (
     <li key={index}>

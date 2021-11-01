@@ -6,9 +6,10 @@ const FilterByCategories: React.FC = () => {
   const { products } = useAppSelector((state) => state.products);
 
   const allCategories = products.map((prod) => prod.category);
+
   const unicCategories: { [key: string]: number } = allCategories.reduce(
     (prev: { [key: string]: number }, cur) => {
-      prev[cur] = ++prev[cur] || 0;
+      prev[cur] = ++prev[cur] || 1;
       return prev;
     },
     {}
