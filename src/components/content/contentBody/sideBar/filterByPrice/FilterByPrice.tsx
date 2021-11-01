@@ -5,6 +5,7 @@ import "antd/dist/antd.css";
 import { handleStyle, trackStyle } from "./sliderStyles";
 import { useAction } from "../../../../../hooks/useAction";
 import { useAppSelector } from "../../../../../hooks/selectorHook";
+import classNames from "classnames";
 
 const FilterByPrice: React.FC = () => {
   //HOOKS
@@ -18,11 +19,36 @@ const FilterByPrice: React.FC = () => {
 
   const [minValue, setMinValue] = useState(minProductPrice);
   const [maxValue, setMaxValue] = useState(maxProductPrice);
+
+  const inputMinClass = classNames(
+    style.box,
+    (minValue < minProductPrice || minValue > maxProductPrice) && style.error
+  );
+  const inputMaxClass = classNames(
+    style.box,
+    (maxValue > maxProductPrice || maxValue < minProductPrice) && style.error
+  );
   //FUNCITONS
   const onChange = (value: number[]) => {
     setMinValue(value[0]);
     setMaxValue(value[1]);
   };
+  const onInputChange = (e: any) => {
+    let value = e.target.value;
+    if (e.target.name === "minInput") {
+      setMinValue(value);
+    } else if (e.target.name === "maxInput") {
+      setMaxValue(value);
+    }
+  };
+  const handleBlur = () => {
+    minValue >= minProductPrice &&
+      minValue <= maxProductPrice &&
+      maxValue <= maxProductPrice &&
+      maxValue >= minProductPrice &&
+      filterByPrice([minValue, maxValue]);
+  };
+
   const onAfterChange = (value: number[]) => {
     filterByPrice(value);
   };
@@ -39,7 +65,6 @@ const FilterByPrice: React.FC = () => {
         step={1}
         min={minProductPrice}
         max={maxProductPrice}
-        defaultValue={[80, 100]}
         onChange={onChange}
         onAfterChange={onAfterChange}
         trackStyle={trackStyle}
@@ -49,27 +74,30 @@ const FilterByPrice: React.FC = () => {
       <div className={style.minMaxContainer}>
         <div className={style.min}>
           <div className={style.title}>Min</div>
-          <div className={style.box}>
+          <div className={inputMinClass}>
             <input
               className={style.input}
               type="number"
               placeholder="0"
               value={minValue}
-              min="100"
-              onChange={(e: any) => setMinValue(e.target.value)}
+              name="minInput"
+              onBlur={() => handleBlur()}
+              onChange={(e: any) => onInputChange(e)}
             />
           </div>
         </div>
         <div className={style.slash}>-</div>
         <div className={style.max}>
           <div className={style.title}>Max</div>
-          <div className={style.box}>
+          <div className={inputMaxClass}>
             <input
               className={style.input}
               type="number"
               placeholder="000"
               value={maxValue}
-              onChange={(e: any) => setMaxValue(e.target.value)}
+              onBlur={() => handleBlur()}
+              name="maxInput"
+              onChange={(e: any) => onInputChange(e)}
             />
           </div>
         </div>

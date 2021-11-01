@@ -5,7 +5,7 @@ import { useAction } from "../../../../hooks/useAction";
 import { useEffect } from "react";
 import mainFilter from "../../../mainFilter/mainFilter";
 
-const AllProductsList = () => {
+const AllProductsList: React.FC = () => {
   const { filterProductCount } = useAction();
   const {
     products,

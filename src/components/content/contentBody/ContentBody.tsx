@@ -1,12 +1,17 @@
+import CustomPagination from "./pagination/CustomPagination";
 import AllProductsList from "./allProductsList/AllProductsList";
 import style from "./ContentBody.module.css";
 import SideBar from "./sideBar/SideBar";
+import React from "react";
 
-const ContentBody = () => {
+const ContentBody: React.FC = () => {
   return (
-    <div className={style.container}>
-      <SideBar />
-      <AllProductsList />
+    <div className={style.mainContainer}>
+      <div className={style.container}>
+        <SideBar />
+        <AllProductsList />
+      </div>
+      <CustomPagination />
     </div>
   );
 };

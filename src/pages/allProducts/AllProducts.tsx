@@ -15,7 +15,7 @@ const AllProducts: React.FC = () => {
   }, []);
 
   return (
-    <div className={style.allProducts}>
+    <div className={style.allProducts} id="scroller">
       <Header />
       <SearchBar />
       <Menu />
