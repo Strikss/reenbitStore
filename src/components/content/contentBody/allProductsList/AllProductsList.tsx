@@ -4,8 +4,9 @@ import style from "./AllProductsList.module.css";
 import { useAction } from "../../../../hooks/useAction";
 import { useEffect } from "react";
 import mainFilter from "../../mainFilter/mainFilter";
+import React from "react";
 
-const AllProductsList = () => {
+const AllProductsList: React.FC = () => {
   const { filterProductCount } = useAction();
   const { products, filterName, filterStars, currentPage, productPortion } =
     useAppSelector((state) => state.products);
