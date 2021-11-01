@@ -3,9 +3,9 @@ import style from "./Paging.module.css";
 import productArrow from "../../../assets/images/productArrow.svg";
 import { useAppSelector } from "../../../hooks/selectorHook";
 import { useAction } from "../../../hooks/useAction";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
-const Paging = () => {
+const Paging: React.FC = () => {
   const { setCurrentPage, setProductPortion } = useAction();
   const { filteredProductCount, productPortion, currentPage, products } =
     useAppSelector((state) => state.products);
@@ -16,7 +16,9 @@ const Paging = () => {
   };
   useEffect(() => {
     currentPage > numberOfPages && setCurrentPage(1);
-  }, [numberOfPages]);
+    console.log("hallo");
+    window.scrollTo(0, 0);
+  }, [numberOfPages, currentPage]);
 
   return (
     <div className={style.paginationContainer}>
