@@ -19,7 +19,7 @@ const AllProductsList = () => {
   }, [filteredProducts.length]);
 
   return (
-    <div className={style.AllProductsListContainer}>
+    <div className={style.container}>
       {filteredProducts.slice(from, to).map((prod) => (
         <Product prod={prod} key={prod.itemID} />
       ))}
