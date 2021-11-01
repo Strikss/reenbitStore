@@ -10,6 +10,7 @@ const FilterByStars: React.FC = () => {
   const handleClick = (index: number) => {
     filterByStars(index);
   };
+
   const ratingComponent = oneRating.map((_, index) => (
     <li
       className={style.oneBox}
