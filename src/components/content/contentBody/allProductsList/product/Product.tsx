@@ -12,6 +12,7 @@ interface Props {
   prod: ProductsType;
 }
 const Product: React.FC<Props> = ({ prod }) => {
+  //STARS
   const starsArray = Array(5).fill(0);
   const stars = starsArray.map((_, index) => (
     <li key={index}>

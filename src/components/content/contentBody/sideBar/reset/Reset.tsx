@@ -4,6 +4,7 @@ import { useAction } from "../../../../../hooks/useAction";
 import style from "./Reset.module.css";
 
 const Reset: React.FC = () => {
+  //HOOKS
   const { reset } = useAction();
 
   return (

@@ -5,18 +5,18 @@ import style from "./SearchEngine.module.css";
 import arrow from "../../../assets/images/arrow.svg";
 
 const DropDownMenu = () => {
-  //Hooks
+  //HOOKS
   const { products, filterCategories } = useAppSelector(
     (state) => state.products
   );
   const { filterByCategories } = useAction();
 
-  //Categories list
+  //CATEGORIES LIST
   const categories = products.map((el) => el.category);
   const unicCategories = categories.filter(
     (value, index, self) => self.indexOf(value) === index
   );
-
+  //DROP DOWN
   const dropDownList = unicCategories.map((el, index) => (
     <Menu.Item key={index + 1} onClick={() => setCategory(el)}>
       {el}
@@ -31,7 +31,7 @@ const DropDownMenu = () => {
     </Menu>
   );
 
-  //functions
+  //FUNCTIONS
   const setCategory = (category: string) => {
     filterByCategories(category);
   };

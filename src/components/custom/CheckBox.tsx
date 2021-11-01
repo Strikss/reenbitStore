@@ -3,10 +3,15 @@ import { useAppSelector } from "../../hooks/selectorHook";
 import style from "./CheckBox.module.css";
 
 const CheckBox: React.FC = () => {
+  //HOOKS
   const { filterFarms, filterStars } = useAppSelector(
     (state) => state.products
   );
+
+  //STATES
   const [checked, setChecked] = useState(false);
+
+  //FUNCTIONS
   useEffect(() => {
     filterFarms.length === 1 && filterStars.length === 1 && setChecked(false);
   }, [filterFarms, filterStars]);

@@ -8,6 +8,7 @@ type StarsProps = {
 };
 
 const StarsGenerator: React.FC<StarsProps> = (props) => {
+  //STARS
   const yellowStarsArray = Array(5).fill(0);
   const yellowStars = yellowStarsArray.map((_, index) => {
     return (

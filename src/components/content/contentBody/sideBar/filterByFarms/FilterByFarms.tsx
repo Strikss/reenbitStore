@@ -5,17 +5,17 @@ import CheckBox from "../../../../custom/CheckBox";
 import style from "./FilterByFarms.module.css";
 
 const FilterByFarms: React.FC = () => {
+  //HOOKS
   const { products } = useAppSelector((state) => state.products);
   const { filterByFarms } = useAction();
 
+  //UNIC FARMS
   const allFarms = products.map((prod) => prod.farm);
   const unicFarms = allFarms.filter(
     (value, index, self) => self.indexOf(value) === index
   );
-  const handleClick = (el: string) => {
-    filterByFarms(el);
-  };
 
+  //FARMS HTML
   const farms = unicFarms.map((el, i) => (
     <li className={style.oneBox} key={i} onChange={() => handleClick(el)}>
       <CheckBox />
@@ -23,6 +23,10 @@ const FilterByFarms: React.FC = () => {
     </li>
   ));
 
+  //FUNCTIONS
+  const handleClick = (el: string) => {
+    filterByFarms(el);
+  };
   return (
     <>
       <div className={style.container}>

@@ -11,11 +11,11 @@ import {
 } from "../../../interfaces/componentConstants";
 
 const ContentActions: React.FC = () => {
-  //hooks
+  //HOOKS
   const sortBy = useAppSelector((state) => state.products.sortBy);
   const { setSortBy } = useAction();
 
-  //dropDown
+  //DROPDOWN
   const menu = (
     <Menu>
       <Menu.Item key={"0"} onClick={() => setSortBy("")}>

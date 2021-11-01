@@ -2,9 +2,11 @@ import { useAppSelector } from "../../../hooks/selectorHook";
 import style from "./ContentHeader.module.css";
 
 const ContentHeader = () => {
+  //HOOKS
   const productCount = useAppSelector(
     (state) => state.products.filteredProductCount
   );
+
   return (
     <div className={style.titleContainer}>
       <h1 className={style.title}>All Products</h1>

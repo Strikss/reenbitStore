@@ -20,6 +20,7 @@ const FilterByPrice: React.FC = () => {
   const [minValue, setMinValue] = useState(minProductPrice);
   const [maxValue, setMaxValue] = useState(maxProductPrice);
 
+  //CSS CLASSES
   const inputMinClass = classNames(
     style.box,
     (minValue < minProductPrice || minValue > maxProductPrice) && style.error
@@ -28,13 +29,14 @@ const FilterByPrice: React.FC = () => {
     style.box,
     (maxValue > maxProductPrice || maxValue < minProductPrice) && style.error
   );
+
   //FUNCITONS
   const onChange = (value: number[]) => {
     setMinValue(value[0]);
     setMaxValue(value[1]);
   };
   const onInputChange = (e: any) => {
-    let value = e.target.value;
+    let value = e.currentTarget.value;
     if (e.target.name === "minInput") {
       setMinValue(value);
     } else if (e.target.name === "maxInput") {
@@ -48,7 +50,6 @@ const FilterByPrice: React.FC = () => {
       maxValue >= minProductPrice &&
       filterByPrice([minValue, maxValue]);
   };
-
   const onAfterChange = (value: number[]) => {
     filterByPrice(value);
   };
@@ -82,7 +83,9 @@ const FilterByPrice: React.FC = () => {
               value={minValue}
               name="minInput"
               onBlur={() => handleBlur()}
-              onChange={(e: any) => onInputChange(e)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                onInputChange(e)
+              }
             />
           </div>
         </div>
@@ -97,7 +100,9 @@ const FilterByPrice: React.FC = () => {
               value={maxValue}
               onBlur={() => handleBlur()}
               name="maxInput"
-              onChange={(e: any) => onInputChange(e)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                onInputChange(e)
+              }
             />
           </div>
         </div>

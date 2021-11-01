@@ -3,10 +3,11 @@ import { useAppSelector } from "../../../../../hooks/selectorHook";
 import style from "./FilterByCategories.module.css";
 
 const FilterByCategories: React.FC = () => {
+  //HOOKS
   const { products } = useAppSelector((state) => state.products);
 
+  //UNIC CATEGORIES
   const allCategories = products.map((prod) => prod.category);
-
   const unicCategories: { [key: string]: number } = allCategories.reduce(
     (prev: { [key: string]: number }, cur) => {
       prev[cur] = ++prev[cur] || 1;
@@ -15,6 +16,7 @@ const FilterByCategories: React.FC = () => {
     {}
   );
 
+  //CATEGORYS HTML
   const categoryItems = Object.keys(unicCategories).map((key, index) => {
     return (
       <li key={index} className={style.itemContainer}>
@@ -23,6 +25,7 @@ const FilterByCategories: React.FC = () => {
       </li>
     );
   });
+
   return (
     <>
       <div className={style.container}>

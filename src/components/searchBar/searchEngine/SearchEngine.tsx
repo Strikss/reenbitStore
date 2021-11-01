@@ -5,8 +5,10 @@ import { useAction } from "../../../hooks/useAction";
 import DropDownMenu from "./DropDownMenu";
 
 const SearchEngine: React.FC = () => {
+  //HOOKS
   const { filterByName } = useAction();
 
+  //FUNCTIONS
   const setName = (e: any) => {
     filterByName(e.target.value);
   };

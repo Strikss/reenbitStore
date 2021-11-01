@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import mainFilter from "../../../mainFilter/mainFilter";
 
 const AllProductsList: React.FC = () => {
+  //HOOKS
   const { filterProductCount } = useAction();
   const {
     products,
@@ -19,6 +20,7 @@ const AllProductsList: React.FC = () => {
     filterPrice,
   } = useAppSelector((state) => state.products);
 
+  //FILTERS
   const filteredProducts = mainFilter(
     products,
     filterName,
@@ -28,9 +30,12 @@ const AllProductsList: React.FC = () => {
     filterFarms,
     filterPrice
   );
+
+  //PAGINATION
   const from = currentPage * productPortion - productPortion;
   const to = currentPage * productPortion;
 
+  //FUNCTIONS
   useEffect(() => {
     filterProductCount(filteredProducts.length);
   }, [filteredProducts.length]);
