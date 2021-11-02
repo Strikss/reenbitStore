@@ -13,7 +13,6 @@ const AllProducts: React.FC = () => {
   useEffect(() => {
     fetchProducts();
   }, []);
-
   return (
     <div className={style.allProducts} id="scroller">
       <Header />
