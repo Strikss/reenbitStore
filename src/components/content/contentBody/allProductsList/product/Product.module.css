@@ -36,7 +36,7 @@
 }
 
 .leftTopPart {
-  font-size: 14px;
+  font-size: 0.85rem;
 }
 .starContainer {
   display: flex;
@@ -48,7 +48,7 @@
   width: 20px;
 }
 .title {
-  font-size: 22px;
+  font-size: 1.35rem;
   letter-spacing: 1.2px;
   margin-bottom: 4px;
 }
@@ -79,7 +79,7 @@
   color: #6a983c;
 }
 .discountPrice {
-  font-size: 22px;
+  font-size: 1.35rem;
   letter-spacing: 1.2px;
 }
 .fullPrice {
@@ -91,7 +91,7 @@
   color: #ffffff;
   letter-spacing: 1.1px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   height: 54px;
   white-space: nowrap;
   max-width: 155px;

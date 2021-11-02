@@ -8,10 +8,10 @@
   cursor: pointer;
 }
 .item {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .title {
-  font-size: 22px;
+  font-size: 1.35rem;
   margin-bottom: 18px;
 }
 .countCircle {
