@@ -4,7 +4,7 @@ import style from "./AllProductsList.module.css";
 import { useAction } from "../../../../hooks/useAction";
 import { useEffect } from "react";
 import mainFilter from "../../../mainFilter/mainFilter";
-import noItemsFound from "../../../../assets/images/noItemFound.png";
+import noItemsGif from "../../../../assets/images/noITEMS.gif";
 
 const AllProductsList: React.FC = () => {
   //HOOKS
@@ -42,7 +42,7 @@ const AllProductsList: React.FC = () => {
   }, [filteredProducts.length]);
 
   return filteredProducts.length === 0 ? (
-    <img className={style.noItems} src={noItemsFound} alt="" />
+    <img className={style.noItems} src={noItemsGif} alt="" />
   ) : (
     <div className={style.container}>
       {filteredProducts.slice(from, to).map((prod) => (
