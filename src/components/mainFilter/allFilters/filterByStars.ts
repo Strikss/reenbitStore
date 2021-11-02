@@ -5,9 +5,7 @@ export const filterByStars = (
   filterStars: number[]
 ) =>
   filteredByName.filter((prod) => {
-    if (filterStars.length === 1) {
-      return prod;
-    } else if (filterStars.includes(prod.rating)) {
+    if (filterStars.length === 1 || filterStars.includes(prod.rating)) {
       return prod;
     }
   });

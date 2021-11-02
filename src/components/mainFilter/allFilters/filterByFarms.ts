@@ -5,9 +5,7 @@ export const filterByFarms = (
   filterFarms: string[]
 ) =>
   filteredByFarms.filter((prod) => {
-    if (filterFarms.length === 1) {
-      return prod;
-    } else if (filterFarms.includes(prod.farm)) {
+    if (filterFarms.length === 1 || filterFarms.includes(prod.farm)) {
       return prod;
     }
   });

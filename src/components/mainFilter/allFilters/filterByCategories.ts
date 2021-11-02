@@ -5,9 +5,10 @@ export const filterByCategories = (
   filterCategories: string
 ) =>
   products.filter((prod) => {
-    if (filterCategories === "") {
-      return prod;
-    } else if (prod.category.toLowerCase() === filterCategories.toLowerCase()) {
+    if (
+      filterCategories === "" ||
+      prod.category.toLowerCase() === filterCategories.toLowerCase()
+    ) {
       return prod;
     }
   });

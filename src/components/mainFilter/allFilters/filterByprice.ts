@@ -5,11 +5,9 @@ export const filterByPrice = (
   filterPrice: number[]
 ) =>
   filteredByPrice.filter((prod) => {
-    if (filterPrice.length === 1) {
-      return prod;
-    } else if (
-      prod.priceHalf >= filterPrice[0] &&
-      prod.priceHalf <= filterPrice[1]
+    if (
+      filterPrice.length === 1 ||
+      (prod.priceHalf >= filterPrice[0] && prod.priceHalf <= filterPrice[1])
     ) {
       return prod;
     }
