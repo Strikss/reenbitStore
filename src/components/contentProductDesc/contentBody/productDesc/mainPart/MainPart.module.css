@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.ratingContainer {
+  display: flex;
+  flex-direction: row;
+}
+.starContainer {
+  display: flex;
+}
+.star {
+  margin-right: 5.26px;
+  width: 20px;
+}
+.valuesContainer {
+  display: flex;
+}
+.left {
+  display: flex;
+  width: 100%;
+}
+.listTitleContainer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 32px;
+}
+.listDescriptionContainer {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  display: flex;
+  width: 100%;
+}
+.buyContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 128, 0, 0.404);
+  padding: 16px 24px;
+}
+.plus {
+  font-size: 22px;
+  margin-right: 4px;
+  color: #92c064;
+}
+.button {
+  color: #ffffff;
+  letter-spacing: 1.1px;
+  font-weight: 700;
+  font-size: 16px;
+  height: 54px;
+  white-space: nowrap;
+  max-width: 155px;
+  background-color: #6a983c;
+  border-radius: 12px;
+  border: 2px solid #46760a;
+  margin-left: 5px;
+  cursor: pointer;
+}
