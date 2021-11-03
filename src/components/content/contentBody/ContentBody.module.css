@@ -6,3 +6,15 @@
   flex-direction: row;
   width: 100%;
 }
+.popOver {
+  display: none;
+  margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .sideBar {
+    display: none;
+  }
+  .popOver {
+    display: block;
+  }
+}

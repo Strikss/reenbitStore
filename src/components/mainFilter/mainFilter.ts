@@ -4,7 +4,7 @@ import { filterByName } from "./allFilters/filterByName";
 import { filterByStars } from "./allFilters/filterByStars";
 import { sortByfn } from "./sortBy/sortByfn";
 import { filterByFarms } from "./allFilters/filterByFarms";
-import { filterByPrice } from "./allFilters/filterByprice";
+import { filterByPrice } from "./allFilters/filterByPrice";
 
 const mainFilter = (
   products: ProductsType[],

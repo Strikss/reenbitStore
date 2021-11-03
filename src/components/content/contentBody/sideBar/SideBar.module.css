@@ -2,9 +2,11 @@
   width: 300px;
   flex-basis: 300px;
   padding-right: 50px;
+  overflow: scroll;
 }
 @media (max-width: 1024px) {
   .sideBarContainer {
-    display: none;
+    height: 95vh;
+    width: 400px;
   }
 }
