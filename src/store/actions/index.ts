@@ -1,3 +1,3 @@
-import * as productsAC from "./productsAC";
+import * as products from "./products";
 
-export default { ...productsAC };
+export default { ...products };

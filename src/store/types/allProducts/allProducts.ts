@@ -1,4 +1,4 @@
-import { ProductsType } from "../../interfaces/product";
+import { ProductsType } from "../../../interfaces/product";
 import {
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,

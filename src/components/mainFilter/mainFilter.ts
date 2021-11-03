@@ -2,21 +2,21 @@ import { ProductsType } from "../../interfaces/product";
 import { filterByCategories } from "./allFilters/filterByCategories";
 import { filterByName } from "./allFilters/filterByName";
 import { filterByStars } from "./allFilters/filterByStars";
-import { sortByfn } from "./sortBy/sortByfn";
+import { sortBy } from "./sortBy/sortBy";
 import { filterByFarms } from "./allFilters/filterByFarms";
-import { filterByPrice } from "./allFilters/filterByprice";
+import { filterByPrice } from "./allFilters/filterByPrice";
 
 const mainFilter = (
   products: ProductsType[],
   filterName: string,
   filterStars: number[],
   filterCategories: string,
-  sortBy: string,
+  sortByWhat: string,
   filterFarms: string[],
   filterPrice: number[]
 ) => {
   const productsCopy = [...products];
-  const sortedBy = sortByfn(productsCopy, sortBy);
+  const sortedBy = sortBy(productsCopy, sortByWhat);
   const filteredByName = filterByName(sortedBy, filterName);
   const filteredByStars = filterByStars(filteredByName, filterStars);
   const filteredByFarms = filterByFarms(filteredByStars, filterFarms);

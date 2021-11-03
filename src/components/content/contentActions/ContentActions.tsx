@@ -4,11 +4,7 @@ import arrow from "../../../assets/images/arrow.svg";
 import { Menu, Dropdown } from "antd";
 import { useAppSelector } from "../../../hooks/selectorHook";
 import { useAction } from "../../../hooks/useAction";
-import {
-  PRICE_HIGH,
-  PRICE_LOW,
-  RATING,
-} from "../../../interfaces/componentConstants";
+import { SortBy } from "../../../enums/products/products";
 
 const ContentActions: React.FC = () => {
   //HOOKS
@@ -21,13 +17,13 @@ const ContentActions: React.FC = () => {
       <Menu.Item key={"0"} onClick={() => setSortBy("")}>
         Featured
       </Menu.Item>
-      <Menu.Item key={"1"} onClick={() => setSortBy(PRICE_LOW)}>
+      <Menu.Item key={"1"} onClick={() => setSortBy(SortBy.PRICE_LOW)}>
         Price:Low to High
       </Menu.Item>
-      <Menu.Item key={"2"} onClick={() => setSortBy(PRICE_HIGH)}>
+      <Menu.Item key={"2"} onClick={() => setSortBy(SortBy.PRICE_HIGH)}>
         Price:High to Low
       </Menu.Item>
-      <Menu.Item key={"3"} onClick={() => setSortBy(RATING)}>
+      <Menu.Item key={"3"} onClick={() => setSortBy(SortBy.RATING)}>
         Rating
       </Menu.Item>
     </Menu>
