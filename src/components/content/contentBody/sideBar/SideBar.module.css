@@ -6,7 +6,17 @@
 }
 @media (max-width: 1024px) {
   .sideBarContainer {
-    height: 95vh;
-    width: 400px;
+    height: 90vh;
+    width: 40vw;
+  }
+}
+@media (max-width: 584px) {
+  .sideBarContainer {
+    width: 60vw;
+  }
+}
+@media (max-width: 391px) {
+  .sideBarContainer {
+    width: 65vw;
   }
 }
