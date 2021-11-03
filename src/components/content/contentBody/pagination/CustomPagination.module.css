@@ -20,6 +20,9 @@
   transform: rotate(90deg);
 }
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
   letter-spacing: 1.1px;
   font-weight: 600;
@@ -32,5 +35,30 @@
   cursor: pointer;
 }
 .pagination {
-  flex-basis: 30%;
+  width: fit-content;
+}
+.mobilePagination {
+  display: none;
+}
+@media (max-width: 768px) {
+  .button {
+    letter-spacing: 0px;
+    height: 40px;
+    padding: 10px;
+    width: fit-content;
+    font-size: 0.9rem;
+  }
+
+  .mobilePagination {
+    display: block;
+  }
+  .paginationContainer {
+    margin-top: 15px;
+    flex-direction: column-reverse;
+  }
+  .pagination,
+  .totalProductsCount,
+  .countContainer {
+    display: none;
+  }
 }

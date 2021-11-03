@@ -7,8 +7,10 @@ import React from "react";
 const ContentBody: React.FC = () => {
   return (
     <div className={style.mainContainer}>
+      <div>hello</div>
       <div className={style.container}>
         <SideBar />
+
         <AllProductsList />
       </div>
       <CustomPagination />

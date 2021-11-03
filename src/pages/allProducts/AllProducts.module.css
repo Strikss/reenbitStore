@@ -1,6 +1,16 @@
 .allProducts {
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.062);
-  padding: 0px 45px 0px 45px;
+  padding: 0 45px;
   overflow: scroll;
+}
+@media (max-width: 768px) {
+  .allProducts {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 440px) {
+  .allProducts {
+    padding: 0 8px;
+  }
 }

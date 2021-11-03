@@ -4,7 +4,7 @@
   border-radius: 12px;
   display: flex;
   align-items: center;
-  width: 500px;
+  width: 60%;
   height: 44px;
   padding: 10px;
   border-radius: 12px;
@@ -19,12 +19,14 @@
 
 .search {
   display: flex;
-  padding-left: 24px;
-  width: 300px;
+  padding-left: 23px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   height: 100%;
 }
 .searchInput {
-  width: 262px;
+  width: 100%;
   border: transparent;
   outline: transparent;
   color: black;
@@ -33,6 +35,7 @@
 .searchLoop {
   width: 15px;
   height: 15px;
+  margin-right: 15px;
 }
 .dropButton {
   display: flex;
@@ -45,4 +48,22 @@
 .arrow {
   margin-left: 5px;
   width: 7px;
+}
+@media (max-width: 902px) {
+  .container {
+    width: 100%;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 440px) {
+  .searchLoop {
+    margin-right: 0px;
+  }
+  .container {
+    padding-left: 0px;
+    margin: 0;
+  }
+  .search {
+    padding-left: 12px;
+  }
 }

@@ -36,13 +36,22 @@ const CustomPagination: React.FC = () => {
         current={currentPage}
         pageSize={productPortion}
       />
+      <Pagination
+        className={style.mobilePagination}
+        simple
+        size="small"
+        total={filteredProductCount}
+        onChange={onPageChange}
+        current={currentPage}
+        pageSize={productPortion}
+      />
       {productPortion < filteredProductCount && numberOfPages !== currentPage && (
         <button className={style.button} onClick={() => setProductPortion()}>
           Show more products
           <img className={style.arrow} src={productArrow} alt="arrow" />
         </button>
       )}
-      <div>
+      <div className={style.countContainer}>
         <span className={style.totalProductsCount}>{totalProductsCount}</span>
         <span className={style.products}>Products</span>
       </div>

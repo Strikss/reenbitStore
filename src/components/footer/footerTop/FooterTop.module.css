@@ -14,3 +14,14 @@
   letter-spacing: 0.5px;
   color: #6a983c;
 }
+@media (max-width: 720px) {
+  .onePortion:not(:last-child) {
+    margin-right: 13px;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+  .descriptionTitle a {
+    font-size: 0.8rem;
+  }
+}

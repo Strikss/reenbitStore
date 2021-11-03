@@ -6,7 +6,7 @@
   justify-content: space-between;
 }
 .title {
-  font-size: 32px;
+  font-size: 2rem;
 }
 .totalCount {
   background-color: #d9e0c9a6;
@@ -18,4 +18,9 @@
 }
 .products {
   color: #a9a9a9;
+}
+@media (max-width: 620px) {
+  .title {
+    font-size: 1.6rem;
+  }
 }

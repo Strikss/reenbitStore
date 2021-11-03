@@ -19,3 +19,17 @@
   bottom: 2px;
   margin-right: 40px;
 }
+@media (max-width: 902px) {
+  .man {
+    display: none;
+  }
+  .header {
+    display: none;
+  }
+}
+@media (max-width: 440px) {
+  .container {
+    justify-content: flex-start;
+    margin-top: 5px;
+  }
+}

@@ -3,3 +3,8 @@
   flex-basis: 300px;
   padding-right: 50px;
 }
+@media (max-width: 1024px) {
+  .sideBarContainer {
+    display: none;
+  }
+}

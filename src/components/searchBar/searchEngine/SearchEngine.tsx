@@ -21,10 +21,10 @@ const SearchEngine: React.FC = () => {
           onChange={setName}
           type="text"
           className={style.searchInput}
-          placeholder="Search Products, categories ..."
+          placeholder="I'm looking ..."
         />
+        <img className={style.searchLoop} src={searchLoop} alt="img here" />
       </div>
-      <img className={style.searchLoop} src={searchLoop} alt="img here" />
     </div>
   );
 };

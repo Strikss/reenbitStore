@@ -7,3 +7,16 @@
   width: 75%;
   height: 70%;
 }
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content;
+    gap: 10px;
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    gap: 5px;
+  }
+}

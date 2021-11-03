@@ -41,7 +41,6 @@ const Product: React.FC<Props> = ({ prod }) => {
               <p className={style.description}>{prod.description}</p>
               <ul className={style.starContainer}>{stars}</ul>
             </div>
-
             <div className={style.leftBottomPart}>
               <ul className={style.listTitleContainer}>
                 <li className={style.listTitle}>Freshness</li>
@@ -76,7 +75,6 @@ const Product: React.FC<Props> = ({ prod }) => {
                   Product Detail <img src={productArrow} alt="arrow" />
                 </NavLink>
               </button>
-
               <div className={style.wishList}>
                 <img src={heart} alt="heart" /> <span> Add to wish list</span>
               </div>
