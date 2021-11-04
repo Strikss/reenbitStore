@@ -1,5 +1,5 @@
-import { SortBy } from "../../../enums/products/products";
-import { ProductsType } from "../../../interfaces/product";
+import { SortBy } from "../../enums/sortBy/sortBy";
+import { ProductsType } from "../../interfaces/product";
 
 export const sortBy = (products: ProductsType[], sortBy: string) =>
   products.sort((firstEl, secondEl) => {

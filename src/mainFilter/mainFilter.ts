@@ -1,4 +1,4 @@
-import { ProductsType } from "../../interfaces/product";
+import { ProductsType } from "../interfaces/product";
 import { filterByCategories } from "./allFilters/filterByCategories";
 import { filterByName } from "./allFilters/filterByName";
 import { filterByStars } from "./allFilters/filterByStars";
@@ -11,12 +11,12 @@ const mainFilter = (
   filterName: string,
   filterStars: number[],
   filterCategories: string,
-  sortByWhat: string,
+  sortByField: string,
   filterFarms: string[],
   filterPrice: number[]
 ) => {
   const productsCopy = [...products];
-  const sortedBy = sortBy(productsCopy, sortByWhat);
+  const sortedBy = sortBy(productsCopy, sortByField);
   const filteredByName = filterByName(sortedBy, filterName);
   const filteredByStars = filterByStars(filteredByName, filterStars);
   const filteredByFarms = filterByFarms(filteredByStars, filterFarms);

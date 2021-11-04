@@ -4,7 +4,7 @@ import arrow from "../../../assets/images/arrow.svg";
 import { Menu, Dropdown } from "antd";
 import { useAppSelector } from "../../../hooks/selectorHook";
 import { useAction } from "../../../hooks/useAction";
-import { SortBy } from "../../../enums/products/products";
+import { SortBy } from "../../../enums/sortBy/sortBy";
 
 const ContentActions: React.FC = () => {
   //HOOKS
