@@ -1,4 +1,4 @@
-import { ProductsType } from "../../../interfaces/product";
+import { ProductsType } from "../../interfaces/product";
 
 export const filterByName = (products: ProductsType[], filterName: string) =>
   products.filter((prod) => {

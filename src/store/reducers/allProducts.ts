@@ -1,7 +1,7 @@
 import {
   AllProductsState,
   AllProductsAction,
-} from "../../types/reducers/allProducts";
+} from "../types/allProducts/allProducts";
 import {
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,
@@ -14,7 +14,7 @@ import {
   FILTER_BY_FARMS,
   FILTER_BY_PRICE,
   RESET,
-} from "../../types/reducers/constansts";
+} from "../types/allProducts/constansts";
 
 const initialState: AllProductsState = {
   products: [
