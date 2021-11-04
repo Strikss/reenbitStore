@@ -68,3 +68,11 @@
     width: 100%;
   }
 }
+@media (max-width: 375px) {
+  .left {
+    font-size: 0.83rem;
+  }
+  .right {
+    font-size: 0.83rem;
+  }
+}
