@@ -1,68 +1,22 @@
-.searchBarWrapper {
+.container {
+  background-color: white;
   border: 2px solid #d1d1d1;
   border-radius: 12px;
-}
-
-.searchLoop {
-  width: 15px;
-  height: 15px;
-  border: transparent;
-}
-
-.formGroup {
-  background-color: white;
   display: flex;
   align-items: center;
-  flex-direction: row;
   width: 500px;
-  height: 42px;
+  height: 44px;
   padding: 10px;
   border-radius: 12px;
   font-weight: 700;
 }
 .dropDown {
-  position: relative;
   width: 140px;
-  padding-left: 16px;
-  color: #151515;
+  padding-left: 13px;
   border-right: 2px solid;
   border-color: #d1d1d1;
-  cursor: pointer;
 }
-.defaultOption {
-  padding: 8px 0px;
-}
-.dropDownList ul {
-  background-color: rgb(209, 209, 209);
-  color: #151515;
-  position: absolute;
-  top: 50px;
-  left: -10px;
-  width: 150px;
-  border-radius: 10px;
-  padding: 0 0 0 25px;
-}
-.dropDownList ul li {
-  padding: 10px 10px 10px 0px;
-}
-.defaultOption img {
-  width: 8px;
-  height: 8px;
-  padding: 0px 11px;
-}
-.dropDownList ul li:hover {
-  color: rgba(0, 0, 0, 0.726);
-  font-weight: bold;
-}
-.dropDownList ul li::before {
-  content: " ";
-  border-width: 0px 8px 8px 8px;
-  border-style: solid;
-  border-color: rgb(209, 209, 209) transparent;
-  position: absolute;
-  bottom: 100%;
-  right: 33px;
-}
+
 .search {
   display: flex;
   padding-left: 24px;
@@ -74,19 +28,21 @@
   border: transparent;
   outline: transparent;
   color: black;
-  font-size: 15px;
+  font-size: 1rem;
 }
-.menuWrapper {
+.searchLoop {
+  width: 15px;
+  height: 15px;
+}
+.dropButton {
   display: flex;
-  flex-direction: row;
-  padding: 5px;
-  justify-content: center;
+  width: 120px;
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 700;
 }
-.menuWrapper div {
-  padding: 5px;
-}
-.categories::after {
-  content: url(../../../assets/images/arrow.svg);
-  position: absolute;
+.arrow {
   margin-left: 5px;
+  width: 7px;
 }

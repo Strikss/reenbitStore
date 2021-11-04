@@ -5,11 +5,11 @@ import style from "./FilterByStars.module.css";
 import StarsGenerator from "./StarsGenerator";
 
 const FilterByStars: React.FC = () => {
+  //HOOKS
   const { filterByStars } = useAction();
+
+  //CHECKBOX WITH STAR HTML
   const oneRating = Array(5).fill(0);
-  const handleClick = (index: number) => {
-    filterByStars(index);
-  };
   const ratingComponent = oneRating.map((_, index) => (
     <li
       className={style.oneBox}
@@ -22,6 +22,11 @@ const FilterByStars: React.FC = () => {
       </ul>
     </li>
   ));
+
+  //FUNCTIONS
+  const handleClick = (index: number) => {
+    filterByStars(index);
+  };
 
   return (
     <>

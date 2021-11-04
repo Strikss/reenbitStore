@@ -1,12 +1,8 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, createStore, Dispatch } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { combineReducers } from "redux";
-import { allProducts } from "./reducers/allProducts";
-
-export const rootReducer = combineReducers({
-  products: allProducts,
-});
+import { rootReducer } from "./rootReducer/rootReducer";
+import { AllProductsAction } from "./types/allProducts/allProducts";
 
 export const store = createStore(
   rootReducer,
@@ -14,3 +10,6 @@ export const store = createStore(
 );
 
 export type RootState = ReturnType<typeof rootReducer>;
+export type appDispatch = () => (
+  dispatch: Dispatch<AllProductsAction>
+) => Promise<void>;

@@ -28,12 +28,16 @@
   margin-left: 21px;
   outline: none;
 }
+
 .slash {
   padding: 0px 10px;
   padding-bottom: 11px;
   color: #d1d1d1;
 }
 .filterTitle {
-  font-size: 22px;
+  font-size: 1.35rem;
   margin-bottom: 16px;
+}
+.error {
+  border: 2px solid rgba(221, 101, 101, 0.719);
 }

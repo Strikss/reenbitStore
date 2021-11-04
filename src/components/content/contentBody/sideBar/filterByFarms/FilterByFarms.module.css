@@ -2,15 +2,14 @@
   margin-bottom: 45px;
 }
 .title {
-  font-size: 22px;
+  font-size: 1.35rem;
   margin-bottom: 18px;
 }
 .oneBox {
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  font-size: 16px;
+  font-size: 1rem;
 }
 .oneBox:not(:first-child) {
   margin-top: 18px;

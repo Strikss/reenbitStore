@@ -1,3 +1,9 @@
 .container {
-  flex-basis: 100%;
+  width: 100%;
+}
+.noItems {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  height: 70%;
 }

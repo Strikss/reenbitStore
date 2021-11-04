@@ -2,9 +2,11 @@ import { useAppSelector } from "../../../hooks/selectorHook";
 import style from "./ContentHeader.module.css";
 
 const ContentHeader = () => {
+  //HOOKS
   const { filteredProductCount, productPortion } = useAppSelector(
     (state) => state.products
   );
+
   const productsOnPage =
     productPortion > filteredProductCount
       ? filteredProductCount

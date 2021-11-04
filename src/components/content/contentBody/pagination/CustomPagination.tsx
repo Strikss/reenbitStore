@@ -6,18 +6,24 @@ import { useAction } from "../../../../hooks/useAction";
 import React, { useEffect } from "react";
 
 const CustomPagination: React.FC = () => {
+  //HOOKS
   const { setCurrentPage, setProductPortion } = useAction();
   const { filteredProductCount, productPortion, currentPage, products } =
     useAppSelector((state) => state.products);
+
+  //PAGINATION
   const totalProductsCount = products.length;
   const numberOfPages = Math.ceil(filteredProductCount / productPortion);
+
+  //FUNCTIONS
   const onPageChange = (page: number) => {
     setCurrentPage(page);
     document.getElementById("scroller")?.scroll(0, 0);
   };
   useEffect(() => {
     currentPage > numberOfPages && setCurrentPage(1);
-  }, [numberOfPages]);
+    window.scrollTo(0, 0);
+  }, [numberOfPages, currentPage]);
 
   return (
     <div className={style.paginationContainer}>

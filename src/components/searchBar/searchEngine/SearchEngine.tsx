@@ -2,41 +2,29 @@ import style from "./SearchEngine.module.css";
 import searchLoop from "../../../assets/images/searchLoop.png";
 import React, { useState } from "react";
 import { useAction } from "../../../hooks/useAction";
+import DropDownMenu from "./DropDownMenu";
 
 const SearchEngine: React.FC = () => {
+  //HOOKS
   const { filterByName } = useAction();
 
-  const [dropDown, setDropDown] = useState(false);
-  const dropDownList = Array(5)
-    .fill(0)
-    .map((el) => <li onClick={() => setDropDown(!dropDown)}>category name</li>);
+  //FUNCTIONS
+  const setName = (e: any) => {
+    filterByName(e.target.value);
+  };
 
   return (
-    <div className={style.searchBarWrapper}>
-      <div className={style.formGroup}>
-        <div className={style.dropDown}>
-          <div
-            className={style.defaultOption}
-            onClick={() => setDropDown(!dropDown)}
-          >
-            <span className={style.categories}>All categories</span>
-          </div>
-          {dropDown && (
-            <div className={style.dropDownList}>
-              <ul>{dropDownList}</ul>
-            </div>
-          )}
-        </div>
-        <div className={style.search}>
-          <input
-            onChange={(e) => filterByName(e.target.value)}
-            type="text"
-            className={style.searchInput}
-            placeholder="Search Products, categories ..."
-          />
-        </div>
-        <img className={style.searchLoop} src={searchLoop} alt="img here" />
+    <div className={style.container}>
+      <DropDownMenu />
+      <div className={style.search}>
+        <input
+          onChange={setName}
+          type="text"
+          className={style.searchInput}
+          placeholder="Search Products, categories ..."
+        />
       </div>
+      <img className={style.searchLoop} src={searchLoop} alt="img here" />
     </div>
   );
 };
