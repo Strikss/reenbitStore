@@ -1,4 +1,4 @@
-import { ProductsType } from "../interfaces/product";
+import { ProductsType } from "../../interfaces/product";
 import { filterByCategories } from "./allFilters/filterByCategories";
 import { filterByName } from "./allFilters/filterByName";
 import { filterByStars } from "./allFilters/filterByStars";
