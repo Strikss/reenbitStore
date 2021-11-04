@@ -1,4 +1,15 @@
 .container {
   width: 100%;
-  background-color: rgba(0, 0, 255, 0.486);
+  background-color: rgba(60, 119, 65, 0.301);
+}
+.imageContainer {
+  display: grid;
+  grid-template: 2fr 1.5fr / 1fr 1fr;
+  background-color: rgba(0, 0, 255, 0.233);
+  gap: 26px;
+}
+.upperImage {
+  grid-column: span 2;
+  height: 280px;
+  background-color: aqua;
 }

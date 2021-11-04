@@ -1,0 +1,20 @@
+.container {
+  border-bottom: 1px solid #f5f5f5;
+}
+.wishList {
+  font-weight: 700;
+}
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.title:first-child {
+  border-bottom: 1px solid black;
+}
+.title:last-child {
+  margin-right: 50px;
+}

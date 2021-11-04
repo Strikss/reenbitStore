@@ -1,9 +1,10 @@
 import React from "react";
-import style from "./MainPart.module.css";
+import style from "./TopPart.module.css";
 import blackStar from "../../../../../assets/images/blackStar.svg";
 import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
+import Buttons from "./buttons/Buttons";
 
-const MainPart: React.FC = () => {
+const TopPart: React.FC = () => {
   //STARS
   const starsArray = Array(5).fill(0);
   const stars = starsArray.map((_, index) => (
@@ -63,16 +64,13 @@ const MainPart: React.FC = () => {
         <div>
           <h1>36.23 USD</h1>
           <p>
-            <s>48.56</s>
+            <s>48.56 USD</s>
           </p>
         </div>
-        <span>Button pcs</span>
-        <button className={style.button}>
-          <span className={style.plus}>+</span>Add to cart
-        </button>
+        <Buttons />
       </div>
     </div>
   );
 };
 
-export default MainPart;
+export default TopPart;

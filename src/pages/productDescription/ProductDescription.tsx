@@ -1,6 +1,6 @@
 import React from "react";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
-import ContentDescription from "../../components/contentProductDesc/ContentDescription";
+import ContentDesc from "../../components/contentProductDesc/ContentDesc";
 import Header from "../../components/header/Header";
 import Menu from "../../components/menu/Menu";
 import SearchBar from "../../components/searchBar/SearchBar";
@@ -13,7 +13,7 @@ const ProductDescription: React.FC = () => {
       <SearchBar />
       <Menu />
       <Breadcrumbs />
-      <ContentDescription />
+      <ContentDesc />
     </div>
   );
 };
