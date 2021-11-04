@@ -2,21 +2,4 @@
   width: 300px;
   flex-basis: 300px;
   padding-right: 50px;
-  overflow: auto;
-}
-@media (max-width: 1024px) {
-  .sideBarContainer {
-    height: 90vh;
-    width: 40vw;
-  }
-}
-@media (max-width: 584px) {
-  .sideBarContainer {
-    width: 60vw;
-  }
-}
-@media (max-width: 391px) {
-  .sideBarContainer {
-    width: 65vw;
-  }
 }
