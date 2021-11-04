@@ -6,11 +6,6 @@
 }
 @media (max-width: 768px) {
   .allProducts {
-    padding: 0 20px;
-  }
-}
-@media (max-width: 440px) {
-  .allProducts {
     padding: 0 8px;
   }
 }

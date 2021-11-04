@@ -44,6 +44,7 @@
   background-color: transparent;
   cursor: pointer;
   font-weight: 700;
+  white-space: nowrap;
 }
 .arrow {
   margin-left: 5px;
@@ -56,6 +57,12 @@
   }
 }
 @media (max-width: 440px) {
+  .dropButton {
+    font-size: 12px;
+  }
+  .dropDown {
+    padding-left: 5px;
+  }
   .searchLoop {
     margin-right: 0px;
   }
