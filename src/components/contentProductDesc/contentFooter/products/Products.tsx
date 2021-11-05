@@ -5,8 +5,12 @@ import style from "./Products.module.css";
 const Products: React.FC = () => {
   const Products = Array(5)
     .fill(0)
-    .map((el) => <Product />);
-  return <div className={style.container}>{Products}</div>;
+    .map((el, i) => (
+      <li key={i}>
+        <Product />
+      </li>
+    ));
+  return <ul className={style.container}>{Products}</ul>;
 };
 
 export default Products;

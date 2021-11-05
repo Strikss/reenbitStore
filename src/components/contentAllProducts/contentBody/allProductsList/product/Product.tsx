@@ -72,7 +72,9 @@ const Product: React.FC<Props> = ({ prod }) => {
             </div>
             <div className={style.buttons}>
               <button className={style.button}>
-                <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
+                <NavLink
+                  to={RouteNames.PRODUCT_DESCRIPTION + `/${prod.itemID}`}
+                >
                   Product Detail <img src={productArrow} alt="arrow" />
                 </NavLink>
               </button>

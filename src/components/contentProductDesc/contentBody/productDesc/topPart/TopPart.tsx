@@ -3,15 +3,22 @@ import style from "./TopPart.module.css";
 import blackStar from "../../../../../assets/images/blackStar.svg";
 import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
 import Buttons from "./buttons/Buttons";
+import { ProductsType } from "../../../../../interfaces/product";
 
-const TopPart: React.FC = () => {
+interface Props {
+  product: ProductsType | undefined;
+}
+
+const TopPart: React.FC<Props> = ({ product }) => {
+  //Hooks
+
   //STARS
   const starsArray = Array(5).fill(0);
   const stars = starsArray.map((_, index) => (
     <li key={index}>
       <img
         className={style.star}
-        src={5 > index ? blackStar : whiteStar}
+        src={product!.rating > index ? blackStar : whiteStar}
         alt="star"
       />
     </li>
@@ -19,7 +26,7 @@ const TopPart: React.FC = () => {
 
   return (
     <div className={style.container}>
-      <h1>Header here</h1>
+      <h1>{product?.name}</h1>
       <div className={style.ratingContainer}>
         <ul className={style.starContainer}>{stars}</ul>
         <span>(1 customer review)</span>

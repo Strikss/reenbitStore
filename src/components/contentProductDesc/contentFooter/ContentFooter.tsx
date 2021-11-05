@@ -3,9 +3,6 @@ import style from "./ContentFooter.module.css";
 import Products from "./products/Products";
 
 const ContentFooter: React.FC = () => {
-  const array = Array(5).fill(0);
-  console.log(array);
-
   return (
     <div className={style.container}>
       <div className={style.titleContainer}>

@@ -1,3 +1,4 @@
+import { SET_CURRENT_ID } from "./../types/allProducts/constansts";
 import {
   AllProductsState,
   AllProductsAction,
@@ -31,6 +32,9 @@ const initialState: AllProductsState = {
       description: "",
       rating: 0,
       image: "",
+      country: "",
+      deliverIn: 0,
+      color: "",
     },
   ],
   filterName: "",
@@ -42,6 +46,7 @@ const initialState: AllProductsState = {
   sortBy: "",
   filterFarms: [""],
   filterPrice: [0],
+  currentID: "",
 };
 
 export const allProducts = (
@@ -110,6 +115,12 @@ export const allProducts = (
         filterFarms: [""],
         filterPrice: [0],
       };
+    case SET_CURRENT_ID: {
+      return {
+        ...state,
+        currentID: action.payload,
+      };
+    }
     default:
       return state;
   }

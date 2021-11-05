@@ -2,12 +2,17 @@ import React from "react";
 import TopPart from "./topPart/TopPart";
 import style from "./ProductDesc.module.css";
 import BottomPart from "./bottomPart/BottomPart";
+import { ProductsType } from "../../../../interfaces/product";
 
-const ProductDesc: React.FC = () => {
+interface Props {
+  product: ProductsType | undefined;
+}
+
+const ProductDesc: React.FC<Props> = ({ product }) => {
   return (
     <div className={style.container}>
-      <TopPart />
-      <BottomPart />
+      <TopPart product={product} />
+      <BottomPart product={product} />
     </div>
   );
 };

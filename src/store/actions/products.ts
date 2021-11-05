@@ -1,3 +1,4 @@
+import { SET_CURRENT_ID } from "./../types/allProducts/constansts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { AllProductsAction } from "../types/allProducts/allProducts";
@@ -66,5 +67,11 @@ export const filterByPrice = (price: number[]): AllProductsAction => {
 export const reset = (): AllProductsAction => {
   return {
     type: RESET,
+  };
+};
+export const setCurrentID = (id: string): AllProductsAction => {
+  return {
+    type: SET_CURRENT_ID,
+    payload: id,
   };
 };

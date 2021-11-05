@@ -1,8 +1,13 @@
 import React from "react";
 import style from "./BottomPart.module.css";
 import heart from "../../../../../assets/images/heart.svg";
+import { ProductsType } from "../../../../../interfaces/product";
 
-const BottomPart: React.FC = () => {
+interface Props {
+  product: ProductsType | undefined;
+}
+
+const BottomPart: React.FC<Props> = ({ product }) => {
   return (
     <div className={style.container}>
       <div className={style.wishList}>
