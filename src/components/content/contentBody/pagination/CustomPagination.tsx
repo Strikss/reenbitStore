@@ -18,7 +18,9 @@ const CustomPagination: React.FC = () => {
   //FUNCTIONS
   const onPageChange = (page: number) => {
     setCurrentPage(page);
-    document.getElementById("scroller")?.scroll(0, 0);
+    document
+      .getElementById("scroller")
+      ?.scroll({ top: 0, left: 0, behavior: "smooth" });
   };
   useEffect(() => {
     currentPage > numberOfPages && setCurrentPage(1);
