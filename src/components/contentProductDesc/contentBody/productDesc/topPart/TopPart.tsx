@@ -31,12 +31,7 @@ const TopPart: React.FC<Props> = ({ product }) => {
         <ul className={style.starContainer}>{stars}</ul>
         <span>(1 customer review)</span>
       </div>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-        voluptatum eos aut maxime odit illo voluptate aspernatur deserunt?
-        Consectetur, nam beatae nesciunt accusamus exercitationem soluta
-        quibusdam ea alias tenetur doloremque?
-      </p>
+      <p>{product?.description}</p>
       <div className={style.valuesContainer}>
         <div className={style.left}>
           <ul className={style.listTitleContainer}>
@@ -46,10 +41,10 @@ const TopPart: React.FC<Props> = ({ product }) => {
             <li className={style.listTitle}>Color:</li>
           </ul>
           <ul className={style.listDescriptionContainer}>
-            <li className={style.listTitle}>7776</li>
-            <li className={style.listTitle}>vegetables</li>
-            <li className={style.listTitle}>in Stock</li>
-            <li className={style.listTitle}>White blue</li>
+            <li className={style.listTitle}>{product?.country}</li>
+            <li className={style.listTitle}>{product?.category}</li>
+            <li className={style.listTitle}>{product?.stock}</li>
+            <li className={style.listTitle}>{product?.color}</li>
           </ul>
         </div>
         <div className={style.right}>
