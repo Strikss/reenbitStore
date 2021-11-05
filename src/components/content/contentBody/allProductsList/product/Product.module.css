@@ -208,6 +208,9 @@
   .content {
     grid-template-columns: 1fr 1fr;
   }
+  .rightSide {
+    align-items: flex-end;
+  }
   .wishList {
     padding: 7px;
     font-size: 0.8rem;
@@ -236,7 +239,6 @@
   .buttons {
     align-items: flex-start;
   }
-
   .discountPrice {
     font-size: 1.2rem;
   }
