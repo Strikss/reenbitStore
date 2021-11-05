@@ -3,7 +3,8 @@ import Product from "./product/Product";
 import style from "./AllProductsList.module.css";
 import { useAction } from "../../../../hooks/useAction";
 import { useEffect } from "react";
-import mainFilter from "../../../mainFilter/mainFilter";
+import mainFilter from "../../../../helpers/mainFilter/mainFilter";
+import noItemsGif from "../../../../assets/images/noITEMS.gif";
 
 const AllProductsList: React.FC = () => {
   //HOOKS
@@ -40,7 +41,9 @@ const AllProductsList: React.FC = () => {
     filterProductCount(filteredProducts.length);
   }, [filteredProducts.length]);
 
-  return (
+  return filteredProducts.length === 0 ? (
+    <img className={style.noItems} src={noItemsGif} alt="" />
+  ) : (
     <div className={style.container}>
       {filteredProducts.slice(from, to).map((prod) => (
         <Product prod={prod} key={prod.itemID} />

@@ -11,7 +11,6 @@
   font-weight: 700;
 }
 .dropDown {
-  font-size: 14px;
   width: 140px;
   padding-left: 13px;
   border-right: 2px solid;
@@ -29,7 +28,7 @@
   border: transparent;
   outline: transparent;
   color: black;
-  font-size: 15px;
+  font-size: 1rem;
 }
 .searchLoop {
   width: 15px;

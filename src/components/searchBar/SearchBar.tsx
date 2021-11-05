@@ -9,7 +9,9 @@ import { NavLink } from "react-router-dom";
 const SearchBar: React.FC = () => {
   return (
     <div className={style.container}>
-      <h1 className={style.header}>Freshnesecom</h1>
+      <h1 className={style.header}>
+        <a href="#">Freshnesecom</a>
+      </h1>
       <SearchEngine />
       <ul className={style.checkout}>
         <li>

@@ -16,6 +16,7 @@ const DropDownMenu = () => {
   const unicCategories = categories.filter(
     (value, index, self) => self.indexOf(value) === index
   );
+
   //DROP DOWN
   const dropDownList = unicCategories.map((el, index) => (
     <Menu.Item key={index + 1} onClick={() => setCategory(el)}>
