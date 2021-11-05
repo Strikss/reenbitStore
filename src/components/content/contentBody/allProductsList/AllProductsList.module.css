@@ -4,8 +4,8 @@
 .noItems {
   display: flex;
   justify-content: center;
-  width: 75%;
-  height: 70%;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 768px) {
