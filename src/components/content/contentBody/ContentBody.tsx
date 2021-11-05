@@ -7,7 +7,10 @@ import { Drawer } from "antd";
 import filter from "../../../assets/images/filter.png";
 
 const ContentBody: React.FC = () => {
+  //Hooks
   const [visible, setVisible] = useState(false);
+
+  //Functions
   const showDrawer = () => {
     setVisible(true);
   };
@@ -27,7 +30,7 @@ const ContentBody: React.FC = () => {
           placement="left"
           onClose={onClose}
           visible={visible}
-          width="80vw"
+          width="81vw"
         >
           <SideBar />
         </Drawer>
