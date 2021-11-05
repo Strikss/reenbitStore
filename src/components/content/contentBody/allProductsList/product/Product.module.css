@@ -130,6 +130,19 @@
   display: flex;
   flex-direction: column;
 }
+.mobileTitle {
+  flex-direction: row;
+  justify-content: space-between;
+  display: none;
+  align-items: flex-start;
+}
+.pricesContainerMobile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 7px;
+}
+
 @media (max-width: 768px) {
   .container {
     display: flex;
@@ -137,11 +150,24 @@
     width: 100%;
     height: 100%;
   }
+  .mainTitle {
+    display: none;
+  }
+  .leftBottomPart {
+    margin-bottom: 10px;
+  }
+  .mobileTitle {
+    display: flex;
+  }
+  .pricesContainer {
+    display: none;
+  }
   .content {
     display: grid;
     grid-template-rows: max-content;
     padding: 10px;
   }
+
   .imgBx {
     object-fit: fill;
   }
@@ -158,7 +184,6 @@
   .button {
     width: 100%;
     height: 36px;
-    font-size: 16px;
     font-size: 0.9rem;
   }
   .starContainer {
@@ -174,13 +199,33 @@
     font-size: 1.7rem;
     margin-bottom: 0px;
   }
-  .leftBottomPart,
-  .transfer,
-  .description {
+
+  .transfer {
     display: none;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 549px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .wishList {
+    padding: 7px;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  .button {
+    width: 100%;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+  .leftBottomPart {
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+  .listTitleContainer {
+    margin-right: 4px;
+  }
+
   .title {
     font-size: 1.3rem;
   }
@@ -194,5 +239,17 @@
 
   .discountPrice {
     font-size: 1.2rem;
+  }
+  .mobileTitle {
+    display: none;
+  }
+  .mainTitle {
+    display: block;
+  }
+  .leftBottomPart {
+    margin-bottom: 10px;
+  }
+  .pricesContainer {
+    display: flex;
   }
 }

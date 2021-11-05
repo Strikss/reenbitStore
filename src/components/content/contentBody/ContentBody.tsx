@@ -27,7 +27,7 @@ const ContentBody: React.FC = () => {
           placement="left"
           onClose={onClose}
           visible={visible}
-          width="400px"
+          width="80vw"
         >
           <SideBar />
         </Drawer>
