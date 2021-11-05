@@ -2,10 +2,6 @@ import React from "react";
 import style from "./Product.module.css";
 
 const Product: React.FC = () => {
-  const array = ["misha", "misha", "vasia", "katya", "katya"];
-  const unique = Array.from(new Set([...array]));
-  console.log(unique);
-
   return (
     <div className={style.container}>
       <div className={style.image}>image here</div>

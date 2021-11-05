@@ -1,6 +1,7 @@
 import React from "react";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import ContentDesc from "../../components/contentProductDesc/ContentDesc";
+import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Menu from "../../components/menu/Menu";
 import SearchBar from "../../components/searchBar/SearchBar";
@@ -14,6 +15,7 @@ const ProductDescription: React.FC = () => {
       <Menu />
       <Breadcrumbs />
       <ContentDesc />
+      <Footer />
     </div>
   );
 };
