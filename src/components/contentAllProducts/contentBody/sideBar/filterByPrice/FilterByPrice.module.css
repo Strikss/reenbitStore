@@ -1,6 +1,7 @@
 .filterContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .minMaxContainer {
   display: flex;
@@ -9,7 +10,8 @@
   margin-top: 16px;
 }
 .box {
-  width: 109px;
+  width: 104px;
+  min-width: 80.42px;
   height: 42px;
   background-color: #b9b6b625;
   border-radius: 12px;

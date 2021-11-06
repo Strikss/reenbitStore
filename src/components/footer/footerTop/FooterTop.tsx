@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import style from "./FooterTop.module.css";
 
@@ -21,9 +22,9 @@ const FooterTop: React.FC = () => {
           </li>
         </ul>
       </div>
-      <div className={style.onePortion}>
+      <div className={style.secondPortion}>
         <h1 className={style.title}>Connections</h1>
-        <ul className={style.item}>
+        <ul className={style.secondItem}>
           <li className={style.descriptionTitle}>
             <a href="#">Facebook</a>
           </li>
@@ -55,18 +56,16 @@ const FooterTop: React.FC = () => {
           </li>
         </ul>
       </div>
-      <div className={style.onePortion}>
+      <div className={style.secondPortion}>
         <h1 className={style.title}>Account</h1>
-        <ul className={style.item}>
+        <ul className={style.secondItem}>
           <li className={style.descriptionTitle}>
             <a href="#">Your account</a>
           </li>
           <li className={style.descriptionTitle}>
             <a href="#">Returns Centre</a>
           </li>
-          <li className={style.descriptionTitle}>
-            <a href="#">100 % purchase protection</a>
-          </li>
+
           <li className={style.descriptionTitle}>
             <a href="#">Chut with us</a>
           </li>

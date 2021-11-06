@@ -19,7 +19,11 @@ const SearchBar: React.FC = () => {
         </li>
         <li>
           <NavLink to={RouteNames.SHOPPING_CART}>
-            <img src={shoppingBag} alt="shoppingBag" />
+            <img
+              src={shoppingBag}
+              alt="shoppingBag"
+              className={style.shoppingBag}
+            />
           </NavLink>
         </li>
       </ul>

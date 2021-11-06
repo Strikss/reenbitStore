@@ -15,3 +15,8 @@
 .item img {
   margin-left: 5px;
 }
+@media (max-width: 620px) {
+  .menuWrapper {
+    display: none;
+  }
+}
