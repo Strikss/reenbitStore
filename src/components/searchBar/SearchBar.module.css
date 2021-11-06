@@ -41,6 +41,7 @@
   .checkout {
     display: flex;
     justify-content: flex-end;
+    margin-left: 7px;
   }
 }
 @media (max-width: 425px) {

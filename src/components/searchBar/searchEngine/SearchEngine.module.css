@@ -7,7 +7,6 @@
   width: 60%;
   height: 44px;
   padding: 10px;
-  border-radius: 12px;
   font-weight: 700;
 }
 .dropDown {
@@ -50,9 +49,10 @@
   margin-left: 5px;
   width: 7px;
 }
-@media (max-width: 902px) {
+@media (max-width: 866px) {
   .container {
     width: 100%;
+    margin-left: 10px;
     margin-right: 10px;
   }
   .dropDown {

@@ -24,7 +24,6 @@ const CustomPagination: React.FC = () => {
   };
   useEffect(() => {
     currentPage > numberOfPages && setCurrentPage(1);
-    window.scrollTo(0, 0);
   }, [numberOfPages, currentPage]);
 
   return (
@@ -46,6 +45,7 @@ const CustomPagination: React.FC = () => {
         onChange={onPageChange}
         current={currentPage}
         pageSize={productPortion}
+        hideOnSinglePage
       />
       {productPortion < filteredProductCount && numberOfPages !== currentPage && (
         <button className={style.button} onClick={() => setProductPortion()}>
