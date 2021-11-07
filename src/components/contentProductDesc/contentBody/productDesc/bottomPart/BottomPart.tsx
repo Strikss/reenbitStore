@@ -4,7 +4,7 @@ import heart from "../../../../../assets/images/heart.svg";
 import { ProductsType } from "../../../../../interfaces/product";
 
 interface Props {
-  product: ProductsType | undefined;
+  product: ProductsType;
 }
 
 const BottomPart: React.FC<Props> = ({ product }) => {

@@ -6,12 +6,10 @@ import Buttons from "./buttons/Buttons";
 import { ProductsType } from "../../../../../interfaces/product";
 
 interface Props {
-  product: ProductsType | undefined;
+  product: ProductsType;
 }
 
 const TopPart: React.FC<Props> = ({ product }) => {
-  //Hooks
-
   //STARS
   const starsArray = Array(5).fill(0);
   const stars = starsArray.map((_, index) => (
@@ -26,12 +24,17 @@ const TopPart: React.FC<Props> = ({ product }) => {
 
   return (
     <div className={style.container}>
-      <h1>{product?.name}</h1>
+      <h1 className={style.header}>{product?.name}</h1>
       <div className={style.ratingContainer}>
         <ul className={style.starContainer}>{stars}</ul>
-        <span>(1 customer review)</span>
+        <span className={style.review}>(1 customer review)</span>
       </div>
-      <p>{product?.description}</p>
+      <p className={style.description}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quas at
+        soluta aspernatur rem eligendi, hic nostrum voluptas ipsam ex sint,
+        nesciunt porro itaque natus quisquam ratione eveniet molestias
+        obcaecati.
+      </p>
       <div className={style.valuesContainer}>
         <div className={style.left}>
           <ul className={style.listTitleContainer}>
@@ -57,16 +60,20 @@ const TopPart: React.FC<Props> = ({ product }) => {
           <ul className={style.listDescriptionContainer}>
             <li className={style.listTitle}>all sizes</li>
             <li className={style.listTitle}>pcs,kgs,box,pack</li>
-            <li className={style.listTitle}>in 2 days</li>
-            <li className={style.listTitle}>Czech republic</li>
+            <li className={style.listTitle}>{product?.deliverIn}</li>
+            <li className={style.listTitle}>{product?.delivery}</li>
           </ul>
         </div>
       </div>
       <div className={style.buyContainer}>
         <div>
-          <h1>36.23 USD</h1>
+          <h1>
+            {product?.priceHalf.toFixed(2)} <span> USD</span>
+          </h1>
           <p>
-            <s>48.56 USD</s>
+            <s>
+              {product?.priceFull.toFixed(2)} <span>USD</span>
+            </s>
           </p>
         </div>
         <Buttons />

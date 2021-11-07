@@ -11,7 +11,7 @@ const ContentBody: React.FC = () => {
 
   return selectedProduct ? (
     <div className={style.container}>
-      <ProductImage />
+      <ProductImage product={selectedProduct} />
       <ProductDesc product={selectedProduct} />
     </div>
   ) : (

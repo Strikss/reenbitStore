@@ -80,7 +80,9 @@ const Product: React.FC<Props> = ({ prod }) => {
                 {prod.priceHalf.toFixed(2)} <span>USD</span>
               </h1>
               <p className={style.fullPrice}>
-                <s>{prod.priceFull.toFixed(2)}</s>
+                <s>
+                  {prod.priceFull.toFixed(2)} <span>USD</span>
+                </s>
               </p>
             </div>
             <div className={style.transfer}>

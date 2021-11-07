@@ -10,18 +10,10 @@ const Buttons: React.FC = () => {
   //DROPDOWN
   const menu = (
     <Menu>
-      <Menu.Item key={"0"} onClick={() => setAmouth("Pcs")}>
-        Pcs
-      </Menu.Item>
-      <Menu.Item key={"1"} onClick={() => setAmouth("Kgs")}>
-        Kgs
-      </Menu.Item>
-      <Menu.Item key={"2"} onClick={() => setAmouth("Box")}>
-        Box
-      </Menu.Item>
-      <Menu.Item key={"3"} onClick={() => setAmouth("Pack")}>
-        Pack
-      </Menu.Item>
+      <Menu.Item onClick={() => setAmouth("Pcs")}>Pcs</Menu.Item>
+      <Menu.Item onClick={() => setAmouth("Kgs")}>Kgs</Menu.Item>
+      <Menu.Item onClick={() => setAmouth("Box")}>Box</Menu.Item>
+      <Menu.Item onClick={() => setAmouth("Pack")}>Pack</Menu.Item>
     </Menu>
   );
 

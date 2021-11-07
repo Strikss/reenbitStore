@@ -5,7 +5,7 @@ import BottomPart from "./bottomPart/BottomPart";
 import { ProductsType } from "../../../../interfaces/product";
 
 interface Props {
-  product: ProductsType | undefined;
+  product: ProductsType;
 }
 
 const ProductDesc: React.FC<Props> = ({ product }) => {

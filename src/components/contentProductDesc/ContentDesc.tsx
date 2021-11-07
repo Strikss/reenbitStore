@@ -6,7 +6,7 @@ import style from "./ContentDesc.module.css";
 import ContentFooter from "./contentFooter/ContentFooter";
 
 const ContentDesc: React.FC = () => {
-  //hooks
+  //HOOKS
   const { id } = useParams<{ id: string }>();
   const { setCurrentID } = useAction();
   useEffect(() => {
