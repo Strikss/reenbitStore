@@ -1,19 +1,21 @@
 import React from "react";
 import { useAppSelector } from "../../../../hooks/selectorHook";
+import { ProductsType } from "../../../../interfaces/product";
 import Product from "./product/Product";
 import style from "./Products.module.css";
 
-const Products: React.FC = () => {
-  //HOOKS
-  const { products, currentID, currentPage, productPortion } = useAppSelector(
-    (state) => state.products
-  );
-  //PAGINATION
-  const from = currentPage * productPortion - productPortion;
-  const to = currentPage * productPortion;
+interface Props {
+  filteredProducts: ProductsType[];
+}
 
-  //FILTERED PRODUCTS
-  const filteredProducts = products.filter((prod) => prod.itemID !== currentID);
+const Products: React.FC<Props> = ({ filteredProducts }) => {
+  //HOOKS
+  const { productPortion } = useAppSelector((state) => state.products);
+  //PAGINATION
+  const from = 0;
+  const to = productPortion;
+
+  //CLEAN PRODUCTS
   const moreProducts = filteredProducts.slice(from, to).map((prod, i) => (
     <li key={i}>
       <Product product={prod} />

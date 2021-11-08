@@ -12,8 +12,22 @@
   transform: rotate(-90deg);
   width: 13px;
 }
-.rightTitle :hover {
+.rightTitle {
+  background-color: transparent;
+  outline: transparent;
+  border: transparent;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.rightTitle:hover {
   cursor: pointer;
   color: rgba(95, 151, 93, 0.753);
   transition: 0.5s;
+}
+.rightTitle:disabled {
+  color: rgba(141, 139, 139, 0.842);
+}
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { ProductsType } from "../../../../../interfaces/product";
-import ProductDesc from "../../../contentBody/productDesc/ProductDesc";
 import style from "./Product.module.css";
 
 interface Props {
@@ -30,7 +29,7 @@ const Product: React.FC<Props> = ({ product }) => {
         <div className={style.bottomPart}>
           <div className={style.priceContainer}>
             <h1 className={style.priceHalf}>
-              {product.priceHalf.toFixed(2)} <span> USD</span>
+              {product.priceHalf.toFixed(2)} <span>USD</span>
             </h1>
             <p className={style.priceFull}>
               <s>
