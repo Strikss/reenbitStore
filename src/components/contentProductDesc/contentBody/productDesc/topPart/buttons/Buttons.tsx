@@ -33,7 +33,8 @@ const Buttons: React.FC = () => {
         </div>
       </div>
       <button className={style.button}>
-        <span className={style.plus}>+</span>Add to cart
+        <span className={style.plus}>+</span>
+        Add to cart
       </button>
     </div>
   );

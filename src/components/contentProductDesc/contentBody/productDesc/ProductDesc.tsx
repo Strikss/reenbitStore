@@ -12,7 +12,7 @@ const ProductDesc: React.FC<Props> = ({ product }) => {
   return (
     <div className={style.container}>
       <TopPart product={product} />
-      <BottomPart product={product} />
+      <BottomPart />
     </div>
   );
 };

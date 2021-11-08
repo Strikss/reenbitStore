@@ -5,7 +5,10 @@
 .titleContainer {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 37px;
 }
-.productContainer {
-  display: flex;
+.arrow {
+  margin-left: 10px;
+  transform: rotate(-90deg);
+  width: 13px;
 }

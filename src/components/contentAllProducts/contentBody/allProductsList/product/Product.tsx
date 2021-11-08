@@ -70,7 +70,9 @@ const Product: React.FC<Props> = ({ prod }) => {
                 <li className={style.listTitle}>{prod.freshness}</li>
                 <li className={style.listTitle}>{prod.farm}</li>
                 <li className={style.listTitle}>{prod.delivery}</li>
-                <li className={style.listTitle}>{prod.stock}</li>
+                <li className={style.listTitle}>
+                  <span className={style.supply}>{`${prod.stock} pcs`}</span>
+                </li>
               </ul>
             </div>
           </div>
