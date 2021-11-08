@@ -12,3 +12,8 @@
   transform: rotate(-90deg);
   width: 13px;
 }
+.rightTitle :hover {
+  cursor: pointer;
+  color: rgba(95, 151, 93, 0.753);
+  transition: 0.5s;
+}

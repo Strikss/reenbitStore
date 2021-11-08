@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import ContentDesc from "../../components/contentProductDesc/ContentDesc";
 import Footer from "../../components/footer/Footer";
@@ -9,10 +10,14 @@ import { useAction } from "../../hooks/useAction";
 import style from "./ProductDescription.module.css";
 
 const ProductDescription: React.FC = () => {
-  const { fetchProducts } = useAction();
+  //HOOKS
+  const { id } = useParams<{ id: string }>();
+  const { setCurrentID, reset, fetchProducts } = useAction();
   useEffect(() => {
+    reset();
     fetchProducts();
-  }, []);
+    setCurrentID(id);
+  }, [id]);
 
   return (
     <div className={style.ProductDescription}>

@@ -40,7 +40,7 @@ const initialState: AllProductsState = {
   filterName: "",
   filterStars: [0],
   currentPage: 1,
-  productPortion: 5,
+  productPortion: 4,
   filteredProductCount: 0,
   filterCategories: "",
   sortBy: "",
@@ -81,7 +81,7 @@ export const allProducts = (
         currentPage: action.payload,
       };
     case SET_PRODUCT_PORTION:
-      const newProductPortion = state.productPortion * 2;
+      const newProductPortion = state.productPortion + 4;
       return {
         ...state,
         productPortion: newProductPortion,
@@ -109,7 +109,7 @@ export const allProducts = (
         filterName: "",
         filterStars: [0],
         currentPage: 1,
-        productPortion: 5,
+        productPortion: 4,
         filterCategories: "",
         sortBy: "",
         filterFarms: [""],
