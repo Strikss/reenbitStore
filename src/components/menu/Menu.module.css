@@ -1,6 +1,6 @@
 .menuWrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   flex-wrap: wrap;
   border: 1px solid transparent;
@@ -14,4 +14,9 @@
 }
 .item img {
   margin-left: 5px;
+}
+@media (max-width: 620px) {
+  .menuWrapper {
+    display: none;
+  }
 }

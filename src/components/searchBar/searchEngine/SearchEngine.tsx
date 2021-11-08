@@ -1,6 +1,6 @@
 import style from "./SearchEngine.module.css";
 import searchLoop from "../../../assets/images/searchLoop.png";
-import React, { useState } from "react";
+import React from "react";
 import { useAction } from "../../../hooks/useAction";
 import DropDownMenu from "./DropDownMenu";
 
@@ -9,7 +9,7 @@ const SearchEngine: React.FC = () => {
   const { filterByName } = useAction();
 
   //FUNCTIONS
-  const setName = (e: any) => {
+  const setName = (e: React.ChangeEvent<HTMLInputElement>) => {
     filterByName(e.target.value);
   };
 
@@ -21,10 +21,10 @@ const SearchEngine: React.FC = () => {
           onChange={setName}
           type="text"
           className={style.searchInput}
-          placeholder="Search Products, categories ..."
+          placeholder="I'm looking ..."
         />
+        <img className={style.searchLoop} src={searchLoop} alt="img here" />
       </div>
-      <img className={style.searchLoop} src={searchLoop} alt="img here" />
     </div>
   );
 };

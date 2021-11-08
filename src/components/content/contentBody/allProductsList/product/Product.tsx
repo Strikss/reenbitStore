@@ -28,26 +28,46 @@ const Product: React.FC<Props> = ({ prod }) => {
     <>
       <div className={style.container}>
         <div className={style.imgBx}>
-          <img
-            className={style.productImage}
-            src={prod.image}
-            alt="Product Image"
-          />
+          <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
+            <img
+              className={style.productImage}
+              src={prod.image}
+              alt="Product Image"
+            />
+          </NavLink>
         </div>
+
         <div className={style.content}>
           <div className={style.leftSide}>
             <div className={style.leftTopPart}>
-              <h1 className={style.title}>{prod.name}</h1>
+              {/*mobile part title*/}
+              <div className={style.mobileTitle}>
+                <div>
+                  <h1 className={style.title}>{prod.name}</h1>
+                </div>
+                <div className={style.pricesContainerMobile}>
+                  <h1 className={style.discountPrice}>
+                    {prod.priceHalf.toFixed(2)} <span>USD</span>
+                  </h1>
+                  <p className={style.fullPrice}>
+                    <s>{prod.priceFull.toFixed(2)}</s>
+                  </p>
+                </div>
+              </div>
+              {/*mobile part title end*/}
+              <div className={style.mainTitle}>
+                <h1 className={style.title}>{prod.name}</h1>
+              </div>
+
               <p className={style.description}>{prod.description}</p>
               <ul className={style.starContainer}>{stars}</ul>
             </div>
-
             <div className={style.leftBottomPart}>
               <ul className={style.listTitleContainer}>
-                <li className={style.listTitle}>Freshness</li>
-                <li className={style.listTitle}>Farm</li>
-                <li className={style.listTitle}>Delivery</li>
-                <li className={style.listTitle}>Stock</li>
+                <li className={style.listTitle}>Freshness:</li>
+                <li className={style.listTitle}>Farm:</li>
+                <li className={style.listTitle}>Delivery:</li>
+                <li className={style.listTitle}>Stock:</li>
               </ul>
               <ul className={style.listDescriptionContainer}>
                 <li className={style.listTitle}>{prod.freshness}</li>
@@ -76,7 +96,6 @@ const Product: React.FC<Props> = ({ prod }) => {
                   Product Detail <img src={productArrow} alt="arrow" />
                 </NavLink>
               </button>
-
               <div className={style.wishList}>
                 <img src={heart} alt="heart" /> <span> Add to wish list</span>
               </div>

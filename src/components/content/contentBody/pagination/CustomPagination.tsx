@@ -18,11 +18,12 @@ const CustomPagination: React.FC = () => {
   //FUNCTIONS
   const onPageChange = (page: number) => {
     setCurrentPage(page);
-    document.getElementById("scroller")?.scroll(0, 0);
+    document
+      .getElementById("scroller")
+      ?.scroll({ top: 0, left: 0, behavior: "smooth" });
   };
   useEffect(() => {
     currentPage > numberOfPages && setCurrentPage(1);
-    window.scrollTo(0, 0);
   }, [numberOfPages, currentPage]);
 
   return (
@@ -36,13 +37,23 @@ const CustomPagination: React.FC = () => {
         current={currentPage}
         pageSize={productPortion}
       />
+      <Pagination
+        className={style.mobilePagination}
+        simple
+        size="small"
+        total={filteredProductCount}
+        onChange={onPageChange}
+        current={currentPage}
+        pageSize={productPortion}
+        hideOnSinglePage
+      />
       {productPortion < filteredProductCount && numberOfPages !== currentPage && (
         <button className={style.button} onClick={() => setProductPortion()}>
           Show more products
           <img className={style.arrow} src={productArrow} alt="arrow" />
         </button>
       )}
-      <div>
+      <div className={style.countContainer}>
         <span className={style.totalProductsCount}>{totalProductsCount}</span>
         <span className={style.products}>Products</span>
       </div>
