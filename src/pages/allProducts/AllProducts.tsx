@@ -10,7 +10,6 @@ import Footer from "../../components/footer/Footer";
 
 const AllProducts: React.FC = () => {
   //HOOKS
-
   const { fetchProducts, reset } = useAction();
   useEffect(() => {
     reset();
