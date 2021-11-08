@@ -28,12 +28,15 @@ const Product: React.FC<Props> = ({ prod }) => {
     <>
       <div className={style.container}>
         <div className={style.imgBx}>
-          <img
-            className={style.productImage}
-            src={prod.image}
-            alt="Product Image"
-          />
+          <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
+            <img
+              className={style.productImage}
+              src={prod.image}
+              alt="Product Image"
+            />
+          </NavLink>
         </div>
+
         <div className={style.content}>
           <div className={style.leftSide}>
             <div className={style.leftTopPart}>
