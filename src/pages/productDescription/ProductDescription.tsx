@@ -17,10 +17,13 @@ const ProductDescription: React.FC = () => {
     reset();
     fetchProducts();
     setCurrentID(id);
+    document
+      .getElementById("productDescription")
+      ?.scroll({ top: 0, left: 0, behavior: "smooth" });
   }, [id]);
 
   return (
-    <div className={style.ProductDescription}>
+    <div className={style.ProductDescription} id="productDescription">
       <Header />
       <SearchBar />
       <Menu />

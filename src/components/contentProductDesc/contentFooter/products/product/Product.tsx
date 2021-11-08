@@ -1,5 +1,7 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { ProductsType } from "../../../../../interfaces/product";
+import { RouteNames } from "../../../../../router/router";
 import style from "./Product.module.css";
 
 interface Props {
@@ -12,14 +14,16 @@ const Product: React.FC<Props> = ({ product }) => {
   return (
     <div className={style.container}>
       <div className={style.imageContainer}>
-        {discount && (
-          <p className={style.discount}>{`- ${discount.toFixed(0)} %`}</p>
-        )}
-        <img
-          className={style.productImage}
-          src={product.image}
-          alt="product Image"
-        />
+        <NavLink to={RouteNames.PRODUCT_DESCRIPTION + `/${product.itemID}`}>
+          {discount && (
+            <p className={style.discount}>{`- ${discount.toFixed(0)} %`}</p>
+          )}
+          <img
+            className={style.productImage}
+            src={product.image}
+            alt="product Image"
+          />
+        </NavLink>
       </div>
       <div className={style.description}>
         <div className={style.topPart}>
