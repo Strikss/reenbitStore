@@ -4,10 +4,9 @@
   border-radius: 12px;
   display: flex;
   align-items: center;
-  width: 500px;
+  width: 60%;
   height: 44px;
   padding: 10px;
-  border-radius: 12px;
   font-weight: 700;
 }
 .dropDown {
@@ -19,12 +18,14 @@
 
 .search {
   display: flex;
-  padding-left: 24px;
-  width: 300px;
+  padding-left: 23px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   height: 100%;
 }
 .searchInput {
-  width: 262px;
+  width: 100%;
   border: transparent;
   outline: transparent;
   color: black;
@@ -33,6 +34,7 @@
 .searchLoop {
   width: 15px;
   height: 15px;
+  margin-right: 15px;
 }
 .dropButton {
   display: flex;
@@ -41,8 +43,34 @@
   background-color: transparent;
   cursor: pointer;
   font-weight: 700;
+  white-space: nowrap;
 }
 .arrow {
   margin-left: 5px;
   width: 7px;
+}
+@media (max-width: 866px) {
+  .container {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .dropDown {
+    padding-left: 5px;
+  }
+}
+@media (max-width: 425px) {
+  .dropButton {
+    font-size: 12px;
+  }
+  .searchLoop {
+    margin-right: 0px;
+  }
+  .container {
+    padding-left: 0px;
+    margin: 0;
+  }
+  .search {
+    padding-left: 12px;
+  }
 }

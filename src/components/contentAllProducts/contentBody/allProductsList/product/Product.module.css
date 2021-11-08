@@ -3,7 +3,6 @@
   border: 1px solid #d1d1d1;
   border-radius: 12px;
   height: 280px;
-  min-width: 700px;
   margin-bottom: 32px;
 }
 
@@ -92,7 +91,7 @@
   letter-spacing: 1.1px;
   font-weight: 700;
   font-size: 1rem;
-  height: 54px;
+  height: 42px;
   white-space: nowrap;
   max-width: 155px;
   background-color: #6a983c;
@@ -130,4 +129,129 @@
 .pricesContainer {
   display: flex;
   flex-direction: column;
+}
+.mobileTitle {
+  flex-direction: row;
+  justify-content: space-between;
+  display: none;
+  align-items: flex-start;
+}
+.pricesContainerMobile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 7px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .mainTitle {
+    display: none;
+  }
+  .leftBottomPart {
+    margin-bottom: 10px;
+  }
+  .mobileTitle {
+    display: flex;
+  }
+  .pricesContainer {
+    display: none;
+  }
+  .content {
+    display: grid;
+    grid-template-rows: max-content;
+    padding: 10px;
+  }
+
+  .productImage {
+    object-fit: fill;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .wishList {
+    padding: 7px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  .button {
+    width: 100%;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  .starContainer {
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  .star {
+    margin-right: 3.26px;
+    width: 14px;
+  }
+  .title {
+    font-size: 1.7rem;
+    margin-bottom: 0px;
+  }
+
+  .transfer {
+    display: none;
+  }
+}
+@media (max-width: 549px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .rightSide {
+    align-items: flex-end;
+  }
+  .wishList {
+    padding: 7px;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  .button {
+    width: 100%;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+  .leftBottomPart {
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+  .listTitleContainer {
+    margin-right: 4px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+  .star {
+    margin-right: 2.26px;
+    width: 10px;
+  }
+  .buttons {
+    align-items: flex-start;
+  }
+  .discountPrice {
+    font-size: 1.2rem;
+  }
+  .mobileTitle {
+    display: none;
+  }
+  .mainTitle {
+    display: block;
+  }
+  .leftBottomPart {
+    margin-bottom: 10px;
+  }
+  .pricesContainer {
+    display: flex;
+  }
 }

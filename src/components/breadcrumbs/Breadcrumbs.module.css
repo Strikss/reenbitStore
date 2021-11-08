@@ -10,3 +10,14 @@
   margin-left: 5px;
   color: rgba(0, 0, 0, 0.781);
 }
+@media (max-width: 768px) {
+  .container {
+    margin: 5px;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    display: none;
+  }
+}
