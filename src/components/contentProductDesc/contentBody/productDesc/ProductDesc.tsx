@@ -1,13 +1,13 @@
 import React from "react";
-import TopPart from "./topPart/TopPart";
+import Context from "./context/Context";
 import style from "./ProductDesc.module.css";
-import BottomPart from "./bottomPart/BottomPart";
+import ProductTabs from "./productTabs/ProductTabs";
 
 const ProductDesc: React.FC = () => {
   return (
     <div className={style.container}>
-      <TopPart />
-      <BottomPart />
+      <Context />
+      <ProductTabs />
     </div>
   );
 };

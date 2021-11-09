@@ -6,7 +6,7 @@ const ProductImage: React.FC = () => {
     <div className={style.container}>
       <div>discount here</div>
       <div className={style.imageContainer}>
-        <img className={style.upperImage} src="#" alt="first image" />
+        <img className={style.mainImg} src="#" alt="first image" />
         <img src="#" alt="second image" />
         <img src="#" alt="third image" />
       </div>

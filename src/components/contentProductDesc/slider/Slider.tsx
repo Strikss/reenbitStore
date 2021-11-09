@@ -1,11 +1,8 @@
 import React from "react";
-import style from "./ContentFooter.module.css";
+import style from "./Slider.module.css";
 import Products from "./products/Products";
 
-const ContentFooter: React.FC = () => {
-  const array = Array(5).fill(0);
-  console.log(array);
-
+const Slider: React.FC = () => {
   return (
     <div className={style.container}>
       <div className={style.titleContainer}>
@@ -19,4 +16,4 @@ const ContentFooter: React.FC = () => {
   );
 };
 
-export default ContentFooter;
+export default Slider;

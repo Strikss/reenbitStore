@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./BottomPart.module.css";
+import style from "./ProductTabs.module.css";
 import heart from "../../../../../assets/images/heart.svg";
 
-const BottomPart: React.FC = () => {
+const ProductTabs: React.FC = () => {
   return (
     <div className={style.container}>
       <div className={style.wishList}>
@@ -32,4 +32,4 @@ const BottomPart: React.FC = () => {
   );
 };
 
-export default BottomPart;
+export default ProductTabs;

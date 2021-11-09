@@ -8,7 +8,7 @@
   background-color: rgba(0, 0, 255, 0.233);
   gap: 26px;
 }
-.upperImage {
+.mainImg {
   grid-column: span 2;
   height: 280px;
   background-color: aqua;

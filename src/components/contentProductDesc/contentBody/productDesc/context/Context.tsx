@@ -1,10 +1,10 @@
 import React from "react";
-import style from "./TopPart.module.css";
+import style from "./Context.module.css";
 import blackStar from "../../../../../assets/images/blackStar.svg";
 import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
 import Buttons from "./buttons/Buttons";
 
-const TopPart: React.FC = () => {
+const Context: React.FC = () => {
   //STARS
   const starsArray = Array(5).fill(0);
   const stars = starsArray.map((_, index) => (
@@ -73,4 +73,4 @@ const TopPart: React.FC = () => {
   );
 };
 
-export default TopPart;
+export default Context;
