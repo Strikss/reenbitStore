@@ -1,7 +1,7 @@
 import React from "react";
 import ContentBody from "./contentBody/ContentBody";
 import style from "./ContentDesc.module.css";
-import Slider from "./slider/ContentFooter";
+import Slider from "./slider/Slider";
 
 const ContentDesc: React.FC = () => {
   return (

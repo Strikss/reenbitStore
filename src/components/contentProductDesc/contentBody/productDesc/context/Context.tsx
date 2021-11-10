@@ -38,40 +38,44 @@ const Context: React.FC<Props> = ({ product }) => {
         nesciunt porro itaque natus quisquam ratione eveniet molestias
         obcaecati.
       </p>
-      <div className={style.valuesContainer}>
-        <div className={style.left}>
-          <ul className={style.listTitleContainer}>
-            <li className={style.listTitle}>Country:</li>
-            <li className={style.listTitle}>Category:</li>
-            <li className={style.listTitle}>Stock:</li>
-            <li className={style.listTitle}>Color:</li>
-          </ul>
-          <ul className={style.listDescriptionContainer}>
-            <li className={style.listTitle}>{product?.country}</li>
-            <li className={style.listTitle}>{product?.category}</li>
-            <li className={style.listTitle}>{`${product?.stock} pcs`}</li>
-            <li className={style.listTitle}>{product?.color}</li>
-          </ul>
-        </div>
-        <div className={style.right}>
-          <ul className={style.listTitleContainer}>
-            <li className={style.listTitle}>Size:</li>
-            <li className={style.listTitle}>Buy by:</li>
-            <li className={style.listTitle}>Delivery:</li>
-            <li className={style.listTitle}>Delivery area:</li>
-          </ul>
-          <ul className={style.listDescriptionContainer}>
-            <li className={style.listTitle}>all sizes</li>
-            <li className={style.listTitle}>pcs, kgs, box, pack</li>
-            <li className={style.listTitle}>
-              {product.deliverIn > 1
-                ? `in ${product?.deliverIn} days`
-                : `in ${product?.deliverIn} day`}
-            </li>
-            <li className={style.listTitle}>{product?.delivery}</li>
-          </ul>
-        </div>
-      </div>
+      <ul className={style.valuesContainer}>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Country:</span>
+          <span className={style.listTitle}>{product.country}</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Size:</span>
+          <span className={style.listTitle}>all sizes</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Category:</span>
+          <span className={style.listTitle}>{product.category}</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Buy by:</span>
+          <span className={style.listTitle}>pcs,kgs,box,pack</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Stock:</span>
+          <span className={style.listTitle}>{`${product?.stock} pcs`}</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Delivery:</span>
+          <span className={style.listTitle}>
+            {product.deliverIn > 1
+              ? `in ${product?.deliverIn} days`
+              : `in ${product?.deliverIn} day`}
+          </span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Color:</span>
+          <span className={style.listTitle}>{product.color}</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Delivery area:</span>
+          <span className={style.listTitle}>{product.delivery}</span>
+        </li>
+      </ul>
       <div className={style.buyContainer}>
         <div>
           <h1 className={style.priceHalf}>
