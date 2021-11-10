@@ -30,36 +30,40 @@ const Context: React.FC = () => {
         Consectetur, nam beatae nesciunt accusamus exercitationem soluta
         quibusdam ea alias tenetur doloremque?
       </p>
-      <div className={style.valuesContainer}>
-        <div className={style.left}>
-          <ul className={style.listTitleContainer}>
-            <li className={style.listTitle}>Country:</li>
-            <li className={style.listTitle}>Category:</li>
-            <li className={style.listTitle}>Stock:</li>
-            <li className={style.listTitle}>Color:</li>
-          </ul>
-          <ul className={style.listDescriptionContainer}>
-            <li className={style.listTitle}>7776</li>
-            <li className={style.listTitle}>vegetables</li>
-            <li className={style.listTitle}>in Stock</li>
-            <li className={style.listTitle}>White blue</li>
-          </ul>
-        </div>
-        <div className={style.right}>
-          <ul className={style.listTitleContainer}>
-            <li className={style.listTitle}>Size:</li>
-            <li className={style.listTitle}>Buy by:</li>
-            <li className={style.listTitle}>Delivery:</li>
-            <li className={style.listTitle}>Delivery area:</li>
-          </ul>
-          <ul className={style.listDescriptionContainer}>
-            <li className={style.listTitle}>all sizes</li>
-            <li className={style.listTitle}>pcs,kgs,box,pack</li>
-            <li className={style.listTitle}>in 2 days</li>
-            <li className={style.listTitle}>Czech republic</li>
-          </ul>
-        </div>
-      </div>
+      <ul className={style.valuesContainer}>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Country:</span>
+          <span className={style.listTitle}>7776</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Category:</span>
+          <span className={style.listTitle}>vegetables</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Stock:</span>
+          <span className={style.listTitle}>in Stock</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Color:</span>
+          <span className={style.listTitle}>White blue</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Size:</span>
+          <span className={style.listTitle}>all sizes</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Buy by:</span>
+          <span className={style.listTitle}>pcs,kgs,box,pack</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Delivery:</span>
+          <span className={style.listTitle}>in 2 days</span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Delivery area:</span>
+          <span className={style.listTitle}>Czech republic</span>
+        </li>
+      </ul>
       <div className={style.buyContainer}>
         <div>
           <h1>36.23 USD</h1>
