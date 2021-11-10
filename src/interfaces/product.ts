@@ -14,4 +14,6 @@ export interface ProductsType {
   country: string;
   deliverIn: number;
   color: string;
+  questions: number;
+  reviews: number;
 }

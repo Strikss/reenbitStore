@@ -35,6 +35,8 @@ const initialState: AllProductsState = {
       country: "",
       deliverIn: 0,
       color: "",
+      questions: 0,
+      reviews: 0,
     },
   ],
   filterName: "",

@@ -1,13 +1,13 @@
 import React from "react";
 import ContentBody from "./contentBody/ContentBody";
 import style from "./ContentDesc.module.css";
-import ContentFooter from "./contentFooter/ContentFooter";
+import Slider from "./slider/ContentFooter";
 
 const ContentDesc: React.FC = () => {
   return (
     <div className={style.container}>
       <ContentBody />
-      <ContentFooter />
+      <Slider />
     </div>
   );
 };

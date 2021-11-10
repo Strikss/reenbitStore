@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./ContentFooter.module.css";
 import Products from "./products/Products";
 import arrow from "../../../assets/images/arrow.svg";
@@ -25,6 +25,9 @@ const ContentFooter: React.FC = () => {
     setProductPortion();
     setBottomBtn(true);
   };
+  useEffect(() => {
+    setBottomBtn(false);
+  }, [currentID]);
 
   return (
     <div className={style.container}>

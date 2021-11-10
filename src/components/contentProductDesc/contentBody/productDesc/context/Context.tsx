@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./TopPart.module.css";
+import style from "./Context.module.css";
 import blackStar from "../../../../../assets/images/blackStar.svg";
 import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
 import Buttons from "./buttons/Buttons";
@@ -10,7 +10,7 @@ interface Props {
   product: ProductsType;
 }
 
-const TopPart: React.FC<Props> = ({ product }) => {
+const Context: React.FC<Props> = ({ product }) => {
   //STARS
   const starsArray = Array(5).fill(0);
   const stars = starsArray.map((_, index) => (
@@ -28,7 +28,9 @@ const TopPart: React.FC<Props> = ({ product }) => {
       <h1 className={style.header}>{product?.name}</h1>
       <div className={style.ratingContainer}>
         <ul className={style.starContainer}>{stars}</ul>
-        <span className={style.review}>(1 customer review)</span>
+        <span className={style.review}>
+          ({product.reviews} customer reviews)
+        </span>
       </div>
       <p className={style.description}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quas at
@@ -90,4 +92,4 @@ const TopPart: React.FC<Props> = ({ product }) => {
   );
 };
 
-export default TopPart;
+export default Context;

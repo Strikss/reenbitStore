@@ -19,7 +19,7 @@ const ProductImage: React.FC<Props> = ({ product }) => {
       </ul>
       <div className={style.imageContainer}>
         <img
-          className={style.upperImage}
+          className={style.mainImage}
           src={product?.image}
           alt="first image"
         />

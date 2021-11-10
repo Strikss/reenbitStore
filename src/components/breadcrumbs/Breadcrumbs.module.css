@@ -1,15 +1,12 @@
 .container {
   display: flex;
   align-items: center;
-  font-size: 18px;
   height: 48px;
   color: #a9a9a9;
   margin: 25px 0;
+  font-size: 1rem;
 }
-.current {
-  margin-left: 5px;
-  color: rgba(0, 0, 0, 0.781);
-}
+
 @media (max-width: 768px) {
   .container {
     margin: 5px;
