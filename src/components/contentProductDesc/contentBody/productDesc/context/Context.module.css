@@ -29,8 +29,6 @@
 .listContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
-}
-.listTitle:nth-child(1) {
-  min-width: 115px;
+  grid-template-columns: 1fr 1fr;
+  min-width: fit-content;
 }
