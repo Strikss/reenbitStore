@@ -11,12 +11,15 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 35px;
+  align-items: center;
 }
 .starContainer {
   display: flex;
 }
 .review {
   color: #a9a9a9;
+  position: relative;
+  top: 1.5px;
 }
 .star {
   margin-right: 5.26px;
@@ -30,8 +33,8 @@
 .valuesContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 40px;
-  row-gap: 13px;
+  grid-column-gap: 40px;
+  grid-row-gap: 13px;
   margin-bottom: 35px;
 }
 .listContainer {

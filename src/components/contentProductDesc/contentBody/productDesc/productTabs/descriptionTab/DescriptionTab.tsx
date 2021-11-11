@@ -3,7 +3,7 @@ import style from "./DescriptionTab.module.css";
 
 const DescriptionTab: React.FC = () => {
   return (
-    <div className={style.container}>
+    <>
       <div className={style.upperContainer}>
         <h1 className={style.descTitle}>Origins</h1>
         <p className={style.description}>
@@ -17,7 +17,7 @@ const DescriptionTab: React.FC = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
         </p>
       </div>
-    </div>
+    </>
   );
 };
 

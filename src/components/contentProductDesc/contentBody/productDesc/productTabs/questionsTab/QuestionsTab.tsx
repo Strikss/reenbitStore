@@ -33,6 +33,6 @@ const QuestionsTab: React.FC<Props> = ({ questions }) => {
       />
     ));
 
-  return <div className={style.container}>{comments}</div>;
+  return <>{comments}</>;
 };
 export default QuestionsTab;

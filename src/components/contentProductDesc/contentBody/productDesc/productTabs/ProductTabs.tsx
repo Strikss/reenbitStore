@@ -12,53 +12,52 @@ interface Props {
 
 const ProductTabs: React.FC<Props> = ({ product }) => {
   //HOOKS
-  const [currentTab, setCurrentTab] = useState(<DescriptionTab />);
-  const [active, setActive] = useState("Description");
+  const [currentTab, setCurrentTab] = useState("Description");
   const tabClass = classNames(style.title, style.active);
-
+  const Tab =
+    currentTab === "Description" ? (
+      <DescriptionTab />
+    ) : currentTab === "Questions" ? (
+      <QuestionsTab questions={product.questions} />
+    ) : currentTab === "Reviews" ? (
+      <ReviewsTab reviewCount={product.reviews} rating={product.rating} />
+    ) : (
+      ""
+    );
   useEffect(() => {
-    setCurrentTab(<DescriptionTab />);
-    setActive("Description");
+    setCurrentTab("Description");
   }, [product]);
 
   return (
     <div className={style.container}>
       <div className={style.titleContainer}>
         <button
-          className={active === "Description" ? tabClass : style.title}
+          className={currentTab === "Description" ? tabClass : style.title}
           onClick={() => {
-            setCurrentTab(<DescriptionTab />);
-            setActive("Description");
+            setCurrentTab("Description");
           }}
         >
           Description
         </button>
         <button
-          className={active === "Reviews" ? tabClass : style.title}
+          className={currentTab === "Reviews" ? tabClass : style.title}
           onClick={() => {
-            setCurrentTab(
-              <ReviewsTab
-                reviewCount={product.reviews}
-                rating={product.rating}
-              />
-            );
-            setActive("Reviews");
+            setCurrentTab("Reviews");
           }}
         >
           Reviews
           <span className={style.amount}>{product.reviews}</span>
         </button>
         <button
-          className={active === "Questions" ? tabClass : style.title}
+          className={currentTab === "Questions" ? tabClass : style.title}
           onClick={() => {
-            setCurrentTab(<QuestionsTab questions={product.questions} />);
-            setActive("Questions");
+            setCurrentTab("Questions");
           }}
         >
           Questions <span className={style.amount}>{product.questions}</span>
         </button>
       </div>
-      <div>{currentTab}</div>
+      <>{Tab}</>
     </div>
   );
 };
