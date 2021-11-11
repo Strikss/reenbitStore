@@ -1,28 +1,48 @@
 import React from "react";
 import style from "./Breadcrumbs.module.css";
 import { Breadcrumb } from "antd";
-import { HomeOutlined, UserOutlined } from "@ant-design/icons";
-import { useHistory, useLocation, useParams } from "react-router";
+import { HomeOutlined } from "@ant-design/icons";
+import { useLocation } from "react-router";
+import { useAppSelector } from "../../hooks/selectorHook";
+import { Routes } from "../../router/router";
+import { matchPath } from "react-router";
 
 const Breadcrumbs: React.FC = () => {
-  const location = useParams();
-  const notLocation = useLocation();
-  const history = useHistory();
-  console.log(location);
-  console.log(notLocation);
-  console.log(history);
+  //HOOKS
+  const { products, currentID } = useAppSelector((state) => state.products);
+  const { pathname } = useLocation();
+  //BREADCRUMB
+  const selectedProduct = products.find((prod) => prod.itemID === currentID);
+
+  const getBreadcrumb = () => {
+    const name = Routes.filter(({ path }) => {
+      let currentRoute = matchPath(pathname, path);
+      return currentRoute?.path === path;
+    });
+
+    if (selectedProduct) {
+      return (
+        <>
+          <Breadcrumb.Item href={name[0].path}>
+            {name[0].breadcrumbName}
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <span>{selectedProduct.name}</span>
+          </Breadcrumb.Item>
+        </>
+      );
+    } else {
+      return <Breadcrumb.Item>{name[0].breadcrumbName}</Breadcrumb.Item>;
+    }
+  };
 
   return (
     <Breadcrumb className={style.container}>
-      <Breadcrumb.Item href="/#/">
+      <Breadcrumb.Item>
         <HomeOutlined />
         <span>Homepage</span>
       </Breadcrumb.Item>
-      <Breadcrumb.Item href="">
-        <UserOutlined />
-        <span>Application List</span>
-      </Breadcrumb.Item>
-      <Breadcrumb.Item>Application</Breadcrumb.Item>
+      {getBreadcrumb()}
     </Breadcrumb>
   );
 };
