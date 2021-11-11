@@ -32,7 +32,7 @@ const Breadcrumbs: React.FC = () => {
       return <Breadcrumb.Item>{name[0].breadcrumbName}</Breadcrumb.Item>;
     }
   };
-  const misha = getBreadcrumb();
+  const breadCrumb = getBreadcrumb();
 
   return (
     <Breadcrumb className={style.container}>
@@ -40,7 +40,7 @@ const Breadcrumbs: React.FC = () => {
         <HomeOutlined />
         <span>Homepage</span>
       </Breadcrumb.Item>
-      {misha}
+      {breadCrumb}
     </Breadcrumb>
   );
 };
