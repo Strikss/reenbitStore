@@ -9,7 +9,7 @@ export interface IRoute {
   breadcrumbName?: string;
 }
 export enum RouteNames {
-  ALL_PRODUCTS = "//",
+  ALL_PRODUCTS = "/",
   PRODUCT_DESCRIPTION = "",
   SHOPPING_CART = "/shopping-cart",
 }
