@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.ratingContainer {
+  display: flex;
+  flex-direction: row;
+}
+.starContainer {
+  display: flex;
+}
+.star {
+  margin-right: 5.26px;
+  width: 20px;
+}
+
+.buyContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 128, 0, 0.404);
+  padding: 16px 24px;
+}
+.valuesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+.listContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  min-width: fit-content;
+}
+.listTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

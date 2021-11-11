@@ -1,6 +1,6 @@
 import React from "react";
-import CheckBox from "../../../../custom/CheckBox";
 import { useAction } from "../../../../../hooks/useAction";
+import CheckBox from "../../../../custom/checkBox/CheckBox";
 import style from "./FilterByStars.module.css";
 import StarsGenerator from "./StarsGenerator";
 
