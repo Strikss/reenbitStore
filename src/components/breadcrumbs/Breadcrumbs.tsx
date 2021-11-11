@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./Breadcrumbs.module.css";
 import { Breadcrumb } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
@@ -11,21 +11,18 @@ const Breadcrumbs: React.FC = () => {
   //HOOKS
   const { products, currentID } = useAppSelector((state) => state.products);
   const { pathname } = useLocation();
-  //BREADCRUMB
-  const selectedProduct = products.find((prod) => prod.itemID === currentID);
 
+  //FUNCTIONS
+  const selectedProduct = products.find((prod) => prod.itemID === currentID);
   const getBreadcrumb = () => {
     const name = Routes.filter(({ path }) => {
       let currentRoute = matchPath(pathname, path);
       return currentRoute?.path === path;
     });
-
     if (selectedProduct) {
       return (
         <>
-          <Breadcrumb.Item href={name[0].path}>
-            {name[0].breadcrumbName}
-          </Breadcrumb.Item>
+          <Breadcrumb.Item href="/#/">{name[0].breadcrumbName}</Breadcrumb.Item>
           <Breadcrumb.Item>
             <span>{selectedProduct.name}</span>
           </Breadcrumb.Item>
@@ -35,6 +32,7 @@ const Breadcrumbs: React.FC = () => {
       return <Breadcrumb.Item>{name[0].breadcrumbName}</Breadcrumb.Item>;
     }
   };
+  const misha = getBreadcrumb();
 
   return (
     <Breadcrumb className={style.container}>
@@ -42,7 +40,7 @@ const Breadcrumbs: React.FC = () => {
         <HomeOutlined />
         <span>Homepage</span>
       </Breadcrumb.Item>
-      {getBreadcrumb()}
+      {misha}
     </Breadcrumb>
   );
 };
