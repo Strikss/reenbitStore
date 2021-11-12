@@ -28,6 +28,7 @@
 .bottomPart {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .price {
   font-size: 1.35rem;

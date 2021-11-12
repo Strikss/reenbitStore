@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import style from "./Breadcrumbs.module.css";
 import { Breadcrumb } from "antd";
 import { HomeOutlined } from "@ant-design/icons";

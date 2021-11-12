@@ -36,6 +36,7 @@ const Product: React.FC<Props> = ({ prod }) => {
             />
           </NavLink>
         </div>
+
         <div className={style.content}>
           <div className={style.leftSide}>
             <div className={style.leftTopPart}>
