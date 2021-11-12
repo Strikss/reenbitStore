@@ -1,7 +1,7 @@
 import React from "react";
-import TopPart from "./topPart/TopPart";
+import Context from "./context/Context";
 import style from "./ProductDesc.module.css";
-import BottomPart from "./bottomPart/BottomPart";
+import ProductTabs from "./productTabs/ProductTabs";
 import { ProductsType } from "../../../../interfaces/product";
 
 interface Props {
@@ -11,8 +11,8 @@ interface Props {
 const ProductDesc: React.FC<Props> = ({ product }) => {
   return (
     <div className={style.container}>
-      <TopPart product={product} />
-      <BottomPart />
+      <Context product={product} />
+      <ProductTabs product={product} />
     </div>
   );
 };

@@ -11,12 +11,15 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 35px;
+  align-items: center;
 }
 .starContainer {
   display: flex;
 }
 .review {
   color: #a9a9a9;
+  position: relative;
+  top: 1.5px;
 }
 .star {
   margin-right: 5.26px;
@@ -26,35 +29,33 @@
   margin-bottom: 35px;
   font-size: 0.9rem;
 }
+
 .valuesContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+  grid-row-gap: 13px;
   margin-bottom: 35px;
 }
-.left {
-  display: flex;
+.listContainer {
   width: 100%;
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  min-width: fit-content;
 }
-.listTitleContainer {
-  display: flex;
-  flex-direction: column;
+.listTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.listTitle:nth-child(odd) {
   margin-right: 32px;
   color: #a9a9a9;
   font-size: 1rem;
-  gap: 7px;
   letter-spacing: 1px;
 }
-.listDescriptionContainer {
-  flex-wrap: wrap;
-  display: flex;
-  flex-direction: column;
+.listTitle:nth-child(even) {
   font-size: 1rem;
-  gap: 7px;
   letter-spacing: 0.5px;
-}
-
-.right {
-  display: flex;
-  width: 100%;
 }
 .buyContainer {
   display: flex;

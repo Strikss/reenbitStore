@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import style from "./ContentFooter.module.css";
+import React, { useEffect, useState } from "react";
+import style from "./Slider.module.css";
 import Products from "./products/Products";
 import arrow from "../../../assets/images/arrow.svg";
 import { useAction } from "../../../hooks/useAction";
 import { useAppSelector } from "../../../hooks/selectorHook";
 
-const ContentFooter: React.FC = () => {
+const Slider: React.FC = () => {
   //HOOKS
   const { setProductPortion } = useAction();
   const { products, currentID, productPortion } = useAppSelector(
@@ -25,6 +25,9 @@ const ContentFooter: React.FC = () => {
     setProductPortion();
     setBottomBtn(true);
   };
+  useEffect(() => {
+    setBottomBtn(false);
+  }, [currentID]);
 
   return (
     <div className={style.container}>
@@ -58,4 +61,4 @@ const ContentFooter: React.FC = () => {
   );
 };
 
-export default ContentFooter;
+export default Slider;

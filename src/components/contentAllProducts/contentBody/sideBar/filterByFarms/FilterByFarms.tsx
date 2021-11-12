@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppSelector } from "../../../../../hooks/selectorHook";
 import { useAction } from "../../../../../hooks/useAction";
-import CheckBox from "../../../../custom/CheckBox";
+import CheckBox from "../../../../custom/checkBox/CheckBox";
 import style from "./FilterByFarms.module.css";
 
 const FilterByFarms: React.FC = () => {
