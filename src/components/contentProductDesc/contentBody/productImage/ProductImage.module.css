@@ -34,14 +34,20 @@
 .carousel {
   display: none;
 }
-@media (max-width: 888px) {
+@media (max-width: 900px) {
   .container {
-    width: 75%;
+    width: 73%;
   }
   .carousel {
     display: block;
   }
   .imageContainer {
     display: none;
+  }
+}
+@media (max-width: 425px) {
+  .discountContainer {
+    justify-content: center;
+    margin-left: 0px;
   }
 }
