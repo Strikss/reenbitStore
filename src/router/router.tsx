@@ -20,7 +20,7 @@ export const Routes: IRoute[] = [
     exact: true,
   },
   {
-    path: RouteNames.PRODUCT_DESCRIPTION,
+    path: RouteNames.PRODUCT_DESCRIPTION + "/:id",
     component: ProductDescription,
     exact: true,
   },

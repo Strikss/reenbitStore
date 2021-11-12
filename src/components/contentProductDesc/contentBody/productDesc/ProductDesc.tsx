@@ -2,12 +2,17 @@ import React from "react";
 import Context from "./context/Context";
 import style from "./ProductDesc.module.css";
 import ProductTabs from "./productTabs/ProductTabs";
+import { ProductsType } from "../../../../interfaces/product";
 
-const ProductDesc: React.FC = () => {
+interface Props {
+  product: ProductsType;
+}
+
+const ProductDesc: React.FC<Props> = ({ product }) => {
   return (
     <div className={style.container}>
-      <Context />
-      <ProductTabs />
+      <Context product={product} />
+      <ProductTabs product={product} />
     </div>
   );
 };

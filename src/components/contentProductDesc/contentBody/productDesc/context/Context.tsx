@@ -3,15 +3,21 @@ import style from "./Context.module.css";
 import blackStar from "../../../../../assets/images/blackStar.svg";
 import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
 import Buttons from "./buttons/Buttons";
+import heart from "../../../../../assets/images/heart.svg";
+import { ProductsType } from "../../../../../interfaces/product";
 
-const Context: React.FC = () => {
+interface Props {
+  product: ProductsType;
+}
+
+const Context: React.FC<Props> = ({ product }) => {
   //STARS
   const starsArray = Array(5).fill(0);
   const stars = starsArray.map((_, index) => (
     <li key={index}>
       <img
         className={style.star}
-        src={5 > index ? blackStar : whiteStar}
+        src={product!.rating > index ? blackStar : whiteStar}
         alt="star"
       />
     </li>
@@ -19,59 +25,72 @@ const Context: React.FC = () => {
 
   return (
     <div className={style.container}>
-      <h1>Header here</h1>
+      <h1 className={style.header}>{product?.name}</h1>
       <div className={style.ratingContainer}>
         <ul className={style.starContainer}>{stars}</ul>
-        <span>(1 customer review)</span>
+        <span className={style.review}>
+          ({product.reviews} customer reviews)
+        </span>
       </div>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-        voluptatum eos aut maxime odit illo voluptate aspernatur deserunt?
-        Consectetur, nam beatae nesciunt accusamus exercitationem soluta
-        quibusdam ea alias tenetur doloremque?
+      <p className={style.description}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quas at
+        soluta aspernatur rem eligendi, hic nostrum voluptas ipsam ex sint,
+        nesciunt porro itaque natus quisquam ratione eveniet molestias
+        obcaecati.
       </p>
       <ul className={style.valuesContainer}>
         <li className={style.listContainer}>
           <span className={style.listTitle}>Country:</span>
-          <span className={style.listTitle}>7776</span>
-        </li>
-        <li className={style.listContainer}>
-          <span className={style.listTitle}>Category:</span>
-          <span className={style.listTitle}>vegetables</span>
-        </li>
-        <li className={style.listContainer}>
-          <span className={style.listTitle}>Stock:</span>
-          <span className={style.listTitle}>in Stock</span>
-        </li>
-        <li className={style.listContainer}>
-          <span className={style.listTitle}>Color:</span>
-          <span className={style.listTitle}>White blue</span>
+          <span className={style.listTitle}>{product.country}</span>
         </li>
         <li className={style.listContainer}>
           <span className={style.listTitle}>Size:</span>
           <span className={style.listTitle}>all sizes</span>
         </li>
         <li className={style.listContainer}>
+          <span className={style.listTitle}>Category:</span>
+          <span className={style.listTitle}>{product.category}</span>
+        </li>
+        <li className={style.listContainer}>
           <span className={style.listTitle}>Buy by:</span>
           <span className={style.listTitle}>pcs,kgs,box,pack</span>
         </li>
         <li className={style.listContainer}>
+          <span className={style.listTitle}>Stock:</span>
+          <span className={style.listTitle}>{`${product?.stock} pcs`}</span>
+        </li>
+        <li className={style.listContainer}>
           <span className={style.listTitle}>Delivery:</span>
-          <span className={style.listTitle}>in 2 days</span>
+          <span className={style.listTitle}>
+            {product.deliverIn > 1
+              ? `in ${product?.deliverIn} days`
+              : `in ${product?.deliverIn} day`}
+          </span>
+        </li>
+        <li className={style.listContainer}>
+          <span className={style.listTitle}>Color:</span>
+          <span className={style.listTitle}>{product.color}</span>
         </li>
         <li className={style.listContainer}>
           <span className={style.listTitle}>Delivery area:</span>
-          <span className={style.listTitle}>Czech republic</span>
+          <span className={style.listTitle}>{product.delivery}</span>
         </li>
       </ul>
       <div className={style.buyContainer}>
         <div>
-          <h1>36.23 USD</h1>
-          <p>
-            <s>48.56 USD</s>
+          <h1 className={style.priceHalf}>
+            {product?.priceHalf.toFixed(2)} <span> USD</span>
+          </h1>
+          <p className={style.priceFull}>
+            <s>
+              {product?.priceFull.toFixed(2)} <span>USD</span>
+            </s>
           </p>
         </div>
         <Buttons />
+      </div>
+      <div className={style.wishList}>
+        <img src={heart} alt="heart" /> <span> Add to my wish list</span>
       </div>
     </div>
   );

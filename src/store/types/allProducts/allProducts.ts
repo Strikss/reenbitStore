@@ -12,6 +12,7 @@ import {
   FILTER_BY_FARMS,
   FILTER_BY_PRICE,
   RESET,
+  SET_CURRENT_ID,
 } from "./constansts";
 
 export interface AllProductsState {
@@ -25,6 +26,7 @@ export interface AllProductsState {
   sortBy: string;
   filterFarms: string[];
   filterPrice: number[];
+  currentID: string;
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -72,6 +74,10 @@ export interface FilterByPriceAction {
 export interface ResetAction {
   type: typeof RESET;
 }
+export interface SetCurrentID {
+  type: typeof SET_CURRENT_ID;
+  payload: string;
+}
 
 export type AllProductsAction =
   | FetchAllProductsAction
@@ -85,4 +91,5 @@ export type AllProductsAction =
   | SetSortBy
   | FilterByFarmsAction
   | FilterByPriceAction
-  | ResetAction;
+  | ResetAction
+  | SetCurrentID;

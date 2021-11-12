@@ -1,3 +1,4 @@
+import { SET_CURRENT_ID } from "./../types/allProducts/constansts";
 import {
   AllProductsState,
   AllProductsAction,
@@ -31,17 +32,23 @@ const initialState: AllProductsState = {
       description: "",
       rating: 0,
       image: "",
+      country: "",
+      deliverIn: 0,
+      color: "",
+      questions: 0,
+      reviews: 0,
     },
   ],
   filterName: "",
   filterStars: [0],
   currentPage: 1,
-  productPortion: 5,
+  productPortion: 4,
   filteredProductCount: 0,
   filterCategories: "",
   sortBy: "",
   filterFarms: [""],
   filterPrice: [0],
+  currentID: "",
 };
 
 export const allProducts = (
@@ -76,7 +83,7 @@ export const allProducts = (
         currentPage: action.payload,
       };
     case SET_PRODUCT_PORTION:
-      const newProductPortion = state.productPortion * 2;
+      const newProductPortion = state.productPortion + 4;
       return {
         ...state,
         productPortion: newProductPortion,
@@ -104,12 +111,18 @@ export const allProducts = (
         filterName: "",
         filterStars: [0],
         currentPage: 1,
-        productPortion: 5,
+        productPortion: 4,
         filterCategories: "",
         sortBy: "",
         filterFarms: [""],
         filterPrice: [0],
       };
+    case SET_CURRENT_ID: {
+      return {
+        ...state,
+        currentID: action.payload,
+      };
+    }
     default:
       return state;
   }

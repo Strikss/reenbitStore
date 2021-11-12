@@ -28,7 +28,7 @@ const Product: React.FC<Props> = ({ prod }) => {
     <>
       <div className={style.container}>
         <div className={style.imgBx}>
-          <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
+          <NavLink to={RouteNames.PRODUCT_DESCRIPTION + `/${prod.itemID}`}>
             <img
               className={style.productImage}
               src={prod.image}
@@ -73,7 +73,9 @@ const Product: React.FC<Props> = ({ prod }) => {
                 <li className={style.listTitle}>{prod.freshness}</li>
                 <li className={style.listTitle}>{prod.farm}</li>
                 <li className={style.listTitle}>{prod.delivery}</li>
-                <li className={style.listTitle}>{prod.stock}</li>
+                <li className={style.listTitle}>
+                  <span className={style.supply}>{`${prod.stock} pcs`}</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -83,7 +85,9 @@ const Product: React.FC<Props> = ({ prod }) => {
                 {prod.priceHalf.toFixed(2)} <span>USD</span>
               </h1>
               <p className={style.fullPrice}>
-                <s>{prod.priceFull.toFixed(2)}</s>
+                <s>
+                  {prod.priceFull.toFixed(2)} <span>USD</span>
+                </s>
               </p>
             </div>
             <div className={style.transfer}>
@@ -92,7 +96,9 @@ const Product: React.FC<Props> = ({ prod }) => {
             </div>
             <div className={style.buttons}>
               <button className={style.button}>
-                <NavLink to={RouteNames.PRODUCT_DESCRIPTION}>
+                <NavLink
+                  to={RouteNames.PRODUCT_DESCRIPTION + `/${prod.itemID}`}
+                >
                   Product Detail <img src={productArrow} alt="arrow" />
                 </NavLink>
               </button>

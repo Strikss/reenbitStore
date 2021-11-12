@@ -9,10 +9,14 @@ import { useAction } from "../../hooks/useAction";
 import Footer from "../../components/footer/Footer";
 
 const AllProducts: React.FC = () => {
-  const { fetchProducts } = useAction();
+  //HOOKS
+
+  const { fetchProducts, reset } = useAction();
   useEffect(() => {
+    reset();
     fetchProducts();
   }, []);
+
   return (
     <div className={style.allProducts} id="scroller">
       <Header />

@@ -14,18 +14,14 @@ const ContentActions: React.FC = () => {
   //DROPDOWN
   const menu = (
     <Menu>
-      <Menu.Item key={"0"} onClick={() => setSortBy("")}>
-        Featured
-      </Menu.Item>
-      <Menu.Item key={"1"} onClick={() => setSortBy(SortBy.PRICE_LOW)}>
+      <Menu.Item onClick={() => setSortBy("")}>Featured</Menu.Item>
+      <Menu.Item onClick={() => setSortBy(SortBy.PRICE_LOW)}>
         Price:Low to High
       </Menu.Item>
-      <Menu.Item key={"2"} onClick={() => setSortBy(SortBy.PRICE_HIGH)}>
+      <Menu.Item onClick={() => setSortBy(SortBy.PRICE_HIGH)}>
         Price:High to Low
       </Menu.Item>
-      <Menu.Item key={"3"} onClick={() => setSortBy(SortBy.RATING)}>
-        Rating
-      </Menu.Item>
+      <Menu.Item onClick={() => setSortBy(SortBy.RATING)}>Rating</Menu.Item>
     </Menu>
   );
 
