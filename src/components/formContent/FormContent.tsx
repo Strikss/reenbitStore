@@ -1,24 +1,13 @@
-import { Form, Input } from "antd";
 import React from "react";
+import Form from "./form/Form";
+import style from "./FormContent.module.css";
+import Summary from "./summary/Summary";
 
-const FormContent = () => {
+const FormContent: React.FC = () => {
   return (
-    <div>
-      <Form
-        name="basic"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        initialValues={{ remember: true }}
-        autoComplete="off"
-      >
-        <Form.Item
-          label="Username"
-          name="username"
-          rules={[{ required: true, message: "Please input your username!" }]}
-        >
-          <Input />
-        </Form.Item>
-      </Form>
+    <div className={style.container}>
+      <Form />
+      <Summary />
     </div>
   );
 };

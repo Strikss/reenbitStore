@@ -1,0 +1,18 @@
+.container {
+  width: 70%;
+  background-color: rgba(206, 206, 206, 0.555);
+  margin-top: 31px;
+  border: 1px solid #d1d1d1;
+  border-radius: 12px;
+}
+.titleContainer {
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+.title {
+  margin-bottom: 4px;
+  font-size: 1.8rem;
+}
+.subtitle {
+  color: #a9a9a9;
+}

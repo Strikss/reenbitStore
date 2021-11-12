@@ -15,7 +15,6 @@ const ShoppingCart: React.FC = () => {
       <Menu />
       <Breadcrumbs />
       <FormContent />
-      <Footer />
     </div>
   );
 };
