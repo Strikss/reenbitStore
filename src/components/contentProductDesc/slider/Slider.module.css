@@ -31,3 +31,10 @@
   display: flex;
   justify-content: flex-end;
 }
+
+@media (max-width: 564px) {
+  .rightTitle,
+  .leftTitle {
+    font-size: 1.1rem;
+  }
+}

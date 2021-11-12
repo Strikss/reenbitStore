@@ -33,7 +33,6 @@
 .valuesContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 40px;
   grid-row-gap: 13px;
   margin-bottom: 35px;
 }
@@ -41,17 +40,16 @@
   width: 100%;
   display: grid;
   grid-template-columns: 0.7fr 1fr;
-  min-width: fit-content;
 }
 .listTitle {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .listTitle:nth-child(odd) {
-  margin-right: 32px;
   color: #a9a9a9;
   font-size: 1rem;
   letter-spacing: 1px;
+  margin-right: 5px;
 }
 .listTitle:nth-child(even) {
   font-size: 1rem;
@@ -78,4 +76,35 @@
 .wishList {
   font-size: 1.1rem;
   font-weight: 700;
+}
+@media (max-width: 1024px) {
+  .priceHalf {
+    font-size: 1.4rem;
+  }
+  .priceFull {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 564px) {
+  .header {
+    font-size: 1.9rem;
+  }
+  .listTitle:nth-child(1n),
+  .description,
+  .wishList {
+    font-size: 0.8rem;
+  }
+  .buyContainer {
+    flex-direction: column;
+  }
+}
+@media (max-width: 425px) {
+  .header {
+    font-size: 1.7rem;
+  }
+  .listTitle:nth-child(1n),
+  .description,
+  .wishList {
+    font-size: 0.75rem;
+  }
 }
