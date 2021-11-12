@@ -1,8 +1,17 @@
 .container {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
   grid-gap: 30px;
   grid-row-gap: 60px;
   margin-bottom: 20px;
+}
+.item {
+  flex: 1;
+}
+@media (max-width: 1048px) {
+  .item {
+    flex: none;
+  }
 }

@@ -17,7 +17,7 @@ const Products: React.FC<Props> = ({ filteredProducts }) => {
 
   //CLEAN PRODUCTS
   const moreProducts = filteredProducts.slice(from, to).map((prod, i) => (
-    <li key={i}>
+    <li key={i} className={style.item}>
       <Product product={prod} />
     </li>
   ));
