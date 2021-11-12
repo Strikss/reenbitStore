@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.imageContainer {
+  position: relative;
+}
+.productImage {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.discount {
+  position: absolute;
+  background-color: #d9e0c9a6;
+  color: #4a8015;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  top: 5px;
+  left: 5px;
+}
+.title {
+  font-size: 1.3rem;
+}
+.bottomPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+  font-size: 1.35rem;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  letter-spacing: 1.1px;
+  font-weight: 700;
+  font-size: 16px;
+  height: 36px;
+  white-space: nowrap;
+  max-width: 155px;
+  background-color: #6a983c;
+  border-radius: 12px;
+  border: 2px solid #46760a;
+  cursor: pointer;
+}
+.priceHalf {
+  font-size: 1.2rem;
+}
+.priceFull {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.397);
+  font-weight: 700;
+}
