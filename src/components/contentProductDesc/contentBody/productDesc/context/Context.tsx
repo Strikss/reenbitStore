@@ -87,7 +87,7 @@ const Context: React.FC<Props> = ({ product }) => {
             </s>
           </p>
         </div>
-        <Buttons />
+        <Buttons product={product} />
       </div>
       <div className={style.wishList}>
         <img src={heart} alt="heart" /> <span> Add to my wish list</span>

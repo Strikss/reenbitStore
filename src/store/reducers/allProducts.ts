@@ -1,4 +1,8 @@
-import { SET_CURRENT_ID } from "./../types/allProducts/constansts";
+import {
+  BUY_PRODUCT,
+  REMOVE_PRODUCT,
+  SET_CURRENT_ID,
+} from "./../types/allProducts/constansts";
 import {
   AllProductsState,
   AllProductsAction,
@@ -49,6 +53,7 @@ const initialState: AllProductsState = {
   filterFarms: [""],
   filterPrice: [0],
   currentID: "",
+  boughtProducts: [],
 };
 
 export const allProducts = (
@@ -121,6 +126,20 @@ export const allProducts = (
       return {
         ...state,
         currentID: action.payload,
+      };
+    }
+    case BUY_PRODUCT: {
+      return {
+        ...state,
+        boughtProducts: [...state.boughtProducts, action.payload],
+      };
+    }
+    case REMOVE_PRODUCT: {
+      return {
+        ...state,
+        boughtProducts: state.boughtProducts.filter(
+          (prod) => prod !== action.payload
+        ),
       };
     }
     default:

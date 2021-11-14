@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useAction } from "../../../../../hooks/useAction";
 import { ProductsType } from "../../../../../interfaces/product";
 import { RouteNames } from "../../../../../router/router";
 import style from "./Product.module.css";
@@ -9,6 +10,9 @@ interface Props {
 }
 
 const Product: React.FC<Props> = ({ product }) => {
+  //HOOKS
+  const { buyProduct } = useAction();
+
   const discount = 100 - (product.priceHalf / product.priceFull) * 100;
 
   return (
@@ -41,7 +45,10 @@ const Product: React.FC<Props> = ({ product }) => {
               </s>
             </p>
           </div>
-          <button className={style.button}>Buy now</button>
+
+          <button className={style.button} onClick={() => buyProduct(product)}>
+            <NavLink to={RouteNames.SHOPPING_CART}>Buy now</NavLink>
+          </button>
         </div>
       </div>
     </div>

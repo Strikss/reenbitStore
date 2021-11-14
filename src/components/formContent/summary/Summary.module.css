@@ -1,9 +1,8 @@
 .container {
   width: 70%;
-  background-color: rgba(206, 206, 206, 0.555);
-  margin-top: 31px;
   border: 1px solid #d1d1d1;
   border-radius: 12px;
+  padding: 30px 16px;
 }
 .titleContainer {
   margin-top: 32px;
@@ -15,4 +14,7 @@
 }
 .subtitle {
   color: #a9a9a9;
+}
+.product {
+  margin-bottom: 32px;
 }

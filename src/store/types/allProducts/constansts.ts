@@ -11,3 +11,5 @@ export const FILTER_BY_FARMS = "FILTER_BY_FARMS";
 export const FILTER_BY_PRICE = "FILTER_BY_PRICE";
 export const RESET = "RESET";
 export const SET_CURRENT_ID = "SET_CURRENT_ID";
+export const BUY_PRODUCT = "BUY_PRODUCT";
+export const REMOVE_PRODUCT = "REMOVE_PRODUCT";

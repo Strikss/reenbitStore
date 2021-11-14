@@ -1,4 +1,9 @@
-import { SET_CURRENT_ID } from "./../types/allProducts/constansts";
+import { ProductsType } from "./../../interfaces/product";
+import {
+  BUY_PRODUCT,
+  REMOVE_PRODUCT,
+  SET_CURRENT_ID,
+} from "./../types/allProducts/constansts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { AllProductsAction } from "../types/allProducts/allProducts";
@@ -73,5 +78,17 @@ export const setCurrentID = (id: string): AllProductsAction => {
   return {
     type: SET_CURRENT_ID,
     payload: id,
+  };
+};
+export const buyProduct = (product: ProductsType): AllProductsAction => {
+  return {
+    type: BUY_PRODUCT,
+    payload: product,
+  };
+};
+export const removeProduct = (product: ProductsType): AllProductsAction => {
+  return {
+    type: REMOVE_PRODUCT,
+    payload: product,
   };
 };

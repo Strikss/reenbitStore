@@ -2,10 +2,19 @@ import { Dropdown, Menu } from "antd";
 import React, { useState } from "react";
 import style from "./Buttons.module.css";
 import arrow from "../../../../../../assets/images/arrow.svg";
+import { ProductsType } from "../../../../../../interfaces/product";
+import { useAction } from "../../../../../../hooks/useAction";
+import { NavLink } from "react-router-dom";
+import { RouteNames } from "../../../../../../router/router";
 
-const Buttons: React.FC = () => {
+interface Props {
+  product: ProductsType;
+}
+
+const Buttons: React.FC<Props> = ({ product }) => {
   //HOOKS
   const [amouth, setAmouth] = useState("Pcs");
+  const { buyProduct } = useAction();
 
   //DROPDOWN
   const menu = (
@@ -32,10 +41,12 @@ const Buttons: React.FC = () => {
           </Dropdown>
         </div>
       </div>
-      <button className={style.button}>
-        <span className={style.plus}>+</span>
-        Add to cart
-      </button>
+      <NavLink to={RouteNames.SHOPPING_CART}>
+        <button className={style.button} onClick={() => buyProduct(product)}>
+          <span className={style.plus}>+</span>
+          Add to cart
+        </button>
+      </NavLink>
     </div>
   );
 };

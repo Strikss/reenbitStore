@@ -46,7 +46,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
   letter-spacing: 1.1px;
   font-weight: 700;
   font-size: 18px;
@@ -58,7 +57,9 @@
   border: 2px solid #46760a;
   margin-left: 5px;
   cursor: pointer;
+  color: #ffffff;
 }
+
 .plus {
   font-size: 26px;
   margin-right: 4px;
