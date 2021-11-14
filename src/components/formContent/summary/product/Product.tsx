@@ -33,7 +33,7 @@ const Product: React.FC<Props> = ({ product }) => {
           <img src={heart} alt="heart" /> <span>Wishlist</span>
         </div>
         <div className={style.deleteImg} onClick={() => removeProduct(product)}>
-          <img src={x} alt="delete" onClick={() => removeProduct(product)} />{" "}
+          <img src={x} alt="delete" />
           <span>Remove</span>
         </div>
       </div>

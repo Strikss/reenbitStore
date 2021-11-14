@@ -1,4 +1,4 @@
-import { Dropdown, Menu } from "antd";
+import { Dropdown, Menu, Progress } from "antd";
 import React, { useState } from "react";
 import style from "./Buttons.module.css";
 import arrow from "../../../../../../assets/images/arrow.svg";
@@ -6,6 +6,7 @@ import { ProductsType } from "../../../../../../interfaces/product";
 import { useAction } from "../../../../../../hooks/useAction";
 import { NavLink } from "react-router-dom";
 import { RouteNames } from "../../../../../../router/router";
+import { useAppSelector } from "../../../../../../hooks/selectorHook";
 
 interface Props {
   product: ProductsType;
@@ -13,9 +14,14 @@ interface Props {
 
 const Buttons: React.FC<Props> = ({ product }) => {
   //HOOKS
+  const boughtProducts: ProductsType[] = useAppSelector(
+    (state) => state.products.boughtProducts
+  );
   const [amouth, setAmouth] = useState("Pcs");
   const { buyProduct } = useAction();
 
+  //PRODUCT IN THE BASKET
+  const success = boughtProducts.some((prod) => prod.itemID === product.itemID);
   //DROPDOWN
   const menu = (
     <Menu>
@@ -26,7 +32,12 @@ const Buttons: React.FC<Props> = ({ product }) => {
     </Menu>
   );
 
-  return (
+  return success ? (
+    <div className={style.success}>
+      <Progress type="circle" percent={100} width={50} />
+      <span className={style.successText}>In the basket</span>
+    </div>
+  ) : (
     <div className={style.btnContainer}>
       <div className={style.amouthContainer}>
         <input className={style.left} type="number" placeholder="1" />
@@ -41,6 +52,7 @@ const Buttons: React.FC<Props> = ({ product }) => {
           </Dropdown>
         </div>
       </div>
+
       <NavLink to={RouteNames.SHOPPING_CART}>
         <button className={style.button} onClick={() => buyProduct(product)}>
           <span className={style.plus}>+</span>

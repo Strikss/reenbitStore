@@ -67,3 +67,13 @@
   position: relative;
   top: -2px;
 }
+.success {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+.successText {
+  font-size: 1.2rem;
+  color: #72c140;
+  margin-left: 5px;
+}
