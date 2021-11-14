@@ -5,8 +5,14 @@ import manHead from "../../assets/images/manHead48.png";
 import shoppingBag from "../../assets/images/shoppingBasket48.png";
 import { RouteNames } from "../../router/router";
 import { NavLink } from "react-router-dom";
+import { useAppSelector } from "../../hooks/selectorHook";
 
 const SearchBar: React.FC = () => {
+  //HOOKS
+  const basketAmout = useAppSelector(
+    (state) => state.products.boughtProducts.length
+  );
+
   return (
     <div className={style.container}>
       <h1 className={style.header}>
@@ -17,7 +23,7 @@ const SearchBar: React.FC = () => {
         <li>
           <img src={manHead} alt="head" className={style.man} />
         </li>
-        <li>
+        <li className={style.basketContainer}>
           <NavLink to={RouteNames.SHOPPING_CART}>
             <img
               src={shoppingBag}
@@ -25,6 +31,7 @@ const SearchBar: React.FC = () => {
               className={style.shoppingBag}
             />
           </NavLink>
+          <span className={style.amout}>{basketAmout}</span>
         </li>
       </ul>
     </div>
