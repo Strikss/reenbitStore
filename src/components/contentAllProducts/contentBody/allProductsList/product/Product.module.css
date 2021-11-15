@@ -189,7 +189,7 @@
   .starContainer {
     display: flex;
     margin-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 0;
   }
   .star {
     margin-right: 3.26px;
@@ -197,7 +197,7 @@
   }
   .title {
     font-size: 1.7rem;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   .transfer {

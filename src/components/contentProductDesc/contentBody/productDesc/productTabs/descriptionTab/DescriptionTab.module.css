@@ -5,3 +5,11 @@
 .description {
   margin-bottom: 25px;
 }
+@media (max-width: 600px) {
+  .descTitle {
+    font-size: 0.9rem;
+  }
+  .description {
+    font-size: 0.75rem;
+  }
+}
