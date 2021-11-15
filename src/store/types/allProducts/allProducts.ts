@@ -30,7 +30,7 @@ export interface AllProductsState {
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
-  payload: any;
+  payload: ProductsType[];
 }
 export interface FilterByNameAction {
   type: typeof FILTER_BY_NAME;
