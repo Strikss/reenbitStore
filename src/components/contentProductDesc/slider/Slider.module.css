@@ -31,3 +31,33 @@
   display: flex;
   justify-content: flex-end;
 }
+.rightTitleMobile {
+  display: none;
+  background-color: transparent;
+  outline: transparent;
+  border: transparent;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.rightTitleMobile:hover {
+  cursor: pointer;
+  color: rgba(95, 151, 93, 0.753);
+  transition: 0.5s;
+}
+.rightTitleMobile:disabled {
+  color: rgba(141, 139, 139, 0.842);
+}
+@media (max-width: 720px) {
+  .rightTitle {
+    display: none;
+  }
+  .rightTitleMobile {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .rightTitle,
+  .leftTitle {
+    font-size: 1.1rem;
+  }
+}

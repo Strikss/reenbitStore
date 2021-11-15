@@ -1,3 +1,4 @@
+import { Carousel } from "antd";
 import React from "react";
 import { ProductsType } from "../../../../interfaces/product";
 import style from "./ProductImage.module.css";
@@ -33,6 +34,32 @@ const ProductImage: React.FC<Props> = ({ product }) => {
           src={product?.image}
           alt="third image"
         />
+      </div>
+      {/*MOBILE*/}
+      <div className={style.carousel}>
+        <Carousel>
+          <div>
+            <img
+              className={style.mainImage}
+              src={product?.image}
+              alt="first image"
+            />
+          </div>
+          <div>
+            <img
+              className={style.secondImage}
+              src={product?.image}
+              alt="second image"
+            />
+          </div>
+          <div>
+            <img
+              className={style.secondImage}
+              src={product?.image}
+              alt="third image"
+            />
+          </div>
+        </Carousel>
       </div>
     </div>
   );
