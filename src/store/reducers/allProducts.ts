@@ -24,7 +24,7 @@ import {
 const initialState: AllProductsState = {
   products: [
     {
-      itemID: "",
+      itemID: "0",
       name: "",
       priceHalf: 0,
       priceFull: 0,

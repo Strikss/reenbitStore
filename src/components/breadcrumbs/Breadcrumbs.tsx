@@ -28,6 +28,8 @@ const Breadcrumbs: React.FC = () => {
           </Breadcrumb.Item>
         </>
       );
+    } else if (name.length > 1) {
+      return <Breadcrumb.Item>{name[1].breadcrumbName}</Breadcrumb.Item>;
     } else {
       return <Breadcrumb.Item>{name[0].breadcrumbName}</Breadcrumb.Item>;
     }
