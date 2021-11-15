@@ -121,6 +121,7 @@ export const allProducts = (
         sortBy: "",
         filterFarms: [""],
         filterPrice: [0],
+        currentID: "",
       };
     case SET_CURRENT_ID: {
       return {

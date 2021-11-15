@@ -1,6 +1,5 @@
 import React from "react";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
-import Footer from "../../components/footer/Footer";
 import FormContent from "../../components/formContent/FormContent";
 import Header from "../../components/header/Header";
 import Menu from "../../components/menu/Menu";

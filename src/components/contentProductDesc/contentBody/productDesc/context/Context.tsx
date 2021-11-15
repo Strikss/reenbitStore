@@ -77,7 +77,7 @@ const Context: React.FC<Props> = ({ product }) => {
         </li>
       </ul>
       <div className={style.buyContainer}>
-        <div>
+        <div className={style.priceContainer}>
           <h1 className={style.priceHalf}>
             {product?.priceHalf.toFixed(2)} <span> USD</span>
           </h1>

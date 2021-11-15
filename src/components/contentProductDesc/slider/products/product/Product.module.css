@@ -59,3 +59,13 @@
   color: rgba(0, 0, 0, 0.397);
   font-weight: 700;
 }
+@media (max-width: 720px) {
+  .container {
+    width: 350px;
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    width: 270px;
+  }
+}

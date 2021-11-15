@@ -57,6 +57,16 @@ const Slider: React.FC = () => {
           </button>
         </div>
       )}
+      <div className={style.btnContainer}>
+        <button
+          disabled={productPortion >= filteredProducts.length}
+          className={style.rightTitleMobile}
+          onClick={() => setProductPortion()}
+        >
+          <span>More products</span>
+          <img className={style.arrow} src={arrow} alt="arrow" />
+        </button>
+      </div>
     </div>
   );
 };
