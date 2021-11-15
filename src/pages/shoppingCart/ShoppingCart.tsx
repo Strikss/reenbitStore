@@ -9,7 +9,7 @@ import style from "./ShoppingCart.module.css";
 
 const ShoppingCart: React.FC = () => {
   return (
-    <div className={style.allProducts} id="scroller">
+    <div className={style.container}>
       <Header />
       <SearchBar />
       <Menu />

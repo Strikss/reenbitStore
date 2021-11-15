@@ -29,7 +29,7 @@ export interface AllProductsState {
   filterFarms: string[];
   filterPrice: number[];
   currentID: string;
-  boughtProducts: ProductsType[] | [];
+  boughtProducts: ProductsType[];
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;

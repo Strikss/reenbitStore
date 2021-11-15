@@ -3,9 +3,18 @@
   border: 1px solid #d1d1d1;
   border-radius: 12px;
   padding: 30px 16px;
+  height: fit-content;
+}
+.productsContainer {
+  overflow: auto;
+  max-height: 476px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 .titleContainer {
-  margin-top: 32px;
+  margin-top: 10px;
   margin-bottom: 40px;
 }
 .title {
@@ -15,6 +24,36 @@
 .subtitle {
   color: #a9a9a9;
 }
-.product {
+.product:not(:last-child) {
   margin-bottom: 32px;
+}
+.subTotal {
+  display: flex;
+  justify-content: space-between;
+}
+.taxContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.price {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.form {
+  margin-bottom: 43px;
+}
+.totalOrderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+.delivery {
+  color: #6a983c;
+  font-size: 0.85rem;
+}
+.fullPrice {
+  font-size: 1.7rem;
+  color: #6a983c;
 }

@@ -33,6 +33,9 @@
   width: 100%;
   padding: 0 16px;
 }
+.title {
+  margin-bottom: 4px;
+}
 .starContainer {
   display: flex;
   margin-bottom: 16px;
@@ -41,14 +44,9 @@
   margin-right: 5.26px;
   width: 20px;
 }
-.priceContainer {
-  display: flex;
-}
 .price {
   color: #6a983c;
-}
-.title {
-  margin-bottom: 4px;
+  font-weight: 600;
 }
 .valuesContainer {
   display: flex;
@@ -72,4 +70,51 @@
 .listTitle:nth-child(even) {
   font-size: 1rem;
   letter-spacing: 0.5px;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* DROPBUTTON */
+
+.amouthContainer {
+  display: flex;
+  width: fit-content;
+  border: 1px solid #d1d1d1;
+  border-radius: 12px;
+  font-size: 16px;
+  align-items: center;
+  padding: 6px;
+  background-color: #f9f9f9;
+  width: 121px;
+}
+
+.left {
+  color: rgba(0, 0, 0, 0.829);
+  width: 100%;
+  margin-left: 3px;
+  border: transparent;
+  background-color: transparent;
+  outline: none;
+}
+.right {
+  width: 100%;
+  min-width: 60px;
+  font-size: 14px;
+  padding-left: 5px;
+  border-left: 2px solid #d1d1d1;
+}
+.dropButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  white-space: nowrap;
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+.arrow {
+  margin-left: 5px;
 }

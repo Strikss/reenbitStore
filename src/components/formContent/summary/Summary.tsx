@@ -1,5 +1,8 @@
 import React from "react";
+import { addDays } from "../../../helpers/addDays/addDays";
 import { useAppSelector } from "../../../hooks/selectorHook";
+import { ProductsType } from "../../../interfaces/product";
+import CustomForm from "../../custom/customForm/CustomForm";
 import Product from "./product/Product";
 import style from "./Summary.module.css";
 
@@ -7,11 +10,24 @@ const Summary: React.FC = () => {
   //HOOKS
   const products = useAppSelector((state) => state.products.boughtProducts);
 
-  const boughtProducts = products.map((prod) => (
-    <li className={style.product}>
+  //BOUGHT PRODUCTS
+  const boughtProducts = products.map((prod, i) => (
+    <li className={style.product} key={i}>
       <Product product={prod} />
     </li>
   ));
+
+  //PRICES
+  const reducer = (prev: number, curr: ProductsType) => prev + curr.priceHalf;
+  const totalPrice: number = products.reduce(reducer, 0);
+  const taxPrice = totalPrice * 0.17;
+
+  //DATE
+  const deliveryDay = products.reduce((prev, curr) => {
+    return Math.max(prev, curr.deliverIn);
+  }, 0);
+  let currentDate = new Date();
+  const deliveryDate = addDays(currentDate, deliveryDay);
 
   return (
     <div className={style.container}>
@@ -24,21 +40,25 @@ const Summary: React.FC = () => {
       <ul className={style.productsContainer}>{boughtProducts}</ul>
       <div className={style.subTotal}>
         <h3>Subtotal</h3>
-        <span>73.98</span>
+        <span className={style.price}>{totalPrice.toFixed(2)} USD</span>
       </div>
-      <div className={style.tax}>
-        <h3>Tax</h3>
-        <span>17%</span>
+      <div className={style.taxContainer}>
+        <h3>Tax 17%</h3>
+        <span className={style.price}>{taxPrice.toFixed(2)} USD</span>
       </div>
-      <div className={style.inputContainer}>
-        <input type="text" />
+      <div className={style.form}>
+        <CustomForm placeholder="Apply promo code" suffixText="Apply now" />
       </div>
-      <div className={style.priceContainer}>
-        <div>
-          <h3>total order</h3>
-          <p>guaranteed</p>
+      <div className={style.totalOrderContainer}>
+        <div className={style.totalOrder}>
+          <h3>Total Order</h3>
+          <p className={style.delivery}>
+            Guaranteed delivery day: {deliveryDate}
+          </p>
         </div>
-        <h1></h1>
+        <h1 className={style.fullPrice}>
+          {(totalPrice + taxPrice).toFixed(2)} USD
+        </h1>
       </div>
     </div>
   );
