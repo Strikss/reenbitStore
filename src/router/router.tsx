@@ -10,7 +10,7 @@ export interface IRoute {
 }
 export enum RouteNames {
   ALL_PRODUCTS = "/",
-  PRODUCT_DESCRIPTION = "",
+  PRODUCT_DESCRIPTION = "/product-description",
   SHOPPING_CART = "/shopping-cart",
 }
 
