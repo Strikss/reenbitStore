@@ -57,3 +57,7 @@
   font-size: 1.7rem;
   color: #6a983c;
 }
+.discount {
+  font-size: 1.3rem;
+  text-decoration: line-through;
+}

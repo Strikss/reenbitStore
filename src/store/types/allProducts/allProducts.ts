@@ -15,6 +15,7 @@ import {
   SET_CURRENT_ID,
   BUY_PRODUCT,
   REMOVE_PRODUCT,
+  SET_DISCOUNT,
 } from "./constansts";
 
 export interface AllProductsState {
@@ -30,6 +31,8 @@ export interface AllProductsState {
   filterPrice: number[];
   currentID: string;
   boughtProducts: ProductsType[];
+  promoCode: string;
+  discount: number;
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -89,6 +92,9 @@ export interface RemoveProduct {
   type: typeof REMOVE_PRODUCT;
   payload: ProductsType;
 }
+export interface SetDiscount {
+  type: typeof SET_DISCOUNT;
+}
 
 export type AllProductsAction =
   | FetchAllProductsAction
@@ -105,4 +111,5 @@ export type AllProductsAction =
   | ResetAction
   | SetCurrentID
   | BuyProduct
-  | RemoveProduct;
+  | RemoveProduct
+  | SetDiscount;

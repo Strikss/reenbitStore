@@ -2,6 +2,7 @@ import {
   BUY_PRODUCT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
+  SET_DISCOUNT,
 } from "./../types/allProducts/constansts";
 import {
   AllProductsState,
@@ -54,6 +55,8 @@ const initialState: AllProductsState = {
   filterPrice: [0],
   currentID: "",
   boughtProducts: [],
+  promoCode: "MISHA",
+  discount: 0,
 };
 
 export const allProducts = (
@@ -141,6 +144,12 @@ export const allProducts = (
         boughtProducts: state.boughtProducts.filter(
           (prod) => prod !== action.payload
         ),
+      };
+    }
+    case SET_DISCOUNT: {
+      return {
+        ...state,
+        discount: 15,
       };
     }
     default:

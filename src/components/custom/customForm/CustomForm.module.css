@@ -7,4 +7,8 @@
 .suffix {
   font-size: 1.1rem;
   font-weight: 700;
+  background-color: transparent;
+  outline: transparent;
+  border: none;
+  cursor: pointer;
 }

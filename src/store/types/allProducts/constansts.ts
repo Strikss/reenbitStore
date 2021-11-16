@@ -13,3 +13,4 @@ export const RESET = "RESET";
 export const SET_CURRENT_ID = "SET_CURRENT_ID";
 export const BUY_PRODUCT = "BUY_PRODUCT";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
+export const SET_DISCOUNT = "SET_DISCOUNT";

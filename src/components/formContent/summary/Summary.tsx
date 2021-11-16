@@ -9,6 +9,7 @@ import style from "./Summary.module.css";
 const Summary: React.FC = () => {
   //HOOKS
   const products = useAppSelector((state) => state.products.boughtProducts);
+  const { promoCode, discount } = useAppSelector((state) => state.products);
 
   //BOUGHT PRODUCTS
   const boughtProducts = products.map((prod, i) => (
@@ -19,8 +20,10 @@ const Summary: React.FC = () => {
 
   //PRICES
   const reducer = (prev: number, curr: ProductsType) => prev + curr.priceHalf;
-  const totalPrice: number = products.reduce(reducer, 0);
-  const taxPrice = totalPrice * 0.17;
+  const productsPrice = products.reduce(reducer, 0);
+  const taxPrice = productsPrice * 0.17;
+  const discountPrice: number =
+    productsPrice - productsPrice * (discount / 100);
 
   //DATE
   const deliveryDay = products.reduce((prev, curr) => {
@@ -40,14 +43,18 @@ const Summary: React.FC = () => {
       <ul className={style.productsContainer}>{boughtProducts}</ul>
       <div className={style.subTotal}>
         <h3>Subtotal</h3>
-        <span className={style.price}>{totalPrice.toFixed(2)} USD</span>
+        <span className={style.price}>{productsPrice.toFixed(2)} USD</span>
       </div>
       <div className={style.taxContainer}>
         <h3>Tax 17%</h3>
         <span className={style.price}>{taxPrice.toFixed(2)} USD</span>
       </div>
       <div className={style.form}>
-        <CustomForm placeholder="Apply promo code" suffixText="Apply now" />
+        <CustomForm
+          placeholder="Apply promo code"
+          suffixText="Apply now"
+          promoCode={promoCode}
+        />
       </div>
       <div className={style.totalOrderContainer}>
         <div className={style.totalOrder}>
@@ -56,9 +63,16 @@ const Summary: React.FC = () => {
             Guaranteed delivery day: {deliveryDate}
           </p>
         </div>
-        <h1 className={style.fullPrice}>
-          {(totalPrice + taxPrice).toFixed(2)} USD
-        </h1>
+        <div className={style.discountContainer}>
+          <h1 className={discount ? style.discount : style.fullPrice}>
+            {(productsPrice + taxPrice).toFixed(2)} USD
+          </h1>
+          {discount ? (
+            <h1 className={style.fullPrice}>
+              {(discountPrice + taxPrice).toFixed(2)} USD
+            </h1>
+          ) : null}
+        </div>
       </div>
     </div>
   );

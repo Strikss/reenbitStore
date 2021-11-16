@@ -3,6 +3,7 @@ import {
   BUY_PRODUCT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
+  SET_DISCOUNT,
 } from "./../types/allProducts/constansts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
@@ -90,5 +91,10 @@ export const removeProduct = (product: ProductsType): AllProductsAction => {
   return {
     type: REMOVE_PRODUCT,
     payload: product,
+  };
+};
+export const setDiscount = (): AllProductsAction => {
+  return {
+    type: SET_DISCOUNT,
   };
 };
