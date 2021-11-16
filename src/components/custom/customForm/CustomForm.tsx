@@ -1,5 +1,6 @@
 import { Input } from "antd";
 import React, { useState } from "react";
+import { useAppSelector } from "../../../hooks/selectorHook";
 import { useAction } from "../../../hooks/useAction";
 import style from "./CustomForm.module.css";
 
@@ -16,9 +17,10 @@ const CustomForm: React.FC<Props> = ({
   //HOOKS
   const [promo, setPromo] = useState("");
   const { setDiscount } = useAction();
+  const { boughtProducts } = useAppSelector((state) => state.products);
 
   //SUFFIX
-  const isDisabled = promoCode !== promo;
+  const isDisabled = promoCode !== promo || boughtProducts.length < 1;
 
   const suffix = (
     <button
