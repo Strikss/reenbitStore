@@ -17,7 +17,7 @@ const ShoppingCart: React.FC = () => {
   }, [id]);
 
   return (
-    <div className={style.container}>
+    <div className={style.container} id="shoppingCart">
       <Header />
       <SearchBar />
       <Menu />

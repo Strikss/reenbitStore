@@ -1,6 +1,7 @@
-import { Form, Input } from "antd";
-import React from "react";
+import { Form, Input, AutoComplete, FormInstance } from "antd";
+import React, { useState } from "react";
 import style from "./CustomForm.module.css";
+import { countryData } from "../../../store/coutryData/coutryData";
 
 interface Props {
   name: string;
@@ -8,6 +9,8 @@ interface Props {
   max?: number;
   formType?: string;
   validate?: boolean;
+  autoComplete?: boolean;
+  form?: any;
 }
 const CustomForm: React.FC<Props> = ({
   placeholder,
@@ -15,9 +18,20 @@ const CustomForm: React.FC<Props> = ({
   max = 50,
   name,
   validate = false,
+  autoComplete = false,
+  form,
 }) => {
   //HOOKS
+  const [selected, setSelected] = useState("");
+  const [options, setOptions] = useState<{ value: string }[]>([]);
 
+  //AUTOCOMPLETE
+  const onSelect = (value: string) => {
+    form.setFieldsValue({ [selected]: value });
+  };
+  const handleSearch = (value: string) => {
+    setOptions(!value ? [] : [...countryData]);
+  };
   return (
     <Form.Item
       name={name}
@@ -27,14 +41,38 @@ const CustomForm: React.FC<Props> = ({
       ]}
     >
       <span className={style.inputContainer}>
-        <Input
-          placeholder={placeholder}
-          bordered={false}
-          size="large"
-          allowClear
-          maxLength={max}
-          type={formType}
-        />
+        {autoComplete ? (
+          <AutoComplete
+            options={options}
+            onSelect={onSelect}
+            onChange={(e) => setSelected(e)}
+            filterOption={(inputValue, option) =>
+              option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !==
+              -1
+            }
+            onSearch={handleSearch}
+          >
+            <Input
+              name={name}
+              placeholder={placeholder}
+              bordered={false}
+              size="large"
+              allowClear
+              maxLength={max}
+              type={formType}
+              onChange={(e) => setSelected(e.target.name)}
+            />
+          </AutoComplete>
+        ) : (
+          <Input
+            placeholder={placeholder}
+            bordered={false}
+            size="large"
+            allowClear
+            maxLength={max}
+            type={formType}
+          />
+        )}
       </span>
     </Form.Item>
   );

@@ -2,7 +2,11 @@ import React from "react";
 import CustomForm from "../../../custom/customForm/CustomForm";
 import style from "./BillingInfo.module.css";
 
-const BillingInfo: React.FC = () => {
+interface Props {
+  form: any;
+}
+
+const BillingInfo: React.FC<Props> = ({ form }) => {
   return (
     <div className={style.container}>
       <div className={style.titleContainer}>
@@ -42,11 +46,23 @@ const BillingInfo: React.FC = () => {
         </li>
         <li className={style.oneForm}>
           <label>Town / City</label>
-          <CustomForm placeholder="Town / City" name="city" validate />
+          <CustomForm
+            placeholder="Town / City"
+            name="city"
+            validate
+            autoComplete
+            form={form}
+          />
         </li>
         <li className={style.oneForm}>
           <label>State / Country</label>
-          <CustomForm placeholder="State / Country" name="country" validate />
+          <CustomForm
+            placeholder="State / Country"
+            name="country"
+            validate
+            autoComplete
+            form={form}
+          />
         </li>
         <li className={style.oneForm}>
           <label>ZIP / Postal code</label>
