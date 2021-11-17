@@ -1,4 +1,4 @@
-import { Input } from "antd";
+import { Form, Input } from "antd";
 import React from "react";
 import style from "./AdditionalInfo.module.css";
 
@@ -16,13 +16,15 @@ const AdditionalInfo: React.FC = () => {
       <div className={style.notes}>
         <h3>Order notes</h3>
         <div className={style.textArea}>
-          <TextArea
-            placeholder="Need a specific delivery day? Sending a gitf? Let’s say ..."
-            rows={7}
-            bordered={false}
-            maxLength={500}
-            style={{ resize: "none" }}
-          />
+          <Form.Item name="textArea">
+            <TextArea
+              placeholder="Need a specific delivery day? Sending a gitf? Let’s say ..."
+              rows={7}
+              bordered={false}
+              maxLength={500}
+              style={{ resize: "none" }}
+            />
+          </Form.Item>
         </div>
       </div>
     </div>

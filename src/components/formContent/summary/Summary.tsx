@@ -2,8 +2,8 @@ import React from "react";
 import { addDays } from "../../../helpers/addDays/addDays";
 import { useAppSelector } from "../../../hooks/selectorHook";
 import { ProductsType } from "../../../interfaces/product";
-import CustomForm from "../../custom/customForm/CustomForm";
 import Product from "./product/Product";
+import PromoCode from "./promoCode/PromoCode";
 import style from "./Summary.module.css";
 
 const Summary: React.FC = () => {
@@ -50,10 +50,13 @@ const Summary: React.FC = () => {
         <span className={style.price}>{taxPrice.toFixed(2)} USD</span>
       </div>
       <div className={style.form}>
-        <CustomForm
+        <PromoCode
           placeholder="Apply promo code"
           suffixText="Apply now"
           promoCode={promoCode}
+          max={10}
+          name="promoCode"
+          id="summary"
         />
       </div>
       <div className={style.totalOrderContainer}>

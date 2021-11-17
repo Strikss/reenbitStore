@@ -1,8 +1,10 @@
+import { Checkbox, Form } from "antd";
 import React from "react";
 import CheckBox from "../../../custom/checkBox/CheckBox";
 import style from "./Confirmation.module.css";
 
 const Confirmation: React.FC = () => {
+  const [form] = Form.useForm();
   return (
     <div className={style.container}>
       <div className={style.titleContainer}>
@@ -11,23 +13,61 @@ const Confirmation: React.FC = () => {
           We are getting to the end. Just few clicks and your order si ready!
         </p>
       </div>
-      <ul className={style.chexBoxContainer}>
-        <li className={style.item}>
-          <CheckBox />
-          <p>
-            I agree with sending an Marketing and newsletter emails. No spam,
-            promissed!
-          </p>
-        </li>
-        <li className={style.item}>
-          <CheckBox />
-          <p>
-            I agree with our <u>terms and conditions</u> and{" "}
-            <u>privacy policy</u>.
-          </p>
-        </li>
-      </ul>
-      <button className={style.button}>Complete order</button>
+      <div className={style.chexBoxContainer}>
+        <Form.Item
+          name="marketingTerms"
+          valuePropName="checked"
+          rules={[
+            {
+              validator: (_, value) =>
+                value
+                  ? Promise.resolve()
+                  : Promise.reject(new Error("Should accept agreement")),
+            },
+          ]}
+        >
+          <span
+            className={style.item}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              e.target.checked
+            }
+          >
+            <CheckBox />
+            <span>
+              I agree with sending an Marketing and newsletter emails. No spam,
+              promissed!{" "}
+            </span>
+          </span>
+        </Form.Item>
+        <Form.Item
+          name="privacyTerms"
+          valuePropName="checked"
+          rules={[
+            {
+              validator: (_, value) =>
+                value
+                  ? Promise.resolve()
+                  : Promise.reject(new Error("Should accept agreement")),
+            },
+          ]}
+        >
+          <span
+            className={style.item}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              e.target.checked
+            }
+          >
+            <CheckBox />
+            <span>
+              I agree with our <u>terms and conditions</u> and{" "}
+              <u>privacy policy</u>.
+            </span>
+          </span>
+        </Form.Item>
+      </div>
+      <button className={style.button} type="submit" form="mainForm">
+        Complete order
+      </button>
     </div>
   );
 };

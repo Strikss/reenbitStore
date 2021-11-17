@@ -1,12 +1,12 @@
 import React from "react";
-import Form from "./form/Form";
+import FormInformation from "./form/FormInformation";
 import style from "./FormContent.module.css";
 import Summary from "./summary/Summary";
 
 const FormContent: React.FC = () => {
   return (
     <div className={style.container}>
-      <Form />
+      <FormInformation />
       <Summary />
     </div>
   );

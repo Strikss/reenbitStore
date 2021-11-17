@@ -7,7 +7,6 @@ const CheckBox: React.FC = () => {
   const { filterFarms, filterStars } = useAppSelector(
     (state) => state.products
   );
-
   //STATES
   const [checked, setChecked] = useState(false);
 

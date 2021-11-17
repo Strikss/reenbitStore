@@ -11,36 +11,51 @@ const BillingInfo: React.FC = () => {
       </div>
       <ul className={style.infoContainer}>
         <li className={style.oneForm}>
-          <h3>First name</h3>
-          <CustomForm placeholder="First name" suffixText="" />
+          <label>First name</label>
+          <CustomForm placeholder="First name" name="firstName" validate />
         </li>
         <li className={style.oneForm}>
-          <h3>Last name</h3>
-          <CustomForm placeholder="Last name" suffixText="" />
+          <label>Last name</label>
+          <CustomForm placeholder="Last name" name="lastName" validate />
         </li>
         <li className={style.oneForm}>
-          <h3>Email address</h3>
-          <CustomForm placeholder="Email address" suffixText="" />
+          <label>Email address</label>
+          <CustomForm
+            placeholder="Email address"
+            name="email"
+            validate
+            formType="email"
+          />
         </li>
         <li className={style.oneForm}>
-          <h3>Phone number</h3>
-          <CustomForm placeholder="Phone number" suffixText="" />
+          <label>Phone number</label>
+          <CustomForm
+            placeholder="Phone number"
+            formType="number"
+            name="phone"
+            validate
+          />
         </li>
         <li className={style.oneForm}>
-          <h3>Address</h3>
-          <CustomForm placeholder="Address" suffixText="" />
+          <label>Address</label>
+          <CustomForm placeholder="Address" name="address" validate />
         </li>
         <li className={style.oneForm}>
-          <h3>Town / City</h3>
-          <CustomForm placeholder="Town / City" suffixText="" />
+          <label>Town / City</label>
+          <CustomForm placeholder="Town / City" name="city" validate />
         </li>
         <li className={style.oneForm}>
-          <h3>State / Country</h3>
-          <CustomForm placeholder="State / Country" suffixText="" />
+          <label>State / Country</label>
+          <CustomForm placeholder="State / Country" name="country" validate />
         </li>
         <li className={style.oneForm}>
-          <h3>ZIP / Postal code</h3>
-          <CustomForm placeholder="ZIP / Postal code" suffixText="" />
+          <label>ZIP / Postal code</label>
+          <CustomForm
+            placeholder="ZIP / Postal code"
+            formType="number"
+            name="zip"
+            validate
+          />
         </li>
       </ul>
     </div>
