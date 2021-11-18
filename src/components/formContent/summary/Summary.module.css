@@ -80,6 +80,9 @@
   .fullPrice {
     font-size: 1.3rem;
   }
+  .discount {
+    font-size: 0.9rem;
+  }
 }
 @media (max-width: 425px) {
   .container {
@@ -89,6 +92,13 @@
     font-size: 1.1rem;
   }
   .delivery {
+    font-size: 0.7rem;
+  }
+
+  .discount {
     font-size: 0.8rem;
+  }
+  .delivery {
+    word-wrap: break-word;
   }
 }

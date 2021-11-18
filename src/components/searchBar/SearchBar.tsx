@@ -31,7 +31,7 @@ const SearchBar: React.FC = () => {
               className={style.shoppingBag}
             />
           </NavLink>
-          <span className={style.amout}>{basketAmout}</span>
+          <span className={style.amount}>{basketAmout}</span>
         </li>
       </ul>
     </div>

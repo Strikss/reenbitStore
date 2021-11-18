@@ -120,14 +120,12 @@
 }
 
 @media (max-width: 1024px) {
-  .listTitle:nth-child(odd),
-  .listTitle:nth-child(even) {
+  .listTitle:nth-child(1n) {
     font-size: 0.9rem;
   }
 }
 @media (max-width: 768px) {
-  .listTitle:nth-child(odd),
-  .listTitle:nth-child(even) {
+  .listTitle:nth-child(1n) {
     font-size: 0.8rem;
   }
   .star {
@@ -141,4 +139,15 @@
   .price {
     font-size: 1.1rem;
   }
+}
+@media (max-width: 425px) {
+  .listTitle:nth-child(1n) {
+    font-size: 0.7rem;
+  }
+}
+.right {
+  min-width: 50px;
+}
+.amouthContainer {
+  width: 100px;
 }
