@@ -22,9 +22,7 @@ const Breadcrumbs: React.FC = () => {
     if (selectedProduct) {
       return (
         <>
-          <Breadcrumb.Item href="reenbitStore#/">
-            {name[0].breadcrumbName}
-          </Breadcrumb.Item>
+          <Breadcrumb.Item href="#">{name[0].breadcrumbName}</Breadcrumb.Item>
           <Breadcrumb.Item>
             <span>{selectedProduct.name}</span>
           </Breadcrumb.Item>
