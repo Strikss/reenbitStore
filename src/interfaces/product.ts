@@ -17,3 +17,8 @@ export interface ProductsType {
   questions: number;
   reviews: number;
 }
+export interface ProdInf {
+  product: ProductsType;
+  amount: number;
+  type: "Pcs" | "Kgs" | "Box" | "Pack";
+}

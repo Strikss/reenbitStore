@@ -22,7 +22,9 @@ const Product: React.FC<Props> = ({ product }) => {
   const discount = 100 - (product.priceHalf / product.priceFull) * 100;
 
   //SUCCESS
-  const success = boughtProducts.some((prod) => prod.itemID === product.itemID);
+  const success = boughtProducts.some(
+    (prod) => prod.product.itemID === product.itemID
+  );
 
   return (
     <div className={style.container}>
@@ -59,7 +61,7 @@ const Product: React.FC<Props> = ({ product }) => {
           ) : (
             <button
               className={style.button}
-              onClick={() => buyProduct(product)}
+              onClick={() => buyProduct({ product, amount: 1, type: "Pcs" })}
             >
               <NavLink to={RouteNames.SHOPPING_CART}>Buy now</NavLink>
             </button>

@@ -1,8 +1,8 @@
 import { Dropdown, Menu, Progress } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Buttons.module.css";
 import arrow from "../../../../../../assets/images/arrow.svg";
-import { ProductsType } from "../../../../../../interfaces/product";
+import { ProdInf, ProductsType } from "../../../../../../interfaces/product";
 import { useAction } from "../../../../../../hooks/useAction";
 import { NavLink } from "react-router-dom";
 import { RouteNames } from "../../../../../../router/router";
@@ -14,23 +14,45 @@ interface Props {
 
 const Buttons: React.FC<Props> = ({ product }) => {
   //HOOKS
-  const boughtProducts: ProductsType[] = useAppSelector(
+  const boughtProducts: ProdInf[] = useAppSelector(
     (state) => state.products.boughtProducts
   );
-  const [amouth, setAmouth] = useState("Pcs");
+  const [type, setType] = useState("Pcs");
+  const [amount, setAmount] = useState(1);
+  const [prodInf, setProdInf] = useState<ProdInf>({
+    product: product,
+    amount: amount,
+    type: type as any,
+  });
   const { buyProduct } = useAction();
 
   //PRODUCT IN THE BASKET
-  const success = boughtProducts.some((prod) => prod.itemID === product.itemID);
+  const success = boughtProducts.some(
+    (prod) => prod.product.itemID === product.itemID
+  );
+
   //DROPDOWN
   const menu = (
     <Menu>
-      <Menu.Item onClick={() => setAmouth("Pcs")}>Pcs</Menu.Item>
-      <Menu.Item onClick={() => setAmouth("Kgs")}>Kgs</Menu.Item>
-      <Menu.Item onClick={() => setAmouth("Box")}>Box</Menu.Item>
-      <Menu.Item onClick={() => setAmouth("Pack")}>Pack</Menu.Item>
+      <Menu.Item key="Pcs" onClick={() => setType("Pcs")}>
+        Pcs
+      </Menu.Item>
+      <Menu.Item key="Kgs" onClick={() => setType("Kgs")}>
+        Kgs
+      </Menu.Item>
+      <Menu.Item key="Box" onClick={() => setType("Box")}>
+        Box
+      </Menu.Item>
+      <Menu.Item key="Pack" onClick={() => setType("Pack")}>
+        Pack
+      </Menu.Item>
     </Menu>
   );
+
+  //FUNCTIONS
+  useEffect(() => {
+    setProdInf({ product: product, amount: amount, type: type as any });
+  }, [type, amount]);
 
   return success ? (
     <div className={style.success}>
@@ -40,12 +62,17 @@ const Buttons: React.FC<Props> = ({ product }) => {
   ) : (
     <div className={style.btnContainer}>
       <div className={style.amouthContainer}>
-        <input className={style.left} type="number" placeholder="1" />
+        <input
+          className={style.left}
+          type="number"
+          placeholder="1"
+          onChange={(e) => setAmount(Number(e.target.value))}
+        />
         <div className={style.right}>
           <Dropdown arrow overlay={menu} trigger={["click"]}>
             <button className={style.dropButton}>
               <a onClick={(e) => e.preventDefault()}>
-                {amouth}
+                {type}
                 <img className={style.arrow} src={arrow} alt="arrow" />
               </a>
             </button>
@@ -54,7 +81,7 @@ const Buttons: React.FC<Props> = ({ product }) => {
       </div>
 
       <NavLink to={RouteNames.SHOPPING_CART}>
-        <button className={style.button} onClick={() => buyProduct(product)}>
+        <button className={style.button} onClick={() => buyProduct(prodInf)}>
           <span className={style.plus}>+</span>
           Add to cart
         </button>

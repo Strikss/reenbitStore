@@ -1,7 +1,7 @@
 import React from "react";
 import { addDays } from "../../../helpers/addDays/addDays";
 import { useAppSelector } from "../../../hooks/selectorHook";
-import { ProductsType } from "../../../interfaces/product";
+import { ProdInf } from "../../../interfaces/product";
 import Product from "./product/Product";
 import PromoCode from "./promoCode/PromoCode";
 import style from "./Summary.module.css";
@@ -10,7 +10,6 @@ const Summary: React.FC = () => {
   //HOOKS
   const products = useAppSelector((state) => state.products.boughtProducts);
   const { promoCode, discount } = useAppSelector((state) => state.products);
-
   //BOUGHT PRODUCTS
   const boughtProducts = products.map((prod, i) => (
     <li className={style.product} key={i}>
@@ -19,15 +18,15 @@ const Summary: React.FC = () => {
   ));
 
   //PRICES
-  const reducer = (prev: number, curr: ProductsType) => prev + curr.priceHalf;
+  const reducer = (prev: number, curr: ProdInf) =>
+    prev + curr.product.priceHalf * curr.amount;
   const productsPrice = products.reduce(reducer, 0);
   const taxPrice = productsPrice * 0.17;
-  const discountPrice: number =
-    productsPrice - productsPrice * (discount / 100);
+  const discountPrice = productsPrice - productsPrice * (discount / 100);
 
   //DATE
   const deliveryDay = products.reduce((prev, curr) => {
-    return Math.max(prev, curr.deliverIn);
+    return Math.max(prev, curr.product.deliverIn);
   }, 0);
   let currentDate = new Date();
   const deliveryDate = addDays(currentDate, deliveryDay);

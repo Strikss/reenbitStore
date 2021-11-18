@@ -1,4 +1,4 @@
-import { ProductsType } from "./../../interfaces/product";
+import { ProdInf, ProductsType } from "./../../interfaces/product";
 import {
   BUY_PRODUCT,
   REMOVE_PRODUCT,
@@ -81,7 +81,7 @@ export const setCurrentID = (id: string): AllProductsAction => {
     payload: id,
   };
 };
-export const buyProduct = (product: ProductsType): AllProductsAction => {
+export const buyProduct = (product: ProdInf): AllProductsAction => {
   return {
     type: BUY_PRODUCT,
     payload: product,

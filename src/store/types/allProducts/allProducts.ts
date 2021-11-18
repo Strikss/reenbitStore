@@ -1,4 +1,4 @@
-import { ProductsType } from "./../../../interfaces/product";
+import { ProdInf, ProductsType } from "./../../../interfaces/product";
 import {
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,
@@ -30,7 +30,7 @@ export interface AllProductsState {
   filterFarms: string[];
   filterPrice: number[];
   currentID: string;
-  boughtProducts: ProductsType[];
+  boughtProducts: ProdInf[];
   promoCode: string;
   discount: number;
 }
@@ -86,7 +86,7 @@ export interface SetCurrentID {
 }
 export interface BuyProduct {
   type: typeof BUY_PRODUCT;
-  payload: ProductsType;
+  payload: ProdInf;
 }
 export interface RemoveProduct {
   type: typeof REMOVE_PRODUCT;
