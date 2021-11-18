@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  width: 90%;
   margin-right: 32px;
 }
 .fireWorks {
@@ -9,3 +9,11 @@
   width: 50%;
   pointer-events: none;
 }
+
+@media (max-width: 768px) {
+  .fireWorks {
+    width: 75%;
+    left: 13%;
+    bottom: 10%;
+  }
+} ;

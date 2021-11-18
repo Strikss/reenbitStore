@@ -12,3 +12,14 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 32px;
 }
+
+@media (max-width: 1024px) {
+  .infoContainer {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    font-size: 0.8rem;
+  }
+} ;

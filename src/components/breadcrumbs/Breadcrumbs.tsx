@@ -41,7 +41,7 @@ const Breadcrumbs: React.FC = () => {
   return (
     <Breadcrumb className={style.container}>
       <Breadcrumb.Item>
-        <HomeOutlined />
+        <HomeOutlined className={style.home} />
         <span>Homepage</span>
       </Breadcrumb.Item>
       {breadCrumb}

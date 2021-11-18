@@ -118,3 +118,27 @@
 .arrow {
   margin-left: 5px;
 }
+
+@media (max-width: 1024px) {
+  .listTitle:nth-child(odd),
+  .listTitle:nth-child(even) {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .listTitle:nth-child(odd),
+  .listTitle:nth-child(even) {
+    font-size: 0.8rem;
+  }
+  .star {
+    margin-right: 5.26px;
+    width: 15px;
+  }
+  .right,
+  .amouthContainer {
+    font-size: 12px;
+  }
+  .price {
+    font-size: 1.1rem;
+  }
+}

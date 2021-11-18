@@ -40,3 +40,11 @@
   margin-left: 5px;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .container {
+    font-size: 0.8rem;
+  }
+  .item {
+    font-size: 0.8rem;
+  }
+} ;

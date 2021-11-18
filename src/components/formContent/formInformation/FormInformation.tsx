@@ -10,6 +10,7 @@ const FormInformation: React.FC = () => {
   //HOOKS
   const [form] = Form.useForm();
   const [fireworks, setFireworks] = useState(false);
+
   //FORM FUNCTIONS
   const onFinish = (values: { [key: string]: string }) => {
     console.log(values);

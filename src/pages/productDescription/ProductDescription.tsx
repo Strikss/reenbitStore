@@ -23,7 +23,7 @@ const ProductDescription: React.FC = () => {
   }, [id]);
 
   return (
-    <div className={style.productDescription} id="productDescription">
+    <div className={style.container} id="productDescription">
       <Header />
       <SearchBar />
       <Menu />

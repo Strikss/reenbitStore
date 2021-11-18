@@ -10,6 +10,7 @@ const Summary: React.FC = () => {
   //HOOKS
   const products = useAppSelector((state) => state.products.boughtProducts);
   const { promoCode, discount } = useAppSelector((state) => state.products);
+
   //BOUGHT PRODUCTS
   const boughtProducts = products.map((prod, i) => (
     <li className={style.product} key={i}>
