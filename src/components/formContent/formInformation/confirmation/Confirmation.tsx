@@ -27,7 +27,6 @@ const Confirmation: React.FC = () => {
           </p>
         </li>
       </ul>
-      <button className={style.button}>Complete order</button>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import CustomForm from "../../../custom/customForm/CustomForm";
+import CustomFormField from "../../../custom/customFormField/CustomFormField";
 import style from "./BillingInfo.module.css";
 
 const BillingInfo: React.FC = () => {
@@ -12,35 +12,35 @@ const BillingInfo: React.FC = () => {
       <ul className={style.infoContainer}>
         <li className={style.oneForm}>
           <h3>First name</h3>
-          <CustomForm placeholder="First name" suffixText="" />
+          <CustomFormField placeholder="First name" />
         </li>
         <li className={style.oneForm}>
           <h3>Last name</h3>
-          <CustomForm placeholder="Last name" suffixText="" />
+          <CustomFormField placeholder="Last name" />
         </li>
         <li className={style.oneForm}>
           <h3>Email address</h3>
-          <CustomForm placeholder="Email address" suffixText="" />
+          <CustomFormField placeholder="Email address" />
         </li>
         <li className={style.oneForm}>
           <h3>Phone number</h3>
-          <CustomForm placeholder="Phone number" suffixText="" />
+          <CustomFormField placeholder="Phone number" />
         </li>
         <li className={style.oneForm}>
           <h3>Address</h3>
-          <CustomForm placeholder="Address" suffixText="" />
+          <CustomFormField placeholder="Address" />
         </li>
         <li className={style.oneForm}>
           <h3>Town / City</h3>
-          <CustomForm placeholder="Town / City" suffixText="" />
+          <CustomFormField placeholder="Town / City" />
         </li>
         <li className={style.oneForm}>
           <h3>State / Country</h3>
-          <CustomForm placeholder="State / Country" suffixText="" />
+          <CustomFormField placeholder="State / Country" />
         </li>
         <li className={style.oneForm}>
           <h3>ZIP / Postal code</h3>
-          <CustomForm placeholder="ZIP / Postal code" suffixText="" />
+          <CustomFormField placeholder="ZIP / Postal code" />
         </li>
       </ul>
     </div>

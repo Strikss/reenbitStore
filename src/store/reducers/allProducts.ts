@@ -2,7 +2,7 @@ import {
   BUY_PRODUCT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
-} from "./../types/allProducts/constansts";
+} from "../types/allProducts/constansts";
 import {
   AllProductsState,
   AllProductsAction,

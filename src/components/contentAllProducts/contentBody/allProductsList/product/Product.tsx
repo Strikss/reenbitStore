@@ -3,10 +3,10 @@ import blackStar from "../../../../../assets/images/blackStar.svg";
 import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
 import { RouteNames } from "../../../../../router/router";
 import { NavLink } from "react-router-dom";
-import productArrow from "../../../../../assets/images/productArrow.svg";
 import heart from "../../../../../assets/images/heart.svg";
 import { ProductsType } from "../../../../../interfaces/product";
 import React from "react";
+import BuyButton from "../../../../custom/buttons/buyButton/BuyButton";
 
 interface Props {
   prod: ProductsType;
@@ -95,13 +95,7 @@ const Product: React.FC<Props> = ({ prod }) => {
               <p className={style.delivery}>Delivery in 1 day</p>
             </div>
             <div className={style.buttons}>
-              <button className={style.button}>
-                <NavLink
-                  to={RouteNames.PRODUCT_DESCRIPTION + `/${prod.itemID}`}
-                >
-                  Product Detail <img src={productArrow} alt="arrow" />
-                </NavLink>
-              </button>
+              <BuyButton productId={prod.itemID} type="detail" />
               <div className={style.wishList}>
                 <img src={heart} alt="heart" /> <span> Add to wish list</span>
               </div>

@@ -1,8 +1,9 @@
 import React from "react";
+import BuyButton from "../../custom/buttons/buyButton/BuyButton";
 import AdditionalInfo from "./additionalInfo/AdditionalInfo";
 import BillingInfo from "./billingInfo/BillingInfo";
 import Confirmation from "./confirmation/Confirmation";
-import style from "./Form.module.css";
+import style from "./FormInformation.module.css";
 
 const Form: React.FC = () => {
   return (
@@ -10,6 +11,9 @@ const Form: React.FC = () => {
       <BillingInfo />
       <AdditionalInfo />
       <Confirmation />
+      <span className={style.button}>
+        <BuyButton type="completeOrder" />
+      </span>
     </div>
   );
 };

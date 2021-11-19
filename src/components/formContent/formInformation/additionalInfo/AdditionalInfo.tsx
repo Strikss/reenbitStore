@@ -17,7 +17,7 @@ const AdditionalInfo: React.FC = () => {
         <h3>Order notes</h3>
         <div className={style.textArea}>
           <TextArea
-            placeholder="Need a specific delivery day? Sending a gitf? Let’s say ..."
+            placeholder="Need a specific delivery day? Sending a gift? Let’s say ..."
             rows={7}
             bordered={false}
             maxLength={500}

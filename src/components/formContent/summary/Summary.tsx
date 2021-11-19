@@ -2,20 +2,31 @@ import React from "react";
 import { addDays } from "../../../helpers/addDays/addDays";
 import { useAppSelector } from "../../../hooks/selectorHook";
 import { ProductsType } from "../../../interfaces/product";
-import CustomForm from "../../custom/customForm/CustomForm";
+import CustomFormField from "../../custom/customFormField/CustomFormField";
 import Product from "./product/Product";
 import style from "./Summary.module.css";
+import emptyBox from "../../../assets/images/empty_box.svg";
 
 const Summary: React.FC = () => {
   //HOOKS
   const products = useAppSelector((state) => state.products.boughtProducts);
 
   //BOUGHT PRODUCTS
-  const boughtProducts = products.map((prod, i) => (
-    <li className={style.product} key={i}>
-      <Product product={prod} />
-    </li>
-  ));
+  const boughtProducts =
+    products.length === 0 ? (
+      <div className={style.emptyBoxContainer}>
+        <a href="#">
+          <img src={emptyBox} alt="empty box" />
+          <p className={style.emptyBox}>The basket is empty</p>
+        </a>
+      </div>
+    ) : (
+      products.map((prod, i) => (
+        <li className={style.product} key={i}>
+          <Product product={prod} />
+        </li>
+      ))
+    );
 
   //PRICES
   const reducer = (prev: number, curr: ProductsType) => prev + curr.priceHalf;
@@ -39,15 +50,18 @@ const Summary: React.FC = () => {
       </div>
       <ul className={style.productsContainer}>{boughtProducts}</ul>
       <div className={style.subTotal}>
-        <h3>Subtotal</h3>
+        <span className={style.innerTitle}>Subtotal</span>
         <span className={style.price}>{totalPrice.toFixed(2)} USD</span>
       </div>
       <div className={style.taxContainer}>
-        <h3>Tax 17%</h3>
+        <span className={style.innerTitle}>Tax 17%</span>
         <span className={style.price}>{taxPrice.toFixed(2)} USD</span>
       </div>
       <div className={style.form}>
-        <CustomForm placeholder="Apply promo code" suffixText="Apply now" />
+        <CustomFormField
+          placeholder="Apply promo code"
+          suffixText="Apply now"
+        />
       </div>
       <div className={style.totalOrderContainer}>
         <div className={style.totalOrder}>
@@ -56,9 +70,9 @@ const Summary: React.FC = () => {
             Guaranteed delivery day: {deliveryDate}
           </p>
         </div>
-        <h1 className={style.fullPrice}>
+        <span className={style.fullPrice}>
           {(totalPrice + taxPrice).toFixed(2)} USD
-        </h1>
+        </span>
       </div>
     </div>
   );

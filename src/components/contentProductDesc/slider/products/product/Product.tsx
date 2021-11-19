@@ -5,6 +5,7 @@ import { useAppSelector } from "../../../../../hooks/selectorHook";
 import { useAction } from "../../../../../hooks/useAction";
 import { ProductsType } from "../../../../../interfaces/product";
 import { RouteNames } from "../../../../../router/router";
+import BuyButton from "../../../../custom/buttons/buyButton/BuyButton";
 import style from "./Product.module.css";
 
 interface Props {
@@ -57,12 +58,7 @@ const Product: React.FC<Props> = ({ product }) => {
           {success ? (
             <Progress type="circle" percent={100} width={30} />
           ) : (
-            <button
-              className={style.button}
-              onClick={() => buyProduct(product)}
-            >
-              <NavLink to={RouteNames.SHOPPING_CART}>Buy now</NavLink>
-            </button>
+            <BuyButton type="buySmall" buyProduct={() => buyProduct(product)} />
           )}
         </div>
       </div>
