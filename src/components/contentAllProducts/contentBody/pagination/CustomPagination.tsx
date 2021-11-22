@@ -4,6 +4,7 @@ import { useAppSelector } from "../../../../hooks/selectorHook";
 import { useAction } from "../../../../hooks/useAction";
 import React, { useEffect } from "react";
 import BuyButton from "../../../custom/buttons/buyButton/BuyButton";
+import downArrow from "../../../../assets/images/downArrow.svg";
 
 const CustomPagination: React.FC = () => {
   //HOOKS
@@ -49,7 +50,12 @@ const CustomPagination: React.FC = () => {
       />
       {productPortion < filteredProductCount &&
         numberOfPages !== currentPage && (
-          <BuyButton type="pagination" setProductPortion={setProductPortion} />
+          <BuyButton
+            type="pagination"
+            handleClick={setProductPortion}
+            text="Show more products"
+            suffix={downArrow}
+          />
         )}
       <div className={style.countContainer}>
         <span className={style.totalProductsCount}>{totalProductsCount}</span>

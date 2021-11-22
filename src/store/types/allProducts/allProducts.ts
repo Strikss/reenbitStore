@@ -6,7 +6,6 @@ import {
   FILTERED_PRODUCT_COUNT,
   SET_CURRENT_PAGE,
   SET_PRODUCT_PORTION,
-  FETCH_PRODUCTS_ERROR,
   FILTER_BY_CATEGORIES,
   SET_SORT_BY,
   FILTER_BY_FARMS,
@@ -54,10 +53,6 @@ export interface SetCurrentPage {
 export interface SetProductPortion {
   type: typeof SET_PRODUCT_PORTION;
 }
-export interface FetchProductsErrorAction {
-  type: typeof FETCH_PRODUCTS_ERROR;
-  payload: string;
-}
 export interface FilterByCategoriesAction {
   type: typeof FILTER_BY_CATEGORIES;
   payload: string;
@@ -87,12 +82,11 @@ export interface BuyProduct {
 }
 export interface RemoveProduct {
   type: typeof REMOVE_PRODUCT;
-  payload: ProductsType;
+  payload: string;
 }
 
 export type AllProductsAction =
   | FetchAllProductsAction
-  | FetchProductsErrorAction
   | FilterByNameAction
   | FilterByStarsAction
   | FilteredProductCountAction

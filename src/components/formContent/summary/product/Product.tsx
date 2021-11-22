@@ -4,7 +4,7 @@ import yellowStar from "../../../../assets/images/yellowStar.svg";
 import whiteStar from "../../../../assets/images/whiteRatingStar.svg";
 import { ProductsType } from "../../../../interfaces/product";
 import heart from "../../../../assets/images/redHeart.svg";
-import x from "../../../../assets/images/x.svg";
+import remove from "../../../../assets/images/x.svg";
 import { useAction } from "../../../../hooks/useAction";
 import AmountButton from "../../../custom/buttons/amountButton/AmountButton";
 
@@ -35,8 +35,11 @@ const Product: React.FC<Props> = ({ product }) => {
         <div className={style.wishList}>
           <img src={heart} alt="heart" /> <span>Wishlist</span>
         </div>
-        <div className={style.deleteImg} onClick={() => removeProduct(product)}>
-          <img src={x} alt="delete" />
+        <div
+          className={style.deleteImg}
+          onClick={() => removeProduct(product.itemID)}
+        >
+          <img src={remove} alt="delete" />
           <span>Remove</span>
         </div>
       </div>

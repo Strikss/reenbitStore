@@ -1,87 +1,31 @@
 import React from "react";
 import style from "./BuyButton.module.css";
-import { NavLink, useHistory } from "react-router-dom";
-import { RouteNames } from "../../../../router/router";
-import productArrow from "../../../../assets/images/productArrow.svg";
 
 interface Props {
-  productId?: string;
   type: "detail" | "pagination" | "buyBig" | "buySmall" | "completeOrder";
-  setProductPortion?: () => void;
-  buyProduct?: () => void;
+  text: string;
+  suffix?: string;
+  prefix?: string;
+  handleClick?: () => void;
 }
 
 const BuyButton: React.FC<Props> = ({
-  productId,
+  handleClick = () => {},
   type,
-  setProductPortion,
-  buyProduct,
+  text,
+  suffix = "",
+  prefix = "",
 }) => {
-  //HOOKS
-  const history = useHistory();
-
-  switch (type) {
-    case "detail": {
-      return (
-        <button
-          className={`${style.button} ${style.buttonDetail}`}
-          onClick={() =>
-            history.push(RouteNames.PRODUCT_DESCRIPTION + `/${productId}`)
-          }
-        >
-          Product Detail{" "}
-          <img className={style.detailArrow} src={productArrow} alt="arrow" />
-        </button>
-      );
-    }
-    case "pagination": {
-      return (
-        <button
-          className={`${style.button} ${style.paginationButton}`}
-          onClick={() => setProductPortion!()}
-        >
-          Show more products
-          <img className={style.arrow} src={productArrow} alt="arrow" />
-        </button>
-      );
-    }
-    case "buyBig": {
-      return (
-        <button
-          className={`${style.button} ${style.buyBigButton}`}
-          onClick={() => {
-            buyProduct!();
-            history.push(RouteNames.SHOPPING_CART);
-          }}
-        >
-          <span className={style.plus}>+</span>
-          Add to cart
-        </button>
-      );
-    }
-    case "buySmall": {
-      return (
-        <button
-          className={`${style.button} ${style.buySmallButton}`}
-          onClick={() => {
-            buyProduct!();
-            history.push(RouteNames.SHOPPING_CART);
-          }}
-        >
-          Buy now
-        </button>
-      );
-    }
-    case "completeOrder": {
-      return (
-        <button className={`${style.button} ${style.completeOrderButton}`}>
-          Complete order
-        </button>
-      );
-    }
-    default:
-      return <div>No button</div>;
-  }
+  return (
+    <button
+      className={`${style.button} ${style[type]}`}
+      onClick={() => handleClick()}
+    >
+      {prefix && <span className={style.plus}>{prefix}</span>}
+      <span>{text}</span>
+      {suffix && <img className={style.suffix} src={suffix} alt="arrow" />}
+    </button>
+  );
 };
 
 export default BuyButton;

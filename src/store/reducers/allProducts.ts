@@ -140,7 +140,7 @@ export const allProducts = (
       return {
         ...state,
         boughtProducts: state.boughtProducts.filter(
-          (prod) => prod !== action.payload
+          (prod) => prod.itemID !== action.payload
         ),
       };
     }

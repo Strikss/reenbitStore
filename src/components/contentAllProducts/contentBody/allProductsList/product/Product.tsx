@@ -2,16 +2,20 @@ import style from "./Product.module.css";
 import blackStar from "../../../../../assets/images/blackStar.svg";
 import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
 import { RouteNames } from "../../../../../router/router";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import heart from "../../../../../assets/images/heart.svg";
 import { ProductsType } from "../../../../../interfaces/product";
 import React from "react";
 import BuyButton from "../../../../custom/buttons/buyButton/BuyButton";
+import productArrow from "../../../../../assets/images/productArrow.svg";
 
 interface Props {
   prod: ProductsType;
 }
 const Product: React.FC<Props> = ({ prod }) => {
+  //HOOKS
+  const history = useHistory();
+
   //STARS
   const starsArray = Array(5).fill(0);
   const stars = starsArray.map((_, index) => (
@@ -23,6 +27,11 @@ const Product: React.FC<Props> = ({ prod }) => {
       />
     </li>
   ));
+
+  //FUNCTIONS
+  const handleClick = () => {
+    history.push(RouteNames.PRODUCT_DESCRIPTION + `/${prod.itemID}`);
+  };
 
   return (
     <>
@@ -95,9 +104,14 @@ const Product: React.FC<Props> = ({ prod }) => {
               <p className={style.delivery}>Delivery in 1 day</p>
             </div>
             <div className={style.buttons}>
-              <BuyButton productId={prod.itemID} type="detail" />
+              <BuyButton
+                type="detail"
+                handleClick={handleClick}
+                text="Product detail"
+                suffix={productArrow}
+              />
               <div className={style.wishList}>
-                <img src={heart} alt="heart" /> <span> Add to wish list</span>
+                <img src={heart} alt="heart" /> <span>Add to wish list</span>
               </div>
             </div>
           </div>

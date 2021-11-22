@@ -80,7 +80,7 @@ const Context: React.FC<Props> = ({ product }) => {
       <div className={style.buyContainer}>
         <div className={style.priceContainer}>
           <h1 className={style.priceHalf}>
-            {product?.priceHalf.toFixed(2)} <span> USD</span>
+            {product?.priceHalf.toFixed(2)} <span>USD</span>
           </h1>
           <p className={style.priceFull}>
             <s>
@@ -91,7 +91,7 @@ const Context: React.FC<Props> = ({ product }) => {
         <Buttons product={product} />
       </div>
       <div className={style.wishList}>
-        <img src={heart} alt="heart" /> <span> Add to my wish list</span>
+        <img src={heart} alt="heart" /> <span>Add to my wish list</span>
       </div>
     </div>
   );
