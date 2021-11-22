@@ -57,7 +57,7 @@ const Product: React.FC<Props> = ({ product }) => {
           <span className={style.price}>
             {product.priceHalf.toFixed(2)} <span>USD</span>
           </span>
-          <AmountButton />
+          <AmountButton buyBy={product.buyBy} />
         </div>
       </div>
     </div>

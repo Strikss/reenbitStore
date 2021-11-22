@@ -3,27 +3,23 @@ import React, { useState } from "react";
 import style from "./AmountButton.module.css";
 import arrow from "../../../../assets/images/arrow.svg";
 
-const AmountButton: React.FC = () => {
-  //HOOKS
-  const [amouth, setAmouth] = useState("Pcs");
+interface Props {
+  buyBy: string[];
+}
 
-  //DROPDOWN
-  const menu = (
-    <Menu>
-      <Menu.Item key="Pcs" onClick={() => setAmouth("Pcs")}>
-        Pcs
+const AmountButton: React.FC<Props> = ({ buyBy }) => {
+  //HOOKS
+  const [amount, setAmount] = useState(buyBy[0]);
+
+  //DROP DOWN
+  const menuItem = buyBy.map((item) => {
+    return (
+      <Menu.Item key={item} onClick={() => setAmount(item)}>
+        {item}
       </Menu.Item>
-      <Menu.Item key="kgs" onClick={() => setAmouth("Kgs")}>
-        Kgs
-      </Menu.Item>
-      <Menu.Item key="box" onClick={() => setAmouth("Box")}>
-        Box
-      </Menu.Item>
-      <Menu.Item key="pack" onClick={() => setAmouth("Pack")}>
-        Pack
-      </Menu.Item>
-    </Menu>
-  );
+    );
+  });
+  const menu = <Menu>{menuItem}</Menu>;
 
   return (
     <div className={style.container}>
@@ -32,7 +28,7 @@ const AmountButton: React.FC = () => {
         <Dropdown arrow overlay={menu} trigger={["click"]}>
           <button className={style.dropButton}>
             <a onClick={(e) => e.preventDefault()}>
-              {amouth}
+              {amount}
               <img className={style.arrow} src={arrow} alt="arrow" />
             </a>
           </button>

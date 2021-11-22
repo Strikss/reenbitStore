@@ -13,11 +13,13 @@
   flex-direction: column;
   margin-bottom: 30px;
 }
-.emptyBoxContainer {
+.blockContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.imgContainer {
+  width: 50%;
 }
 .emptyBox {
   font-size: 1.4rem;

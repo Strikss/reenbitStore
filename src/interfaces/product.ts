@@ -16,4 +16,5 @@ export interface ProductsType {
   color: string;
   questions: number;
   reviews: number;
+  buyBy: string[];
 }

@@ -14,12 +14,12 @@ const Summary: React.FC = () => {
   //BOUGHT PRODUCTS
   const boughtProducts =
     products.length === 0 ? (
-      <div className={style.emptyBoxContainer}>
-        <a href="#">
-          <img src={emptyBox} alt="empty box" />
-          <p className={style.emptyBox}>The basket is empty</p>
-        </a>
-      </div>
+      <a href="#" className={style.blockContainer}>
+        <img src={emptyBox} alt="empty box" className={style.imgContainer} />
+        <p className={style.emptyBox}>
+          The basket is empty, please click here to redirect to main page
+        </p>
+      </a>
     ) : (
       products.map((prod, i) => (
         <li className={style.product} key={i}>

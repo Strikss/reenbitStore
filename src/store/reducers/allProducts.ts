@@ -41,6 +41,7 @@ const initialState: AllProductsState = {
       color: "",
       questions: 0,
       reviews: 0,
+      buyBy: [""],
     },
   ],
   filterName: "",

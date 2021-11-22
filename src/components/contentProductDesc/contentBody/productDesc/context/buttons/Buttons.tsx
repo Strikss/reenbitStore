@@ -28,7 +28,7 @@ const Buttons: React.FC<Props> = ({ product }) => {
     </div>
   ) : (
     <div className={style.btnContainer}>
-      <AmountButton />
+      <AmountButton buyBy={product.buyBy} />
       <BuyButton type="buyBig" buyProduct={() => buyProduct(product)} />
     </div>
   );

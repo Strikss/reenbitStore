@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./BuyButton.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { RouteNames } from "../../../../router/router";
 import productArrow from "../../../../assets/images/productArrow.svg";
 
@@ -17,13 +17,20 @@ const BuyButton: React.FC<Props> = ({
   setProductPortion,
   buyProduct,
 }) => {
+  //HOOKS
+  const history = useHistory();
+
   switch (type) {
     case "detail": {
       return (
-        <button className={`${style.button} ${style.buttonDetail}`}>
-          <NavLink to={RouteNames.PRODUCT_DESCRIPTION + `/${productId}`}>
-            Product Detail <img src={productArrow} alt="arrow" />
-          </NavLink>
+        <button
+          className={`${style.button} ${style.buttonDetail}`}
+          onClick={() =>
+            history.push(RouteNames.PRODUCT_DESCRIPTION + `/${productId}`)
+          }
+        >
+          Product Detail{" "}
+          <img className={style.detailArrow} src={productArrow} alt="arrow" />
         </button>
       );
     }
@@ -40,24 +47,28 @@ const BuyButton: React.FC<Props> = ({
     }
     case "buyBig": {
       return (
-        <NavLink to={RouteNames.SHOPPING_CART}>
-          <button
-            className={`${style.button} ${style.buyBigButton}`}
-            onClick={buyProduct}
-          >
-            <span className={style.plus}>+</span>
-            Add to cart
-          </button>
-        </NavLink>
+        <button
+          className={`${style.button} ${style.buyBigButton}`}
+          onClick={() => {
+            buyProduct!();
+            history.push(RouteNames.SHOPPING_CART);
+          }}
+        >
+          <span className={style.plus}>+</span>
+          Add to cart
+        </button>
       );
     }
     case "buySmall": {
       return (
         <button
           className={`${style.button} ${style.buySmallButton}`}
-          onClick={buyProduct}
+          onClick={() => {
+            buyProduct!();
+            history.push(RouteNames.SHOPPING_CART);
+          }}
         >
-          <NavLink to={RouteNames.SHOPPING_CART}>Buy now</NavLink>
+          Buy now
         </button>
       );
     }

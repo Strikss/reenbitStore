@@ -19,6 +19,12 @@
 .button a {
   color: #ffffff;
 }
+.buttonDetail {
+  width: 100%;
+}
+.detailArrow {
+  margin-left: 5px;
+}
 
 /* PAGINATION BUTTON */
 .paginationButton {
@@ -41,6 +47,7 @@
   position: relative;
   top: -2px;
 }
+
 @media (max-width: 1024px) {
   .buyBigButton {
     width: fit-content;

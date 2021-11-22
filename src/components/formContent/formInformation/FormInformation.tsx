@@ -11,9 +11,7 @@ const Form: React.FC = () => {
       <BillingInfo />
       <AdditionalInfo />
       <Confirmation />
-      <span className={style.button}>
-        <BuyButton type="completeOrder" />
-      </span>
+      <BuyButton type="completeOrder" />
     </div>
   );
 };
