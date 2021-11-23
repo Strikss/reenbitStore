@@ -1,13 +1,14 @@
-import { ProdInf, ProductsType } from "./../../interfaces/product";
+import { AllProductsAction } from "./../types/allProducts/allProducts";
+import { ProdInf } from "./../../interfaces/product";
 import {
   BUY_PRODUCT,
+  CHANGE_AMOUNT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
   SET_DISCOUNT,
 } from "./../types/allProducts/constansts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
-import { AllProductsAction } from "../types/allProducts/allProducts";
 import {
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,
@@ -91,4 +92,7 @@ export const setDiscount = (): AllProductsAction => {
   return {
     type: SET_DISCOUNT,
   };
+};
+export const changeAmount = (product: ProdInf): AllProductsAction => {
+  return { type: CHANGE_AMOUNT, payload: product };
 };

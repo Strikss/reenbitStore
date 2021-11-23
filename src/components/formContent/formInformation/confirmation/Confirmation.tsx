@@ -1,13 +1,9 @@
-import { Checkbox, Form } from "antd";
+import { Form } from "antd";
 import React from "react";
-import { useAppSelector } from "../../../../hooks/selectorHook";
 import CheckBox from "../../../custom/checkBox/CheckBox";
 import style from "./Confirmation.module.css";
 
 const Confirmation: React.FC = () => {
-  //HOOKS
-  const { boughtProducts } = useAppSelector((state) => state.products);
-
   return (
     <div className={style.container}>
       <div className={style.titleContainer}>
@@ -68,14 +64,6 @@ const Confirmation: React.FC = () => {
           </span>
         </Form.Item>
       </div>
-      <button
-        disabled={boughtProducts.length < 1}
-        className={style.button}
-        type="submit"
-        form="mainForm"
-      >
-        Complete order
-      </button>
     </div>
   );
 };

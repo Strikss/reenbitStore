@@ -8,16 +8,20 @@ interface Props {
   buyBy: ProdInf["type"][];
   setTypeValue: React.Dispatch<React.SetStateAction<ProdInf["type"]>>;
   setAmountValue: React.Dispatch<React.SetStateAction<number>>;
+  value?: number;
+  currentType?: ProdInf["type"];
 }
 
 const AmountButton: React.FC<Props> = ({
   buyBy,
   setTypeValue,
   setAmountValue,
+  value,
+  currentType = buyBy[0],
 }) => {
   //HOOKS
-  const [type, setType] = useState<ProdInf["type"]>(buyBy[0]);
-  const [amount, setAmount] = useState(1);
+  const [type, setType] = useState<ProdInf["type"]>(currentType!);
+  const [amount, setAmount] = useState(value!);
 
   //DROP DOWN
   const menuItem = buyBy.map((item: ProdInf["type"]) => {
@@ -39,7 +43,7 @@ const AmountButton: React.FC<Props> = ({
     <div className={style.container}>
       <input
         className={style.left}
-        type="number"
+        value={value}
         placeholder="1"
         onChange={(e) => setAmount(Number(e.target.value))}
       />

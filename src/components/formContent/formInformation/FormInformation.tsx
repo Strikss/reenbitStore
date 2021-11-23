@@ -5,15 +5,19 @@ import BillingInfo from "./billingInfo/BillingInfo";
 import Confirmation from "./confirmation/Confirmation";
 import style from "./FormInformation.module.css";
 import fireWorks from "../../../assets/images/fireWorks.gif";
+import BuyButton from "../../custom/buttons/buyButton/BuyButton";
+import { useAppSelector } from "../../../hooks/selectorHook";
 
 const FormInformation: React.FC = () => {
   //HOOKS
   const [form] = Form.useForm();
   const [fireworks, setFireworks] = useState(false);
+  const boughtProducts = useAppSelector(
+    (state) => state.products.boughtProducts
+  );
 
   //FORM FUNCTIONS
   const onFinish = (values: { [key: string]: string }) => {
-    console.log(values);
     form.resetFields();
     document
       .getElementById("shoppingCart")
@@ -39,6 +43,12 @@ const FormInformation: React.FC = () => {
         <BillingInfo form={form} />
         <AdditionalInfo />
         <Confirmation />
+        <BuyButton
+          type="completeOrder"
+          text="Complete order"
+          form="mainForm"
+          disabled={boughtProducts.length < 1}
+        />
       </Form>
     </div>
   );

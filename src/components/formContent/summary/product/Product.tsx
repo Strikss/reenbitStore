@@ -4,10 +4,9 @@ import yellowStar from "../../../../assets/images/yellowStar.svg";
 import whiteStar from "../../../../assets/images/whiteRatingStar.svg";
 import { ProdInf } from "../../../../interfaces/product";
 import heart from "../../../../assets/images/redHeart.svg";
-import x from "../../../../assets/images/x.svg";
+import remove from "../../../../assets/images/x.svg";
 import { useAction } from "../../../../hooks/useAction";
-import { Dropdown, Menu } from "antd";
-import arrow from "../../../../assets/images/arrow.svg";
+import AmountButton from "../../../custom/buttons/amountButton/AmountButton";
 
 interface Props {
   product: ProdInf;
@@ -15,9 +14,9 @@ interface Props {
 
 const Product: React.FC<Props> = ({ product }) => {
   //HOOKS
-  const { removeProduct } = useAction();
-  const [type, setType] = useState(product.type);
-  const [value, setValue] = useState(product.amount);
+  const { removeProduct, changeAmount } = useAction();
+  const [typeValue, setTypeValue] = useState(product.type);
+  const [amountValue, setAmountValue] = useState(product.amount);
 
   //STARS
   const starsArray = Array(5).fill(0);
@@ -30,19 +29,13 @@ const Product: React.FC<Props> = ({ product }) => {
       />
     </li>
   ));
-
-  //DROPDOWN MENU
-  const menu = (
-    <Menu>
-      <Menu.Item onClick={() => setType("Pcs")}>Pcs</Menu.Item>
-      <Menu.Item onClick={() => setType("Kgs")}>Kgs</Menu.Item>
-      <Menu.Item onClick={() => setType("Box")}>Box</Menu.Item>
-      <Menu.Item onClick={() => setType("Pack")}>Pack</Menu.Item>
-    </Menu>
-  );
-
-  //FUNCTIONS
-
+  useEffect(() => {
+    changeAmount({
+      product: product.product,
+      type: typeValue,
+      amount: amountValue,
+    });
+  }, [typeValue, amountValue]);
   return (
     <div className={style.container}>
       <div className={style.imgContainer}>
@@ -54,7 +47,7 @@ const Product: React.FC<Props> = ({ product }) => {
           className={style.deleteImg}
           onClick={() => removeProduct(product.product.itemID)}
         >
-          <img src={x} alt="delete" />
+          <img src={remove} alt="delete" />
           <span>Remove</span>
         </div>
       </div>
@@ -73,28 +66,16 @@ const Product: React.FC<Props> = ({ product }) => {
         <ul className={style.starContainer}>{stars}</ul>
         <div className={style.priceContainer}>
           <h2 className={style.price}>
-            {(product.product.priceHalf * value).toFixed(2)} <span>USD</span>
+            {(product.product.priceHalf * amountValue).toFixed(2)}{" "}
+            <span>USD</span>
           </h2>
-          <div className={style.amouthContainer}>
-            <input
-              className={style.left}
-              type="number"
-              placeholder="1"
-              value={value}
-              onChange={(e) => setValue(Number(e.target.value))}
-              disabled
-            />
-            <div className={style.right}>
-              <Dropdown arrow overlay={menu} trigger={["click"]} disabled>
-                <button className={style.dropButton}>
-                  <a onClick={(e) => e.preventDefault()}>
-                    {type}
-                    <img className={style.arrow} src={arrow} alt="arrow" />
-                  </a>
-                </button>
-              </Dropdown>
-            </div>
-          </div>
+          <AmountButton
+            buyBy={product.product.buyBy}
+            setTypeValue={setTypeValue}
+            setAmountValue={setAmountValue}
+            value={product.amount}
+            currentType={product.type}
+          />
         </div>
       </div>
     </div>

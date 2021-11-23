@@ -1,5 +1,6 @@
 import {
   BUY_PRODUCT,
+  CHANGE_AMOUNT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
   SET_DISCOUNT,
@@ -152,6 +153,15 @@ export const allProducts = (
         ...state,
         discount: 15,
       };
+    }
+    case CHANGE_AMOUNT: {
+      const productIndex = state.boughtProducts.findIndex(
+        (el) => el.product.itemID === action.payload.product.itemID
+      );
+      if (productIndex !== -1) {
+        state.boughtProducts.splice(productIndex, 1, action.payload);
+      }
+      return { ...state };
     }
     default:
       return state;

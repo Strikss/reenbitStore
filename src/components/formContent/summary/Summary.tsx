@@ -5,6 +5,7 @@ import { ProdInf } from "../../../interfaces/product";
 import Product from "./product/Product";
 import PromoCode from "./promoCode/PromoCode";
 import style from "./Summary.module.css";
+import emptyBox from "../../../assets/images/empty_box.svg";
 
 const Summary: React.FC = () => {
   //HOOKS
@@ -12,11 +13,21 @@ const Summary: React.FC = () => {
   const { promoCode, discount } = useAppSelector((state) => state.products);
 
   //BOUGHT PRODUCTS
-  const boughtProducts = products.map((prod, i) => (
-    <li className={style.product} key={i}>
-      <Product product={prod} />
-    </li>
-  ));
+  const boughtProducts =
+    products.length === 0 ? (
+      <a href="#" className={style.blockContainer}>
+        <img src={emptyBox} alt="empty box" className={style.imgContainer} />
+        <p className={style.emptyBox}>
+          The basket is empty, please click here to redirect to main page
+        </p>
+      </a>
+    ) : (
+      products.map((prod, i) => (
+        <li className={style.product} key={i}>
+          <Product product={prod} />
+        </li>
+      ))
+    );
 
   //PRICES
   const reducer = (prev: number, curr: ProdInf) =>
@@ -42,11 +53,11 @@ const Summary: React.FC = () => {
       </div>
       <ul className={style.productsContainer}>{boughtProducts}</ul>
       <div className={style.subTotal}>
-        <h3>Subtotal</h3>
+        <span className={style.innerTitle}>Subtotal</span>
         <span className={style.price}>{productsPrice.toFixed(2)} USD</span>
       </div>
       <div className={style.taxContainer}>
-        <h3>Tax 17%</h3>
+        <span className={style.innerTitle}>Tax 17%</span>
         <span className={style.price}>{taxPrice.toFixed(2)} USD</span>
       </div>
       <div className={style.form}>
@@ -61,19 +72,19 @@ const Summary: React.FC = () => {
       </div>
       <div className={style.totalOrderContainer}>
         <div className={style.totalOrder}>
-          <h3>Total Order</h3>
+          <span>Total Order</span>
           <p className={style.delivery}>
             Guaranteed delivery day: {deliveryDate}
           </p>
         </div>
         <div className={style.discountContainer}>
-          <h1 className={discount ? style.discount : style.fullPrice}>
+          <span className={discount ? style.discount : style.fullPrice}>
             {(productsPrice + taxPrice).toFixed(2)} USD
-          </h1>
+          </span>
           {discount ? (
-            <h1 className={style.fullPrice}>
+            <span className={style.fullPrice}>
               {(discountPrice + taxPrice).toFixed(2)} USD
-            </h1>
+            </span>
           ) : null}
         </div>
       </div>

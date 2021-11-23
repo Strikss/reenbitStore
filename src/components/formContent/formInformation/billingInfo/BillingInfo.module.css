@@ -10,7 +10,7 @@
 .infoContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 32px;
+  grid-gap: 15px;
 }
 
 @media (max-width: 1024px) {
