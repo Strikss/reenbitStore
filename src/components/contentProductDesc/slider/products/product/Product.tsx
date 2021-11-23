@@ -1,10 +1,11 @@
 import { Progress } from "antd";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useAppSelector } from "../../../../../hooks/selectorHook";
 import { useAction } from "../../../../../hooks/useAction";
 import { ProductsType } from "../../../../../interfaces/product";
 import { RouteNames } from "../../../../../router/router";
+import BuyButton from "../../../../custom/buttons/buyButton/BuyButton";
 import style from "./Product.module.css";
 
 interface Props {
@@ -17,6 +18,7 @@ const Product: React.FC<Props> = ({ product }) => {
   const boughtProducts = useAppSelector(
     (state) => state.products.boughtProducts
   );
+  const history = useHistory();
 
   //DISCOUNT
   const discount = 100 - (product.priceHalf / product.priceFull) * 100;
@@ -25,6 +27,12 @@ const Product: React.FC<Props> = ({ product }) => {
   const success = boughtProducts.some(
     (prod) => prod.product.itemID === product.itemID
   );
+
+  //FUNCTIONS
+  const handleClick = () => {
+    buyProduct({ product, amount: 1, type: product.buyBy[0] as any });
+    history.push(RouteNames.SHOPPING_CART);
+  };
 
   return (
     <div className={style.container}>
@@ -59,12 +67,11 @@ const Product: React.FC<Props> = ({ product }) => {
           {success ? (
             <Progress type="circle" percent={100} width={30} />
           ) : (
-            <button
-              className={style.button}
-              onClick={() => buyProduct({ product, amount: 1, type: "Pcs" })}
-            >
-              <NavLink to={RouteNames.SHOPPING_CART}>Buy now</NavLink>
-            </button>
+            <BuyButton
+              type="buySmall"
+              handleClick={handleClick}
+              text="Buy now"
+            />
           )}
         </div>
       </div>

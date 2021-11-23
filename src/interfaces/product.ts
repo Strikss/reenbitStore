@@ -16,6 +16,7 @@ export interface ProductsType {
   color: string;
   questions: number;
   reviews: number;
+  buyBy: ProdInf["type"][];
 }
 export interface ProdInf {
   product: ProductsType;

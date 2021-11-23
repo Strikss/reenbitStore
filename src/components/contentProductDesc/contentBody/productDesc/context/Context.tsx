@@ -22,6 +22,7 @@ const Context: React.FC<Props> = ({ product }) => {
       />
     </li>
   ));
+  const buyBy = product.buyBy.join(", ");
 
   return (
     <div className={style.container}>
@@ -53,7 +54,7 @@ const Context: React.FC<Props> = ({ product }) => {
         </li>
         <li className={style.listContainer}>
           <span className={style.listTitle}>Buy by:</span>
-          <span className={style.listTitle}>pcs,kgs,box,pack</span>
+          <span className={style.listTitle}>{buyBy}</span>
         </li>
         <li className={style.listContainer}>
           <span className={style.listTitle}>Stock:</span>

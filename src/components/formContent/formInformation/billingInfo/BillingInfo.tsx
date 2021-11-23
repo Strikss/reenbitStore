@@ -1,5 +1,5 @@
 import React from "react";
-import CustomForm from "../../../custom/customForm/CustomForm";
+import CustomForm from "../../../custom/customFormField/CustomFormField";
 import style from "./BillingInfo.module.css";
 
 interface Props {

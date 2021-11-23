@@ -1,6 +1,6 @@
 import { Form, Input, AutoComplete, FormInstance } from "antd";
 import React, { useState } from "react";
-import style from "./CustomForm.module.css";
+import style from "./CustomFormField.module.css";
 import { countryData } from "../../../store/coutryData/coutryData";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   autoComplete?: boolean;
   form?: any;
 }
-const CustomForm: React.FC<Props> = ({
+const CustomFormField: React.FC<Props> = ({
   placeholder,
   formType = "string",
   max = 50,
@@ -78,4 +78,4 @@ const CustomForm: React.FC<Props> = ({
   );
 };
 
-export default CustomForm;
+export default CustomFormField;

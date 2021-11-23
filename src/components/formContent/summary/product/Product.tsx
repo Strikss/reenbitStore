@@ -52,7 +52,7 @@ const Product: React.FC<Props> = ({ product }) => {
         </div>
         <div
           className={style.deleteImg}
-          onClick={() => removeProduct(product.product)}
+          onClick={() => removeProduct(product.product.itemID)}
         >
           <img src={x} alt="delete" />
           <span>Remove</span>

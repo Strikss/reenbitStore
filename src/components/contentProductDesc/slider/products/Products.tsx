@@ -11,6 +11,7 @@ interface Props {
 const Products: React.FC<Props> = ({ filteredProducts }) => {
   //HOOKS
   const { productPortion } = useAppSelector((state) => state.products);
+
   //PAGINATION
   const from = 0;
   const to = productPortion;

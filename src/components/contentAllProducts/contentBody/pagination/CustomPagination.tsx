@@ -1,9 +1,10 @@
 import { Pagination } from "antd";
 import style from "./CustomPagination.module.css";
-import productArrow from "../../../../assets/images/productArrow.svg";
 import { useAppSelector } from "../../../../hooks/selectorHook";
 import { useAction } from "../../../../hooks/useAction";
 import React, { useEffect } from "react";
+import downArrow from "../../../../assets/images/downArrow.svg";
+import BuyButton from "../../../custom/buttons/buyButton/BuyButton";
 
 const CustomPagination: React.FC = () => {
   //HOOKS
@@ -47,12 +48,15 @@ const CustomPagination: React.FC = () => {
         pageSize={productPortion}
         hideOnSinglePage
       />
-      {productPortion < filteredProductCount && numberOfPages !== currentPage && (
-        <button className={style.button} onClick={() => setProductPortion()}>
-          Show more products
-          <img className={style.arrow} src={productArrow} alt="arrow" />
-        </button>
-      )}
+      {productPortion < filteredProductCount &&
+        numberOfPages !== currentPage && (
+          <BuyButton
+            type="pagination"
+            handleClick={setProductPortion}
+            text="Show more products"
+            suffix={downArrow}
+          />
+        )}
       <div className={style.countContainer}>
         <span className={style.totalProductsCount}>{totalProductsCount}</span>
         <span className={style.products}>Products</span>

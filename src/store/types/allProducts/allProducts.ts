@@ -85,7 +85,7 @@ export interface BuyProduct {
 }
 export interface RemoveProduct {
   type: typeof REMOVE_PRODUCT;
-  payload: ProductsType;
+  payload: string;
 }
 export interface SetDiscount {
   type: typeof SET_DISCOUNT;

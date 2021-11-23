@@ -10,7 +10,6 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { AllProductsAction } from "../types/allProducts/allProducts";
 import {
   FETCH_ALL_PRODUCTS,
-  FETCH_PRODUCTS_ERROR,
   FILTER_BY_NAME,
   FILTER_BY_STARS,
   FILTERED_PRODUCT_COUNT,
@@ -33,12 +32,7 @@ export const fetchProducts: appDispatch = () => async (dispatch) => {
         payload: response,
       });
     });
-  } catch (e: any) {
-    dispatch({
-      type: FETCH_PRODUCTS_ERROR,
-      payload: "an error has occured",
-    });
-  }
+  } catch (e: any) {}
 };
 export const filterByName = (name: string): AllProductsAction => {
   return { type: FILTER_BY_NAME, payload: name };
@@ -87,10 +81,10 @@ export const buyProduct = (product: ProdInf): AllProductsAction => {
     payload: product,
   };
 };
-export const removeProduct = (product: ProductsType): AllProductsAction => {
+export const removeProduct = (id: string): AllProductsAction => {
   return {
     type: REMOVE_PRODUCT,
-    payload: product,
+    payload: id,
   };
 };
 export const setDiscount = (): AllProductsAction => {

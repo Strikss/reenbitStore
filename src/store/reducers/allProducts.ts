@@ -42,6 +42,7 @@ const initialState: AllProductsState = {
       color: "",
       questions: 0,
       reviews: 0,
+      buyBy: [],
     },
   ],
   filterName: "",
@@ -142,7 +143,7 @@ export const allProducts = (
       return {
         ...state,
         boughtProducts: state.boughtProducts.filter(
-          (prod) => prod.product !== action.payload
+          (prod) => prod.product.itemID !== action.payload
         ),
       };
     }
