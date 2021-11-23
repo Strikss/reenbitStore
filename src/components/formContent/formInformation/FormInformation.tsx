@@ -7,10 +7,12 @@ import style from "./FormInformation.module.css";
 import fireWorks from "../../../assets/images/fireWorks.gif";
 import BuyButton from "../../custom/buttons/buyButton/BuyButton";
 import { useAppSelector } from "../../../hooks/selectorHook";
+import { useAction } from "../../../hooks/useAction";
 
 const FormInformation: React.FC = () => {
   //HOOKS
   const [form] = Form.useForm();
+  const { setSuccess } = useAction();
   const [fireworks, setFireworks] = useState(false);
   const boughtProducts = useAppSelector(
     (state) => state.products.boughtProducts
@@ -19,6 +21,7 @@ const FormInformation: React.FC = () => {
   //FORM FUNCTIONS
   const onFinish = (values: { [key: string]: string }) => {
     form.resetFields();
+    setSuccess();
     document
       .getElementById("shoppingCart")
       ?.scroll({ top: 0, left: 0, behavior: "smooth" });

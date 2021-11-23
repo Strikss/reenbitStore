@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import style from "./AmountButton.module.css";
 import arrow from "../../../../assets/images/arrow.svg";
 import { ProdInf } from "../../../../interfaces/product";
+import classNames from "classnames";
 
 interface Props {
   buyBy: ProdInf["type"][];
@@ -10,6 +11,7 @@ interface Props {
   setAmountValue: React.Dispatch<React.SetStateAction<number>>;
   value?: number;
   currentType?: ProdInf["type"];
+  max: number;
 }
 
 const AmountButton: React.FC<Props> = ({
@@ -18,6 +20,7 @@ const AmountButton: React.FC<Props> = ({
   setAmountValue,
   value,
   currentType = buyBy[0],
+  max,
 }) => {
   //HOOKS
   const [type, setType] = useState<ProdInf["type"]>(currentType!);
@@ -32,6 +35,11 @@ const AmountButton: React.FC<Props> = ({
     );
   });
   const menu = <Menu>{menuItem}</Menu>;
+  //CSS VALIDATION
+  const inputClass = classNames(
+    style.container,
+    (amount <= 0 || amount > max) && style.error
+  );
 
   //FUNCTIONS
   useEffect(() => {
@@ -40,10 +48,11 @@ const AmountButton: React.FC<Props> = ({
   }, [type, amount]);
 
   return (
-    <div className={style.container}>
+    <div className={inputClass}>
       <input
         className={style.left}
         value={value}
+        type="number"
         placeholder="1"
         onChange={(e) => setAmount(Number(e.target.value))}
       />

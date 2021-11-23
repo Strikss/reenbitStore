@@ -75,6 +75,7 @@ const Product: React.FC<Props> = ({ product }) => {
             setAmountValue={setAmountValue}
             value={product.amount}
             currentType={product.type}
+            max={product.product.stock}
           />
         </div>
       </div>

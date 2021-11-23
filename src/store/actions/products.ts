@@ -6,6 +6,7 @@ import {
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
   SET_DISCOUNT,
+  SET_SUCCESS,
 } from "./../types/allProducts/constansts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
@@ -95,4 +96,7 @@ export const setDiscount = (): AllProductsAction => {
 };
 export const changeAmount = (product: ProdInf): AllProductsAction => {
   return { type: CHANGE_AMOUNT, payload: product };
+};
+export const setSuccess = (): AllProductsAction => {
+  return { type: SET_SUCCESS };
 };

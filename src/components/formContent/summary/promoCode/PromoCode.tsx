@@ -1,5 +1,5 @@
 import { Alert, Form, Input } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppSelector } from "../../../../hooks/selectorHook";
 import { useAction } from "../../../../hooks/useAction";
 import style from "./PromoCode.module.css";
@@ -23,7 +23,9 @@ const PromoCode: React.FC<Props> = ({
   //HOOKS
   const [form] = Form.useForm();
   const { setDiscount } = useAction();
-  const { boughtProducts } = useAppSelector((state) => state.products);
+  const { boughtProducts, discount } = useAppSelector(
+    (state) => state.products
+  );
   const [alert, setAlert] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -52,7 +54,10 @@ const PromoCode: React.FC<Props> = ({
     values[name] == promoCode ? onSuccess() : onError();
     form.resetFields();
   };
-
+  useEffect(() => {
+    discount && setSuccess(true);
+    boughtProducts.length < 1 && setSuccess(false);
+  }, [discount, boughtProducts]);
   return (
     <Form
       form={form}

@@ -35,11 +35,7 @@ const Buttons: React.FC<Props> = ({ product }) => {
 
   //FUNCTIONS
   useEffect(() => {
-    setProdInf({
-      product: product,
-      amount: amountValue,
-      type: typeValue,
-    });
+    setProdInf({ product: product, type: typeValue, amount: amountValue });
   }, [amountValue, typeValue]);
 
   const handleClick = () => {
@@ -57,12 +53,15 @@ const Buttons: React.FC<Props> = ({ product }) => {
         buyBy={product.buyBy}
         setTypeValue={setTypeValue}
         setAmountValue={setAmountValue}
+        value={amountValue}
+        max={product.stock}
       />
       <BuyButton
         type="buyBig"
         handleClick={handleClick}
         text="Add to cart"
         prefix="+"
+        disabled={amountValue <= 0 || amountValue > product.stock}
       />
     </div>
   );

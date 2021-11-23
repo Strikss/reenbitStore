@@ -16,6 +16,7 @@ import {
   REMOVE_PRODUCT,
   SET_DISCOUNT,
   CHANGE_AMOUNT,
+  SET_SUCCESS,
 } from "./constansts";
 
 export interface AllProductsState {
@@ -95,6 +96,9 @@ export interface ChangeAmount {
   type: typeof CHANGE_AMOUNT;
   payload: ProdInf;
 }
+export interface SetSuccess {
+  type: typeof SET_SUCCESS;
+}
 
 export type AllProductsAction =
   | FetchAllProductsAction
@@ -112,4 +116,5 @@ export type AllProductsAction =
   | BuyProduct
   | RemoveProduct
   | SetDiscount
-  | ChangeAmount;
+  | ChangeAmount
+  | SetSuccess;

@@ -4,6 +4,7 @@ import {
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
   SET_DISCOUNT,
+  SET_SUCCESS,
 } from "./../types/allProducts/constansts";
 import {
   AllProductsState,
@@ -162,6 +163,13 @@ export const allProducts = (
         state.boughtProducts.splice(productIndex, 1, action.payload);
       }
       return { ...state };
+    }
+    case SET_SUCCESS: {
+      return {
+        ...state,
+        boughtProducts: [],
+        discount: 0,
+      };
     }
     default:
       return state;

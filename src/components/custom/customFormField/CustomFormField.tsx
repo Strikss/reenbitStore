@@ -1,7 +1,7 @@
 import { Form, Input, AutoComplete, FormInstance } from "antd";
 import React, { useState } from "react";
 import style from "./CustomFormField.module.css";
-import { countryData } from "../../../store/coutryData/coutryData";
+import { countryData } from "../../../static/coutryData/coutryData";
 
 interface Props {
   name: string;
