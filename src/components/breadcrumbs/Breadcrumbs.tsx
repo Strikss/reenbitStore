@@ -22,12 +22,14 @@ const Breadcrumbs: React.FC = () => {
     if (selectedProduct) {
       return (
         <>
-          <Breadcrumb.Item href="/#/">{name[0].breadcrumbName}</Breadcrumb.Item>
+          <Breadcrumb.Item href="#">{name[0].breadcrumbName}</Breadcrumb.Item>
           <Breadcrumb.Item>
             <span>{selectedProduct.name}</span>
           </Breadcrumb.Item>
         </>
       );
+    } else if (name.length > 1) {
+      return <Breadcrumb.Item>{name[1].breadcrumbName}</Breadcrumb.Item>;
     } else {
       return <Breadcrumb.Item>{name[0].breadcrumbName}</Breadcrumb.Item>;
     }

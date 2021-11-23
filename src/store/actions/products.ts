@@ -1,10 +1,14 @@
-import { SET_CURRENT_ID } from "./../types/allProducts/constansts";
+import { ProductsType } from "./../../interfaces/product";
+import {
+  BUY_PRODUCT,
+  REMOVE_PRODUCT,
+  SET_CURRENT_ID,
+} from "./../types/allProducts/constansts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { AllProductsAction } from "../types/allProducts/allProducts";
 import {
   FETCH_ALL_PRODUCTS,
-  FETCH_PRODUCTS_ERROR,
   FILTER_BY_NAME,
   FILTER_BY_STARS,
   FILTERED_PRODUCT_COUNT,
@@ -27,12 +31,7 @@ export const fetchProducts: appDispatch = () => async (dispatch) => {
         payload: response,
       });
     });
-  } catch (e: any) {
-    dispatch({
-      type: FETCH_PRODUCTS_ERROR,
-      payload: "an error has occured",
-    });
-  }
+  } catch (e: any) {}
 };
 export const filterByName = (name: string): AllProductsAction => {
   return { type: FILTER_BY_NAME, payload: name };
@@ -72,6 +71,18 @@ export const reset = (): AllProductsAction => {
 export const setCurrentID = (id: string): AllProductsAction => {
   return {
     type: SET_CURRENT_ID,
+    payload: id,
+  };
+};
+export const buyProduct = (product: ProductsType): AllProductsAction => {
+  return {
+    type: BUY_PRODUCT,
+    payload: product,
+  };
+};
+export const removeProduct = (id: string): AllProductsAction => {
+  return {
+    type: REMOVE_PRODUCT,
     payload: id,
   };
 };

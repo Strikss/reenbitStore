@@ -1,41 +1,48 @@
-import { Dropdown, Menu } from "antd";
-import React, { useState } from "react";
+import { Progress } from "antd";
+import React from "react";
 import style from "./Buttons.module.css";
-import arrow from "../../../../../../assets/images/arrow.svg";
+import { ProductsType } from "../../../../../../interfaces/product";
+import { useAction } from "../../../../../../hooks/useAction";
+import { useAppSelector } from "../../../../../../hooks/selectorHook";
+import BuyButton from "../../../../../custom/buttons/buyButton/BuyButton";
+import AmountButton from "../../../../../custom/buttons/amountButton/AmountButton";
+import { RouteNames } from "../../../../../../router/router";
+import { useHistory } from "react-router";
 
-const Buttons: React.FC = () => {
+interface Props {
+  product: ProductsType;
+}
+
+const Buttons: React.FC<Props> = ({ product }) => {
   //HOOKS
-  const [amouth, setAmouth] = useState("Pcs");
-
-  //DROPDOWN
-  const menu = (
-    <Menu>
-      <Menu.Item onClick={() => setAmouth("Pcs")}>Pcs</Menu.Item>
-      <Menu.Item onClick={() => setAmouth("Kgs")}>Kgs</Menu.Item>
-      <Menu.Item onClick={() => setAmouth("Box")}>Box</Menu.Item>
-      <Menu.Item onClick={() => setAmouth("Pack")}>Pack</Menu.Item>
-    </Menu>
+  const boughtProducts: ProductsType[] = useAppSelector(
+    (state) => state.products.boughtProducts
   );
+  const { buyProduct } = useAction();
+  const history = useHistory();
 
-  return (
+  //PRODUCT IN THE BASKET
+  const success = boughtProducts.some((prod) => prod.itemID === product.itemID);
+
+  //FUNCTIONS
+  const handleClick = () => {
+    buyProduct(product);
+    history.push(RouteNames.SHOPPING_CART);
+  };
+  return success ? (
+    <div className={style.success}>
+      <Progress type="circle" percent={100} width={50} />
+      <span className={style.successText}>In the basket</span>
+    </div>
+  ) : (
     <div className={style.btnContainer}>
-      <div className={style.amouthContainer}>
-        <input className={style.left} type="number" placeholder="1" />
-        <div className={style.right}>
-          <Dropdown arrow overlay={menu} trigger={["click"]}>
-            <button className={style.dropButton}>
-              <a onClick={(e) => e.preventDefault()}>
-                {amouth}
-                <img className={style.arrow} src={arrow} alt="arrow" />
-              </a>
-            </button>
-          </Dropdown>
-        </div>
-      </div>
-      <button className={style.button}>
-        <span className={style.plus}>+</span>
-        Add to cart
-      </button>
+      <AmountButton buyBy={product.buyBy} />
+      <BuyButton
+        type="buyBig"
+        handleClick={handleClick}
+        text="Add to cart"
+        prefix="+"
+      />
     </div>
   );
 };

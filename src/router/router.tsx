@@ -1,6 +1,6 @@
 import AllProducts from "../pages/allProducts/AllProducts";
 import ProductDescription from "../pages/productDescription/ProductDescription";
-import ShippingCart from "../pages/shippingCart/ShippingCart";
+import ShoppingCart from "../pages/shoppingCart/ShoppingCart";
 
 export interface IRoute {
   path: string;
@@ -29,7 +29,8 @@ export const Routes: IRoute[] = [
   },
   {
     path: RouteNames.SHOPPING_CART,
-    component: ShippingCart,
+    component: ShoppingCart,
     exact: true,
+    breadcrumbName: "Checkout page",
   },
 ];

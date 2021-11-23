@@ -1,8 +1,8 @@
 .productDescription {
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.062);
-  padding: 0 45px 0px 45px;
-  overflow: scroll;
+  padding: 0px 45px 0px 45px;
+  overflow: auto;
 }
 @media (max-width: 600px) {
   .productDescription {

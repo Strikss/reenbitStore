@@ -1,0 +1,14 @@
+.container {
+  margin-bottom: 60px;
+}
+.infoDescription {
+  color: #a9a9a9;
+}
+.titleContainer {
+  margin-bottom: 30px;
+}
+.infoContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}

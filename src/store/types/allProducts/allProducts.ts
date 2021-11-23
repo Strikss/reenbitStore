@@ -1,4 +1,4 @@
-import { ProductsType } from "../../../interfaces/product";
+import { ProductsType } from "./../../../interfaces/product";
 import {
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,
@@ -6,13 +6,14 @@ import {
   FILTERED_PRODUCT_COUNT,
   SET_CURRENT_PAGE,
   SET_PRODUCT_PORTION,
-  FETCH_PRODUCTS_ERROR,
   FILTER_BY_CATEGORIES,
   SET_SORT_BY,
   FILTER_BY_FARMS,
   FILTER_BY_PRICE,
   RESET,
   SET_CURRENT_ID,
+  BUY_PRODUCT,
+  REMOVE_PRODUCT,
 } from "./constansts";
 
 export interface AllProductsState {
@@ -27,6 +28,7 @@ export interface AllProductsState {
   filterFarms: string[];
   filterPrice: number[];
   currentID: string;
+  boughtProducts: ProductsType[];
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -51,10 +53,6 @@ export interface SetCurrentPage {
 export interface SetProductPortion {
   type: typeof SET_PRODUCT_PORTION;
 }
-export interface FetchProductsErrorAction {
-  type: typeof FETCH_PRODUCTS_ERROR;
-  payload: string;
-}
 export interface FilterByCategoriesAction {
   type: typeof FILTER_BY_CATEGORIES;
   payload: string;
@@ -78,10 +76,17 @@ export interface SetCurrentID {
   type: typeof SET_CURRENT_ID;
   payload: string;
 }
+export interface BuyProduct {
+  type: typeof BUY_PRODUCT;
+  payload: ProductsType;
+}
+export interface RemoveProduct {
+  type: typeof REMOVE_PRODUCT;
+  payload: string;
+}
 
 export type AllProductsAction =
   | FetchAllProductsAction
-  | FetchProductsErrorAction
   | FilterByNameAction
   | FilterByStarsAction
   | FilteredProductCountAction
@@ -92,4 +97,6 @@ export type AllProductsAction =
   | FilterByFarmsAction
   | FilterByPriceAction
   | ResetAction
-  | SetCurrentID;
+  | SetCurrentID
+  | BuyProduct
+  | RemoveProduct;
