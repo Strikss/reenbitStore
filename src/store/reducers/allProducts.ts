@@ -3,13 +3,9 @@ import {
   CHANGE_AMOUNT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
-<<<<<<< HEAD
   SET_DISCOUNT,
   SET_SUCCESS,
 } from "./../types/allProducts/constansts";
-=======
-} from "../types/allProducts/constansts";
->>>>>>> 1acadebcd03ac197747a820045d74e56fb2b44f1
 import {
   AllProductsState,
   AllProductsAction,
@@ -48,11 +44,7 @@ const initialState: AllProductsState = {
       color: "",
       questions: 0,
       reviews: 0,
-<<<<<<< HEAD
       buyBy: [],
-=======
-      buyBy: [""],
->>>>>>> 1acadebcd03ac197747a820045d74e56fb2b44f1
     },
   ],
   filterName: "",
