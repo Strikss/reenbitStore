@@ -12,7 +12,9 @@
   border: none;
   cursor: pointer;
 }
-
+.disabled {
+  opacity: 0.5;
+}
 @media (max-width: 425px) {
   .suffix {
     font-size: 0.9rem;

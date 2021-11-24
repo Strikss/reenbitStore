@@ -7,6 +7,8 @@ import heart from "../../../../assets/images/redHeart.svg";
 import remove from "../../../../assets/images/x.svg";
 import { useAction } from "../../../../hooks/useAction";
 import AmountButton from "../../../custom/buttons/amountButton/AmountButton";
+import { NavLink } from "react-router-dom";
+import { RouteNames } from "../../../../router/router";
 
 interface Props {
   product: ProdInf;
@@ -39,13 +41,24 @@ const Product: React.FC<Props> = ({ product }) => {
   return (
     <div className={style.container}>
       <div className={style.imgContainer}>
-        <img className={style.img} src={product.product.image} alt="product" />
+        <NavLink
+          to={RouteNames.PRODUCT_DESCRIPTION + `/${product.product.itemID}`}
+        >
+          <img
+            className={style.img}
+            src={product.product.image}
+            alt="product"
+          />
+        </NavLink>
         <div className={style.wishList}>
           <img src={heart} alt="heart" /> <span>Wishlist</span>
         </div>
         <div
           className={style.deleteImg}
-          onClick={() => removeProduct(product.product.itemID)}
+          onClick={() => {
+            removeProduct(product.product.itemID);
+            localStorage.removeItem(product.product.itemID);
+          }}
         >
           <img src={remove} alt="delete" />
           <span>Remove</span>

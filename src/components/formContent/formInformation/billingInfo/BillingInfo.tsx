@@ -1,9 +1,10 @@
+import { FormInstance } from "antd";
 import React from "react";
 import CustomForm from "../../../custom/customFormField/CustomFormField";
 import style from "./BillingInfo.module.css";
 
 interface Props {
-  form: any;
+  form: FormInstance;
 }
 
 const BillingInfo: React.FC<Props> = ({ form }) => {

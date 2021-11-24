@@ -1,5 +1,6 @@
 .btnContainer {
   display: flex;
+  align-items: center;
 }
 .success {
   display: flex;

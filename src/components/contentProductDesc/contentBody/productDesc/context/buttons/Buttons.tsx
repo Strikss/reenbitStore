@@ -40,6 +40,7 @@ const Buttons: React.FC<Props> = ({ product }) => {
 
   const handleClick = () => {
     buyProduct(prodInf);
+    localStorage.setItem(product.itemID, JSON.stringify(prodInf));
     history.push(RouteNames.SHOPPING_CART);
   };
   return success ? (

@@ -41,6 +41,10 @@
   position: relative;
   top: -2px;
 }
+/* DISABLED */
+.disabled {
+  opacity: 0.6;
+}
 
 @media (max-width: 1024px) {
   .buyBig {

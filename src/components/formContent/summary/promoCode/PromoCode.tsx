@@ -29,12 +29,15 @@ const PromoCode: React.FC<Props> = ({
   const [alert, setAlert] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  //DISABLED
+  const disabled = boughtProducts.length < 1;
+
   //SUFFIX
   const suffix = (
     <button
-      disabled={boughtProducts.length < 1 || success === true}
+      disabled={disabled}
       type="submit"
-      className={style.suffix}
+      className={`${style.suffix} ${disabled && style.disabled}`}
     >
       {suffixText}
     </button>
@@ -67,22 +70,26 @@ const PromoCode: React.FC<Props> = ({
       autoComplete="off"
       onFinish={onFinish}
     >
-      <Form.Item name={name}>
-        <span className={style.inputContainer}>
-          <Input
-            placeholder={placeholder}
-            bordered={false}
-            size="large"
-            suffix={suffix}
-            allowClear
-            maxLength={max}
-          />
-        </span>
-      </Form.Item>
+      {success ? (
+        <Alert message="Success" type="success" showIcon />
+      ) : (
+        <Form.Item name={name}>
+          <span className={style.inputContainer}>
+            <Input
+              placeholder={placeholder}
+              bordered={false}
+              size="large"
+              suffix={suffix}
+              allowClear
+              maxLength={max}
+            />
+          </span>
+        </Form.Item>
+      )}
+
       {alert ? (
         <Alert message="Enter a valid code" type="error" showIcon />
       ) : null}
-      {success ? <Alert message="Success" type="success" showIcon /> : null}
     </Form>
   );
 };

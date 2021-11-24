@@ -22,7 +22,7 @@ const BuyButton: React.FC<Props> = ({
 }) => {
   return (
     <button
-      className={`${style.button} ${style[type]}`}
+      className={`${style.button} ${style[type]} ${disabled && style.disabled}`}
       onClick={() => handleClick()}
       type="submit"
       form={form}

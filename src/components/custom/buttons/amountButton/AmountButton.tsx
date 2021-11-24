@@ -35,11 +35,10 @@ const AmountButton: React.FC<Props> = ({
     );
   });
   const menu = <Menu>{menuItem}</Menu>;
+
   //CSS VALIDATION
-  const inputClass = classNames(
-    style.container,
-    (amount <= 0 || amount > max) && style.error
-  );
+  const error = amount <= 0 || amount > max;
+  const inputClass = classNames(style.inputContainer, error && style.error);
 
   //FUNCTIONS
   useEffect(() => {
@@ -48,24 +47,27 @@ const AmountButton: React.FC<Props> = ({
   }, [type, amount]);
 
   return (
-    <div className={inputClass}>
-      <input
-        className={style.left}
-        value={value}
-        type="number"
-        placeholder="1"
-        onChange={(e) => setAmount(Number(e.target.value))}
-      />
-      <div className={style.right}>
-        <Dropdown arrow overlay={menu} trigger={["click"]}>
-          <button className={style.dropButton}>
-            <a onClick={(e) => e.preventDefault()}>
-              {type}
-              <img className={style.arrow} src={arrow} alt="arrow" />
-            </a>
-          </button>
-        </Dropdown>
+    <div className={style.container}>
+      <div className={inputClass}>
+        <input
+          className={style.left}
+          value={value}
+          type="number"
+          placeholder="1"
+          onChange={(e) => setAmount(Number(e.target.value))}
+        />
+        <div className={style.right}>
+          <Dropdown arrow overlay={menu} trigger={["click"]}>
+            <button className={style.dropButton}>
+              <a onClick={(e) => e.preventDefault()}>
+                {type}
+                <img className={style.arrow} src={arrow} alt="arrow" />
+              </a>
+            </button>
+          </Dropdown>
+        </div>
       </div>
+      {error ? <span className={style.errorText}>Error</span> : null}
     </div>
   );
 };

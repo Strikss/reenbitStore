@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { addDays } from "../../../helpers/addDays/addDays";
 import { useAppSelector } from "../../../hooks/selectorHook";
 import { ProdInf } from "../../../interfaces/product";

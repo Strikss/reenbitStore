@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { useAppSelector } from "../../../../../hooks/selectorHook";
 import { useAction } from "../../../../../hooks/useAction";
-import { ProductsType } from "../../../../../interfaces/product";
+import { ProdInf, ProductsType } from "../../../../../interfaces/product";
 import { RouteNames } from "../../../../../router/router";
 import BuyButton from "../../../../custom/buttons/buyButton/BuyButton";
 import style from "./Product.module.css";
@@ -20,6 +20,13 @@ const Product: React.FC<Props> = ({ product }) => {
   );
   const history = useHistory();
 
+  //PRODUCT
+  const prodInf = {
+    product,
+    amount: 1,
+    type: product.buyBy[0] as ProdInf["type"],
+  };
+
   //DISCOUNT
   const discount = 100 - (product.priceHalf / product.priceFull) * 100;
 
@@ -30,7 +37,8 @@ const Product: React.FC<Props> = ({ product }) => {
 
   //FUNCTIONS
   const handleClick = () => {
-    buyProduct({ product, amount: 1, type: product.buyBy[0] as any });
+    buyProduct(prodInf);
+    localStorage.setItem(product.itemID, JSON.stringify(prodInf));
     history.push(RouteNames.SHOPPING_CART);
   };
 

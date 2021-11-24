@@ -1,5 +1,5 @@
 import { Form, Input, AutoComplete, FormInstance } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./CustomFormField.module.css";
 import { countryData } from "../../../static/coutryData/coutryData";
 
@@ -10,7 +10,7 @@ interface Props {
   formType?: string;
   validate?: boolean;
   autoComplete?: boolean;
-  form?: any;
+  form?: FormInstance;
 }
 const CustomFormField: React.FC<Props> = ({
   placeholder,
@@ -24,14 +24,23 @@ const CustomFormField: React.FC<Props> = ({
   //HOOKS
   const [selected, setSelected] = useState("");
   const [options, setOptions] = useState<{ value: string }[]>([]);
+  const [defaultValue, setDefaultValue] = useState<string>(
+    localStorage.getItem(name) || ""
+  );
 
   //AUTOCOMPLETE
   const onSelect = (value: string) => {
-    form.setFieldsValue({ [selected]: value });
+    form!.setFieldsValue({ [selected]: value });
   };
   const handleSearch = (value: string) => {
     setOptions(!value ? [] : [...countryData]);
   };
+  //DEFAULT VALUE
+
+  useEffect(() => {
+    setDefaultValue("");
+  }, [defaultValue]);
+
   return (
     <Form.Item
       name={name}
@@ -51,13 +60,13 @@ const CustomFormField: React.FC<Props> = ({
               -1
             }
             onSearch={handleSearch}
+            defaultValue={defaultValue}
           >
             <Input
               name={name}
               placeholder={placeholder}
               bordered={false}
               size="large"
-              allowClear
               maxLength={max}
               type={formType}
               onChange={(e) => setSelected(e.target.name)}
@@ -68,9 +77,10 @@ const CustomFormField: React.FC<Props> = ({
             placeholder={placeholder}
             bordered={false}
             size="large"
-            allowClear
             maxLength={max}
             type={formType}
+            autoComplete="randomstring"
+            defaultValue={defaultValue}
           />
         )}
       </span>
