@@ -10,6 +10,8 @@ import AmountButton from "../../../custom/buttons/amountButton/AmountButton";
 import { NavLink } from "react-router-dom";
 import { RouteNames } from "../../../../router/router";
 import { toFixed } from "../../../../helpers/toFixed/toFixed";
+import { setLocalStorage } from "../../../../helpers/setLocalStorage/setLocalStorage";
+import { useAppSelector } from "../../../../hooks/selectorHook";
 
 interface Props {
   product: ProdInf;
@@ -20,6 +22,13 @@ const Product: React.FC<Props> = ({ product }) => {
   const { removeProduct, changeAmount } = useAction();
   const [typeValue, setTypeValue] = useState(product.type);
   const [amountValue, setAmountValue] = useState(product.amount);
+  const { boughtProducts } = useAppSelector((state) => state.products);
+
+  const prodInf = {
+    product: product.product,
+    type: typeValue,
+    amount: amountValue,
+  };
 
   //STARS
   const starsArray = Array(5).fill(0);
@@ -44,11 +53,8 @@ const Product: React.FC<Props> = ({ product }) => {
     localStorage.setItem("products", JSON.stringify(newProductList));
   };
   useEffect(() => {
-    changeAmount({
-      product: product.product,
-      type: typeValue,
-      amount: amountValue,
-    });
+    changeAmount(prodInf);
+    setLocalStorage(prodInf, boughtProducts.length, true);
   }, [typeValue, amountValue]);
 
   return (
