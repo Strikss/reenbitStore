@@ -8,6 +8,7 @@ import { RouteNames } from "../../../../../../router/router";
 import { useAppSelector } from "../../../../../../hooks/selectorHook";
 import BuyButton from "../../../../../custom/buttons/buyButton/BuyButton";
 import AmountButton from "../../../../../custom/buttons/amountButton/AmountButton";
+import { setLocalStorage } from "../../../../../../helpers/setLocalStorage/setLocalStorage";
 
 interface Props {
   product: ProductsType;
@@ -37,6 +38,7 @@ const Buttons: React.FC<Props> = ({ product }) => {
   }, [amountValue, typeValue]);
 
   const handleClick = () => {
+    setLocalStorage(prodInf, boughtProducts.length);
     buyProduct(prodInf);
     history.push(RouteNames.SHOPPING_CART);
   };

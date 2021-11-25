@@ -7,11 +7,16 @@ import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import Menu from "../../components/menu/Menu";
 import { useAction } from "../../hooks/useAction";
 import Footer from "../../components/footer/Footer";
+import { useAppSelector } from "../../hooks/selectorHook";
+import { rebuyProducts } from "../../helpers/rebuyProducts/rebuyProducts";
 
 const AllProducts: React.FC = () => {
   //HOOKS
-  const { fetchProducts, reset } = useAction();
+  const { fetchProducts, reset, buyProduct } = useAction();
+  const { boughtProducts } = useAppSelector((state) => state.products);
+
   useEffect(() => {
+    rebuyProducts(buyProduct, boughtProducts.length);
     reset();
     fetchProducts();
   }, []);

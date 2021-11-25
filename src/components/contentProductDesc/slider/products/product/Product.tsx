@@ -1,6 +1,7 @@
 import { Progress } from "antd";
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
+import { setLocalStorage } from "../../../../../helpers/setLocalStorage/setLocalStorage";
 import { toFixed } from "../../../../../helpers/toFixed/toFixed";
 import { useAppSelector } from "../../../../../hooks/selectorHook";
 import { useAction } from "../../../../../hooks/useAction";
@@ -16,9 +17,7 @@ interface Props {
 const Product: React.FC<Props> = ({ product }) => {
   //HOOKS
   const { buyProduct } = useAction();
-  const boughtProducts = useAppSelector(
-    (state) => state.products.boughtProducts
-  );
+  const { boughtProducts } = useAppSelector((state) => state.products);
   const history = useHistory();
 
   //PRODUCT
@@ -38,6 +37,7 @@ const Product: React.FC<Props> = ({ product }) => {
 
   //FUNCTIONS
   const handleClick = () => {
+    setLocalStorage(prodInf, boughtProducts.length);
     buyProduct(prodInf);
     history.push(RouteNames.SHOPPING_CART);
   };

@@ -34,14 +34,14 @@ const Product: React.FC<Props> = ({ product }) => {
   ));
 
   //FUNCTIONS
-  const cleanLocalStorage = () => {
-    let keysToRemove = ["products", "amount"];
-
-    if (localStorage.getItem("amount") === "1") {
-      for (let key of keysToRemove) {
-        localStorage.removeItem(key);
-      }
-    }
+  const cleanLocalStorage = (id: string) => {
+    const productList: ProdInf[] = JSON.parse(
+      localStorage.getItem("products") as string
+    );
+    const newProductList = productList.filter(
+      (product) => product.product.itemID !== id
+    );
+    localStorage.setItem("products", JSON.stringify(newProductList));
   };
   useEffect(() => {
     changeAmount({
@@ -70,7 +70,7 @@ const Product: React.FC<Props> = ({ product }) => {
           className={style.deleteImg}
           onClick={() => {
             removeProduct(product.product.itemID);
-            cleanLocalStorage();
+            cleanLocalStorage(product.product.itemID);
           }}
         >
           <img src={remove} alt="delete" />
