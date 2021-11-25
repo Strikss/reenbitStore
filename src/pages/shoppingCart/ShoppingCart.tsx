@@ -8,6 +8,7 @@ import SearchBar from "../../components/searchBar/SearchBar";
 import { useAppSelector } from "../../hooks/selectorHook";
 import { useAction } from "../../hooks/useAction";
 import style from "./ShoppingCart.module.css";
+import { ProdInf } from "../../interfaces/product";
 
 const ShoppingCart: React.FC = () => {
   //HOOKS
@@ -16,20 +17,28 @@ const ShoppingCart: React.FC = () => {
   const { boughtProducts } = useAppSelector((state) => state.products);
 
   //LOCAL STORAGE
-  const rebuyProducts = () => {
-    const keys = Object.keys(localStorage);
-    keys.forEach((el) => {
-      const value = localStorage[el];
-
-      if (value.includes("{" && "}")) {
-        const product = JSON.parse(value);
-        buyProduct(product);
-      }
-    });
+  const setProducts = () => {
+    localStorage.setItem("products", JSON.stringify(boughtProducts));
+    localStorage.setItem("amount", JSON.stringify(boughtProducts.length));
   };
 
+  const rebuyProducts = () => {
+    const value: ProdInf[] = JSON.parse(
+      localStorage.getItem("products") as string
+    );
+    if (value !== null) {
+      value.forEach((el) => buyProduct(el));
+    }
+  };
+
+  //FUNCTIONS
   useEffect(() => {
-    boughtProducts.length === 0 && rebuyProducts();
+    boughtProducts.length !== 0 && setProducts();
+    console.log("hel");
+  }, [JSON.stringify(boughtProducts)]);
+
+  useEffect(() => {
+    boughtProducts.length === 0 && localStorage.length !== 0 && rebuyProducts();
     reset();
   }, [id]);
 

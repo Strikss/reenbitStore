@@ -15,9 +15,7 @@ interface Props {
 
 const Buttons: React.FC<Props> = ({ product }) => {
   //HOOKS
-  const boughtProducts: ProdInf[] = useAppSelector(
-    (state) => state.products.boughtProducts
-  );
+  const { boughtProducts } = useAppSelector((state) => state.products);
   const [typeValue, setTypeValue] = useState<ProdInf["type"]>(product.buyBy[0]);
   const [amountValue, setAmountValue] = useState(1);
   const [prodInf, setProdInf] = useState<ProdInf>({
@@ -40,7 +38,6 @@ const Buttons: React.FC<Props> = ({ product }) => {
 
   const handleClick = () => {
     buyProduct(prodInf);
-    localStorage.setItem(product.itemID, JSON.stringify(prodInf));
     history.push(RouteNames.SHOPPING_CART);
   };
   return success ? (

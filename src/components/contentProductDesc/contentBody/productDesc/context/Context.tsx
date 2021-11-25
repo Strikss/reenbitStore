@@ -5,6 +5,7 @@ import whiteStar from "../../../../../assets/images/whiteRatingStar.svg";
 import Buttons from "./buttons/Buttons";
 import heart from "../../../../../assets/images/heart.svg";
 import { ProductsType } from "../../../../../interfaces/product";
+import { toFixed } from "../../../../../helpers/toFixed/toFixed";
 
 interface Props {
   product: ProductsType;
@@ -79,13 +80,9 @@ const Context: React.FC<Props> = ({ product }) => {
       </ul>
       <div className={style.buyContainer}>
         <div className={style.priceContainer}>
-          <h1 className={style.priceHalf}>
-            {product?.priceHalf.toFixed(2)} <span> USD</span>
-          </h1>
+          <h1 className={style.priceHalf}>{toFixed(product?.priceHalf)}</h1>
           <p className={style.priceFull}>
-            <s>
-              {product?.priceFull.toFixed(2)} <span>USD</span>
-            </s>
+            <s>{toFixed(product?.priceFull)}</s>
           </p>
         </div>
         <Buttons product={product} />

@@ -67,7 +67,11 @@ const AmountButton: React.FC<Props> = ({
           </Dropdown>
         </div>
       </div>
-      {error ? <span className={style.errorText}>Error</span> : null}
+      {error ? (
+        <span className={style.errorText}>
+          This product doesnt sell at this amount
+        </span>
+      ) : null}
     </div>
   );
 };

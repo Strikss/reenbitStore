@@ -1,6 +1,7 @@
 import { Progress } from "antd";
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
+import { toFixed } from "../../../../../helpers/toFixed/toFixed";
 import { useAppSelector } from "../../../../../hooks/selectorHook";
 import { useAction } from "../../../../../hooks/useAction";
 import { ProdInf, ProductsType } from "../../../../../interfaces/product";
@@ -38,7 +39,6 @@ const Product: React.FC<Props> = ({ product }) => {
   //FUNCTIONS
   const handleClick = () => {
     buyProduct(prodInf);
-    localStorage.setItem(product.itemID, JSON.stringify(prodInf));
     history.push(RouteNames.SHOPPING_CART);
   };
 
@@ -63,13 +63,9 @@ const Product: React.FC<Props> = ({ product }) => {
         </div>
         <div className={style.bottomPart}>
           <div className={style.priceContainer}>
-            <h1 className={style.priceHalf}>
-              {product.priceHalf.toFixed(2)} <span>USD</span>
-            </h1>
+            <h1 className={style.priceHalf}>{toFixed(product.priceHalf)}</h1>
             <p className={style.priceFull}>
-              <s>
-                {product.priceFull.toFixed(2)} <span>USD</span>
-              </s>
+              <s>{toFixed(product.priceFull)}</s>
             </p>
           </div>
           {success ? (

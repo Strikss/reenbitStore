@@ -12,7 +12,7 @@ const Confirmation: React.FC = () => {
           We are getting to the end. Just few clicks and your order si ready!
         </p>
       </div>
-      <div className={style.chexBoxContainer}>
+      <div className={style.checkBoxContainer}>
         <Form.Item
           name="marketingTerms"
           valuePropName="checked"
@@ -34,7 +34,7 @@ const Confirmation: React.FC = () => {
             <CheckBox />
             <span>
               I agree with sending an Marketing and newsletter emails. No spam,
-              promissed!{" "}
+              promissed!
             </span>
           </span>
         </Form.Item>

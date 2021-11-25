@@ -1,6 +1,6 @@
 import { FormInstance } from "antd";
 import React from "react";
-import CustomForm from "../../../custom/customFormField/CustomFormField";
+import CustomFormField from "../../../custom/customFormField/CustomFormField";
 import style from "./BillingInfo.module.css";
 
 interface Props {
@@ -17,15 +17,15 @@ const BillingInfo: React.FC<Props> = ({ form }) => {
       <ul className={style.infoContainer}>
         <li className={style.oneForm}>
           <label>First name</label>
-          <CustomForm placeholder="First name" name="firstName" validate />
+          <CustomFormField placeholder="First name" name="firstName" validate />
         </li>
         <li className={style.oneForm}>
           <label>Last name</label>
-          <CustomForm placeholder="Last name" name="lastName" validate />
+          <CustomFormField placeholder="Last name" name="lastName" validate />
         </li>
         <li className={style.oneForm}>
           <label>Email address</label>
-          <CustomForm
+          <CustomFormField
             placeholder="Email address"
             name="email"
             validate
@@ -34,20 +34,20 @@ const BillingInfo: React.FC<Props> = ({ form }) => {
         </li>
         <li className={style.oneForm}>
           <label>Phone number</label>
-          <CustomForm
+          <CustomFormField
             placeholder="Phone number"
             formType="number"
-            name="phone"
+            name="number"
             validate
           />
         </li>
         <li className={style.oneForm}>
           <label>Address</label>
-          <CustomForm placeholder="Address" name="address" validate />
+          <CustomFormField placeholder="Address" name="address" validate />
         </li>
         <li className={style.oneForm}>
           <label>Town / City</label>
-          <CustomForm
+          <CustomFormField
             placeholder="Town / City"
             name="city"
             validate
@@ -57,7 +57,7 @@ const BillingInfo: React.FC<Props> = ({ form }) => {
         </li>
         <li className={style.oneForm}>
           <label>State / Country</label>
-          <CustomForm
+          <CustomFormField
             placeholder="State / Country"
             name="country"
             validate
@@ -67,7 +67,7 @@ const BillingInfo: React.FC<Props> = ({ form }) => {
         </li>
         <li className={style.oneForm}>
           <label>ZIP / Postal code</label>
-          <CustomForm
+          <CustomFormField
             placeholder="ZIP / Postal code"
             formType="number"
             name="zip"

@@ -6,6 +6,7 @@ import Product from "./product/Product";
 import PromoCode from "./promoCode/PromoCode";
 import style from "./Summary.module.css";
 import emptyBox from "../../../assets/images/empty_box.svg";
+import { toFixed } from "../../../helpers/toFixed/toFixed";
 
 const Summary: React.FC = () => {
   //HOOKS
@@ -54,11 +55,11 @@ const Summary: React.FC = () => {
       <ul className={style.productsContainer}>{boughtProducts}</ul>
       <div className={style.subTotal}>
         <span className={style.innerTitle}>Subtotal</span>
-        <span className={style.price}>{productsPrice.toFixed(2)} USD</span>
+        <span className={style.price}>{toFixed(productsPrice)}</span>
       </div>
       <div className={style.taxContainer}>
         <span className={style.innerTitle}>Tax 17%</span>
-        <span className={style.price}>{taxPrice.toFixed(2)} USD</span>
+        <span className={style.price}>{toFixed(taxPrice)}</span>
       </div>
       <div className={style.form}>
         <PromoCode
@@ -79,11 +80,11 @@ const Summary: React.FC = () => {
         </div>
         <div className={style.discountContainer}>
           <span className={discount ? style.discount : style.fullPrice}>
-            {(productsPrice + taxPrice).toFixed(2)} USD
+            {toFixed(productsPrice + taxPrice)}
           </span>
           {discount ? (
             <span className={style.fullPrice}>
-              {(discountPrice + taxPrice).toFixed(2)} USD
+              {toFixed(discountPrice + taxPrice)}
             </span>
           ) : null}
         </div>

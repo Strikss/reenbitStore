@@ -9,6 +9,7 @@ import { useAction } from "../../../../hooks/useAction";
 import AmountButton from "../../../custom/buttons/amountButton/AmountButton";
 import { NavLink } from "react-router-dom";
 import { RouteNames } from "../../../../router/router";
+import { toFixed } from "../../../../helpers/toFixed/toFixed";
 
 interface Props {
   product: ProdInf;
@@ -31,6 +32,17 @@ const Product: React.FC<Props> = ({ product }) => {
       />
     </li>
   ));
+
+  //FUNCTIONS
+  const cleanLocalStorage = () => {
+    let keysToRemove = ["products", "amount"];
+
+    if (localStorage.getItem("amount") === "1") {
+      for (let key of keysToRemove) {
+        localStorage.removeItem(key);
+      }
+    }
+  };
   useEffect(() => {
     changeAmount({
       product: product.product,
@@ -38,6 +50,7 @@ const Product: React.FC<Props> = ({ product }) => {
       amount: amountValue,
     });
   }, [typeValue, amountValue]);
+
   return (
     <div className={style.container}>
       <div className={style.imgContainer}>
@@ -57,7 +70,7 @@ const Product: React.FC<Props> = ({ product }) => {
           className={style.deleteImg}
           onClick={() => {
             removeProduct(product.product.itemID);
-            localStorage.removeItem(product.product.itemID);
+            cleanLocalStorage();
           }}
         >
           <img src={remove} alt="delete" />
@@ -79,8 +92,7 @@ const Product: React.FC<Props> = ({ product }) => {
         <ul className={style.starContainer}>{stars}</ul>
         <div className={style.priceContainer}>
           <h2 className={style.price}>
-            {(product.product.priceHalf * amountValue).toFixed(2)}{" "}
-            <span>USD</span>
+            {toFixed(product.product.priceHalf * amountValue)}
           </h2>
           <AmountButton
             buyBy={product.product.buyBy}

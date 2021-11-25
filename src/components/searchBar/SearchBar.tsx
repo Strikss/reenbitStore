@@ -9,9 +9,11 @@ import { useAppSelector } from "../../hooks/selectorHook";
 
 const SearchBar: React.FC = () => {
   //HOOKS
-  const basketAmout = useAppSelector(
-    (state) => state.products.boughtProducts.length
-  );
+  const { boughtProducts } = useAppSelector((state) => state.products);
+  const basketAmount =
+    boughtProducts.length !== 0
+      ? boughtProducts.length
+      : localStorage.getItem("amount");
 
   return (
     <div className={style.container}>
@@ -31,7 +33,7 @@ const SearchBar: React.FC = () => {
               className={style.shoppingBag}
             />
           </NavLink>
-          <span className={style.amount}>{basketAmout}</span>
+          <span className={style.amount}>{basketAmount}</span>
         </li>
       </ul>
     </div>
