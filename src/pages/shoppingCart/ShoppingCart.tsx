@@ -34,7 +34,6 @@ const ShoppingCart: React.FC = () => {
   //FUNCTIONS
   useEffect(() => {
     boughtProducts.length !== 0 && setProducts();
-    console.log("hel");
   }, [JSON.stringify(boughtProducts)]);
 
   useEffect(() => {
