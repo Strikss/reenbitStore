@@ -51,6 +51,7 @@ const AmountButton: React.FC<Props> = ({
       <div className={inputClass}>
         <input
           className={style.left}
+          onBlur={() => (error ? setAmount(1) : null)}
           value={value}
           type="number"
           placeholder="1"

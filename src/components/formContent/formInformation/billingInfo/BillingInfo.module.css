@@ -12,6 +12,9 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
 }
+.required {
+  color: red;
+}
 
 @media (max-width: 1024px) {
   .infoContainer {

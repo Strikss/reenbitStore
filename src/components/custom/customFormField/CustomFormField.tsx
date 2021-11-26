@@ -27,7 +27,6 @@ const CustomFormField: React.FC<Props> = ({
   const [defaultValue, setDefaultValue] = useState<string>(
     localStorage.getItem(name) || ""
   );
-
   //AUTOCOMPLETE
   const onSelect = (value: string) => {
     form!.setFieldsValue({ [selected]: value });
@@ -45,6 +44,12 @@ const CustomFormField: React.FC<Props> = ({
     <Form.Item
       name={name}
       rules={[
+        formType === "tel"
+          ? {
+              pattern: new RegExp(/^([+]?\d{2})?\d{10}$/),
+              message: "Enter a valid number",
+            }
+          : {},
         { required: validate, message: `Enter a ${placeholder}` },
         { type: formType === "email" ? "email" : "string" },
       ]}

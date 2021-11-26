@@ -16,15 +16,21 @@ const BillingInfo: React.FC<Props> = ({ form }) => {
       </div>
       <ul className={style.infoContainer}>
         <li className={style.oneForm}>
-          <label>First name</label>
+          <label>
+            <span className={style.required}>*</span> First name
+          </label>
           <CustomFormField placeholder="First name" name="firstName" validate />
         </li>
         <li className={style.oneForm}>
-          <label>Last name</label>
+          <label>
+            <span className={style.required}>*</span> Last name
+          </label>
           <CustomFormField placeholder="Last name" name="lastName" validate />
         </li>
         <li className={style.oneForm}>
-          <label>Email address</label>
+          <label>
+            <span className={style.required}>*</span> Email address
+          </label>
           <CustomFormField
             placeholder="Email address"
             name="email"
@@ -33,20 +39,27 @@ const BillingInfo: React.FC<Props> = ({ form }) => {
           />
         </li>
         <li className={style.oneForm}>
-          <label>Phone number</label>
+          <label>
+            <span className={style.required}>*</span> Phone number
+          </label>
           <CustomFormField
             placeholder="Phone number"
-            formType="number"
+            formType="tel"
             name="number"
             validate
+            max={13}
           />
         </li>
         <li className={style.oneForm}>
-          <label>Address</label>
+          <label>
+            <span className={style.required}>*</span> Address
+          </label>
           <CustomFormField placeholder="Address" name="address" validate />
         </li>
         <li className={style.oneForm}>
-          <label>Town / City</label>
+          <label>
+            <span className={style.required}>*</span> Town / City
+          </label>
           <CustomFormField
             placeholder="Town / City"
             name="city"
@@ -56,7 +69,9 @@ const BillingInfo: React.FC<Props> = ({ form }) => {
           />
         </li>
         <li className={style.oneForm}>
-          <label>State / Country</label>
+          <label>
+            <span className={style.required}>*</span> State / Country
+          </label>
           <CustomFormField
             placeholder="State / Country"
             name="country"
@@ -66,7 +81,9 @@ const BillingInfo: React.FC<Props> = ({ form }) => {
           />
         </li>
         <li className={style.oneForm}>
-          <label>ZIP / Postal code</label>
+          <label>
+            <span className={style.required}>*</span> ZIP / Postal code
+          </label>
           <CustomFormField
             placeholder="ZIP / Postal code"
             formType="number"

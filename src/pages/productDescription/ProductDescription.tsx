@@ -6,16 +6,13 @@ import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Menu from "../../components/menu/Menu";
 import SearchBar from "../../components/searchBar/SearchBar";
-import { rebuyProducts } from "../../helpers/rebuyProducts/rebuyProducts";
-import { useAppSelector } from "../../hooks/selectorHook";
 import { useAction } from "../../hooks/useAction";
 import style from "./ProductDescription.module.css";
 
 const ProductDescription: React.FC = () => {
   //HOOKS
   const { id } = useParams<{ id: string }>();
-  const { setCurrentID, reset, fetchProducts, buyProduct } = useAction();
-  const { boughtProducts } = useAppSelector((state) => state.products);
+  const { setCurrentID, reset, fetchProducts } = useAction();
 
   useEffect(() => {
     reset();
@@ -24,7 +21,6 @@ const ProductDescription: React.FC = () => {
     document
       .getElementById("productDescription")
       ?.scroll({ top: 0, left: 0, behavior: "smooth" });
-    rebuyProducts(buyProduct, boughtProducts.length);
   }, [id]);
 
   return (
