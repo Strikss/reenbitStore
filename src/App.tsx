@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { Routes } from "./router/router";
-import "./App.css";
+import "./App.scss";
 import { useAction } from "./hooks/useAction";
 import { useAppSelector } from "./hooks/selectorHook";
 import { rebuyProducts } from "./helpers/rebuyProducts/rebuyProducts";
