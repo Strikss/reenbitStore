@@ -6,7 +6,7 @@ import Header from "../../components/header/Header";
 import Menu from "../../components/menu/Menu";
 import SearchBar from "../../components/searchBar/SearchBar";
 import { useAction } from "../../hooks/useAction";
-import style from "./ShoppingCart.module.css";
+import style from "./ShoppingCart.module.scss";
 
 const ShoppingCart: React.FC = () => {
   //HOOKS

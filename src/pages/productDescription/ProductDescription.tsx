@@ -7,7 +7,7 @@ import Header from "../../components/header/Header";
 import Menu from "../../components/menu/Menu";
 import SearchBar from "../../components/searchBar/SearchBar";
 import { useAction } from "../../hooks/useAction";
-import style from "./ProductDescription.module.css";
+import style from "./ProductDescription.module.scss";
 
 const ProductDescription: React.FC = () => {
   //HOOKS

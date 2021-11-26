@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "../../components/header/Header";
 import SearchBar from "../../components/searchBar/SearchBar";
-import style from "./AllProducts.module.css";
+import style from "./AllProducts.module.scss";
 import Content from "../../components/contentAllProducts/Content";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import Menu from "../../components/menu/Menu";
