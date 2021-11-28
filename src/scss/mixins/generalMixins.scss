@@ -1,0 +1,16 @@
+@mixin pageContainer {
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.062);
+  padding: 0 45px;
+  overflow: auto;
+}
+
+//COUNT CIRCLE
+@mixin countCircle {
+  background-color: #d9e0c9a6;
+  font-size: 0.9rem;
+  color: #4a8015;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}

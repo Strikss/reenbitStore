@@ -1,0 +1,52 @@
+@import "../../../../../scss/";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.imageContainer {
+  position: relative;
+}
+.productImage {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.discount {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  @include countCircle;
+}
+.title {
+  font-size: 1.3rem;
+}
+.bottomPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+  font-size: 1.35rem;
+}
+
+.priceHalf {
+  font-size: 1.2rem;
+}
+.priceFull {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.397);
+  font-weight: 700;
+}
+@media (max-width: 720px) {
+  .container {
+    width: 350px;
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    width: 270px;
+  }
+}

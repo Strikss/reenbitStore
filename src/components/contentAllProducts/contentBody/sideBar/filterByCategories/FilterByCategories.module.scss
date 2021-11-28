@@ -1,0 +1,35 @@
+@import "../../../../../scss/";
+.container {
+  margin-bottom: 45px;
+}
+.itemContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.item {
+  font-size: 1rem;
+}
+.title {
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+.countCircle {
+  @include countCircle;
+}
+.itemContainer:not(:last-child) {
+  margin-bottom: 10px;
+}
+.selected {
+  background-color: #6a983cd8;
+  border-radius: 12px;
+  padding: 5px 5px;
+  color: white;
+  transition: 0.5s;
+  font-size: 1.1em;
+  letter-spacing: 0.2px;
+}
+.selected .countCircle {
+  color: white;
+}

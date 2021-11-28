@@ -1,0 +1,24 @@
+@import "../../../scss/";
+
+.titleContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.title {
+  font-size: 2rem;
+}
+.totalCount {
+  @include countCircle;
+}
+.products {
+  margin-left: 5px;
+  color: #a9a9a9;
+}
+@media (max-width: 620px) {
+  .title {
+    font-size: 1.6rem;
+  }
+}

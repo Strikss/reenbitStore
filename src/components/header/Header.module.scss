@@ -1,0 +1,74 @@
+@import "../../scss/";
+
+.mainWrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 48px;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 400;
+  border-bottom: 1px solid #d1d1d1;
+  justify-content: space-between;
+  align-items: center;
+}
+.right {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+
+  .item:not(:first-child) .link {
+    margin-left: 38px;
+  }
+  .item .link {
+    color: $green;
+  }
+}
+
+.left {
+  display: flex;
+  width: 100%;
+  .item:first-child .link {
+    color: $green;
+  }
+  .item:not(:last-child) .link {
+    margin-right: 38px;
+  }
+}
+
+@include _866 {
+  .mainWrapper {
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  .right,
+  .left {
+    justify-content: space-between;
+  }
+  .left {
+    margin-bottom: 10px;
+  }
+  .left :last-child .link {
+    justify-content: flex-end;
+  }
+}
+@include _575 {
+  .left :first-child .link {
+    display: none;
+  }
+
+  .left :last-child {
+    display: flex;
+    width: 100%;
+  }
+  .right {
+    justify-content: space-around;
+  }
+}
+@include _375 {
+  .left {
+    font-size: 0.83rem;
+  }
+  .right {
+    font-size: 0.83rem;
+  }
+}
