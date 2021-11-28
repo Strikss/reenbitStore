@@ -1,7 +1,7 @@
 import { Carousel } from "antd";
 import React from "react";
 import { ProductsType } from "../../../../interfaces/product";
-import style from "./ProductImage.module.css";
+import style from "./ProductImage.module.scss";
 
 interface Props {
   product: ProductsType;

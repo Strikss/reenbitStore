@@ -3,7 +3,8 @@
 .container {
   @include pageContainer;
 }
-@media (max-width: 768px) {
+
+@include _768 {
   .container {
     padding: 0 8px;
   }

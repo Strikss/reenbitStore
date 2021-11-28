@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppSelector } from "../../../../../hooks/selectorHook";
 import { useAction } from "../../../../../hooks/useAction";
-import style from "./FilterByCategories.module.css";
+import style from "./FilterByCategories.module.scss";
 import classNames from "classnames";
 
 const FilterByCategories: React.FC = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./SearchBar.module.css";
+import style from "./SearchBar.module.scss";
 import SearchEngine from "./searchEngine/SearchEngine";
 import manHead from "../../assets/images/manHead48.png";
 import shoppingBag from "../../assets/images/shoppingBasket48.png";

@@ -1,5 +1,5 @@
 import { useAppSelector } from "../../../hooks/selectorHook";
-import style from "./ContentHeader.module.css";
+import style from "./ContentHeader.module.scss";
 
 const ContentHeader = () => {
   //HOOKS

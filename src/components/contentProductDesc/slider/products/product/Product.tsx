@@ -8,7 +8,7 @@ import { useAction } from "../../../../../hooks/useAction";
 import { ProdInf, ProductsType } from "../../../../../interfaces/product";
 import { RouteNames } from "../../../../../router/router";
 import BuyButton from "../../../../custom/buttons/buyButton/BuyButton";
-import style from "./Product.module.css";
+import style from "./Product.module.scss";
 
 interface Props {
   product: ProductsType;

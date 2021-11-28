@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { ProductsType } from "../../../../../interfaces/product";
 import DescriptionTab from "./descriptionTab/DescriptionTab";
-import style from "./ProductTabs.module.css";
+import style from "./ProductTabs.module.scss";
 import QuestionsTab from "./questionsTab/QuestionsTab";
 import ReviewsTab from "./reviewsTab/ReviewsTab";
 
