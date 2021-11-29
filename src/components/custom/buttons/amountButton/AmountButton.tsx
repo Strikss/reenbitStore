@@ -41,6 +41,13 @@ const AmountButton: React.FC<Props> = ({
   const inputClass = classNames(style.inputContainer, error && style.error);
 
   //FUNCTIONS
+  const handleBlur = () => {
+    if (error) {
+      amount <= 0 && setAmount(1);
+      amount > max && setAmount(max);
+    }
+  };
+
   useEffect(() => {
     setTypeValue(type);
     setAmountValue(amount);
@@ -51,7 +58,7 @@ const AmountButton: React.FC<Props> = ({
       <div className={inputClass}>
         <input
           className={style.left}
-          onBlur={() => (error ? setAmount(1) : null)}
+          onBlur={handleBlur}
           value={value}
           type="number"
           placeholder="1"

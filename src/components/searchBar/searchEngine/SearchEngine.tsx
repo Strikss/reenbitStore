@@ -13,12 +13,27 @@ const SearchEngine: React.FC = () => {
     filterByName(e.target.value);
   };
 
+  const debounce = (
+    fn: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    delay: number
+  ) => {
+    let timeout: ReturnType<typeof setTimeout>;
+
+    return (args: React.ChangeEvent<HTMLInputElement>) => {
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        fn(args);
+      }, delay);
+    };
+  };
+
   return (
     <div className={style.container}>
       <DropDownMenu />
       <div className={style.search}>
         <input
-          onChange={setName}
+          onChange={debounce(setName, 500)}
           type="text"
           className={style.searchInput}
           placeholder="I'm looking ..."
