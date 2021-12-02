@@ -42,6 +42,10 @@
   color: rgba(0, 0, 0, 0.397);
   font-weight: 700;
 }
+.outOfStock {
+  font-size: 1.1rem;
+  color: rgba(243, 28, 28, 0.829);
+}
 @media (max-width: 720px) {
   .container {
     width: 350px;

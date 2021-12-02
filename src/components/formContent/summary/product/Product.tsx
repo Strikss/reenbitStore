@@ -52,6 +52,7 @@ const Product: React.FC<Props> = ({ product }) => {
     );
     localStorage.setItem("products", JSON.stringify(newProductList));
   };
+
   useEffect(() => {
     changeAmount(prodInf);
     setLocalStorage(prodInf, boughtProducts.length, true);

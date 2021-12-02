@@ -46,9 +46,13 @@ const FormInformation: React.FC = () => {
   const onFieldsChange = (e: FieldData[]) => {
     const [firstObject] = e;
     const { name, value } = firstObject;
+    console.log(firstObject);
     const nameStr = name.toString();
     if (nameStr !== "privacyTerms" && nameStr !== "marketingTerms") {
       localStorage.setItem(nameStr, value);
+    }
+    if (localStorage.getItem(nameStr)?.length === 0 || "undefined") {
+      localStorage.removeItem(nameStr);
     }
   };
 
@@ -58,7 +62,6 @@ const FormInformation: React.FC = () => {
       form.setFieldsValue({ [el]: localStorage[el] });
     });
   };
-
   useEffect(() => {
     setFieldsValue();
   }, []);

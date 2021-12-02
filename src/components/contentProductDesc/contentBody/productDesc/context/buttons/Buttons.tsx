@@ -42,6 +42,7 @@ const Buttons: React.FC<Props> = ({ product }) => {
     buyProduct(prodInf);
     history.push(RouteNames.SHOPPING_CART);
   };
+
   return success ? (
     <div className={style.success}>
       <Progress type="circle" percent={100} width={50} />
@@ -49,13 +50,18 @@ const Buttons: React.FC<Props> = ({ product }) => {
     </div>
   ) : (
     <div className={style.btnContainer}>
-      <AmountButton
-        buyBy={product.buyBy}
-        setTypeValue={setTypeValue}
-        setAmountValue={setAmountValue}
-        value={amountValue}
-        max={product.stock}
-      />
+      {product.stock === 0 ? (
+        <span className={style.outOfStock}>Out of stock</span>
+      ) : (
+        <AmountButton
+          buyBy={product.buyBy}
+          setTypeValue={setTypeValue}
+          setAmountValue={setAmountValue}
+          value={amountValue}
+          max={product.stock}
+        />
+      )}
+
       <BuyButton
         type="buyBig"
         handleClick={handleClick}

@@ -12,6 +12,9 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    margin-right: 0;
+  }
   .fireWorks {
     width: 75%;
     left: 13%;

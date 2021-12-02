@@ -70,6 +70,8 @@ const Product: React.FC<Props> = ({ product }) => {
           </div>
           {success ? (
             <Progress type="circle" percent={100} width={30} />
+          ) : product.stock === 0 ? (
+            <span className={style.outOfStock}>Out of stock</span>
           ) : (
             <BuyButton
               type="buySmall"

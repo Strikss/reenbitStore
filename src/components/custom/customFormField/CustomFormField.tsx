@@ -47,7 +47,7 @@ const CustomFormField: React.FC<Props> = ({
         formType === "tel"
           ? {
               pattern: new RegExp(/^([+]?\d{2})?\d{10}$/),
-              message: "Enter a valid number",
+              message: "Enter a valid number +(38)111-222-33-44",
             }
           : {},
         { required: validate, message: `Enter a ${placeholder}` },

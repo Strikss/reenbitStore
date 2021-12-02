@@ -12,3 +12,7 @@
   color: #72c140;
   margin-left: 5px;
 }
+.outOfStock {
+  font-size: 1.3rem;
+  color: rgba(243, 28, 28, 0.829);
+}
