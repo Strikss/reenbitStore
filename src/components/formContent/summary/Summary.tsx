@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { addDays } from "../../../helpers/addDays/addDays";
 import { useAppSelector } from "../../../hooks/selectorHook";
-import { ProductsType } from "../../../interfaces/product";
-import CustomFormField from "../../custom/customFormField/CustomFormField";
+import { ProdInf } from "../../../interfaces/product";
 import Product from "./product/Product";
+import PromoCode from "./promoCode/PromoCode";
 import style from "./Summary.module.css";
 import emptyBox from "../../../assets/images/empty_box.svg";
+import { toFixed } from "../../../helpers/toFixed/toFixed";
 
 const Summary: React.FC = () => {
   //HOOKS
   const products = useAppSelector((state) => state.products.boughtProducts);
+  const { promoCode, discount } = useAppSelector((state) => state.products);
 
   //BOUGHT PRODUCTS
   const boughtProducts =
@@ -29,13 +31,15 @@ const Summary: React.FC = () => {
     );
 
   //PRICES
-  const reducer = (prev: number, curr: ProductsType) => prev + curr.priceHalf;
-  const totalPrice: number = products.reduce(reducer, 0);
-  const taxPrice = totalPrice * 0.17;
+  const reducer = (prev: number, curr: ProdInf) =>
+    prev + curr.product.priceHalf * curr.amount;
+  const productsPrice = products.reduce(reducer, 0);
+  const taxPrice = productsPrice * 0.17;
+  const discountPrice = productsPrice - productsPrice * (discount / 100);
 
   //DATE
   const deliveryDay = products.reduce((prev, curr) => {
-    return Math.max(prev, curr.deliverIn);
+    return Math.max(prev, curr.product.deliverIn);
   }, 0);
   let currentDate = new Date();
   const deliveryDate = addDays(currentDate, deliveryDay);
@@ -51,28 +55,39 @@ const Summary: React.FC = () => {
       <ul className={style.productsContainer}>{boughtProducts}</ul>
       <div className={style.subTotal}>
         <span className={style.innerTitle}>Subtotal</span>
-        <span className={style.price}>{totalPrice.toFixed(2)} USD</span>
+        <span className={style.price}>{toFixed(productsPrice)}</span>
       </div>
       <div className={style.taxContainer}>
         <span className={style.innerTitle}>Tax 17%</span>
-        <span className={style.price}>{taxPrice.toFixed(2)} USD</span>
+        <span className={style.price}>{toFixed(taxPrice)}</span>
       </div>
       <div className={style.form}>
-        <CustomFormField
+        <PromoCode
           placeholder="Apply promo code"
           suffixText="Apply now"
+          promoCode={promoCode}
+          max={10}
+          name="promoCode"
+          id="summary"
         />
       </div>
       <div className={style.totalOrderContainer}>
         <div className={style.totalOrder}>
-          <h3>Total Order</h3>
+          <span>Total Order</span>
           <p className={style.delivery}>
             Guaranteed delivery day: {deliveryDate}
           </p>
         </div>
-        <span className={style.fullPrice}>
-          {(totalPrice + taxPrice).toFixed(2)} USD
-        </span>
+        <div className={style.discountContainer}>
+          <span className={discount ? style.discount : style.fullPrice}>
+            {toFixed(productsPrice + taxPrice)}
+          </span>
+          {discount ? (
+            <span className={style.fullPrice}>
+              {toFixed(discountPrice + taxPrice)}
+            </span>
+          ) : null}
+        </div>
       </div>
     </div>
   );

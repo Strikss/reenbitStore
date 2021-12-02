@@ -16,5 +16,10 @@ export interface ProductsType {
   color: string;
   questions: number;
   reviews: number;
-  buyBy: string[];
+  buyBy: ProdInf["type"][];
+}
+export interface ProdInf {
+  product: ProductsType;
+  amount: number;
+  type: "Pcs" | "Kgs" | "Box" | "Pack";
 }

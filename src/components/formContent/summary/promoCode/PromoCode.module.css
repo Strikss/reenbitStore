@@ -1,0 +1,22 @@
+.inputContainer {
+  background-color: #f9f9f9;
+  border: 1px solid #d1d1d1;
+  border-radius: 12px;
+  display: flex;
+}
+.suffix {
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: transparent;
+  outline: transparent;
+  border: none;
+  cursor: pointer;
+}
+.disabled {
+  opacity: 0.5;
+}
+@media (max-width: 425px) {
+  .suffix {
+    font-size: 0.9rem;
+  }
+}

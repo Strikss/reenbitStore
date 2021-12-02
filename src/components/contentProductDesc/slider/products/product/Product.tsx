@@ -1,9 +1,11 @@
 import { Progress } from "antd";
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
+import { setLocalStorage } from "../../../../../helpers/setLocalStorage/setLocalStorage";
+import { toFixed } from "../../../../../helpers/toFixed/toFixed";
 import { useAppSelector } from "../../../../../hooks/selectorHook";
 import { useAction } from "../../../../../hooks/useAction";
-import { ProductsType } from "../../../../../interfaces/product";
+import { ProdInf, ProductsType } from "../../../../../interfaces/product";
 import { RouteNames } from "../../../../../router/router";
 import BuyButton from "../../../../custom/buttons/buyButton/BuyButton";
 import style from "./Product.module.css";
@@ -15,20 +17,28 @@ interface Props {
 const Product: React.FC<Props> = ({ product }) => {
   //HOOKS
   const { buyProduct } = useAction();
-  const boughtProducts = useAppSelector(
-    (state) => state.products.boughtProducts
-  );
+  const { boughtProducts } = useAppSelector((state) => state.products);
   const history = useHistory();
+
+  //PRODUCT
+  const prodInf = {
+    product,
+    amount: 1,
+    type: product.buyBy[0] as ProdInf["type"],
+  };
 
   //DISCOUNT
   const discount = 100 - (product.priceHalf / product.priceFull) * 100;
 
   //SUCCESS
-  const success = boughtProducts.some((prod) => prod.itemID === product.itemID);
+  const success = boughtProducts.some(
+    (prod) => prod.product.itemID === product.itemID
+  );
 
   //FUNCTIONS
   const handleClick = () => {
-    buyProduct(product);
+    setLocalStorage(prodInf, boughtProducts.length);
+    buyProduct(prodInf);
     history.push(RouteNames.SHOPPING_CART);
   };
 
@@ -53,17 +63,15 @@ const Product: React.FC<Props> = ({ product }) => {
         </div>
         <div className={style.bottomPart}>
           <div className={style.priceContainer}>
-            <h1 className={style.priceHalf}>
-              {product.priceHalf.toFixed(2)} <span>USD</span>
-            </h1>
+            <h1 className={style.priceHalf}>{toFixed(product.priceHalf)}</h1>
             <p className={style.priceFull}>
-              <s>
-                {product.priceFull.toFixed(2)} <span>USD</span>
-              </s>
+              <s>{toFixed(product.priceFull)}</s>
             </p>
           </div>
           {success ? (
             <Progress type="circle" percent={100} width={30} />
+          ) : product.stock === 0 ? (
+            <span className={style.outOfStock}>Out of stock</span>
           ) : (
             <BuyButton
               type="buySmall"

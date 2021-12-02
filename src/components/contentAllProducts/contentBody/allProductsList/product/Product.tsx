@@ -6,8 +6,9 @@ import { NavLink, useHistory } from "react-router-dom";
 import heart from "../../../../../assets/images/heart.svg";
 import { ProductsType } from "../../../../../interfaces/product";
 import React from "react";
-import BuyButton from "../../../../custom/buttons/buyButton/BuyButton";
 import productArrow from "../../../../../assets/images/productArrow.svg";
+import BuyButton from "../../../../custom/buttons/buyButton/BuyButton";
+import { toFixed } from "../../../../../helpers/toFixed/toFixed";
 
 interface Props {
   prod: ProductsType;
@@ -56,10 +57,10 @@ const Product: React.FC<Props> = ({ prod }) => {
                 </div>
                 <div className={style.pricesContainerMobile}>
                   <h1 className={style.discountPrice}>
-                    {prod.priceHalf.toFixed(2)} <span>USD</span>
+                    {toFixed(prod.priceHalf)}
                   </h1>
                   <p className={style.fullPrice}>
-                    <s>{prod.priceFull.toFixed(2)}</s>
+                    <s>{toFixed(prod.priceFull)}</s>
                   </p>
                 </div>
               </div>
@@ -90,13 +91,9 @@ const Product: React.FC<Props> = ({ prod }) => {
           </div>
           <div className={style.rightSide}>
             <div className={style.pricesContainer}>
-              <h1 className={style.discountPrice}>
-                {prod.priceHalf.toFixed(2)} <span>USD</span>
-              </h1>
+              <h1 className={style.discountPrice}>{toFixed(prod.priceHalf)}</h1>
               <p className={style.fullPrice}>
-                <s>
-                  {prod.priceFull.toFixed(2)} <span>USD</span>
-                </s>
+                <s>{toFixed(prod.priceFull)}</s>
               </p>
             </div>
             <div className={style.transfer}>

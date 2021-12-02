@@ -1,6 +1,5 @@
 .container {
-  display: flex;
-  flex-direction: column;
+  padding-bottom: 11px;
 }
 .infoDescription {
   color: #a9a9a9;
@@ -8,19 +7,28 @@
 .titleContainer {
   margin-bottom: 30px;
 }
-.chexBoxContainer {
+.checkBoxContainer {
   display: flex;
   flex-direction: column;
   grid-gap: 16px;
-  margin-bottom: 32px;
 }
-
 .item {
   display: flex;
-  padding: 10px 16px;
+  height: fit-content;
+  align-items: center;
+  padding: 12px;
   background-color: #f9f9f9;
   width: fit-content;
-  align-items: center;
   border: 1px solid#D1D1D1;
   border-radius: 12px;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
 }
+@media (max-width: 768px) {
+  .container {
+    font-size: 0.8rem;
+  }
+  .item {
+    font-size: 0.8rem;
+  }
+} ;

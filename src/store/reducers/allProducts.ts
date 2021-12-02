@@ -1,8 +1,11 @@
 import {
   BUY_PRODUCT,
+  CHANGE_AMOUNT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
-} from "../types/allProducts/constansts";
+  SET_DISCOUNT,
+  SET_SUCCESS,
+} from "./../types/allProducts/constansts";
 import {
   AllProductsState,
   AllProductsAction,
@@ -41,7 +44,7 @@ const initialState: AllProductsState = {
       color: "",
       questions: 0,
       reviews: 0,
-      buyBy: [""],
+      buyBy: [],
     },
   ],
   filterName: "",
@@ -55,6 +58,8 @@ const initialState: AllProductsState = {
   filterPrice: [0],
   currentID: "",
   boughtProducts: [],
+  promoCode: "MISHA",
+  discount: 0,
 };
 
 export const allProducts = (
@@ -140,8 +145,30 @@ export const allProducts = (
       return {
         ...state,
         boughtProducts: state.boughtProducts.filter(
-          (prod) => prod.itemID !== action.payload
+          (prod) => prod.product.itemID !== action.payload
         ),
+      };
+    }
+    case SET_DISCOUNT: {
+      return {
+        ...state,
+        discount: 15,
+      };
+    }
+    case CHANGE_AMOUNT: {
+      const productIndex = state.boughtProducts.findIndex(
+        (el) => el.product.itemID === action.payload.product.itemID
+      );
+      if (productIndex !== -1) {
+        state.boughtProducts.splice(productIndex, 1, action.payload);
+      }
+      return { ...state };
+    }
+    case SET_SUCCESS: {
+      return {
+        ...state,
+        boughtProducts: [],
+        discount: 0,
       };
     }
     default:

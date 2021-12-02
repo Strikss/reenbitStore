@@ -6,6 +6,10 @@
   margin: 25px 0;
   font-size: 1rem;
 }
+.home {
+  position: relative;
+  top: -1px;
+}
 
 @media (max-width: 768px) {
   .container {

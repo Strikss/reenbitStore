@@ -1,12 +1,15 @@
-import { ProductsType } from "./../../interfaces/product";
+import { AllProductsAction } from "./../types/allProducts/allProducts";
+import { ProdInf } from "./../../interfaces/product";
 import {
   BUY_PRODUCT,
+  CHANGE_AMOUNT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
+  SET_DISCOUNT,
+  SET_SUCCESS,
 } from "./../types/allProducts/constansts";
 import db from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
-import { AllProductsAction } from "../types/allProducts/allProducts";
 import {
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,
@@ -74,7 +77,7 @@ export const setCurrentID = (id: string): AllProductsAction => {
     payload: id,
   };
 };
-export const buyProduct = (product: ProductsType): AllProductsAction => {
+export const buyProduct = (product: ProdInf): AllProductsAction => {
   return {
     type: BUY_PRODUCT,
     payload: product,
@@ -85,4 +88,15 @@ export const removeProduct = (id: string): AllProductsAction => {
     type: REMOVE_PRODUCT,
     payload: id,
   };
+};
+export const setDiscount = (): AllProductsAction => {
+  return {
+    type: SET_DISCOUNT,
+  };
+};
+export const changeAmount = (product: ProdInf): AllProductsAction => {
+  return { type: CHANGE_AMOUNT, payload: product };
+};
+export const setSuccess = (): AllProductsAction => {
+  return { type: SET_SUCCESS };
 };

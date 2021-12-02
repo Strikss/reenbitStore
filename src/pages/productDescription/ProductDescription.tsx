@@ -13,6 +13,7 @@ const ProductDescription: React.FC = () => {
   //HOOKS
   const { id } = useParams<{ id: string }>();
   const { setCurrentID, reset, fetchProducts } = useAction();
+
   useEffect(() => {
     reset();
     fetchProducts();
@@ -23,7 +24,7 @@ const ProductDescription: React.FC = () => {
   }, [id]);
 
   return (
-    <div className={style.productDescription} id="productDescription">
+    <div className={style.container} id="productDescription">
       <Header />
       <SearchBar />
       <Menu />

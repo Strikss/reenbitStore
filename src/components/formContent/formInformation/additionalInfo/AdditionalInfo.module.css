@@ -13,3 +13,8 @@
   border: 1px solid #d1d1d1;
   border-radius: 12px;
 }
+@media (max-width: 768px) {
+  .container {
+    font-size: 0.8rem;
+  }
+} ;

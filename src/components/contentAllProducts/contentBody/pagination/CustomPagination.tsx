@@ -3,8 +3,8 @@ import style from "./CustomPagination.module.css";
 import { useAppSelector } from "../../../../hooks/selectorHook";
 import { useAction } from "../../../../hooks/useAction";
 import React, { useEffect } from "react";
-import BuyButton from "../../../custom/buttons/buyButton/BuyButton";
 import downArrow from "../../../../assets/images/downArrow.svg";
+import BuyButton from "../../../custom/buttons/buyButton/BuyButton";
 
 const CustomPagination: React.FC = () => {
   //HOOKS

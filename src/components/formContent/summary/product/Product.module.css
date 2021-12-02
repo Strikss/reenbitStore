@@ -46,7 +46,6 @@
 }
 .price {
   color: #6a983c;
-  font-size: 1.2rem;
   font-weight: 600;
 }
 .valuesContainer {
@@ -77,4 +76,37 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .listTitle:nth-child(1n) {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .listTitle:nth-child(1n) {
+    font-size: 0.8rem;
+  }
+  .star {
+    margin-right: 5.26px;
+    width: 15px;
+  }
+  .right,
+  .amouthContainer {
+    font-size: 12px;
+  }
+  .price {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 425px) {
+  .listTitle:nth-child(1n) {
+    font-size: 0.7rem;
+  }
+}
+.right {
+  min-width: 50px;
+}
+.amouthContainer {
+  width: 100px;
 }

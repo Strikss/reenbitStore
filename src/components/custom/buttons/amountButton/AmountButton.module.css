@@ -1,6 +1,11 @@
 .container {
   display: flex;
-  border: 1px solid #d1d1d1;
+  flex-direction: column;
+  position: relative;
+}
+.inputContainer {
+  display: flex;
+  border: 2px solid #d1d1d1;
   border-radius: 12px;
   font-size: 16px;
   align-items: center;
@@ -34,4 +39,14 @@
   border: transparent;
   background-color: transparent;
   cursor: pointer;
+}
+.error {
+  border: 2px solid rgba(221, 101, 101, 0.719);
+}
+.errorText {
+  position: absolute;
+  color: rgba(255, 0, 0, 0.74);
+  width: 255px;
+  left: -120px;
+  bottom: -22px;
 }

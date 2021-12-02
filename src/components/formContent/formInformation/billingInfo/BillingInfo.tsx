@@ -1,8 +1,13 @@
+import { FormInstance } from "antd";
 import React from "react";
 import CustomFormField from "../../../custom/customFormField/CustomFormField";
 import style from "./BillingInfo.module.css";
 
-const BillingInfo: React.FC = () => {
+interface Props {
+  form: FormInstance;
+}
+
+const BillingInfo: React.FC<Props> = ({ form }) => {
   return (
     <div className={style.container}>
       <div className={style.titleContainer}>
@@ -11,36 +16,80 @@ const BillingInfo: React.FC = () => {
       </div>
       <ul className={style.infoContainer}>
         <li className={style.oneForm}>
-          <h3>First name</h3>
-          <CustomFormField placeholder="First name" />
+          <label>
+            <span className={style.required}>*</span> First name
+          </label>
+          <CustomFormField placeholder="First name" name="firstName" validate />
         </li>
         <li className={style.oneForm}>
-          <h3>Last name</h3>
-          <CustomFormField placeholder="Last name" />
+          <label>
+            <span className={style.required}>*</span> Last name
+          </label>
+          <CustomFormField placeholder="Last name" name="lastName" validate />
         </li>
         <li className={style.oneForm}>
-          <h3>Email address</h3>
-          <CustomFormField placeholder="Email address" />
+          <label>
+            <span className={style.required}>*</span> Email address
+          </label>
+          <CustomFormField
+            placeholder="Email address"
+            name="email"
+            validate
+            formType="email"
+          />
         </li>
         <li className={style.oneForm}>
-          <h3>Phone number</h3>
-          <CustomFormField placeholder="Phone number" />
+          <label>
+            <span className={style.required}>*</span> Phone number
+          </label>
+          <CustomFormField
+            placeholder="Phone number"
+            formType="tel"
+            name="number"
+            validate
+            max={13}
+          />
         </li>
         <li className={style.oneForm}>
-          <h3>Address</h3>
-          <CustomFormField placeholder="Address" />
+          <label>
+            <span className={style.required}>*</span> Address
+          </label>
+          <CustomFormField placeholder="Address" name="address" validate />
         </li>
         <li className={style.oneForm}>
-          <h3>Town / City</h3>
-          <CustomFormField placeholder="Town / City" />
+          <label>
+            <span className={style.required}>*</span> Town / City
+          </label>
+          <CustomFormField
+            placeholder="Town / City"
+            name="city"
+            validate
+            autoComplete
+            form={form}
+          />
         </li>
         <li className={style.oneForm}>
-          <h3>State / Country</h3>
-          <CustomFormField placeholder="State / Country" />
+          <label>
+            <span className={style.required}>*</span> State / Country
+          </label>
+          <CustomFormField
+            placeholder="State / Country"
+            name="country"
+            validate
+            autoComplete
+            form={form}
+          />
         </li>
         <li className={style.oneForm}>
-          <h3>ZIP / Postal code</h3>
-          <CustomFormField placeholder="ZIP / Postal code" />
+          <label>
+            <span className={style.required}>*</span> ZIP / Postal code
+          </label>
+          <CustomFormField
+            placeholder="ZIP / Postal code"
+            formType="number"
+            name="zip"
+            validate
+          />
         </li>
       </ul>
     </div>

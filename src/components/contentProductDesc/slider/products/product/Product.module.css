@@ -33,6 +33,7 @@
 .price {
   font-size: 1.35rem;
 }
+
 .priceHalf {
   font-size: 1.2rem;
 }
@@ -40,6 +41,10 @@
   font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.397);
   font-weight: 700;
+}
+.outOfStock {
+  font-size: 1.1rem;
+  color: rgba(243, 28, 28, 0.829);
 }
 @media (max-width: 720px) {
   .container {

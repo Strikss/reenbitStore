@@ -1,9 +1,23 @@
 .container {
-  width: 100%;
+  width: 90%;
   margin-right: 32px;
-  display: flex;
-  flex-direction: column;
 }
-.button {
-  padding-bottom: 32px;
+.fireWorks {
+  position: absolute;
+  left: 25%;
+  bottom: 10%;
+  width: 50%;
+  z-index: 1;
+  pointer-events: none;
 }
+
+@media (max-width: 768px) {
+  .container {
+    margin-right: 0;
+  }
+  .fireWorks {
+    width: 75%;
+    left: 13%;
+    bottom: 10%;
+  }
+} ;

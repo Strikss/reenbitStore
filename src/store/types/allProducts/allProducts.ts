@@ -1,4 +1,4 @@
-import { ProductsType } from "./../../../interfaces/product";
+import { ProdInf, ProductsType } from "./../../../interfaces/product";
 import {
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,
@@ -14,6 +14,9 @@ import {
   SET_CURRENT_ID,
   BUY_PRODUCT,
   REMOVE_PRODUCT,
+  SET_DISCOUNT,
+  CHANGE_AMOUNT,
+  SET_SUCCESS,
 } from "./constansts";
 
 export interface AllProductsState {
@@ -28,7 +31,9 @@ export interface AllProductsState {
   filterFarms: string[];
   filterPrice: number[];
   currentID: string;
-  boughtProducts: ProductsType[];
+  boughtProducts: ProdInf[];
+  promoCode: string;
+  discount: number;
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -78,11 +83,21 @@ export interface SetCurrentID {
 }
 export interface BuyProduct {
   type: typeof BUY_PRODUCT;
-  payload: ProductsType;
+  payload: ProdInf;
 }
 export interface RemoveProduct {
   type: typeof REMOVE_PRODUCT;
   payload: string;
+}
+export interface SetDiscount {
+  type: typeof SET_DISCOUNT;
+}
+export interface ChangeAmount {
+  type: typeof CHANGE_AMOUNT;
+  payload: ProdInf;
+}
+export interface SetSuccess {
+  type: typeof SET_SUCCESS;
 }
 
 export type AllProductsAction =
@@ -99,4 +114,7 @@ export type AllProductsAction =
   | ResetAction
   | SetCurrentID
   | BuyProduct
-  | RemoveProduct;
+  | RemoveProduct
+  | SetDiscount
+  | ChangeAmount
+  | SetSuccess;

@@ -11,13 +11,14 @@ import Footer from "../../components/footer/Footer";
 const AllProducts: React.FC = () => {
   //HOOKS
   const { fetchProducts, reset } = useAction();
+
   useEffect(() => {
     reset();
     fetchProducts();
   }, []);
 
   return (
-    <div className={style.allProducts} id="scroller">
+    <div className={style.container} id="scroller">
       <Header />
       <SearchBar />
       <Menu />

@@ -10,5 +10,19 @@
 .infoContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 15px;
 }
+.required {
+  color: red;
+}
+
+@media (max-width: 1024px) {
+  .infoContainer {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    font-size: 0.8rem;
+  }
+} ;

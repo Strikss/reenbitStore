@@ -6,7 +6,9 @@ interface Props {
   text: string;
   suffix?: string;
   prefix?: string;
+  disabled?: boolean;
   handleClick?: () => void;
+  form?: string;
 }
 
 const BuyButton: React.FC<Props> = ({
@@ -15,11 +17,16 @@ const BuyButton: React.FC<Props> = ({
   text,
   suffix = "",
   prefix = "",
+  form = "",
+  disabled = false,
 }) => {
   return (
     <button
-      className={`${style.button} ${style[type]}`}
+      className={`${style.button} ${style[type]} ${disabled && style.disabled}`}
       onClick={() => handleClick()}
+      type="submit"
+      form={form}
+      disabled={disabled}
     >
       {prefix && <span className={style.plus}>{prefix}</span>}
       <span>{text}</span>

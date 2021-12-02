@@ -12,12 +12,14 @@ const ShoppingCart: React.FC = () => {
   //HOOKS
   const { id } = useParams<{ id: string }>();
   const { reset } = useAction();
+
+  //FUNCTIONS
   useEffect(() => {
     reset();
   }, [id]);
 
   return (
-    <div className={style.container}>
+    <div className={style.container} id="shoppingCart">
       <Header />
       <SearchBar />
       <Menu />
