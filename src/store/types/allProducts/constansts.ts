@@ -15,3 +15,5 @@ export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const SET_DISCOUNT = "SET_DISCOUNT";
 export const CHANGE_AMOUNT = "CHANGE_AMOUNT";
 export const SET_SUCCESS = "SET_SUCCESS";
+export const LOGIN = "SET_LOGIN";
+export const LOGOUT = "SET_LOGOUT";

@@ -18,6 +18,7 @@
   position: relative;
   bottom: 2px;
   margin-right: 40px;
+  border-radius: 12px;
 }
 .basketContainer {
   position: relative;

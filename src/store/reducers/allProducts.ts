@@ -1,6 +1,8 @@
 import {
   BUY_PRODUCT,
   CHANGE_AMOUNT,
+  LOGIN,
+  LOGOUT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
   SET_DISCOUNT,
@@ -60,6 +62,11 @@ const initialState: AllProductsState = {
   boughtProducts: [],
   promoCode: "MISHA",
   discount: 0,
+  profile: {
+    email: "",
+    name: "",
+    imageUrl: "",
+  },
 };
 
 export const allProducts = (
@@ -170,6 +177,19 @@ export const allProducts = (
         boughtProducts: [],
         discount: 0,
       };
+    }
+    case LOGIN: {
+      return {
+        ...state,
+        profile: {
+          name: action.payload.name,
+          email: action.payload.email,
+          imageUrl: action.payload.imageUrl,
+        },
+      };
+    }
+    case LOGOUT: {
+      return { ...state, profile: { name: "", imageUrl: "", email: "" } };
     }
     default:
       return state;

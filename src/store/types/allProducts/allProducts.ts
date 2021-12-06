@@ -1,4 +1,4 @@
-import { ProdInf, ProductsType } from "./../../../interfaces/product";
+import { ProdInf, ProductsType, Profile } from "./../../../interfaces/product";
 import {
   FETCH_ALL_PRODUCTS,
   FILTER_BY_NAME,
@@ -17,6 +17,8 @@ import {
   SET_DISCOUNT,
   CHANGE_AMOUNT,
   SET_SUCCESS,
+  LOGIN,
+  LOGOUT,
 } from "./constansts";
 
 export interface AllProductsState {
@@ -34,6 +36,7 @@ export interface AllProductsState {
   boughtProducts: ProdInf[];
   promoCode: string;
   discount: number;
+  profile: Profile;
 }
 export interface FetchAllProductsAction {
   type: typeof FETCH_ALL_PRODUCTS;
@@ -99,6 +102,13 @@ export interface ChangeAmount {
 export interface SetSuccess {
   type: typeof SET_SUCCESS;
 }
+export interface LogIn {
+  type: typeof LOGIN;
+  payload: Profile;
+}
+export interface LogOut {
+  type: typeof LOGOUT;
+}
 
 export type AllProductsAction =
   | FetchAllProductsAction
@@ -117,4 +127,6 @@ export type AllProductsAction =
   | RemoveProduct
   | SetDiscount
   | ChangeAmount
-  | SetSuccess;
+  | SetSuccess
+  | LogIn
+  | LogOut;

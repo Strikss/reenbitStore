@@ -23,3 +23,9 @@ export interface ProdInf {
   amount: number;
   type: "Pcs" | "Kgs" | "Box" | "Pack";
 }
+
+export interface Profile {
+  email: string;
+  name: string;
+  imageUrl: string;
+}

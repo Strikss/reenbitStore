@@ -1,8 +1,10 @@
 import { AllProductsAction } from "./../types/allProducts/allProducts";
-import { ProdInf } from "./../../interfaces/product";
+import { ProdInf, Profile } from "./../../interfaces/product";
 import {
   BUY_PRODUCT,
   CHANGE_AMOUNT,
+  LOGIN,
+  LOGOUT,
   REMOVE_PRODUCT,
   SET_CURRENT_ID,
   SET_DISCOUNT,
@@ -99,4 +101,10 @@ export const changeAmount = (product: ProdInf): AllProductsAction => {
 };
 export const setSuccess = (): AllProductsAction => {
   return { type: SET_SUCCESS };
+};
+export const logIn = (profile: Profile): AllProductsAction => {
+  return { type: LOGIN, payload: profile };
+};
+export const logOut = (): AllProductsAction => {
+  return { type: LOGOUT };
 };
